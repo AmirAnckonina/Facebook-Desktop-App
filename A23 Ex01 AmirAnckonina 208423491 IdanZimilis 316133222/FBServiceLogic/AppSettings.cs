@@ -16,28 +16,49 @@ namespace FBServiceLogic
         /// 
         private List<string> m_Permissions;
         private string m_AppID;
-        private bool m_RememberUser;
+        private bool m_RememberUserActivated;
+        private string m_LastAccessToken;
+        private static readonly string sr_AppSettingsFilePath = 
+            Path.Combine(
+                Directory.GetParent(Directory.GetCurrentDirectory()).Parent.Parent.FullName,
+                @"FBServiceLogic\Properties\AppSettings.xml");
+
 
         public string AppID { get => m_AppID; set => m_AppID = value; } 
-        public bool RememberUser { get => m_RememberUser; set => m_RememberUser = value; }
+        public bool RememberUserActivated { get => m_RememberUserActivated; set => m_RememberUserActivated = value; }
         public string LastAccessToken { get; set; }
         public List<string> Permissions { get => m_Permissions; set => m_Permissions = value; } 
-        /*private string m_AppID; // = "3456972604533289";
-        private List<string> m_Permissions;
-        private bool m_RememberUserActivated;
-        private string m_LastAccessToken;*/
 
         private AppSettings()
         {
-            m_RememberUser = false;
-            m_Permissions = new List<string>(); 
+            m_RememberUserActivated = false;
+            m_Permissions = new List<string>();
+            SetDefaultPermissions();
+            SetAppSettingFilePath();
         }
 
+        private void SetDefaultPermissions()
+        {
+            /// Init App with default ID, Permissions ... etc.
+            /// 
+        }
+
+        private void SetAppSettingFilePath()
+        {
+           /* string workingDirPath;
+            string basePath;
+
+            workingDirPath = Directory.GetCurrentDirectory();
+            basePath = Directory.GetParent(workingDirPath.ToString()).Parent.Parent.FullName;
+            sr_AppSettingsFilePath = Path.Combine(
+                Directory.GetParent(Directory.GetCurrentDirectory()).Parent.Parent.FullName,
+                @"FBServiceLogic\Properties\AppSettings.xml");*/
+        }
         public static AppSettings LoadSettings() /// Consider change design of the func.
         {
             AppSettings appSettings = null;
 
-            //appSettings = LoadFromFile();
+            appSettings = LoadFromFile();
 
             if (appSettings == null)
             {
@@ -55,10 +76,11 @@ namespace FBServiceLogic
 
         public void SaveToFile()
         {
-            string path = Directory.GetParent(Directory.GetCurrentDirectory()).ToString();
-            /// string path = AppDomain.CurrentDomain.BaseDirectory();
+            string workingDirectory = Directory.GetCurrentDirectory();
+            string BasePath = Directory.GetParent(workingDirectory).Parent.Parent.FullName;
+            string appSettingsFilePath = Path.Combine(BasePath, @"\FBServiceLogic\Properties");
 
-            using (Stream stream = new FileStream(path, FileMode.Truncate))
+            using (Stream stream = new FileStream(appSettingsFilePath, FileMode.Truncate))
             {
                 XmlSerializer serializer = new XmlSerializer(this.GetType());
                 serializer.Serialize(stream, this);
@@ -68,13 +90,8 @@ namespace FBServiceLogic
         public static AppSettings LoadFromFile()
         {
             AppSettings appSettings = null;
-            string workingDirectory = Directory.GetCurrentDirectory();
-            string path = Directory.GetParent(workingDirectory).Parent.ToString();
-            /// string path = Directory.GetCurrentDirectory();
-            /// string path = Directory.GetParent(Directory.GetCurrentDirectory()).ToString();
-            /// string path = AppDomain.CurrentDomain.BaseDirectory();
 
-            using (Stream stream = new FileStream(path, FileMode.Open))
+            using (Stream stream = new FileStream(sr_AppSettingsFilePath, FileMode.Open))
             {
                 XmlSerializer serializer = new XmlSerializer(typeof(AppSettings));
                 appSettings = serializer.Deserialize(stream) as AppSettings;

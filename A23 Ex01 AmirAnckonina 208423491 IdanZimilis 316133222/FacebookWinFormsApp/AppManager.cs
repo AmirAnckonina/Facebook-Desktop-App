@@ -9,7 +9,7 @@ using FBServiceLogic;
 
 namespace FacebookWinFormsApp
 {
-    public class FBAppManager
+    public class AppManager
     {
         private FormLogin m_FormLogin;
         private FormMain m_FormMain;
@@ -17,7 +17,7 @@ namespace FacebookWinFormsApp
         /// <summary>
         ///  Change
         /// </summary>
-        public FBAppManager()
+        public AppManager()
         {
             this.m_FBAPIClient = new FBAPIClient();
             this.m_FormLogin = new FormLogin(m_FBAPIClient);

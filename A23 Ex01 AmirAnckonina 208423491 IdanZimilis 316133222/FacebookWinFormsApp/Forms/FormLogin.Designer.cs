@@ -32,7 +32,6 @@ namespace FacebookWinFormsApp
             this.label1 = new System.Windows.Forms.Label();
             this.buttonLogin = new System.Windows.Forms.Button();
             this.buttonSettings = new System.Windows.Forms.Button();
-            this.rememberMeCheckbox = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // label1
@@ -70,24 +69,12 @@ namespace FacebookWinFormsApp
             this.buttonSettings.UseVisualStyleBackColor = true;
             this.buttonSettings.Click += new System.EventHandler(this.buttonSettings_Click);
             // 
-            // rememberMeCheckBox
-            // 
-            this.rememberMeCheckbox.AutoSize = true;
-            this.rememberMeCheckbox.Location = new System.Drawing.Point(12, 239);
-            this.rememberMeCheckbox.Name = "rememberMeCheckBox";
-            this.rememberMeCheckbox.Size = new System.Drawing.Size(122, 21);
-            this.rememberMeCheckbox.TabIndex = 62;
-            this.rememberMeCheckbox.Text = "Remember Me";
-            this.rememberMeCheckbox.UseVisualStyleBackColor = true;
-            this.rememberMeCheckbox.CheckedChanged += new System.EventHandler(this.rememberMeCheckbox_CheckedChanged);
-            // 
             // FormLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.ClientSize = new System.Drawing.Size(777, 272);
-            this.Controls.Add(this.rememberMeCheckbox);
             this.Controls.Add(this.buttonSettings);
             this.Controls.Add(this.buttonLogin);
             this.Controls.Add(this.label1);
@@ -107,6 +94,5 @@ namespace FacebookWinFormsApp
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button buttonLogin;
         private System.Windows.Forms.Button buttonSettings;
-        private System.Windows.Forms.CheckBox rememberMeCheckbox;
     }
 }
