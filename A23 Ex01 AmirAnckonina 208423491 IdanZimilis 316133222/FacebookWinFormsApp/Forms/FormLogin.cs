@@ -56,7 +56,7 @@ namespace FacebookWinFormsApp
 
         private void rememberMeCheckbox_CheckedChanged(object sender, EventArgs e)
         {
-            r_FBAPIClient.AppSettings.RememberUser = true;
+            r_FBAPIClient.AppSettings.RememberUserActivated = true;
         }
     }
 }

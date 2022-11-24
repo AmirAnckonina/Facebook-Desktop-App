@@ -14,14 +14,14 @@ namespace FacebookWinFormsApp
 {
     public partial class AlbumsForm : Form
     {
-        private FBAppManager m_FormsController;
+        private AppManager m_FormsController;
         public AlbumsForm()
         {
             InitializeComponent();
         }
 
     
-        public void  setController(FBAppManager i_FormsController)
+        public void  setController(AppManager i_FormsController)
         {
             this.m_FormsController = i_FormsController;
             
