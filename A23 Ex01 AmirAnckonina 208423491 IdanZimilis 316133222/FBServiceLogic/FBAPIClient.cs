@@ -93,6 +93,32 @@ namespace FBServiceLogic
             return albumDTOList;
         }
 
-      
+        public List<PostDTO> GetPostsList()
+        {
+            List<PostDTO> postDTOList = new List<PostDTO>();
+
+            foreach (Post post in m_CurrentUser.Posts) 
+            {
+                postDTOList.Add(new PostDTO(post.Message, post.Caption, post.CreatedTime));
+            }
+
+            return postDTOList;
+        }
+
+        public List<PostDTO> GetPostsByDate(DateTime i_DateTime)
+        {
+            List<PostDTO> postDTOList = new List<PostDTO>();
+
+            foreach (Post post in m_CurrentUser.Posts)
+            {
+                if (post.CreatedTime.Equals(i_DateTime))
+                {
+                    postDTOList.Add(new PostDTO(post.Message, post.Caption, post.CreatedTime)); 
+                }
+            }
+        
+
+            return postDTOList;
+        }
     }
 }
