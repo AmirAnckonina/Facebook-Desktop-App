@@ -14,7 +14,9 @@ namespace FacebookWinFormsApp
         private FormLogin m_FormLogin;
         private FormMain m_FormMain;
         private FBAPIClient m_FBAPIClient;
-
+        /// <summary>
+        ///  Change
+        /// </summary>
         public FBAppManager()
         {
             this.m_FBAPIClient = new FBAPIClient();
