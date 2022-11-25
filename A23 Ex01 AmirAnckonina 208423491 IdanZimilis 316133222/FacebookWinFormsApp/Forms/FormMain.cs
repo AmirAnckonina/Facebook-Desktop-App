@@ -76,5 +76,14 @@ namespace FacebookWinFormsApp
                 r_FBAPIClient.AppSettings.RememberUserActivated = false;
             } 
         }
+
+        private void searchPostsByDateButton_Click(object sender, EventArgs e)
+        {
+            foreach (PostDTO post in r_FBAPIClient.GetPostsByDate(dateTimePicker1.Value))
+            {
+                postsByDateListBox.Items.Add(post.Message);
+            }
+
+        }
     }
 }
