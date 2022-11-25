@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.buttonLogin = new System.Windows.Forms.Button();
             this.buttonLogout = new System.Windows.Forms.Button();
             this.postButton = new System.Windows.Forms.Button();
             this.profilePictureBox = new System.Windows.Forms.PictureBox();
@@ -52,23 +51,26 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.AlbumsButton = new System.Windows.Forms.Button();
+            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.homeTab = new System.Windows.Forms.TabPage();
+            this.friendsTab = new System.Windows.Forms.TabPage();
+            this.albumsTab = new System.Windows.Forms.TabPage();
+            this.groupsTab = new System.Windows.Forms.TabPage();
+            this.postsTab = new System.Windows.Forms.TabPage();
+            this.likedPagesTab = new System.Windows.Forms.TabPage();
+            this.myAlumnusTab = new System.Windows.Forms.TabPage();
+            this.hometownFriendsTab = new System.Windows.Forms.TabPage();
             ((System.ComponentModel.ISupportInitialize)(this.profilePictureBox)).BeginInit();
             this.infoGroupBox.SuspendLayout();
+            this.tabControl1.SuspendLayout();
+            this.homeTab.SuspendLayout();
+            this.albumsTab.SuspendLayout();
+            this.postsTab.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // buttonLogin
-            // 
-            this.buttonLogin.Location = new System.Drawing.Point(912, 84);
-            this.buttonLogin.Margin = new System.Windows.Forms.Padding(4);
-            this.buttonLogin.Name = "buttonLogin";
-            this.buttonLogin.Size = new System.Drawing.Size(199, 28);
-            this.buttonLogin.TabIndex = 36;
-            this.buttonLogin.Text = "Login";
-            this.buttonLogin.UseVisualStyleBackColor = true;
             // 
             // buttonLogout
             // 
-            this.buttonLogout.Location = new System.Drawing.Point(912, 15);
+            this.buttonLogout.Location = new System.Drawing.Point(6, 712);
             this.buttonLogout.Margin = new System.Windows.Forms.Padding(4);
             this.buttonLogout.Name = "buttonLogout";
             this.buttonLogout.Size = new System.Drawing.Size(197, 28);
@@ -80,7 +82,7 @@
             // postButton
             // 
             this.postButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.postButton.Location = new System.Drawing.Point(717, 189);
+            this.postButton.Location = new System.Drawing.Point(339, 50);
             this.postButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.postButton.Name = "postButton";
             this.postButton.Size = new System.Drawing.Size(135, 30);
@@ -90,16 +92,16 @@
             // 
             // profilePictureBox
             // 
-            this.profilePictureBox.Location = new System.Drawing.Point(12, 98);
+            this.profilePictureBox.Location = new System.Drawing.Point(6, 59);
             this.profilePictureBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.profilePictureBox.Name = "profilePictureBox";
-            this.profilePictureBox.Size = new System.Drawing.Size(239, 153);
+            this.profilePictureBox.Size = new System.Drawing.Size(244, 161);
             this.profilePictureBox.TabIndex = 54;
             this.profilePictureBox.TabStop = false;
             // 
             // settingsButton
             // 
-            this.settingsButton.Location = new System.Drawing.Point(912, 50);
+            this.settingsButton.Location = new System.Drawing.Point(6, 678);
             this.settingsButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.settingsButton.Name = "settingsButton";
             this.settingsButton.Size = new System.Drawing.Size(199, 28);
@@ -111,7 +113,7 @@
             // 
             this.postLabel.AutoSize = true;
             this.postLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.postLabel.Location = new System.Drawing.Point(281, 189);
+            this.postLabel.Location = new System.Drawing.Point(17, 9);
             this.postLabel.Name = "postLabel";
             this.postLabel.Size = new System.Drawing.Size(106, 24);
             this.postLabel.TabIndex = 56;
@@ -120,7 +122,7 @@
             // textBox1
             // 
             this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.textBox1.Location = new System.Drawing.Point(393, 189);
+            this.textBox1.Location = new System.Drawing.Point(21, 50);
             this.textBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(317, 28);
@@ -131,7 +133,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.label1.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.label1.Location = new System.Drawing.Point(371, 15);
+            this.label1.Location = new System.Drawing.Point(30, 22);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(419, 24);
             this.label1.TabIndex = 58;
@@ -141,17 +143,17 @@
             // 
             this.postsListBox.FormattingEnabled = true;
             this.postsListBox.ItemHeight = 16;
-            this.postsListBox.Location = new System.Drawing.Point(285, 238);
+            this.postsListBox.Location = new System.Drawing.Point(43, 94);
             this.postsListBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.postsListBox.Name = "postsListBox";
-            this.postsListBox.Size = new System.Drawing.Size(567, 132);
+            this.postsListBox.Size = new System.Drawing.Size(408, 68);
             this.postsListBox.TabIndex = 59;
             // 
             // rememberMeCheckBox
             // 
             this.rememberMeCheckBox.AutoSize = true;
             this.rememberMeCheckBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.rememberMeCheckBox.Location = new System.Drawing.Point(27, 50);
+            this.rememberMeCheckBox.Location = new System.Drawing.Point(12, 634);
             this.rememberMeCheckBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.rememberMeCheckBox.Name = "rememberMeCheckBox";
             this.rememberMeCheckBox.Size = new System.Drawing.Size(159, 28);
@@ -163,10 +165,10 @@
             // testBoxLoggedInUser
             // 
             this.testBoxLoggedInUser.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.testBoxLoggedInUser.Location = new System.Drawing.Point(16, 20);
+            this.testBoxLoggedInUser.Location = new System.Drawing.Point(6, 12);
             this.testBoxLoggedInUser.Margin = new System.Windows.Forms.Padding(4);
             this.testBoxLoggedInUser.Name = "testBoxLoggedInUser";
-            this.testBoxLoggedInUser.Size = new System.Drawing.Size(233, 22);
+            this.testBoxLoggedInUser.Size = new System.Drawing.Size(244, 22);
             this.testBoxLoggedInUser.TabIndex = 61;
             // 
             // infoLabel
@@ -193,9 +195,9 @@
             this.infoGroupBox.Controls.Add(this.label2);
             this.infoGroupBox.Controls.Add(this.infoLabel);
             this.infoGroupBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.infoGroupBox.Location = new System.Drawing.Point(285, 50);
+            this.infoGroupBox.Location = new System.Drawing.Point(34, 105);
             this.infoGroupBox.Name = "infoGroupBox";
-            this.infoGroupBox.Size = new System.Drawing.Size(567, 115);
+            this.infoGroupBox.Size = new System.Drawing.Size(440, 121);
             this.infoGroupBox.TabIndex = 63;
             this.infoGroupBox.TabStop = false;
             // 
@@ -291,7 +293,7 @@
             // 
             // AlbumsButton
             // 
-            this.AlbumsButton.Location = new System.Drawing.Point(912, 120);
+            this.AlbumsButton.Location = new System.Drawing.Point(19, 38);
             this.AlbumsButton.Margin = new System.Windows.Forms.Padding(4);
             this.AlbumsButton.Name = "AlbumsButton";
             this.AlbumsButton.Size = new System.Drawing.Size(199, 28);
@@ -300,25 +302,115 @@
             this.AlbumsButton.UseVisualStyleBackColor = true;
             this.AlbumsButton.Click += new System.EventHandler(this.friendsButton_Click);
             // 
+            // tabControl1
+            // 
+            this.tabControl1.Controls.Add(this.homeTab);
+            this.tabControl1.Controls.Add(this.friendsTab);
+            this.tabControl1.Controls.Add(this.albumsTab);
+            this.tabControl1.Controls.Add(this.groupsTab);
+            this.tabControl1.Controls.Add(this.postsTab);
+            this.tabControl1.Controls.Add(this.likedPagesTab);
+            this.tabControl1.Controls.Add(this.myAlumnusTab);
+            this.tabControl1.Controls.Add(this.hometownFriendsTab);
+            this.tabControl1.Location = new System.Drawing.Point(257, 12);
+            this.tabControl1.Name = "tabControl1";
+            this.tabControl1.SelectedIndex = 0;
+            this.tabControl1.Size = new System.Drawing.Size(811, 728);
+            this.tabControl1.TabIndex = 65;
+            // 
+            // homeTab
+            // 
+            this.homeTab.Controls.Add(this.label1);
+            this.homeTab.Controls.Add(this.infoGroupBox);
+            this.homeTab.Location = new System.Drawing.Point(4, 25);
+            this.homeTab.Name = "homeTab";
+            this.homeTab.Size = new System.Drawing.Size(803, 699);
+            this.homeTab.TabIndex = 6;
+            this.homeTab.Text = "Home";
+            this.homeTab.UseVisualStyleBackColor = true;
+            // 
+            // friendsTab
+            // 
+            this.friendsTab.Location = new System.Drawing.Point(4, 25);
+            this.friendsTab.Name = "friendsTab";
+            this.friendsTab.Padding = new System.Windows.Forms.Padding(3);
+            this.friendsTab.Size = new System.Drawing.Size(625, 446);
+            this.friendsTab.TabIndex = 1;
+            this.friendsTab.Text = "Friends";
+            this.friendsTab.UseVisualStyleBackColor = true;
+            // 
+            // albumsTab
+            // 
+            this.albumsTab.Controls.Add(this.AlbumsButton);
+            this.albumsTab.Location = new System.Drawing.Point(4, 25);
+            this.albumsTab.Name = "albumsTab";
+            this.albumsTab.Padding = new System.Windows.Forms.Padding(3);
+            this.albumsTab.Size = new System.Drawing.Size(803, 699);
+            this.albumsTab.TabIndex = 0;
+            this.albumsTab.Text = "Albums";
+            this.albumsTab.UseVisualStyleBackColor = true;
+            // 
+            // groupsTab
+            // 
+            this.groupsTab.Location = new System.Drawing.Point(4, 25);
+            this.groupsTab.Name = "groupsTab";
+            this.groupsTab.Size = new System.Drawing.Size(477, 316);
+            this.groupsTab.TabIndex = 2;
+            this.groupsTab.Text = "Groups";
+            this.groupsTab.UseVisualStyleBackColor = true;
+            // 
+            // postsTab
+            // 
+            this.postsTab.Controls.Add(this.postLabel);
+            this.postsTab.Controls.Add(this.textBox1);
+            this.postsTab.Controls.Add(this.postButton);
+            this.postsTab.Controls.Add(this.postsListBox);
+            this.postsTab.Location = new System.Drawing.Point(4, 25);
+            this.postsTab.Name = "postsTab";
+            this.postsTab.Size = new System.Drawing.Size(625, 446);
+            this.postsTab.TabIndex = 3;
+            this.postsTab.Text = "Posts";
+            this.postsTab.UseVisualStyleBackColor = true;
+            // 
+            // likedPagesTab
+            // 
+            this.likedPagesTab.Location = new System.Drawing.Point(4, 25);
+            this.likedPagesTab.Name = "likedPagesTab";
+            this.likedPagesTab.Size = new System.Drawing.Size(477, 316);
+            this.likedPagesTab.TabIndex = 4;
+            this.likedPagesTab.Text = "Liked Pages";
+            this.likedPagesTab.UseVisualStyleBackColor = true;
+            // 
+            // myAlumnusTab
+            // 
+            this.myAlumnusTab.Location = new System.Drawing.Point(4, 25);
+            this.myAlumnusTab.Name = "myAlumnusTab";
+            this.myAlumnusTab.Size = new System.Drawing.Size(477, 316);
+            this.myAlumnusTab.TabIndex = 5;
+            this.myAlumnusTab.Text = "My Alumnus";
+            this.myAlumnusTab.UseVisualStyleBackColor = true;
+            // 
+            // hometownFriendsTab
+            // 
+            this.hometownFriendsTab.Location = new System.Drawing.Point(4, 25);
+            this.hometownFriendsTab.Name = "hometownFriendsTab";
+            this.hometownFriendsTab.Size = new System.Drawing.Size(640, 446);
+            this.hometownFriendsTab.TabIndex = 7;
+            this.hometownFriendsTab.Text = "Hometown Friends";
+            this.hometownFriendsTab.UseVisualStyleBackColor = true;
+            // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.ClientSize = new System.Drawing.Size(1123, 753);
-            this.Controls.Add(this.AlbumsButton);
-            this.Controls.Add(this.infoGroupBox);
+            this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.testBoxLoggedInUser);
             this.Controls.Add(this.rememberMeCheckBox);
-            this.Controls.Add(this.postsListBox);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.postLabel);
             this.Controls.Add(this.settingsButton);
             this.Controls.Add(this.profilePictureBox);
-            this.Controls.Add(this.postButton);
             this.Controls.Add(this.buttonLogout);
-            this.Controls.Add(this.buttonLogin);
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FormMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -327,14 +419,18 @@
             ((System.ComponentModel.ISupportInitialize)(this.profilePictureBox)).EndInit();
             this.infoGroupBox.ResumeLayout(false);
             this.infoGroupBox.PerformLayout();
+            this.tabControl1.ResumeLayout(false);
+            this.homeTab.ResumeLayout(false);
+            this.homeTab.PerformLayout();
+            this.albumsTab.ResumeLayout(false);
+            this.postsTab.ResumeLayout(false);
+            this.postsTab.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Button buttonLogin;
         private System.Windows.Forms.Button buttonLogout;
         private System.Windows.Forms.Button postButton;
         private System.Windows.Forms.PictureBox profilePictureBox;
@@ -358,6 +454,15 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button AlbumsButton;
+        private System.Windows.Forms.TabControl tabControl1;
+        private System.Windows.Forms.TabPage albumsTab;
+        private System.Windows.Forms.TabPage friendsTab;
+        private System.Windows.Forms.TabPage groupsTab;
+        private System.Windows.Forms.TabPage postsTab;
+        private System.Windows.Forms.TabPage likedPagesTab;
+        private System.Windows.Forms.TabPage homeTab;
+        private System.Windows.Forms.TabPage myAlumnusTab;
+        private System.Windows.Forms.TabPage hometownFriendsTab;
     }
 }
 
