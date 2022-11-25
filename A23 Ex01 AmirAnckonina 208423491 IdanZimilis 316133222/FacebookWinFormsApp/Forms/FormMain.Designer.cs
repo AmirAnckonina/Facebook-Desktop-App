@@ -55,6 +55,8 @@
             this.homeTab = new System.Windows.Forms.TabPage();
             this.friendsTab = new System.Windows.Forms.TabPage();
             this.albumsTab = new System.Windows.Forms.TabPage();
+            this.label8 = new System.Windows.Forms.Label();
+            this.albumsLayoutPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.groupsTab = new System.Windows.Forms.TabPage();
             this.postsTab = new System.Windows.Forms.TabPage();
             this.likedPagesTab = new System.Windows.Forms.TabPage();
@@ -64,11 +66,13 @@
             this.searchPostsByDateButton = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
             this.postsByDateListBox = new System.Windows.Forms.ListBox();
+            this.label9 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.profilePictureBox)).BeginInit();
             this.infoGroupBox.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.homeTab.SuspendLayout();
             this.albumsTab.SuspendLayout();
+            this.groupsTab.SuspendLayout();
             this.postsTab.SuspendLayout();
             this.hometownFriendsTab.SuspendLayout();
             this.SuspendLayout();
@@ -148,10 +152,10 @@
             // 
             this.postsListBox.FormattingEnabled = true;
             this.postsListBox.ItemHeight = 16;
-            this.postsListBox.Location = new System.Drawing.Point(43, 94);
+            this.postsListBox.Location = new System.Drawing.Point(21, 95);
             this.postsListBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.postsListBox.Name = "postsListBox";
-            this.postsListBox.Size = new System.Drawing.Size(408, 68);
+            this.postsListBox.Size = new System.Drawing.Size(453, 68);
             this.postsListBox.TabIndex = 59;
             // 
             // rememberMeCheckBox
@@ -298,14 +302,14 @@
             // 
             // AlbumsButton
             // 
-            this.AlbumsButton.Location = new System.Drawing.Point(19, 38);
+            this.AlbumsButton.Location = new System.Drawing.Point(16, 22);
             this.AlbumsButton.Margin = new System.Windows.Forms.Padding(4);
             this.AlbumsButton.Name = "AlbumsButton";
             this.AlbumsButton.Size = new System.Drawing.Size(199, 28);
             this.AlbumsButton.TabIndex = 64;
-            this.AlbumsButton.Text = "Albums";
+            this.AlbumsButton.Text = "Fetch Albums";
             this.AlbumsButton.UseVisualStyleBackColor = true;
-            this.AlbumsButton.Click += new System.EventHandler(this.friendsButton_Click);
+            this.AlbumsButton.Click += new System.EventHandler(this.fetchAlbumsButton_Click);
             // 
             // tabControl1
             // 
@@ -346,6 +350,8 @@
             // 
             // albumsTab
             // 
+            this.albumsTab.Controls.Add(this.label8);
+            this.albumsTab.Controls.Add(this.albumsLayoutPanel);
             this.albumsTab.Controls.Add(this.AlbumsButton);
             this.albumsTab.Location = new System.Drawing.Point(4, 25);
             this.albumsTab.Name = "albumsTab";
@@ -355,8 +361,26 @@
             this.albumsTab.Text = "Albums";
             this.albumsTab.UseVisualStyleBackColor = true;
             // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.label8.Location = new System.Drawing.Point(375, 26);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(74, 24);
+            this.label8.TabIndex = 66;
+            this.label8.Text = "Albums";
+            // 
+            // albumsLayoutPanel
+            // 
+            this.albumsLayoutPanel.Location = new System.Drawing.Point(16, 58);
+            this.albumsLayoutPanel.Name = "albumsLayoutPanel";
+            this.albumsLayoutPanel.Size = new System.Drawing.Size(771, 399);
+            this.albumsLayoutPanel.TabIndex = 65;
+            // 
             // groupsTab
             // 
+            this.groupsTab.Controls.Add(this.label9);
             this.groupsTab.Location = new System.Drawing.Point(4, 25);
             this.groupsTab.Name = "groupsTab";
             this.groupsTab.Size = new System.Drawing.Size(803, 699);
@@ -444,6 +468,16 @@
             this.postsByDateListBox.Size = new System.Drawing.Size(626, 196);
             this.postsByDateListBox.TabIndex = 0;
             // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.label9.Location = new System.Drawing.Point(383, 22);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(72, 24);
+            this.label9.TabIndex = 0;
+            this.label9.Text = "Groups";
+            // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -468,6 +502,9 @@
             this.homeTab.ResumeLayout(false);
             this.homeTab.PerformLayout();
             this.albumsTab.ResumeLayout(false);
+            this.albumsTab.PerformLayout();
+            this.groupsTab.ResumeLayout(false);
+            this.groupsTab.PerformLayout();
             this.postsTab.ResumeLayout(false);
             this.postsTab.PerformLayout();
             this.hometownFriendsTab.ResumeLayout(false);
@@ -514,6 +551,9 @@
         private System.Windows.Forms.Button searchPostsByDateButton;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.ListBox postsByDateListBox;
+        private System.Windows.Forms.FlowLayoutPanel albumsLayoutPanel;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label9;
     }
 }
 

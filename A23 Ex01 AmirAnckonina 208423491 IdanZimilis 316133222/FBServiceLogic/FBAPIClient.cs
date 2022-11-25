@@ -1,12 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Facebook;
+﻿using Facebook;
 using FacebookWrapper;
 using FacebookWrapper.ObjectModel;
 using FBServiceLogic.DTOs;
+using System;
+using System.Collections.Generic;
 
 
 namespace FBServiceLogic
@@ -80,13 +77,13 @@ namespace FBServiceLogic
             return friendDTOList;
         }
 
-        public List<AlbumDTO> GetAlbumsList()
+        public List<TextAndImageDTO> GetAlbumsList()
         {
-            List<AlbumDTO> albumDTOList = new List<AlbumDTO>();
+            List<TextAndImageDTO> albumDTOList = new List<TextAndImageDTO>();
 
             foreach (Album album in m_CurrentUser.Albums)
             {
-                AlbumDTO albumDTO = new AlbumDTO(album.Name, album.PictureSmallURL);
+                TextAndImageDTO albumDTO = new TextAndImageDTO(album.Name, album.PictureSmallURL);
                 albumDTOList.Add(albumDTO);
             }
 
@@ -119,6 +116,18 @@ namespace FBServiceLogic
         
 
             return postDTOList;
+        }
+
+        public List<TextAndImageDTO> GetGroupsNamesList()
+        {
+            List<TextAndImageDTO> groupsDTOList = new List<TextAndImageDTO>();
+
+            foreach (Group group in m_CurrentUser.Groups)
+            {
+                groupsDTOList.Add(new TextAndImageDTO(group.Name, group.PictureNormalURL));
+            }
+
+            return groupsDTOList;
         }
     }
 }
