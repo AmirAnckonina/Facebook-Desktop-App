@@ -170,7 +170,6 @@
             this.testBoxLoggedInUser.Name = "testBoxLoggedInUser";
             this.testBoxLoggedInUser.Size = new System.Drawing.Size(244, 22);
             this.testBoxLoggedInUser.TabIndex = 61;
-            // 
             // infoLabel
             // 
             this.infoLabel.AutoSize = true;
@@ -334,7 +333,7 @@
             this.friendsTab.Location = new System.Drawing.Point(4, 25);
             this.friendsTab.Name = "friendsTab";
             this.friendsTab.Padding = new System.Windows.Forms.Padding(3);
-            this.friendsTab.Size = new System.Drawing.Size(625, 446);
+            this.friendsTab.Size = new System.Drawing.Size(803, 699);
             this.friendsTab.TabIndex = 1;
             this.friendsTab.Text = "Friends";
             this.friendsTab.UseVisualStyleBackColor = true;
@@ -354,7 +353,7 @@
             // 
             this.groupsTab.Location = new System.Drawing.Point(4, 25);
             this.groupsTab.Name = "groupsTab";
-            this.groupsTab.Size = new System.Drawing.Size(477, 316);
+            this.groupsTab.Size = new System.Drawing.Size(803, 699);
             this.groupsTab.TabIndex = 2;
             this.groupsTab.Text = "Groups";
             this.groupsTab.UseVisualStyleBackColor = true;
@@ -367,7 +366,7 @@
             this.postsTab.Controls.Add(this.postsListBox);
             this.postsTab.Location = new System.Drawing.Point(4, 25);
             this.postsTab.Name = "postsTab";
-            this.postsTab.Size = new System.Drawing.Size(625, 446);
+            this.postsTab.Size = new System.Drawing.Size(803, 699);
             this.postsTab.TabIndex = 3;
             this.postsTab.Text = "Posts";
             this.postsTab.UseVisualStyleBackColor = true;
@@ -376,7 +375,7 @@
             // 
             this.likedPagesTab.Location = new System.Drawing.Point(4, 25);
             this.likedPagesTab.Name = "likedPagesTab";
-            this.likedPagesTab.Size = new System.Drawing.Size(477, 316);
+            this.likedPagesTab.Size = new System.Drawing.Size(803, 699);
             this.likedPagesTab.TabIndex = 4;
             this.likedPagesTab.Text = "Liked Pages";
             this.likedPagesTab.UseVisualStyleBackColor = true;
@@ -385,7 +384,7 @@
             // 
             this.myAlumnusTab.Location = new System.Drawing.Point(4, 25);
             this.myAlumnusTab.Name = "myAlumnusTab";
-            this.myAlumnusTab.Size = new System.Drawing.Size(477, 316);
+            this.myAlumnusTab.Size = new System.Drawing.Size(803, 699);
             this.myAlumnusTab.TabIndex = 5;
             this.myAlumnusTab.Text = "My Alumnus";
             this.myAlumnusTab.UseVisualStyleBackColor = true;
@@ -394,7 +393,7 @@
             // 
             this.hometownFriendsTab.Location = new System.Drawing.Point(4, 25);
             this.hometownFriendsTab.Name = "hometownFriendsTab";
-            this.hometownFriendsTab.Size = new System.Drawing.Size(640, 446);
+            this.hometownFriendsTab.Size = new System.Drawing.Size(803, 699);
             this.hometownFriendsTab.TabIndex = 7;
             this.hometownFriendsTab.Text = "Hometown Friends";
             this.hometownFriendsTab.UseVisualStyleBackColor = true;
@@ -415,6 +414,7 @@
             this.Name = "FormMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FaceBook Desktop App";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormMain_FormClosed);
             this.Load += new System.EventHandler(this.FormMain_Load);
             ((System.ComponentModel.ISupportInitialize)(this.profilePictureBox)).EndInit();
             this.infoGroupBox.ResumeLayout(false);

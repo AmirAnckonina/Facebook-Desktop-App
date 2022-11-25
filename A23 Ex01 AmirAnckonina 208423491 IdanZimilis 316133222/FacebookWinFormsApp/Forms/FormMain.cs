@@ -69,12 +69,25 @@ namespace FacebookWinFormsApp
             if (rememberMeCheckBox.Checked)
             {
                 r_FBAPIClient.AppSettings.RememberUserActivated = true;
+                // Consider do that with Event
+                r_FBAPIClient.AppSettings.LastAccessToken = r_FBAPIClient.LoginResult.AccessToken;
             }
 
             else
             {
                 r_FBAPIClient.AppSettings.RememberUserActivated = false;
+                r_FBAPIClient.AppSettings.LastAccessToken.Remove(0);
             } 
         }
+
+        private void FormMain_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            if (rememberMeCheckBox.Checked)
+            {
+                r_FBAPIClient.AppSettings.SaveToFile();
+            }
+           
+        }
+
     }
 }

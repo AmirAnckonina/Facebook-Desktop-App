@@ -59,14 +59,5 @@ namespace FBServiceLogic.Properties {
                 resourceCulture = value;
             }
         }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to .
-        /// </summary>
-        internal static string AppSettings {
-            get {
-                return ResourceManager.GetString("AppSettings", resourceCulture);
-            }
-        }
     }
 }
