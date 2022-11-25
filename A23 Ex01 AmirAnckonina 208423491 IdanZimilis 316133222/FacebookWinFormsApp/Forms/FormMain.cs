@@ -10,6 +10,8 @@ using FacebookWrapper.ObjectModel;
 using FacebookWrapper;
 using FBServiceLogic;
 using FBServiceLogic.DTOs;
+using FacebookWinFormsApp.Forms.Controls;
+
 
 namespace FacebookWinFormsApp
 {
@@ -17,7 +19,7 @@ namespace FacebookWinFormsApp
     {
         private FormLogin m_FormLogin;
         private readonly FBAPIClient r_FBAPIClient;
-        private AlbumsForm m_AlbumsForm;
+        //private AlbumsForm m_AlbumsForm;
 
         public FormMain(FBAPIClient i_FBAPIClient)
         {
@@ -25,7 +27,7 @@ namespace FacebookWinFormsApp
             FacebookWrapper.FacebookService.s_CollectionLimit = 100;
             r_FBAPIClient = i_FBAPIClient;
             m_FormLogin = new FormLogin(r_FBAPIClient);
-            m_AlbumsForm = new AlbumsForm();
+            //m_AlbumsForm = new AlbumsForm();
             //m_AppSettings = AppSettings.LoadFromFile();
         }
 
@@ -39,7 +41,8 @@ namespace FacebookWinFormsApp
             aboutLabel.Text = userBasicInfoDTO.About;
             statusLabel.Text = userBasicInfoDTO.OnlineStatus;
             homeTownLabel.Text = userBasicInfoDTO.Hometown;
-            m_AlbumsForm.FetchAlbums(r_FBAPIClient.GetAlbumsList());
+            FetchAlbums(r_FBAPIClient.GetAlbumsList());
+            FetchGroups(r_FBAPIClient.GetGroupsNamesList());
 
 
             /*if (m_FBAPIClient.LoggedInUser.Posts.Count > 0)
@@ -59,9 +62,9 @@ namespace FacebookWinFormsApp
             FetchUserInfo();
         }
 
-        private void friendsButton_Click(object sender, EventArgs e)
+        private void fetchAlbumsButton_Click(object sender, EventArgs e)
         {
-            m_AlbumsForm.ShowDialog();
+            
         }
 
         private void rememberMeCheckBox_CheckedChanged(object sender, EventArgs e)
@@ -75,6 +78,27 @@ namespace FacebookWinFormsApp
             {
                 r_FBAPIClient.AppSettings.RememberUserActivated = false;
             } 
+        }
+
+        private void searchPostsByDateButton_Click(object sender, EventArgs e)
+        {
+            foreach (PostDTO post in r_FBAPIClient.GetPostsByDate(dateTimePicker1.Value))
+            {
+                postsByDateListBox.Items.Add(post.Message);
+            }
+
+        }
+
+        internal void FetchAlbums(List<TextAndImageDTO> albumDTOs)
+        {
+            foreach (TextAndImageDTO albumDTO in albumDTOs)
+            {
+                AlbumBox album = new AlbumBox();
+                album.setName(albumDTO.Name);
+                album.setPictureBox(albumDTO.PictureURL);
+
+                albumsLayoutPanel.Controls.Add(album);
+            }
         }
     }
 }
