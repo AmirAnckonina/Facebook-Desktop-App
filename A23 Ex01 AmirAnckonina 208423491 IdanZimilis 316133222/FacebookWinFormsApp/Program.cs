@@ -19,7 +19,6 @@ namespace FacebookWinFormsApp
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             new AppManager().Run();
-            /// Application.Run(new FormMain());
         }
     }
 }

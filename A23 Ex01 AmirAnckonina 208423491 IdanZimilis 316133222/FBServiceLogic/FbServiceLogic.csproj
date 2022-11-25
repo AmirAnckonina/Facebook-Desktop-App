@@ -40,8 +40,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AppSettings.cs" />
-    <Compile Include="DTOs\AlbumDTO.cs" />
     <Compile Include="DTOs\PostDTO.cs" />
+    <Compile Include="DTOs\TextAndImageDTO.cs" />
     <Compile Include="DTOs\UserBasicInfoDTO.cs" />
     <Compile Include="DTOs\FriendDTO.cs" />
     <Compile Include="FBAPIClient.cs" />

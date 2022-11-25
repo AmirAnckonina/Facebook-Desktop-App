@@ -17,18 +17,13 @@ namespace FacebookWinFormsApp
 {
     public partial class FormMain : Form
     {
-        private FormLogin m_FormLogin;
         private readonly FBAPIClient r_FBAPIClient;
-        //private AlbumsForm m_AlbumsForm;
 
         public FormMain(FBAPIClient i_FBAPIClient)
         {
             InitializeComponent();
             FacebookWrapper.FacebookService.s_CollectionLimit = 100;
             r_FBAPIClient = i_FBAPIClient;
-            m_FormLogin = new FormLogin(r_FBAPIClient);
-            //m_AlbumsForm = new AlbumsForm();
-            //m_AppSettings = AppSettings.LoadFromFile();
         }
 
         public void FetchUserInfo()
@@ -42,7 +37,7 @@ namespace FacebookWinFormsApp
             statusLabel.Text = userBasicInfoDTO.OnlineStatus;
             homeTownLabel.Text = userBasicInfoDTO.Hometown;
             FetchAlbums(r_FBAPIClient.GetAlbumsList());
-            FetchGroups(r_FBAPIClient.GetGroupsNamesList());
+            ///FetchGroups(r_FBAPIClient.GetGroupsNamesList());
 
 
             /*if (m_FBAPIClient.LoggedInUser.Posts.Count > 0)
@@ -88,8 +83,14 @@ namespace FacebookWinFormsApp
             if (rememberMeCheckBox.Checked)
             {
                 r_FBAPIClient.AppSettings.SaveToFile();
+                r_FBAPIClient.ResetCurrentFBState();
             }
-           
+
+            else
+            {
+                r_FBAPIClient.Logout();
+            }
+
         }
 
         private void searchPostsByDateButton_Click(object sender, EventArgs e)

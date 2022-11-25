@@ -15,7 +15,7 @@ namespace FBServiceLogic
         /// </summary>
         /// 
         private string m_AppID;
-        //private bool m_RememberUserActivated;
+        // private bool m_RememberUserActivated;
         //private string m_LastAccessToken;
         private List<string> m_Permissions;
         private static readonly string sr_AppSettingsFilePath = Path.Combine(
@@ -34,7 +34,7 @@ namespace FBServiceLogic
             /// m_RememberUserActivated = false;
             RememberUserActivated = false;
             ///m_LastAccessToken = "";
-            LastAccessToken = "";
+            LastAccessToken = null;
             SetDefaultPermissions();
         }
 
@@ -85,7 +85,7 @@ namespace FBServiceLogic
                 using (Stream stream = new FileStream(sr_AppSettingsFilePath, FileMode.Truncate))
                 {
                     XmlSerializer serializer = new XmlSerializer(this.GetType());
-                    serializer.Serialize(stream, this.GetType());
+                    serializer.Serialize(stream, this);
                 }
             }
 
@@ -94,7 +94,7 @@ namespace FBServiceLogic
                 using (Stream stream = new FileStream(sr_AppSettingsFilePath, FileMode.CreateNew))
                 {
                     XmlSerializer serializer = new XmlSerializer(this.GetType());
-                    serializer.Serialize(stream, this.GetType());
+                    serializer.Serialize(stream, this);
                 }
             }
         }
@@ -105,7 +105,7 @@ namespace FBServiceLogic
 
             try 
             {
-                using (Stream stream = new FileStream(sr_AppSettingsFilePath, FileMode.Truncate))
+                using (Stream stream = new FileStream(sr_AppSettingsFilePath, FileMode.Open))
                 {
                     XmlSerializer serializer = new XmlSerializer(typeof(AppSettings));
                     appSettings = serializer.Deserialize(stream) as AppSettings;
@@ -118,6 +118,16 @@ namespace FBServiceLogic
 
             return appSettings;
         }       
+
+        public void ResetAppSettings()
+        {
+            RememberUserActivated = false;
+            LastAccessToken = null;
+            if (File.Exists(sr_AppSettingsFilePath))
+            {
+                File.Delete(sr_AppSettingsFilePath);
+            }
+        }
     }
 
 }

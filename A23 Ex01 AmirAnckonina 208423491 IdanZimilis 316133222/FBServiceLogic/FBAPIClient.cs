@@ -10,15 +10,14 @@ namespace FBServiceLogic
 {
     public class FBAPIClient
     {
-        /// <summary>
-        /// /TEST!!!!!
-        /// </summary>
         private User m_CurrentUser;
         private LoginResult m_LoginResult;
         private readonly AppSettings r_AppSettings;
 
         public FBAPIClient()
         {
+            m_CurrentUser = null;
+            m_LoginResult = null;
             r_AppSettings = AppSettings.LoadSettings();
         }
 
@@ -30,7 +29,19 @@ namespace FBServiceLogic
         {
             m_LoginResult = FacebookService.Login(r_AppSettings.AppID, r_AppSettings.Permissions.ToArray());
    
-            if (!string.IsNullOrEmpty(m_LoginResult.AccessToken))
+            CompleteLoginProcedure(m_LoginResult.AccessToken);
+        }
+
+        public void AutomaticLogin()
+        {
+            m_LoginResult = FacebookService.Connect(r_AppSettings.LastAccessToken);
+
+            CompleteLoginProcedure(m_LoginResult.AccessToken);
+        }
+
+        private void CompleteLoginProcedure(string i_AccessToken)
+        {
+            if (!string.IsNullOrEmpty(i_AccessToken))
             {
                 m_CurrentUser = m_LoginResult.LoggedInUser;
             }
@@ -38,13 +49,20 @@ namespace FBServiceLogic
             else
             {
                 throw new FacebookApiException("Login Failed");
-            }    
+            }
         }
 
         public void Logout()
         {
             FacebookService.Logout();
+            r_AppSettings.ResetAppSettings();
+            ResetCurrentFBState();
+        }
+
+        public void ResetCurrentFBState()
+        {
             m_CurrentUser = null;
+            m_LoginResult = null;
         }
 
         public UserBasicInfoDTO GetUserBasicInfoDTO()
