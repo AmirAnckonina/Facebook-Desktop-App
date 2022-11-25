@@ -20,14 +20,8 @@ namespace FacebookWinFormsApp
             InitializeComponent();
         }
 
-    
-        public void  setController(AppManager i_FormsController)
-        {
-            this.m_FormsController = i_FormsController;
-            
-        }
 
-        internal void fetchAlbums(List<AlbumDTO> albumDTOs)
+        internal void FetchAlbums(List<AlbumDTO> albumDTOs)
         {
             foreach (AlbumDTO albumDTO in albumDTOs)
             {

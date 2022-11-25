@@ -39,7 +39,7 @@ namespace FacebookWinFormsApp
             aboutLabel.Text = userBasicInfoDTO.About;
             statusLabel.Text = userBasicInfoDTO.OnlineStatus;
             homeTownLabel.Text = userBasicInfoDTO.Hometown;
-            m_AlbumsForm.fetchAlbums(r_FBAPIClient.GetAlbumsList());
+            m_AlbumsForm.FetchAlbums(r_FBAPIClient.GetAlbumsList());
 
 
             /*if (m_FBAPIClient.LoggedInUser.Posts.Count > 0)
