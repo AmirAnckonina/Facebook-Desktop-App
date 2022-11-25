@@ -21,9 +21,9 @@ namespace FacebookWinFormsApp
         }
 
 
-        internal void FetchAlbums(List<AlbumDTO> albumDTOs)
+        internal void FetchAlbums(List<TextAndImageDTO> albumDTOs)
         {
-            foreach (AlbumDTO albumDTO in albumDTOs)
+            foreach (TextAndImageDTO albumDTO in albumDTOs)
             {
                 AlbumBox album = new AlbumBox();
                 album.setName(albumDTO.Name);
