@@ -26,22 +26,23 @@ namespace FacebookWinFormsApp
 
 		private void buttonApply_Click(object sender, EventArgs e)
 		{
-			if (comboAppID.SelectedIndex == -1)
-			{
-				comboAppID.SelectedIndex = 0;
-			}
 
-			else
+            if (comboAppID.SelectedIndex == -1)
             {
-				string appID = comboAppID.SelectedItem.ToString();
-
-				r_FBAPIClient.AppSettings.AppID = appID;
+                comboAppID.SelectedIndex = 0;
             }
 
-			UpdateAppPermissions();
-			
-			//listBoxPermissions.CheckedItems.CopyTo(AppSettings.s_Permissions, 0);
-			DialogResult = DialogResult.OK;
+            else
+            {
+                string appID = comboAppID.SelectedItem.ToString();
+
+                r_FBAPIClient.AppSettings.AppID = appID;
+            }
+
+            UpdateAppPermissions();
+
+            //listBoxPermissions.CheckedItems.CopyTo(AppSettings.s_Permissions, 0);
+            DialogResult = DialogResult.OK;
 			this.Close();
 		}
 

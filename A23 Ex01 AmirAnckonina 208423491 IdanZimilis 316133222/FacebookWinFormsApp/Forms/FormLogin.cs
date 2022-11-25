@@ -20,6 +20,24 @@ namespace FacebookWinFormsApp
             m_FromAppSettings = new FormAppSettings(r_FBAPIClient);
         }
 
+        /*private void m_FromAppSettings_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            m_FromAppSettings = sender as FormAppSettings;
+            if (m_FormAppSettings.comboAppID.SelectedIndex == -1)
+            {
+                comboAppID.SelectedIndex = 0;
+            }
+
+            else
+            {
+                string appID = comboAppID.SelectedItem.ToString();
+
+                FBServiceLogic.AppSettings.AppID = appID;
+            }
+
+            UpdateAppPermissions();
+        }*/
+
         public bool LoginSucceed
         { 
             get
@@ -30,6 +48,8 @@ namespace FacebookWinFormsApp
 
         private void buttonLogin_Click(object sender, EventArgs e)
         {
+            //m_FromAppSettings.ShowDialog();
+
             try
             {
                 r_FBAPIClient.Login();

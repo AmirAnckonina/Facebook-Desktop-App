@@ -14,53 +14,57 @@ namespace FBServiceLogic
         /// Idan/Amir app id : 3456972604533289 
         /// </summary>
         /// 
-        private List<string> m_Permissions;
         private string m_AppID;
-        private bool m_RememberUserActivated;
-        private string m_LastAccessToken;
-        private static readonly string sr_AppSettingsFilePath = 
-            Path.Combine(
-                Directory.GetParent(Directory.GetCurrentDirectory()).Parent.Parent.FullName,
-                @"FBServiceLogic\Properties\AppSettings.xml");
-
+        //private bool m_RememberUserActivated;
+        //private string m_LastAccessToken;
+        private List<string> m_Permissions;
+        private static readonly string sr_AppSettingsFilePath = Path.Combine(
+                 Directory.GetParent(Directory.GetCurrentDirectory()).Parent.Parent.FullName,
+                 @"FBServiceLogic\Properties\AppSettings.xml");
 
         public string AppID { get => m_AppID; set => m_AppID = value; } 
-        public bool RememberUserActivated { get => m_RememberUserActivated; set => m_RememberUserActivated = value; }
+        /// public bool RememberUserActivated { get => m_RememberUserActivated; set => m_RememberUserActivated = value; }
+        public bool RememberUserActivated { get; set; }
         public string LastAccessToken { get; set; }
         public List<string> Permissions { get => m_Permissions; set => m_Permissions = value; } 
 
         private AppSettings()
         {
-            m_RememberUserActivated = false;
-            m_Permissions = new List<string>();
+            m_AppID = "3456972604533289";
+            /// m_RememberUserActivated = false;
+            RememberUserActivated = false;
+            ///m_LastAccessToken = "";
+            LastAccessToken = "";
             SetDefaultPermissions();
-            SetAppSettingFilePath();
         }
 
         private void SetDefaultPermissions()
         {
-            /// Init App with default ID, Permissions ... etc.
-            /// 
+            /// Init App Permissions 
+            m_Permissions = new List<string>(new string[] { "email",
+        "public_profile",
+        "user_age_range",
+        "user_birthday",
+        "user_events",
+        "user_friends",
+        "user_gender",
+        "user_hometown",
+        "user_likes",
+        "user_link",
+        "user_location",
+        "user_photos",
+        "user_posts",
+        "user_videos"
+            });
         }
 
-        private void SetAppSettingFilePath()
-        {
-           /* string workingDirPath;
-            string basePath;
-
-            workingDirPath = Directory.GetCurrentDirectory();
-            basePath = Directory.GetParent(workingDirPath.ToString()).Parent.Parent.FullName;
-            sr_AppSettingsFilePath = Path.Combine(
-                Directory.GetParent(Directory.GetCurrentDirectory()).Parent.Parent.FullName,
-                @"FBServiceLogic\Properties\AppSettings.xml");*/
-        }
         public static AppSettings LoadSettings() /// Consider change design of the func.
         {
             AppSettings appSettings = null;
-
+           
             appSettings = LoadFromFile();
 
-            if (appSettings == null)
+            if (appSettings == null || appSettings.RememberUserActivated == false)
             {
                 appSettings = new AppSettings();
             }
@@ -76,46 +80,44 @@ namespace FBServiceLogic
 
         public void SaveToFile()
         {
-            string workingDirectory = Directory.GetCurrentDirectory();
-            string BasePath = Directory.GetParent(workingDirectory).Parent.Parent.FullName;
-            string appSettingsFilePath = Path.Combine(BasePath, @"\FBServiceLogic\Properties");
-
-            using (Stream stream = new FileStream(appSettingsFilePath, FileMode.Truncate))
+            if (File.Exists(sr_AppSettingsFilePath))
             {
-                XmlSerializer serializer = new XmlSerializer(this.GetType());
-                serializer.Serialize(stream, this);
+                using (Stream stream = new FileStream(sr_AppSettingsFilePath, FileMode.Truncate))
+                {
+                    XmlSerializer serializer = new XmlSerializer(this.GetType());
+                    serializer.Serialize(stream, this.GetType());
+                }
+            }
+
+            else
+            {
+                using (Stream stream = new FileStream(sr_AppSettingsFilePath, FileMode.CreateNew))
+                {
+                    XmlSerializer serializer = new XmlSerializer(this.GetType());
+                    serializer.Serialize(stream, this.GetType());
+                }
             }
         }
 
-        public static AppSettings LoadFromFile()
+        private static AppSettings LoadFromFile()
         {
             AppSettings appSettings = null;
 
-            using (Stream stream = new FileStream(sr_AppSettingsFilePath, FileMode.Open))
+            try 
             {
-                XmlSerializer serializer = new XmlSerializer(typeof(AppSettings));
-                appSettings = serializer.Deserialize(stream) as AppSettings;
+                using (Stream stream = new FileStream(sr_AppSettingsFilePath, FileMode.Truncate))
+                {
+                    XmlSerializer serializer = new XmlSerializer(typeof(AppSettings));
+                    appSettings = serializer.Deserialize(stream) as AppSettings;
+                }
+            }
+            catch(Exception ex)
+            {
+                appSettings = new AppSettings();
             }
 
             return appSettings;
-        }
-
-        /*{
-                "email",
-        "public_profile",
-        "user_age_range",
-        "user_birthday",
-        "user_events",
-        "user_friends",
-        "user_gender",
-        "user_hometown",
-        "user_likes",
-        "user_link",
-        "user_location",
-        "user_photos",
-        "user_posts",
-        "user_videos"
-            };*/
+        }       
     }
 
 }

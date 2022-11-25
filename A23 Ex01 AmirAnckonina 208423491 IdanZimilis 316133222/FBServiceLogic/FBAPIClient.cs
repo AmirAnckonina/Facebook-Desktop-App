@@ -19,11 +19,11 @@ namespace FBServiceLogic
 
         public FBAPIClient()
         {
-          r_AppSettings = AppSettings.LoadSettings();
+            r_AppSettings = AppSettings.LoadSettings();
         }
 
-        public User CurrentUser { get; set; }
-        public LoginResult LoginResult { get; }
+        public User CurrentUser { get => m_CurrentUser; set => m_CurrentUser = value; }
+        public LoginResult LoginResult { get => m_LoginResult; set => m_LoginResult = value; }
         public AppSettings AppSettings { get => r_AppSettings; }
 
         public void Login()

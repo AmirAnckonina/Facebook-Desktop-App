@@ -179,7 +179,6 @@
             this.testBoxLoggedInUser.Name = "testBoxLoggedInUser";
             this.testBoxLoggedInUser.Size = new System.Drawing.Size(244, 22);
             this.testBoxLoggedInUser.TabIndex = 61;
-            // 
             // infoLabel
             // 
             this.infoLabel.AutoSize = true;
@@ -494,6 +493,7 @@
             this.Name = "FormMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FaceBook Desktop App";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormMain_FormClosed);
             this.Load += new System.EventHandler(this.FormMain_Load);
             ((System.ComponentModel.ISupportInitialize)(this.profilePictureBox)).EndInit();
             this.infoGroupBox.ResumeLayout(false);
