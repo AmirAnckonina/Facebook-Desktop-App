@@ -19,8 +19,8 @@ namespace FBServiceLogic
         //private string m_LastAccessToken;
         private List<string> m_Permissions;
         private static readonly string sr_AppSettingsFilePath = Path.Combine(
-                 Directory.GetParent(Directory.GetCurrentDirectory()).Parent.Parent.FullName,
-                 @"FBServiceLogic\Properties\AppSettings.xml");
+                 AppDomain.CurrentDomain.BaseDirectory,
+                 @"AppSettings.xml");
 
         public string AppID { get => m_AppID; set => m_AppID = value; } 
         /// public bool RememberUserActivated { get => m_RememberUserActivated; set => m_RememberUserActivated = value; }
@@ -87,7 +87,6 @@ namespace FBServiceLogic
             {
                 fileMode = FileMode.Truncate;
             }
-
             else
             {
                 fileMode = FileMode.CreateNew;

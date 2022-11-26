@@ -49,8 +49,10 @@ namespace FacebookWinFormsApp
             statusLabel.Text = userBasicInfoDTO.OnlineStatus;
             homeTownLabel.Text = userBasicInfoDTO.Hometown;
             r_FBAPIClient.ImportAlternativeData();
-            ///FetchAlbums(r_FBAPIClient.GetAlbumsList());
-            ///FetchGroups(r_FBAPIClient.GetGroupsNamesList());
+            FetchAlbums(r_FBAPIClient.GetAlbumsList());
+            FetchGroups(r_FBAPIClient.GetGroupsNamesList());
+            FetchPosts(r_FBAPIClient.GetPostsList());
+            
 
 
             /*if (m_FBAPIClient.LoggedInUser.Posts.Count > 0)
@@ -108,11 +110,46 @@ namespace FacebookWinFormsApp
 
         private void searchPostsByDateButton_Click(object sender, EventArgs e)
         {
+            postsByDateListBox.Items.Clear();
             foreach (PostDTO post in r_FBAPIClient.GetPostsByDate(dateTimePicker1.Value))
             {
-                postsByDateListBox.Items.Add(post.Message);
+                if (!string.IsNullOrEmpty(post.Message))
+                {
+                    string[] postString = post.Message.Split(char.Parse("\n"));
+                    foreach (string word in postString)
+                    {
+                        //postsByDateTextBox.Text += word + Environment.NewLine;
+                        postsByDateListBox.Items.Add(word + Environment.NewLine);
+                    }
+                    //postsByDateTextBox.Text +=  post.Message + Environment.NewLine;
+                    //postsByDateTextBox.Text += "hey\nthis is idan\nits a new text";
+                    //StringBuilder sb = new StringBuilder();
+                    //postsByDateListBox.Items.Add(string.Format(post.Message));
+                    postsByDateListBox.Items.Add(Environment.NewLine);
+                }
             }
 
+        }
+
+        public void FetchPosts(List<PostDTO> postsDTOList)
+        {
+            foreach (PostDTO post in postsDTOList)
+            {
+                if (!string.IsNullOrEmpty(post.Message))
+                {
+                    string[] postString = post.Message.Split(char.Parse("\n"));
+                    foreach (string word in postString)
+                    {
+                        //postsByDateTextBox.Text += word + Environment.NewLine;
+                        postsListBox.Items.Add(word + Environment.NewLine);
+                    }
+                    //postsByDateTextBox.Text +=  post.Message + Environment.NewLine;
+                    //postsByDateTextBox.Text += "hey\nthis is idan\nits a new text";
+                    //StringBuilder sb = new StringBuilder();
+                    //postsByDateListBox.Items.Add(string.Format(post.Message));
+                    postsByDateListBox.Items.Add(Environment.NewLine);
+                }
+            }
         }
 
         internal void FetchAlbums(List<TextAndImageDTO> albumDTOs)
@@ -124,7 +161,9 @@ namespace FacebookWinFormsApp
                 album.setPictureBox(albumDTO.PictureURL);
 
                 albumsLayoutPanel.Controls.Add(album);
+                
             }
+            albumsLayoutPanel.AutoScroll = true;
         }
 
         private void tabControl_Selecting(object sender, TabControlCancelEventArgs e)
@@ -180,6 +219,20 @@ namespace FacebookWinFormsApp
         private void FetchFriends()
         {
             r_FBAPIClient.GetFriendsList();
+        }
+
+        private void FetchGroups(List<TextAndImageDTO> groupsListDTO)
+        {
+            foreach (TextAndImageDTO groupDTO in groupsListDTO)
+            {
+                AlbumBox group = new AlbumBox();
+                group.setName(groupDTO.Name);
+                group.setPictureBox(groupDTO.PictureURL);
+
+                groupLayoutPanel.Controls.Add(group);
+
+            }
+            groupLayoutPanel.AutoScroll = true;
         }
     }
 }

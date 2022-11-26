@@ -37,7 +37,7 @@ namespace FacebookWinFormsApp.Forms.Controls
             // albumNameLabel
             // 
             this.albumNameLabel.AutoSize = true;
-            this.albumNameLabel.Location = new System.Drawing.Point(198, 22);
+            this.albumNameLabel.Location = new System.Drawing.Point(124, 23);
             this.albumNameLabel.Name = "albumNameLabel";
             this.albumNameLabel.Size = new System.Drawing.Size(23, 17);
             this.albumNameLabel.TabIndex = 0;
@@ -45,9 +45,10 @@ namespace FacebookWinFormsApp.Forms.Controls
             // 
             // albumPictureBox
             // 
-            this.albumPictureBox.Location = new System.Drawing.Point(29, 54);
+            this.albumPictureBox.Location = new System.Drawing.Point(12, 43);
             this.albumPictureBox.Name = "albumPictureBox";
-            this.albumPictureBox.Size = new System.Drawing.Size(363, 223);
+            this.albumPictureBox.Size = new System.Drawing.Size(243, 153);
+            this.albumPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.albumPictureBox.TabIndex = 1;
             this.albumPictureBox.TabStop = false;
             // 
@@ -59,7 +60,7 @@ namespace FacebookWinFormsApp.Forms.Controls
             this.Controls.Add(this.albumPictureBox);
             this.Controls.Add(this.albumNameLabel);
             this.Name = "AlbumBox";
-            this.Size = new System.Drawing.Size(434, 304);
+            this.Size = new System.Drawing.Size(258, 198);
             ((System.ComponentModel.ISupportInitialize)(this.albumPictureBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
