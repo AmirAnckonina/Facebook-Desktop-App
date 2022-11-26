@@ -221,6 +221,13 @@ namespace FacebookWinFormsApp
             r_FBAPIClient.GetFriendsList();
         }
 
+
+        public void CheckRememberMe()
+        {
+            rememberMeCheckBox.Checked = true;
+        }
+
+
         private void FetchGroups(List<TextAndImageDTO> groupsListDTO)
         {
             foreach (TextAndImageDTO groupDTO in groupsListDTO)
@@ -234,5 +241,6 @@ namespace FacebookWinFormsApp
             }
             groupLayoutPanel.AutoScroll = true;
         }
+
     }
 }

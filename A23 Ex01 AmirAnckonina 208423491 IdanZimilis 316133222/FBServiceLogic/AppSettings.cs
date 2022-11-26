@@ -18,6 +18,11 @@ namespace FBServiceLogic
         // private bool m_RememberUserActivated;
         //private string m_LastAccessToken;
         private List<string> m_Permissions;
+
+        /*private static readonly string sr_AppSettingsFilePath = Path.Combine(
+                 Directory.GetParent(Directory.GetCurrentDirectory()).Parent.Parent.FullName,
+                 @"FBServiceLogic\Properties\AppSettings.xml");*/
+
         private static readonly string sr_AppSettingsFilePath = Path.Combine(
                  AppDomain.CurrentDomain.BaseDirectory,
                  @"AppSettings.xml");
@@ -91,6 +96,7 @@ namespace FBServiceLogic
             {
                 fileMode = FileMode.CreateNew;
             }
+
 
             using (Stream stream = new FileStream(sr_AppSettingsFilePath, fileMode))
             {

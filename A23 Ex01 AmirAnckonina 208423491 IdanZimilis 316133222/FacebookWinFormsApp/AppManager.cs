@@ -64,6 +64,7 @@ namespace FacebookWinFormsApp
             if (r_FBAPIClient.AppSettings.RememberUserActivated)
             {
                 r_FBAPIClient.AutomaticLogin();
+                r_FormMain.CheckRememberMe();
                 RunApp();
             }
 
