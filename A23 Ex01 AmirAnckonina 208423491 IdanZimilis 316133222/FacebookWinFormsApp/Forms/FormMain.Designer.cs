@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMain));
             this.buttonLogout = new System.Windows.Forms.Button();
             this.postButton = new System.Windows.Forms.Button();
             this.profilePictureBox = new System.Windows.Forms.PictureBox();
@@ -54,6 +55,7 @@
             this.tabControl = new System.Windows.Forms.TabControl();
             this.homeTab = new System.Windows.Forms.TabPage();
             this.friendsTab = new System.Windows.Forms.TabPage();
+            this.buttonFetchFriends = new System.Windows.Forms.Button();
             this.albumsTab = new System.Windows.Forms.TabPage();
             this.label8 = new System.Windows.Forms.Label();
             this.albumsLayoutPanel = new System.Windows.Forms.FlowLayoutPanel();
@@ -67,7 +69,7 @@
             this.searchPostsByDateButton = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
             this.postsByDateListBox = new System.Windows.Forms.ListBox();
-            this.buttonFetchFriends = new System.Windows.Forms.Button();
+            this.fbLogoPictureBox = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.profilePictureBox)).BeginInit();
             this.infoGroupBox.SuspendLayout();
             this.tabControl.SuspendLayout();
@@ -77,6 +79,7 @@
             this.groupsTab.SuspendLayout();
             this.postsTab.SuspendLayout();
             this.hometownFriendsTab.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.fbLogoPictureBox)).BeginInit();
             this.SuspendLayout();
             // 
             // buttonLogout
@@ -102,7 +105,7 @@
             // 
             // profilePictureBox
             // 
-            this.profilePictureBox.Location = new System.Drawing.Point(4, 48);
+            this.profilePictureBox.Location = new System.Drawing.Point(4, 184);
             this.profilePictureBox.Margin = new System.Windows.Forms.Padding(2);
             this.profilePictureBox.Name = "profilePictureBox";
             this.profilePictureBox.Size = new System.Drawing.Size(183, 131);
@@ -366,6 +369,17 @@
             this.friendsTab.Text = "Friends";
             this.friendsTab.UseVisualStyleBackColor = true;
             // 
+            // buttonFetchFriends
+            // 
+            this.buttonFetchFriends.Cursor = System.Windows.Forms.Cursors.Default;
+            this.buttonFetchFriends.Location = new System.Drawing.Point(50, 47);
+            this.buttonFetchFriends.Name = "buttonFetchFriends";
+            this.buttonFetchFriends.Size = new System.Drawing.Size(75, 23);
+            this.buttonFetchFriends.TabIndex = 0;
+            this.buttonFetchFriends.Text = "Fetch Friends";
+            this.buttonFetchFriends.UseVisualStyleBackColor = true;
+            this.buttonFetchFriends.Click += new System.EventHandler(this.buttonFetchFriends_Click);
+            // 
             // albumsTab
             // 
             this.albumsTab.Controls.Add(this.label8);
@@ -508,23 +522,25 @@
             this.postsByDateListBox.Size = new System.Drawing.Size(470, 160);
             this.postsByDateListBox.TabIndex = 0;
             // 
-            // buttonFetchFriends
+            // fbLogoPictureBox
             // 
-            this.buttonFetchFriends.Cursor = System.Windows.Forms.Cursors.Default;
-            this.buttonFetchFriends.Location = new System.Drawing.Point(50, 47);
-            this.buttonFetchFriends.Name = "buttonFetchFriends";
-            this.buttonFetchFriends.Size = new System.Drawing.Size(75, 23);
-            this.buttonFetchFriends.TabIndex = 0;
-            this.buttonFetchFriends.Text = "Fetch Friends";
-            this.buttonFetchFriends.UseVisualStyleBackColor = true;
-            this.buttonFetchFriends.Click += new System.EventHandler(this.buttonFetchFriends_Click);
+            this.fbLogoPictureBox.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("fbLogoPictureBox.BackgroundImage")));
+            this.fbLogoPictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.fbLogoPictureBox.Location = new System.Drawing.Point(24, 36);
+            this.fbLogoPictureBox.Name = "fbLogoPictureBox";
+            this.fbLogoPictureBox.Size = new System.Drawing.Size(143, 129);
+            this.fbLogoPictureBox.TabIndex = 66;
+            this.fbLogoPictureBox.TabStop = false;
             // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(842, 612);
+            this.Controls.Add(this.fbLogoPictureBox);
             this.Controls.Add(this.tabControl);
             this.Controls.Add(this.testBoxLoggedInUser);
             this.Controls.Add(this.rememberMeCheckBox);
@@ -533,7 +549,7 @@
             this.Controls.Add(this.buttonLogout);
             this.Name = "FormMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FaceBook Desktop App";
+            this.Text = "Facebook";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormMain_FormClosed);
             this.Load += new System.EventHandler(this.FormMain_Load);
             ((System.ComponentModel.ISupportInitialize)(this.profilePictureBox)).EndInit();
@@ -551,6 +567,7 @@
             this.postsTab.PerformLayout();
             this.hometownFriendsTab.ResumeLayout(false);
             this.hometownFriendsTab.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.fbLogoPictureBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -597,6 +614,7 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Button buttonFetchFriends;
+        private System.Windows.Forms.PictureBox fbLogoPictureBox;
     }
 }
 

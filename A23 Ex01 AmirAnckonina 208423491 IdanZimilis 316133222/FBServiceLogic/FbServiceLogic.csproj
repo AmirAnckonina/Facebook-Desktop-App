@@ -63,6 +63,7 @@
       <HintPath>..\FBApi\FbGraphApiWrapper.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Drawing" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Xml.Serialization" />
   </ItemGroup>
@@ -71,6 +72,24 @@
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\FacebookBackground.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\FacebookForHomePage.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\FacebookLogo.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\FacebookBackground.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\FacebookForHomePage.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\FacebookLogo.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
