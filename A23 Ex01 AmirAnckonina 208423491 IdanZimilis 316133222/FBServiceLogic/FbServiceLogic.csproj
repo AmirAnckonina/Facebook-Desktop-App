@@ -43,7 +43,6 @@
     <Compile Include="DTOs\PostDTO.cs" />
     <Compile Include="DTOs\TextAndImageDTO.cs" />
     <Compile Include="DTOs\UserBasicInfoDTO.cs" />
-    <Compile Include="DTOs\FriendDTO.cs" />
     <Compile Include="DummyUsers.cs" />
     <Compile Include="FBAPIClient.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
@@ -51,6 +50,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="SingleDummyUser.cs" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Connected Services\" />

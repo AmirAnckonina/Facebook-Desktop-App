@@ -181,5 +181,11 @@ namespace FacebookWinFormsApp
         {
             r_FBAPIClient.GetFriendsList();
         }
+
+        public void CheckRememberMe()
+        {
+            rememberMeCheckBox.Checked = true;
+        }
+
     }
 }

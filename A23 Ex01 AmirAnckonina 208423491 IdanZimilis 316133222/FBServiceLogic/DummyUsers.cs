@@ -24,24 +24,10 @@ namespace FBServiceLogic
 
          public List<SingleDummyUser> FBUsers { get; set; }
 
-        public class SingleDummyUser
-        {
-            public string Name { get; set; }
-            public string Hometown { get; set; }
-            public string Education { get; set; }
-            public string ProfilePictureURL { get; set; }
-        }
-
         private DummyUsers()
         {
             FBUsers = new List<SingleDummyUser>();
             CreateDummyUsers();
-            /*SingleDummyUser dummy = new SingleDummyUser();
-            dummy.Name = "Amir Anckonina";
-            dummy.Hometown = "Givattayim";
-            dummy.Education = "Jaffa College";
-            dummy.ProfilePictureURL = "https://scontent.ftlv19-1.fna.fbcdn.net/v/t39.30808-6/278259031_10217472948335929_6944866859029329988_n.jpg?_nc_cat=102&amp;ccb=1-7&amp;_nc_sid=09cbfe&amp;_nc_ohc=ZAyYx_OTH_oAX9W-O7s&amp;tn=nxpwZqIw4rlQvPQw&amp;_nc_ht=scontent.ftlv19-1.fna&amp;oh=00_AfCljiyUKYs49SoAAm-koF7V3lIREhPShV2Bx1y5yaBVhw&amp;oe=63873135";
-            FBUsers.Add(dummy);*/
             ///SaveXMLExample();
             ///ImportDummyUsersFromXMLFile();
         }

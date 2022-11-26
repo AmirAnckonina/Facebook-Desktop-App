@@ -8,12 +8,7 @@ namespace FBServiceLogic.DTOs
 {
     public class TextAndImageDTO
     {
-        public TextAndImageDTO(string i_Name, string i_PictureURL)
-        {
-            Name = i_Name;
-            PictureURL = i_PictureURL;
-        }
-        public  string Name { get; }
-        public string PictureURL { get; }
+        public string Name { get; set; }
+        public string PictureURL { get; set; }
     }
 }
