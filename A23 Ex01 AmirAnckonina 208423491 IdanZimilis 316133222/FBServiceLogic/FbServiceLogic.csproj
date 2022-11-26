@@ -44,6 +44,7 @@
     <Compile Include="DTOs\TextAndImageDTO.cs" />
     <Compile Include="DTOs\UserBasicInfoDTO.cs" />
     <Compile Include="DTOs\FriendDTO.cs" />
+    <Compile Include="DummyUsers.cs" />
     <Compile Include="FBAPIClient.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>

@@ -15,7 +15,5 @@ namespace FBServiceLogic.DTOs
         }
         public  string Name { get; }
         public string PictureURL { get; }
-        
-
     }
 }

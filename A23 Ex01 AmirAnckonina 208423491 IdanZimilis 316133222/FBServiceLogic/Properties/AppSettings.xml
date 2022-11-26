@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<AppSettings xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <AppID>3456972604533289</AppID>
+  <RememberUserActivated>true</RememberUserActivated>
+  <LastAccessToken>EAAxIGSgXaikBAND7ui5LnItRkZBXD1zYdiToEj7MtaR0ijwqMhbkG3FRMuF4dIweU2Akbx26z45wccCajjRwLp8VYIscG8z6iImYVZCi1BWd66rZAxw8uourq30nFqQEsG1fndkYWyjaBTayIYPI0YYKx06I8yL1oLYg86dYkVGpUmEsqYL</LastAccessToken>
+  <Permissions>
+    <string>email</string>
+    <string>public_profile</string>
+    <string>user_age_range</string>
+    <string>user_birthday</string>
+    <string>user_events</string>
+    <string>user_friends</string>
+    <string>user_gender</string>
+    <string>user_hometown</string>
+    <string>user_likes</string>
+    <string>user_link</string>
+    <string>user_location</string>
+    <string>user_photos</string>
+    <string>user_posts</string>
+    <string>user_videos</string>
+  </Permissions>
+</AppSettings>

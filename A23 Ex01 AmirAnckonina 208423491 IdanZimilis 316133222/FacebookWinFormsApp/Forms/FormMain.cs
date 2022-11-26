@@ -17,6 +17,18 @@ namespace FacebookWinFormsApp
 {
     public partial class FormMain : Form
     {
+
+        private enum Tabs
+        {
+            Home,
+            Friends,
+            Albums,
+            Groups,
+            Posts,
+            LikedPages,
+            MyAlumnus,
+            SerachPost,
+        }
         private readonly FBAPIClient r_FBAPIClient;
 
         public FormMain(FBAPIClient i_FBAPIClient)
@@ -112,6 +124,61 @@ namespace FacebookWinFormsApp
 
                 albumsLayoutPanel.Controls.Add(album);
             }
+        }
+
+        private void tabControl_Selecting(object sender, TabControlCancelEventArgs e)
+        {
+            tabControl = sender as TabControl;
+
+            if (tabControl != null)
+            {
+                TabPage currentTab = tabControl.SelectedTab;
+
+                switch(currentTab.Name)
+                {
+                    case "Home":
+                        FetchUserInfo();
+                        break;
+
+                    case "Friends":
+                        /// FetchFriends();
+                        break;
+
+                    case "Albums":
+                        /// FetchAlbums();
+                        break;
+
+                    case "Posts":
+                        /// FetchPosts();
+                        break;
+
+                    case "Liked Pages":
+                        /// FetchLikedPages();
+                        break;
+                    case "My Alumnus":
+                        ///FetchMyAlumnus();
+                        break; 
+
+                    case "Search Post":
+                        /// ?
+                        break;
+
+                    default:
+                        break;
+                       
+                }
+               
+            }
+        }
+
+        private void buttonFetchFriends_Click(object sender, EventArgs e)
+        {
+            FetchFriends();
+        }
+
+        private void FetchFriends()
+        {
+            r_FBAPIClient.GetFriendsList();
         }
     }
 }
