@@ -147,24 +147,27 @@ namespace FBServiceLogic
         public List<PostDTO> GetPostsByDate(DateTime i_DateTime)
         {
             List<PostDTO> postDTOList = new List<PostDTO>();
-
+            int postCounter = 0;
             foreach (Post post in m_CurrentUser.Posts)
             {
-                if (post.CreatedTime.Equals(i_DateTime))
+                postCounter++;
+                DateTime? dt = post.CreatedTime.Value;
+                if (dt?.Day == i_DateTime.Day && dt?.Month == i_DateTime.Month && dt?.Year == i_DateTime.Year )
                 {
                     postDTOList.Add(new PostDTO(post.Message, post.Caption, post.CreatedTime)); 
                 }
             }
         
-
+            
             return postDTOList;
         }
 
         public List<TextAndImageDTO> GetGroupsNamesList()
         {
             List<TextAndImageDTO> groupsDTOList = new List<TextAndImageDTO>();
-
-            foreach (Group group in m_CurrentUser.Groups)
+            FacebookObjectCollection<Group> groups = m_CurrentUser.Groups;
+            
+            foreach (Group group in groups)
             {
                 groupsDTOList.Add(new TextAndImageDTO(group.Name, group.PictureNormalURL));
             }
