@@ -80,23 +80,24 @@ namespace FBServiceLogic
 
         public void SaveToFile()
         {
+
+            FileMode fileMode;
+
             if (File.Exists(sr_AppSettingsFilePath))
             {
-                using (Stream stream = new FileStream(sr_AppSettingsFilePath, FileMode.Truncate))
-                {
-                    XmlSerializer serializer = new XmlSerializer(this.GetType());
-                    serializer.Serialize(stream, this);
-                }
+                fileMode = FileMode.Truncate;
             }
 
             else
             {
-                using (Stream stream = new FileStream(sr_AppSettingsFilePath, FileMode.CreateNew))
-                {
-                    XmlSerializer serializer = new XmlSerializer(this.GetType());
-                    serializer.Serialize(stream, this);
-                }
+                fileMode = FileMode.CreateNew;
             }
+
+            using (Stream stream = new FileStream(sr_AppSettingsFilePath, fileMode))
+            {
+                XmlSerializer serializer = new XmlSerializer(this.GetType());
+                serializer.Serialize(stream, this);
+            }       
         }
 
         private static AppSettings LoadFromFile()
