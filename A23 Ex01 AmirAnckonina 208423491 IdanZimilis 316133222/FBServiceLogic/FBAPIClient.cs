@@ -13,12 +13,14 @@ namespace FBServiceLogic
         private User m_CurrentUser;
         private LoginResult m_LoginResult;
         private readonly AppSettings r_AppSettings;
+        private readonly DummyUsers r_DummyUsers;
 
         public FBAPIClient()
         {
             m_CurrentUser = null;
             m_LoginResult = null;
             r_AppSettings = AppSettings.LoadSettings();
+            /// r_DummyUsers = new DummyUsers();
         }
 
         public User CurrentUser { get => m_CurrentUser; set => m_CurrentUser = value; }
@@ -84,13 +86,30 @@ namespace FBServiceLogic
         {
             List<FriendDTO> friendDTOList = new List<FriendDTO>();
 
-            foreach (User friend in m_CurrentUser.Friends)
+            /*if (m_CurrentUser.Friends == null)
             {
-                FriendDTO newFriendDTO = new FriendDTO();
-                newFriendDTO.Name = friend.Name;
-                newFriendDTO.ProfilePictureURL = friend.PictureSqaureURL;
-                friendDTOList.Add(newFriendDTO);
-            }
+                foreach (Dictionary<string,string> dummyUser in r_DummyUsers.FBUsers)
+                {
+                    FriendDTO newFriendDTO = new FriendDTO();
+                    newFriendDTO.Name = dummyUser["Name"];
+                    newFriendDTO.Name = dummyUser["Hometown"];
+                    newFriendDTO.Name = dummyUser["Education"];
+                    newFriendDTO.ProfilePictureURL = dummyUser["ProfilePictureURL"];
+                    friendDTOList.Add(newFriendDTO);
+                }
+            }*/
+
+            /*else
+            {*/
+                foreach (User friend in m_CurrentUser.Friends)
+                {
+                    FriendDTO newFriendDTO = new FriendDTO();
+                    newFriendDTO.Name = friend.Name;
+                    newFriendDTO.ProfilePictureURL = friend.PictureSqaureURL;
+                    friendDTOList.Add(newFriendDTO);
+                }
+
+            /*}*/
 
             return friendDTOList;
         }
