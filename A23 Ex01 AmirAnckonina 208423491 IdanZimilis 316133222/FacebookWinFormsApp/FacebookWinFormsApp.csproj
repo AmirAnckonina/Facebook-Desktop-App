@@ -96,6 +96,12 @@
     <Compile Include="Forms\Controls\AlbumBox.Designer.cs">
       <DependentUpon>AlbumBox.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Controls\FriendBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Controls\FriendBox.Designer.cs">
+      <DependentUpon>FriendBox.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\FormAppSettings.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -124,6 +130,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Forms\Controls\AlbumBox.resx">
       <DependentUpon>AlbumBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Controls\FriendBox.resx">
+      <DependentUpon>FriendBox.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormAppSettings.resx">
       <DependentUpon>FormAppSettings.cs</DependentUpon>

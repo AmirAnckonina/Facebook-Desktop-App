@@ -4,6 +4,7 @@ using FacebookWrapper.ObjectModel;
 using FBServiceLogic.DTOs;
 using System;
 using System.Collections.Generic;
+using FBServiceLogic.DummyData;
 
 
 namespace FBServiceLogic
@@ -33,7 +34,7 @@ namespace FBServiceLogic
             m_LoginResult = null;
             m_CurrentUser = null;
             r_AppSettings = AppSettings.LoadSettings();
-            r_DummyUsers = DummyUsers.ImportDummyUsersFromXMLFile();
+            /// r_DummyUsers = DummyUsers.ImportDummyUsersFromXMLFile();
         }
 
         public User CurrentUser { get => m_CurrentUser; set => m_CurrentUser = value; }
@@ -65,7 +66,7 @@ namespace FBServiceLogic
             if (!string.IsNullOrEmpty(i_AccessToken))
             {
                 m_CurrentUser = m_LoginResult.LoggedInUser;
-                SetDummyDataForCurrentUser();
+                m_CurrentUserDummyData = DummyDataCreator.SetDummyDataForCurrentUser(m_CurrentUser.Name, m_CurrentUser.PictureSqaureURL);
             }
 
             else
@@ -87,15 +88,6 @@ namespace FBServiceLogic
             m_LoginResult = null;
         }
 
-        private void SetDummyDataForCurrentUser()
-        {
-            m_CurrentUserDummyData = new SingleDummyUser();
-
-            m_CurrentUserDummyData.Name = m_CurrentUser.Name;
-            m_CurrentUserDummyData.Hometown = "Givatayim";
-            m_CurrentUserDummyData.Education = "Jaffa College";
-            m_CurrentUserDummyData.ProfilePictureURL = m_CurrentUser.PictureSmallURL;
-        }
 
         public UserBasicInfoDTO GetUserBasicInfoDTO()
         {
@@ -288,7 +280,7 @@ namespace FBServiceLogic
 
                 newLikedPage.Name = likedPage.Name;
                 newLikedPage.PictureURL = likedPage.PictureSmallURL;
-                newLikedPage.LikesCount = likedPage.LikesCount;
+                newLikedPage.LikesCount = likedPage.LikesCount != null ? likedPage.LikesCount : DummyDataCreator.GenerateRandLikesCount();
                 likedPagesList.Add(newLikedPage);
             }
 

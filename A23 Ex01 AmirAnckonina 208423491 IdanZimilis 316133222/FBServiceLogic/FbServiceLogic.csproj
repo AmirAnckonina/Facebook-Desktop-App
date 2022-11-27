@@ -44,14 +44,15 @@
     <Compile Include="DTOs\PostDTO.cs" />
     <Compile Include="DTOs\TextAndImageDTO.cs" />
     <Compile Include="DTOs\UserBasicInfoDTO.cs" />
-    <Compile Include="DummyUsers.cs" />
+    <Compile Include="DummyData\DummyDataCreator.cs" />
+    <Compile Include="DummyData\DummyUsers.cs" />
     <Compile Include="FBAPIClient.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="SingleDummyUser.cs" />
+    <Compile Include="DummyData\SingleDummyUser.cs" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Connected Services\" />
@@ -75,15 +76,6 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Properties\FacebookBackground.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Properties\FacebookForHomePage.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Properties\FacebookLogo.jpg" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\FacebookBackground.jpg" />
   </ItemGroup>
   <ItemGroup>
@@ -92,5 +84,6 @@
   <ItemGroup>
     <None Include="Resources\FacebookLogo.jpg" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
