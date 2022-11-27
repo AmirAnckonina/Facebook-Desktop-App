@@ -9,17 +9,8 @@ using FacebookWrapper.ObjectModel;
 
 namespace FBServiceLogic.DTOs
 {
-    public class UserBasicInfoDTO
+    public class UserBasicInfoDTO // : TextAndImageDTO
     {
-/*        private string m_Name;
-        private string m_ProfilePictureURL;
-        private string m_Birthday;
-        private string m_Email;
-        private string m_Gender;
-        private string m_Hometown;
-        private string m_About;
-        private string m_OnlineStatus;*/
-
         public string FirstName { get; set; }
         public string ProfilePictureURL { get; set; }
         public string Birthday { get; set; }

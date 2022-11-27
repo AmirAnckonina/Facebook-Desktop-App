@@ -183,7 +183,11 @@ namespace FBServiceLogic
                 DateTime? dt = post.CreatedTime.Value;
                 if (dt?.Day == i_DateTime.Day && dt?.Month == i_DateTime.Month && dt?.Year == i_DateTime.Year )
                 {
-                    postDTOList.Add(new PostDTO(post.Message, post.Caption, post.CreatedTime));
+                    PostDTO newPost = new PostDTO();
+                    newPost.Message = post.Message;
+                    newPost.Caption = post.Caption;
+                    newPost.CreatedTime = post.CreatedTime;
+                    postDTOList.Add(newPost);
                 }
             }
             return postDTOList;
@@ -272,6 +276,23 @@ namespace FBServiceLogic
             }
 
             return myHometownFriends;
+        }
+
+        public List<LikedPageDTO> GetLikedPages()
+        {
+            List<LikedPageDTO> likedPagesList = new List<LikedPageDTO>();
+
+            foreach (Page likedPage in m_CurrentUser.LikedPages)
+            {
+                LikedPageDTO newLikedPage = new LikedPageDTO();
+
+                newLikedPage.Name = likedPage.Name;
+                newLikedPage.PictureURL = likedPage.PictureSmallURL;
+                newLikedPage.LikesCount = likedPage.LikesCount;
+                likedPagesList.Add(newLikedPage);
+            }
+
+            return likedPagesList;
         }
     }
 }
