@@ -96,6 +96,12 @@
     <Compile Include="Forms\Controls\AlbumBox.Designer.cs">
       <DependentUpon>AlbumBox.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Controls\PageBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Controls\PageBox.Designer.cs">
+      <DependentUpon>PageBox.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\FormAppSettings.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -124,6 +130,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Forms\Controls\AlbumBox.resx">
       <DependentUpon>AlbumBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Controls\PageBox.resx">
+      <DependentUpon>PageBox.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormAppSettings.resx">
       <DependentUpon>FormAppSettings.cs</DependentUpon>
