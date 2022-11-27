@@ -64,7 +64,16 @@ namespace FacebookWinFormsApp
 
         private void FetchLikedPages(List<LikedPageDTO> i_LikedPagesList)
         {
+            foreach (LikedPageDTO pageDTO in i_LikedPagesList)
+            {
+                PageBox pageBox = new PageBox();
+                pageBox.setName(pageDTO.Name);
+                pageBox.setPictureBox(pageDTO.PictureURL);
+                pageBox.setNumOfLikes(pageDTO.LikesCount);
+                likedPagesFlowLayoutPanel.Controls.Add(pageBox);
 
+            }
+            likedPagesFlowLayoutPanel.AutoScroll = true;
         }
 
         private void buttonLogout_Click(object sender, EventArgs e)
