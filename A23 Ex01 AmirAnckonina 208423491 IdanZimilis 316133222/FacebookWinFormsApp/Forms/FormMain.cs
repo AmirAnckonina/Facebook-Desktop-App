@@ -40,26 +40,29 @@ namespace FacebookWinFormsApp
 
         public void FetchUserInfo()
         {
-            UserBasicInfoDTO userBasicInfoDTO = r_FBAPIClient.GetUserBasicInfoDTO();
             testBoxLoggedInUser.Text = $"Logged in as {r_FBAPIClient.CurrentUser.Name}";
+            r_FBAPIClient.ImportAlternativeData();
+            FetchBasicUserInfo();
+            FetchAlbums(r_FBAPIClient.GetAlbumsList());
+            FetchGroups(r_FBAPIClient.GetGroupsNamesList());
+            FetchPosts(r_FBAPIClient.GetPostsList());
+            FetchLikedPages(r_FBAPIClient.GetLikedPages());
+           
+            /*if (m_FBAPIClient.LoggedInUser.Posts.Count > 0)
+            {
+              //textBoxStatus.Text = m_FBAPIClient.LoggedInUser.Posts[0].Message;
+            }*/
+        }
+
+        private void FetchBasicUserInfo()
+        {
+            UserBasicInfoDTO userBasicInfoDTO = r_FBAPIClient.GetUserBasicInfoDTO();
             profilePictureBox.LoadAsync(userBasicInfoDTO.ProfilePictureURL);
             genderLabel.Text = userBasicInfoDTO.Gender;
             birthdayLabel.Text = userBasicInfoDTO.Birthday;
             aboutLabel.Text = userBasicInfoDTO.About;
             statusLabel.Text = userBasicInfoDTO.OnlineStatus;
             homeTownLabel.Text = userBasicInfoDTO.Hometown;
-            r_FBAPIClient.ImportAlternativeData();
-            FetchAlbums(r_FBAPIClient.GetAlbumsList());
-            FetchGroups(r_FBAPIClient.GetGroupsNamesList());
-            FetchPosts(r_FBAPIClient.GetPostsList());
-            FetchLikedPages(r_FBAPIClient.GetLikedPages());
-            
-
-
-            /*if (m_FBAPIClient.LoggedInUser.Posts.Count > 0)
-            {
-              //textBoxStatus.Text = m_FBAPIClient.LoggedInUser.Posts[0].Message;
-            }*/
         }
 
         private void FetchLikedPages(List<LikedPageDTO> i_LikedPagesList)
