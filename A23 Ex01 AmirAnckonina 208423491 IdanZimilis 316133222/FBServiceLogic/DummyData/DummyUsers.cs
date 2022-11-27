@@ -18,63 +18,20 @@ namespace FBServiceLogic
         ///  The purpose is to give this List<User> to the current user and set it as his Friends list.
         /// </summary>
         /// 
-        private static readonly string sr_DummyUsersFilePath = Path.Combine(
+       /* private static readonly string sr_DummyUsersFilePath = Path.Combine(
                  Directory.GetParent(Directory.GetCurrentDirectory()).Parent.Parent.FullName,
-                 @"FBServiceLogic\Properties\FBDummyUsers.xml");
+                 @"FBServiceLogic\Properties\FBDummyUsers.xml");*/
 
-         public List<SingleDummyUser> FBUsers { get; set; }
+        public List<SingleDummyUser> FBUsers { get; set; }
 
-        private DummyUsers()
+        public DummyUsers()
         {
             FBUsers = new List<SingleDummyUser>();
-            CreateDummyUsers();
+            /// CreateDummyUsers();
             ///SaveXMLExample();
             ///ImportDummyUsersFromXMLFile();
         }
-
-        public void SaveXMLExample()
-        {
-            FileMode fileMode;
-
-            if (File.Exists(sr_DummyUsersFilePath))
-            {
-                fileMode = FileMode.Truncate;
-            }
-
-            else
-            {
-                fileMode = FileMode.CreateNew;
-            }
-                
-            using (Stream stream = new FileStream(sr_DummyUsersFilePath, fileMode))
-            {
-                XmlSerializer serializer = new XmlSerializer(this.GetType());
-                serializer.Serialize(stream, this);
-            } 
-        }
-
-        public static DummyUsers ImportDummyUsersFromXMLFile()
-        {
-            /// FBUsers = null;
-            DummyUsers dummyUsers = null;
-
-            try
-            {
-                using (Stream stream = new FileStream(sr_DummyUsersFilePath, FileMode.Open))
-                {
-                    XmlSerializer serializer = new XmlSerializer(typeof(DummyUsers));
-                    dummyUsers = serializer.Deserialize(stream) as DummyUsers;
-                }
-            }
-            catch (Exception ex)
-            {
-                /// throw new IOException(ex.Message);
-                dummyUsers = new DummyUsers();
-            }
-
-            return dummyUsers;
-        }
-
+/*
         private void CreateDummyUsers()
         {
             SingleDummyUser dummy = new SingleDummyUser();
@@ -119,6 +76,51 @@ namespace FBServiceLogic
             dummy.Education = "Jaffa College";
             dummy.ProfilePictureURL = "https://scontent.ftlv19-1.fna.fbcdn.net/v/t1.6435-9/117803866_3020504371412230_6906581810340608107_n.jpg?_nc_cat=102&amp;ccb=1-7&amp;_nc_sid=09cbfe&amp;_nc_ohc=lQHiYQ-N1k4AX_liUdO&amp;_nc_ht=scontent.ftlv19-1.fna&amp;oh=00_AfBEQObHheRwlTmK-6_s2-Iffal6If0lHOzU7x7BmVqQbg&amp;oe=63A92801";
             FBUsers.Add(dummy);
+        }*/
+
+
+
+        /*public void SaveXMLExample()
+        {
+            FileMode fileMode;
+
+            if (File.Exists(sr_DummyUsersFilePath))
+            {
+                fileMode = FileMode.Truncate;
+            }
+
+            else
+            {
+                fileMode = FileMode.CreateNew;
+            }
+                
+            using (Stream stream = new FileStream(sr_DummyUsersFilePath, fileMode))
+            {
+                XmlSerializer serializer = new XmlSerializer(this.GetType());
+                serializer.Serialize(stream, this);
+            } 
         }
+
+        public static DummyUsers ImportDummyUsersFromXMLFile()
+        {
+            /// FBUsers = null;
+            DummyUsers dummyUsers = null;
+
+            try
+            {
+                using (Stream stream = new FileStream(sr_DummyUsersFilePath, FileMode.Open))
+                {
+                    XmlSerializer serializer = new XmlSerializer(typeof(DummyUsers));
+                    dummyUsers = serializer.Deserialize(stream) as DummyUsers;
+                }
+            }
+            catch (Exception ex)
+            {
+                /// throw new IOException(ex.Message);
+                dummyUsers = new DummyUsers();
+            }
+
+            return dummyUsers;
+        }*/
     }
 }

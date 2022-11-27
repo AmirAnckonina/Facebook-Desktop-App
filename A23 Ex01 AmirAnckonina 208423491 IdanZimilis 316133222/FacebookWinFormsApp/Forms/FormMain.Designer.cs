@@ -64,6 +64,8 @@
             this.label9 = new System.Windows.Forms.Label();
             this.postsTab = new System.Windows.Forms.TabPage();
             this.likedPagesTab = new System.Windows.Forms.TabPage();
+            this.labelLikedPages = new System.Windows.Forms.Label();
+            this.likedPagesFlowLayoutPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.myAlumnusTab = new System.Windows.Forms.TabPage();
             this.hometownFriendsTab = new System.Windows.Forms.TabPage();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
@@ -71,8 +73,7 @@
             this.label7 = new System.Windows.Forms.Label();
             this.postsByDateListBox = new System.Windows.Forms.ListBox();
             this.fbLogoPictureBox = new System.Windows.Forms.PictureBox();
-            this.likedPagesFlowLayoutPanel = new System.Windows.Forms.FlowLayoutPanel();
-            this.labelLikedPages = new System.Windows.Forms.Label();
+            this.friendsFlowLayoutPanel = new System.Windows.Forms.FlowLayoutPanel();
             ((System.ComponentModel.ISupportInitialize)(this.profilePictureBox)).BeginInit();
             this.infoGroupBox.SuspendLayout();
             this.tabControl.SuspendLayout();
@@ -100,7 +101,7 @@
             // 
             this.postButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.postButton.Location = new System.Drawing.Point(254, 41);
-            this.postButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.postButton.Margin = new System.Windows.Forms.Padding(2);
             this.postButton.Name = "postButton";
             this.postButton.Size = new System.Drawing.Size(101, 24);
             this.postButton.TabIndex = 53;
@@ -110,7 +111,7 @@
             // profilePictureBox
             // 
             this.profilePictureBox.Location = new System.Drawing.Point(35, 170);
-            this.profilePictureBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.profilePictureBox.Margin = new System.Windows.Forms.Padding(2);
             this.profilePictureBox.Name = "profilePictureBox";
             this.profilePictureBox.Size = new System.Drawing.Size(118, 114);
             this.profilePictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -120,7 +121,7 @@
             // settingsButton
             // 
             this.settingsButton.Location = new System.Drawing.Point(4, 551);
-            this.settingsButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.settingsButton.Margin = new System.Windows.Forms.Padding(2);
             this.settingsButton.Name = "settingsButton";
             this.settingsButton.Size = new System.Drawing.Size(149, 23);
             this.settingsButton.TabIndex = 55;
@@ -142,7 +143,7 @@
             // 
             this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.textBox1.Location = new System.Drawing.Point(16, 41);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(2);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(239, 24);
             this.textBox1.TabIndex = 57;
@@ -167,7 +168,7 @@
             this.postsListBox.HorizontalScrollbar = true;
             this.postsListBox.ItemHeight = 17;
             this.postsListBox.Location = new System.Drawing.Point(16, 77);
-            this.postsListBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.postsListBox.Margin = new System.Windows.Forms.Padding(2);
             this.postsListBox.Name = "postsListBox";
             this.postsListBox.ScrollAlwaysVisible = true;
             this.postsListBox.Size = new System.Drawing.Size(600, 463);
@@ -178,7 +179,7 @@
             this.rememberMeCheckBox.AutoSize = true;
             this.rememberMeCheckBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.rememberMeCheckBox.Location = new System.Drawing.Point(9, 515);
-            this.rememberMeCheckBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.rememberMeCheckBox.Margin = new System.Windows.Forms.Padding(2);
             this.rememberMeCheckBox.Name = "rememberMeCheckBox";
             this.rememberMeCheckBox.Size = new System.Drawing.Size(126, 22);
             this.rememberMeCheckBox.TabIndex = 60;
@@ -220,9 +221,9 @@
             this.infoGroupBox.Controls.Add(this.infoLabel);
             this.infoGroupBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.infoGroupBox.Location = new System.Drawing.Point(26, 59);
-            this.infoGroupBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.infoGroupBox.Margin = new System.Windows.Forms.Padding(2);
             this.infoGroupBox.Name = "infoGroupBox";
-            this.infoGroupBox.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.infoGroupBox.Padding = new System.Windows.Forms.Padding(2);
             this.infoGroupBox.Size = new System.Drawing.Size(548, 124);
             this.infoGroupBox.TabIndex = 63;
             this.infoGroupBox.TabStop = false;
@@ -348,7 +349,7 @@
             this.tabControl.Controls.Add(this.myAlumnusTab);
             this.tabControl.Controls.Add(this.hometownFriendsTab);
             this.tabControl.Location = new System.Drawing.Point(193, 10);
-            this.tabControl.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabControl.Margin = new System.Windows.Forms.Padding(2);
             this.tabControl.Name = "tabControl";
             this.tabControl.SelectedIndex = 0;
             this.tabControl.Size = new System.Drawing.Size(640, 592);
@@ -360,7 +361,7 @@
             this.homeTab.Controls.Add(this.label1);
             this.homeTab.Controls.Add(this.infoGroupBox);
             this.homeTab.Location = new System.Drawing.Point(4, 22);
-            this.homeTab.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.homeTab.Margin = new System.Windows.Forms.Padding(2);
             this.homeTab.Name = "homeTab";
             this.homeTab.Size = new System.Drawing.Size(632, 566);
             this.homeTab.TabIndex = 6;
@@ -369,11 +370,12 @@
             // 
             // friendsTab
             // 
+            this.friendsTab.Controls.Add(this.friendsFlowLayoutPanel);
             this.friendsTab.Controls.Add(this.buttonFetchFriends);
             this.friendsTab.Location = new System.Drawing.Point(4, 22);
-            this.friendsTab.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.friendsTab.Margin = new System.Windows.Forms.Padding(2);
             this.friendsTab.Name = "friendsTab";
-            this.friendsTab.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.friendsTab.Padding = new System.Windows.Forms.Padding(2);
             this.friendsTab.Size = new System.Drawing.Size(632, 566);
             this.friendsTab.TabIndex = 1;
             this.friendsTab.Text = "Friends";
@@ -382,7 +384,7 @@
             // buttonFetchFriends
             // 
             this.buttonFetchFriends.Cursor = System.Windows.Forms.Cursors.Default;
-            this.buttonFetchFriends.Location = new System.Drawing.Point(16, 20);
+            this.buttonFetchFriends.Location = new System.Drawing.Point(11, 5);
             this.buttonFetchFriends.Name = "buttonFetchFriends";
             this.buttonFetchFriends.Size = new System.Drawing.Size(75, 23);
             this.buttonFetchFriends.TabIndex = 0;
@@ -396,9 +398,9 @@
             this.albumsTab.Controls.Add(this.albumsLayoutPanel);
             this.albumsTab.Controls.Add(this.AlbumsButton);
             this.albumsTab.Location = new System.Drawing.Point(4, 22);
-            this.albumsTab.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.albumsTab.Margin = new System.Windows.Forms.Padding(2);
             this.albumsTab.Name = "albumsTab";
-            this.albumsTab.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.albumsTab.Padding = new System.Windows.Forms.Padding(2);
             this.albumsTab.Size = new System.Drawing.Size(632, 566);
             this.albumsTab.TabIndex = 0;
             this.albumsTab.Text = "Albums";
@@ -420,7 +422,7 @@
             this.albumsLayoutPanel.AutoScroll = true;
             this.albumsLayoutPanel.BackColor = System.Drawing.Color.Transparent;
             this.albumsLayoutPanel.Location = new System.Drawing.Point(12, 47);
-            this.albumsLayoutPanel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.albumsLayoutPanel.Margin = new System.Windows.Forms.Padding(2);
             this.albumsLayoutPanel.Name = "albumsLayoutPanel";
             this.albumsLayoutPanel.Size = new System.Drawing.Size(610, 504);
             this.albumsLayoutPanel.TabIndex = 65;
@@ -430,7 +432,7 @@
             this.groupsTab.Controls.Add(this.groupLayoutPanel);
             this.groupsTab.Controls.Add(this.label9);
             this.groupsTab.Location = new System.Drawing.Point(4, 22);
-            this.groupsTab.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupsTab.Margin = new System.Windows.Forms.Padding(2);
             this.groupsTab.Name = "groupsTab";
             this.groupsTab.Size = new System.Drawing.Size(632, 566);
             this.groupsTab.TabIndex = 2;
@@ -440,7 +442,7 @@
             // groupLayoutPanel
             // 
             this.groupLayoutPanel.Location = new System.Drawing.Point(21, 72);
-            this.groupLayoutPanel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupLayoutPanel.Margin = new System.Windows.Forms.Padding(2);
             this.groupLayoutPanel.Name = "groupLayoutPanel";
             this.groupLayoutPanel.Size = new System.Drawing.Size(563, 350);
             this.groupLayoutPanel.TabIndex = 1;
@@ -463,7 +465,7 @@
             this.postsTab.Controls.Add(this.postButton);
             this.postsTab.Controls.Add(this.postsListBox);
             this.postsTab.Location = new System.Drawing.Point(4, 22);
-            this.postsTab.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.postsTab.Margin = new System.Windows.Forms.Padding(2);
             this.postsTab.Name = "postsTab";
             this.postsTab.Size = new System.Drawing.Size(632, 566);
             this.postsTab.TabIndex = 3;
@@ -475,17 +477,38 @@
             this.likedPagesTab.Controls.Add(this.labelLikedPages);
             this.likedPagesTab.Controls.Add(this.likedPagesFlowLayoutPanel);
             this.likedPagesTab.Location = new System.Drawing.Point(4, 22);
-            this.likedPagesTab.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.likedPagesTab.Margin = new System.Windows.Forms.Padding(2);
             this.likedPagesTab.Name = "likedPagesTab";
             this.likedPagesTab.Size = new System.Drawing.Size(632, 566);
             this.likedPagesTab.TabIndex = 4;
             this.likedPagesTab.Text = "Liked Pages";
             this.likedPagesTab.UseVisualStyleBackColor = true;
             // 
+            // labelLikedPages
+            // 
+            this.labelLikedPages.AutoSize = true;
+            this.labelLikedPages.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.labelLikedPages.Location = new System.Drawing.Point(267, 4);
+            this.labelLikedPages.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.labelLikedPages.Name = "labelLikedPages";
+            this.labelLikedPages.Size = new System.Drawing.Size(89, 18);
+            this.labelLikedPages.TabIndex = 67;
+            this.labelLikedPages.Text = "Liked Pages";
+            // 
+            // likedPagesFlowLayoutPanel
+            // 
+            this.likedPagesFlowLayoutPanel.AutoScroll = true;
+            this.likedPagesFlowLayoutPanel.BackColor = System.Drawing.Color.Transparent;
+            this.likedPagesFlowLayoutPanel.Location = new System.Drawing.Point(11, 31);
+            this.likedPagesFlowLayoutPanel.Margin = new System.Windows.Forms.Padding(2);
+            this.likedPagesFlowLayoutPanel.Name = "likedPagesFlowLayoutPanel";
+            this.likedPagesFlowLayoutPanel.Size = new System.Drawing.Size(610, 504);
+            this.likedPagesFlowLayoutPanel.TabIndex = 66;
+            // 
             // myAlumnusTab
             // 
             this.myAlumnusTab.Location = new System.Drawing.Point(4, 22);
-            this.myAlumnusTab.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.myAlumnusTab.Margin = new System.Windows.Forms.Padding(2);
             this.myAlumnusTab.Name = "myAlumnusTab";
             this.myAlumnusTab.Size = new System.Drawing.Size(632, 566);
             this.myAlumnusTab.TabIndex = 5;
@@ -500,7 +523,7 @@
             this.hometownFriendsTab.Controls.Add(this.label7);
             this.hometownFriendsTab.Controls.Add(this.postsByDateListBox);
             this.hometownFriendsTab.Location = new System.Drawing.Point(4, 22);
-            this.hometownFriendsTab.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.hometownFriendsTab.Margin = new System.Windows.Forms.Padding(2);
             this.hometownFriendsTab.Name = "hometownFriendsTab";
             this.hometownFriendsTab.Size = new System.Drawing.Size(632, 566);
             this.hometownFriendsTab.TabIndex = 7;
@@ -510,7 +533,7 @@
             // dateTimePicker1
             // 
             this.dateTimePicker1.Location = new System.Drawing.Point(173, 29);
-            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(2);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(245, 20);
             this.dateTimePicker1.TabIndex = 3;
@@ -518,7 +541,7 @@
             // searchPostsByDateButton
             // 
             this.searchPostsByDateButton.Location = new System.Drawing.Point(440, 28);
-            this.searchPostsByDateButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.searchPostsByDateButton.Margin = new System.Windows.Forms.Padding(2);
             this.searchPostsByDateButton.Name = "searchPostsByDateButton";
             this.searchPostsByDateButton.Size = new System.Drawing.Size(56, 19);
             this.searchPostsByDateButton.TabIndex = 2;
@@ -545,7 +568,7 @@
             this.postsByDateListBox.HorizontalScrollbar = true;
             this.postsByDateListBox.ItemHeight = 17;
             this.postsByDateListBox.Location = new System.Drawing.Point(30, 58);
-            this.postsByDateListBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.postsByDateListBox.Margin = new System.Windows.Forms.Padding(2);
             this.postsByDateListBox.Name = "postsByDateListBox";
             this.postsByDateListBox.ScrollAlwaysVisible = true;
             this.postsByDateListBox.Size = new System.Drawing.Size(588, 378);
@@ -561,26 +584,15 @@
             this.fbLogoPictureBox.TabIndex = 66;
             this.fbLogoPictureBox.TabStop = false;
             // 
-            // likedPagesFlowLayoutPanel
+            // friendsFlowLayoutPanel
             // 
-            this.likedPagesFlowLayoutPanel.AutoScroll = true;
-            this.likedPagesFlowLayoutPanel.BackColor = System.Drawing.Color.Transparent;
-            this.likedPagesFlowLayoutPanel.Location = new System.Drawing.Point(11, 31);
-            this.likedPagesFlowLayoutPanel.Margin = new System.Windows.Forms.Padding(2);
-            this.likedPagesFlowLayoutPanel.Name = "likedPagesFlowLayoutPanel";
-            this.likedPagesFlowLayoutPanel.Size = new System.Drawing.Size(610, 504);
-            this.likedPagesFlowLayoutPanel.TabIndex = 66;
-            // 
-            // labelLikedPages
-            // 
-            this.labelLikedPages.AutoSize = true;
-            this.labelLikedPages.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.labelLikedPages.Location = new System.Drawing.Point(267, 4);
-            this.labelLikedPages.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.labelLikedPages.Name = "labelLikedPages";
-            this.labelLikedPages.Size = new System.Drawing.Size(89, 18);
-            this.labelLikedPages.TabIndex = 67;
-            this.labelLikedPages.Text = "Liked Pages";
+            this.friendsFlowLayoutPanel.AutoScroll = true;
+            this.friendsFlowLayoutPanel.BackColor = System.Drawing.Color.Transparent;
+            this.friendsFlowLayoutPanel.Location = new System.Drawing.Point(11, 31);
+            this.friendsFlowLayoutPanel.Margin = new System.Windows.Forms.Padding(2);
+            this.friendsFlowLayoutPanel.Name = "friendsFlowLayoutPanel";
+            this.friendsFlowLayoutPanel.Size = new System.Drawing.Size(610, 504);
+            this.friendsFlowLayoutPanel.TabIndex = 66;
             // 
             // FormMain
             // 
@@ -670,6 +682,7 @@
         private System.Windows.Forms.FlowLayoutPanel groupLayoutPanel;
         private System.Windows.Forms.Label labelLikedPages;
         private System.Windows.Forms.FlowLayoutPanel likedPagesFlowLayoutPanel;
+        private System.Windows.Forms.FlowLayoutPanel friendsFlowLayoutPanel;
     }
 }
 
