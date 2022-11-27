@@ -52,6 +52,7 @@ namespace FacebookWinFormsApp
             FetchAlbums(r_FBAPIClient.GetAlbumsList());
             FetchGroups(r_FBAPIClient.GetGroupsNamesList());
             FetchPosts(r_FBAPIClient.GetPostsList());
+            FetchLikedPages(r_FBAPIClient.GetLikedPages());
             
 
 
@@ -59,6 +60,11 @@ namespace FacebookWinFormsApp
             {
               //textBoxStatus.Text = m_FBAPIClient.LoggedInUser.Posts[0].Message;
             }*/
+        }
+
+        private void FetchLikedPages(List<LikedPageDTO> i_LikedPagesList)
+        {
+
         }
 
         private void buttonLogout_Click(object sender, EventArgs e)

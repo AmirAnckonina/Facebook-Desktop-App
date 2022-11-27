@@ -6,11 +6,8 @@ using System.Threading.Tasks;
 
 namespace FBServiceLogic.DTOs
 {
-    public class PostDTO
+    public class LikedPageDTO : TextAndImageDTO
     {
-        public string Message { get; set; }
-        public string Caption { get; set; }
-        public DateTime? CreatedTime { get; set; }
-
+        public long? LikesCount { get; set; }
     }
 }
