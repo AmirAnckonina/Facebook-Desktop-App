@@ -27,23 +27,19 @@ namespace FacebookWinFormsApp
         private void buttonLogin_Click(object sender, EventArgs e)
         {
             m_LoginSucceed = false;
-            string permissionsAuthText;
 
             try
             {
+                if (r_FromAppSettings.WithDefaultPermissions == true)
+                {
+                    r_FBAPIClient.AppSettings.SetDefaultAppSettings();
+                }
+
                 r_FBAPIClient.Login();
-                /*permissionsAuthText = CreatePermissionsAuthText();
-                DialogResult permissionsAuthDialogResult = MessageBox.Show(
-                    permissionsAuthText,
-                    "Permissions Authorization",
-                    MessageBoxButtons.OKCancel
-                    );*/
-                /*if (DialogResult == DialogResult.OK)
-                {*/
-                    m_LoginSucceed = true;
-                    this.Close();
-                /// }
+                m_LoginSucceed = true;
+                this.Close();
             }
+
             catch(Exception ex)
             {
                 m_LoginSucceed = false;
