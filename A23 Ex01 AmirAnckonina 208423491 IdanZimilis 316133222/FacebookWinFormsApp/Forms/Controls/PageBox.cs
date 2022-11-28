@@ -31,5 +31,8 @@ namespace FacebookWinFormsApp.Forms.Controls
         {
             likesLabel.Text = i_NumOfLikes.ToString(); //check if null or zero
         }
+
+
+  
     }
 }
