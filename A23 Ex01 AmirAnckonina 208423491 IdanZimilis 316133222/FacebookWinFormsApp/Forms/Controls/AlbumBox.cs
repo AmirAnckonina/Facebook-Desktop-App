@@ -17,12 +17,12 @@ namespace FacebookWinFormsApp.Forms.Controls
             InitializeComponent();
         }
 
-        public void setName(string i_AlbumName)
+        public void SetGroupNameLabel(string i_AlbumName)
         {
             albumNameLabel.Text = i_AlbumName;
         }
 
-        public void setPictureBox(string i_albumPictureURL)
+        public void SetGroupPictureInPictureBox(string i_albumPictureURL)
         {
             albumPictureBox.LoadAsync(i_albumPictureURL);
         }

@@ -23,10 +23,9 @@ namespace FBServiceLogic
         }
 
         private User m_CurrentUser;
-        private SingleDummyUser m_CurrentUserDummyData;
+        private DummyCurrentUser m_DummyCurrUserData;
         private LoginResult m_LoginResult;
         private readonly AppSettings r_AppSettings;
-        private DummyUsers r_DummyUsers;
 
         public FBAPIClient()
         {
@@ -34,7 +33,6 @@ namespace FBServiceLogic
             m_LoginResult = null;
             m_CurrentUser = null;
             r_AppSettings = AppSettings.LoadSettings();
-            /// r_DummyUsers = DummyUsers.ImportDummyUsersFromXMLFile();
         }
 
         public User CurrentUser { get => m_CurrentUser; set => m_CurrentUser = value; }
@@ -66,7 +64,7 @@ namespace FBServiceLogic
             if (!string.IsNullOrEmpty(i_AccessToken))
             {
                 m_CurrentUser = m_LoginResult.LoggedInUser;
-                m_CurrentUserDummyData = DummyDataCreator.SetDummyDataForCurrentUser(m_CurrentUser.Name, m_CurrentUser.PictureSqaureURL);
+                m_DummyCurrUserData = DummyDataCreator.CreateDummyDataForCurrentUser(m_CurrentUser.Name, m_CurrentUser.PictureSqaureURL);
             }
 
             else
@@ -88,33 +86,34 @@ namespace FBServiceLogic
             m_LoginResult = null;
         }
 
-
         public UserBasicInfoDTO GetUserBasicInfoDTO()
         {
             UserBasicInfoDTO userBasicInfoDTO = new UserBasicInfoDTO();
 
-            userBasicInfoDTO.FirstName = m_CurrentUser.Name;
-            userBasicInfoDTO.ProfilePictureURL = m_CurrentUser.PictureNormalURL;
+            userBasicInfoDTO.Name = m_CurrentUser.Name;
+            userBasicInfoDTO.PictureURL = m_CurrentUser.PictureNormalURL;
             userBasicInfoDTO.Birthday = m_CurrentUser.Birthday;
             userBasicInfoDTO.Gender = m_CurrentUser.Gender.ToString();
-            userBasicInfoDTO.About = m_CurrentUser.About;
-            userBasicInfoDTO.OnlineStatus = m_CurrentUser.OnlineStatus.ToString();
+            userBasicInfoDTO.Education = m_CurrentUser.Educations != null ? m_CurrentUser.Educations[0].School.Name : m_DummyCurrUserData.Education;
+            userBasicInfoDTO.Hometown = m_CurrentUser.Hometown != null ? m_CurrentUser.Hometown.Name : m_DummyCurrUserData.Education;
+            userBasicInfoDTO.OnlineStatus = m_CurrentUser.OnlineStatus != null ? m_CurrentUser.OnlineStatus.ToString() : m_DummyCurrUserData.OnlineStatus.ToString();
 
             return userBasicInfoDTO;
         }
 
-        public List<TextAndImageDTO> GetFriendsList()
+        public List<FriendDTO> GetFriendsList()
         {
-            List<TextAndImageDTO> friendDTOList = new List<TextAndImageDTO>();
+            List<FriendDTO> friendDTOList = new List<FriendDTO>();
+            FriendDTO newFriendDTO;
 
             if (m_CurrentUser.Friends.Count <= 0)
             {
-                foreach (SingleDummyUser dummyUser in r_DummyUsers.FBUsers)
+                foreach (DummyUser dummyUser in m_DummyCurrUserData.Friends)
                 {
-                    TextAndImageDTO newFriendDTO = new TextAndImageDTO();
+                    newFriendDTO = new FriendDTO();
                     newFriendDTO.Name = dummyUser.Name;
-                    newFriendDTO.Name = dummyUser.Name;
-                    newFriendDTO.PictureURL = dummyUser.ProfilePictureURL;
+                    newFriendDTO.PictureURL = dummyUser.PictureURL;
+                    newFriendDTO.OnlineStatus = dummyUser.OnlineStatus.ToString();
                     friendDTOList.Add(newFriendDTO);
                 }
             }
@@ -123,9 +122,10 @@ namespace FBServiceLogic
             {
                 foreach (User friend in m_CurrentUser.Friends)
                 {
-                    TextAndImageDTO newFriendDTO = new TextAndImageDTO();
+                    newFriendDTO = new FriendDTO();
                     newFriendDTO.Name = friend.Name;
                     newFriendDTO.PictureURL = friend.PictureSqaureURL;
+                    newFriendDTO.OnlineStatus = friend.OnlineStatus.ToString();
                     friendDTOList.Add(newFriendDTO);
                 }
             }
@@ -136,10 +136,11 @@ namespace FBServiceLogic
         public List<TextAndImageDTO> GetAlbumsList()
         {
             List<TextAndImageDTO> albumDTOList = new List<TextAndImageDTO>();
+            TextAndImageDTO albumDTO;
 
             foreach (Album album in m_CurrentUser.Albums)
             {
-                TextAndImageDTO albumDTO = new TextAndImageDTO();
+                albumDTO = new TextAndImageDTO();
                 albumDTO.Name = album.Name;
                 albumDTO.PictureURL = album.PictureSmallURL;
                 albumDTOList.Add(albumDTO);
@@ -151,15 +152,15 @@ namespace FBServiceLogic
         public List<PostDTO> GetPostsList()
         {
             List<PostDTO> postDTOList = new List<PostDTO>();
+            PostDTO newPost;
 
             foreach (Post post in m_CurrentUser.Posts)
             {
-                PostDTO newPost = new PostDTO();
+                newPost = new PostDTO();
                 newPost.Message = post.Message;
                 newPost.Caption = post.Caption;
                 newPost.CreatedTime = post.CreatedTime;
                 postDTOList.Add(newPost);
-                /// postDTOList.Add(new PostDTO(post.Message, post.Caption, post.CreatedTime));
             }
 
             return postDTOList;
@@ -168,53 +169,78 @@ namespace FBServiceLogic
         public List<PostDTO> GetPostsByDate(DateTime i_DateTime)
         {
             List<PostDTO> postDTOList = new List<PostDTO>();
+            PostDTO newPost;
+            DateTime? dateTime;
+
             int postCounter = 0;
             foreach (Post post in m_CurrentUser.Posts)
             {
                 postCounter++;
-                DateTime? dt = post.CreatedTime.Value;
-                if (dt?.Day == i_DateTime.Day && dt?.Month == i_DateTime.Month && dt?.Year == i_DateTime.Year )
+                dateTime = post.CreatedTime.Value;
+                if (dateTime?.Day == i_DateTime.Day && dateTime?.Month == i_DateTime.Month && dateTime?.Year == i_DateTime.Year )
                 {
-                    PostDTO newPost = new PostDTO();
+                    newPost = new PostDTO();
                     newPost.Message = post.Message;
                     newPost.Caption = post.Caption;
                     newPost.CreatedTime = post.CreatedTime;
                     postDTOList.Add(newPost);
                 }
             }
+
             return postDTOList;
         }
 
-        public List<TextAndImageDTO> GetGroupsNamesList()
+        public List<GroupDTO> GetGroupsNamesList()
         {
-            List<TextAndImageDTO> groupsDTOList = new List<TextAndImageDTO>();
+            List<GroupDTO> groupsDTOList = new List<GroupDTO>();
             FacebookObjectCollection<Group> groups = m_CurrentUser.Groups;
-            
-            foreach (Group group in groups)
+            GroupDTO newGroup;
+
+            if (m_CurrentUser.Groups.Count <= 0)
             {
-                TextAndImageDTO newGroup = new TextAndImageDTO();
-                newGroup.Name = group.Name;
-                newGroup.PictureURL = group.PictureNormalURL;
-                groupsDTOList.Add(newGroup);
+                foreach (DummyGroup group in m_DummyCurrUserData.Groups)
+                {
+                    newGroup = new GroupDTO();
+                    newGroup.Name = group.Name;
+                    newGroup.PictureURL = group.PictureURL;
+                    newGroup.Privacy = group.Privacy.ToString();
+                    newGroup.MembersCount = group.MembersCount;
+                    groupsDTOList.Add(newGroup);
+                }
+            }
+
+            else
+            {
+                foreach (Group group in groups)
+                {
+                    newGroup = new GroupDTO();
+                    newGroup.Name = group.Name;
+                    newGroup.PictureURL = group.PictureNormalURL;
+                    newGroup.Privacy = group.Privacy.ToString();
+                    newGroup.MembersCount = group.Members.Count;
+                    groupsDTOList.Add(newGroup);
+                }
             }
 
             return groupsDTOList;
         }
 
-        public List<TextAndImageDTO> GetMyAlumnus()
+        public List<AlumniDTO> GetMyAlumnus()
         {
-            List<TextAndImageDTO> myAlumnusList = new List<TextAndImageDTO>();
+            List<AlumniDTO> myAlumnusList = new List<AlumniDTO>();
+            AlumniDTO newAlumni;
 
             if (m_CurrentUser.Friends.Count <= 0)
             {
-                foreach (SingleDummyUser friend in r_DummyUsers.FBUsers)
+                foreach (DummyUser friend in m_DummyCurrUserData.Friends)
                 {
-                    if (m_CurrentUserDummyData.Education == friend.Education)
+                    if (m_DummyCurrUserData.Education == friend.Education)
                     {
-                        TextAndImageDTO newFriendDTO = new TextAndImageDTO();
-                        newFriendDTO.Name = friend.Name;
-                        newFriendDTO.PictureURL = friend.ProfilePictureURL;
-                        myAlumnusList.Add(newFriendDTO);
+                        newAlumni = new AlumniDTO();
+                        newAlumni.Name = friend.Name;
+                        newAlumni.PictureURL = friend.PictureURL;
+                        newAlumni.Education = friend.Education;
+                        myAlumnusList.Add(newAlumni);
 
                     }
                 }
@@ -226,10 +252,11 @@ namespace FBServiceLogic
                 {
                     if (m_CurrentUser.Educations[0].School.Name == friend.Educations[0].School.Name)
                     {
-                        TextAndImageDTO newFriendDTO = new TextAndImageDTO();
-                        newFriendDTO.Name = friend.Name;
-                        newFriendDTO.PictureURL = friend.PictureSqaureURL;
-                        myAlumnusList.Add(newFriendDTO);
+                        newAlumni = new AlumniDTO();
+                        newAlumni.Name = friend.Name;
+                        newAlumni.PictureURL = friend.PictureSmallURL;
+                        newAlumni.Education = friend.Educations[0].School.Name;
+                        myAlumnusList.Add(newAlumni);
                     }
                 }
             }
@@ -237,21 +264,22 @@ namespace FBServiceLogic
             return myAlumnusList;
         }
 
-        public List<TextAndImageDTO> GetMyHometownFriends()
+        public List<HometownFriendDTO> GetMyHometownFriends()
         {
-            List<TextAndImageDTO> myHometownFriends = new List<TextAndImageDTO>();
+            List<HometownFriendDTO> myHometownFriends = new List<HometownFriendDTO>();
+            HometownFriendDTO htFriend;
 
 
             if (m_CurrentUser.Friends.Count <= 0)
             {
-                foreach (SingleDummyUser dummyUser in r_DummyUsers.FBUsers)
+                foreach (DummyUser dummyUser in m_DummyCurrUserData.Friends)
                 {
-                    if (m_CurrentUserDummyData.Hometown == dummyUser.Hometown)
+                    if (m_DummyCurrUserData.Hometown == dummyUser.Hometown)
                     {
-                        TextAndImageDTO newFriendDTO = new TextAndImageDTO();
-                        newFriendDTO.Name = dummyUser.Name;
-                        newFriendDTO.PictureURL = dummyUser.ProfilePictureURL;
-                        myHometownFriends.Add(newFriendDTO);
+                        htFriend = new HometownFriendDTO();
+                        htFriend.Name = dummyUser.Name;
+                        htFriend.PictureURL = dummyUser.PictureURL;
+                        myHometownFriends.Add(htFriend);
                     }
                 }
             }
@@ -260,10 +288,10 @@ namespace FBServiceLogic
             {
                 foreach (User friend in m_CurrentUser.Friends)
                 {
-                    TextAndImageDTO newFriendDTO = new TextAndImageDTO();
-                    newFriendDTO.Name = friend.Name;
-                    newFriendDTO.PictureURL = friend.PictureSqaureURL;
-                    myHometownFriends.Add(newFriendDTO);
+                    htFriend = new HometownFriendDTO();
+                    htFriend.Name = friend.Name;
+                    htFriend.PictureURL = friend.PictureSqaureURL;
+                    myHometownFriends.Add(htFriend);
                 }
             }
 

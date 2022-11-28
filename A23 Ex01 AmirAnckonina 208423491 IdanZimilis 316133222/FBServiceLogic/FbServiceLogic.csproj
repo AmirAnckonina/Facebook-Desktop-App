@@ -40,19 +40,27 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AppSettings.cs" />
+    <Compile Include="DTOs\AlumniDTO.cs" />
+    <Compile Include="DTOs\FriendDTO.cs" />
+    <Compile Include="DTOs\GroupDTO.cs" />
+    <Compile Include="DTOs\HometownFriendDTO.cs" />
     <Compile Include="DTOs\LikedPageDTO.cs" />
     <Compile Include="DTOs\PostDTO.cs" />
     <Compile Include="DTOs\TextAndImageDTO.cs" />
     <Compile Include="DTOs\UserBasicInfoDTO.cs" />
+    <Compile Include="DummyData\DummyCurrentUser.cs" />
     <Compile Include="DummyData\DummyDataCreator.cs" />
-    <Compile Include="DummyData\DummyUsers.cs" />
+    <Compile Include="DummyData\DummyGroup.cs" />
+    <Compile Include="DummyData\DummyFriends.cs" />
+    <Compile Include="DummyData\eGroupPrivacy.cs" />
+    <Compile Include="DummyData\eOnlineStatus.cs" />
     <Compile Include="FBAPIClient.cs" />
+    <Compile Include="DummyData\DummyUser.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="DummyData\SingleDummyUser.cs" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Connected Services\" />
@@ -72,18 +80,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\FacebookBackground.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\FacebookForHomePage.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\FacebookLogo.jpg" />
-  </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

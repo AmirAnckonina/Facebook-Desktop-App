@@ -57,10 +57,9 @@ namespace FacebookWinFormsApp
         private void FetchBasicUserInfo()
         {
             UserBasicInfoDTO userBasicInfoDTO = r_FBAPIClient.GetUserBasicInfoDTO();
-            profilePictureBox.LoadAsync(userBasicInfoDTO.ProfilePictureURL);
+            profilePictureBox.LoadAsync(userBasicInfoDTO.PictureURL);
             genderLabel.Text = userBasicInfoDTO.Gender;
             birthdayLabel.Text = userBasicInfoDTO.Birthday;
-            aboutLabel.Text = userBasicInfoDTO.About;
             statusLabel.Text = userBasicInfoDTO.OnlineStatus;
             homeTownLabel.Text = userBasicInfoDTO.Hometown;
         }
@@ -175,8 +174,8 @@ namespace FacebookWinFormsApp
             foreach (TextAndImageDTO albumDTO in albumDTOs)
             {
                 AlbumBox album = new AlbumBox();
-                album.setName(albumDTO.Name);
-                album.setPictureBox(albumDTO.PictureURL);
+                album.SetGroupNameLabel(albumDTO.Name);
+                album.SetGroupPictureInPictureBox(albumDTO.PictureURL);
 
                 albumsLayoutPanel.Controls.Add(album);
                 
@@ -246,15 +245,16 @@ namespace FacebookWinFormsApp
         }
 
 
-        private void FetchGroups(List<TextAndImageDTO> groupsListDTO)
+        private void FetchGroups(List<GroupDTO> groupsListDTO)
         {
-            foreach (TextAndImageDTO groupDTO in groupsListDTO)
+            foreach (GroupDTO groupDTO in groupsListDTO)
             {
-                AlbumBox group = new AlbumBox();
-                group.setName(groupDTO.Name);
-                group.setPictureBox(groupDTO.PictureURL);
-
-                groupLayoutPanel.Controls.Add(group);
+                AlbumBox groupAlbumBox = new AlbumBox();
+                groupAlbumBox.SetGroupNameLabel(groupDTO.Name);
+                groupAlbumBox.SetGroupPictureInPictureBox(groupDTO.PictureURL);
+                /*groupAlbumBox.SetGroupMembersCountLabel(groupDTO.MembersCount);
+                groupAlbumBox.SetGroupPrivacyLabel(groupDTO.Privacy);*/
+                groupLayoutPanel.Controls.Add(groupAlbumBox);
 
             }
             groupLayoutPanel.AutoScroll = true;
