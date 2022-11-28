@@ -279,6 +279,7 @@ namespace FBServiceLogic
                         htFriend = new HometownFriendDTO();
                         htFriend.Name = dummyUser.Name;
                         htFriend.PictureURL = dummyUser.PictureURL;
+                        htFriend.Hometown = dummyUser.Hometown;
                         myHometownFriends.Add(htFriend);
                     }
                 }
@@ -291,6 +292,7 @@ namespace FBServiceLogic
                     htFriend = new HometownFriendDTO();
                     htFriend.Name = friend.Name;
                     htFriend.PictureURL = friend.PictureSqaureURL;
+                    htFriend.Hometown = friend.Hometown.Name;
                     myHometownFriends.Add(htFriend);
                 }
             }

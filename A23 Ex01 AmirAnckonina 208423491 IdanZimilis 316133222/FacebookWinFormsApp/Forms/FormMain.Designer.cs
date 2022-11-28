@@ -55,6 +55,7 @@
             this.tabControl = new System.Windows.Forms.TabControl();
             this.homeTab = new System.Windows.Forms.TabPage();
             this.friendsTab = new System.Windows.Forms.TabPage();
+            this.friendsFlowLayoutPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.buttonFetchFriends = new System.Windows.Forms.Button();
             this.albumsTab = new System.Windows.Forms.TabPage();
             this.label8 = new System.Windows.Forms.Label();
@@ -73,7 +74,7 @@
             this.label7 = new System.Windows.Forms.Label();
             this.postsByDateListBox = new System.Windows.Forms.ListBox();
             this.fbLogoPictureBox = new System.Windows.Forms.PictureBox();
-            this.friendsFlowLayoutPanel = new System.Windows.Forms.FlowLayoutPanel();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
             ((System.ComponentModel.ISupportInitialize)(this.profilePictureBox)).BeginInit();
             this.infoGroupBox.SuspendLayout();
             this.tabControl.SuspendLayout();
@@ -348,6 +349,7 @@
             this.tabControl.Controls.Add(this.likedPagesTab);
             this.tabControl.Controls.Add(this.myAlumnusTab);
             this.tabControl.Controls.Add(this.hometownFriendsTab);
+            this.tabControl.Controls.Add(this.tabPage1);
             this.tabControl.Location = new System.Drawing.Point(193, 10);
             this.tabControl.Margin = new System.Windows.Forms.Padding(2);
             this.tabControl.Name = "tabControl";
@@ -380,6 +382,16 @@
             this.friendsTab.TabIndex = 1;
             this.friendsTab.Text = "Friends";
             this.friendsTab.UseVisualStyleBackColor = true;
+            // 
+            // friendsFlowLayoutPanel
+            // 
+            this.friendsFlowLayoutPanel.AutoScroll = true;
+            this.friendsFlowLayoutPanel.BackColor = System.Drawing.Color.Transparent;
+            this.friendsFlowLayoutPanel.Location = new System.Drawing.Point(11, 31);
+            this.friendsFlowLayoutPanel.Margin = new System.Windows.Forms.Padding(2);
+            this.friendsFlowLayoutPanel.Name = "friendsFlowLayoutPanel";
+            this.friendsFlowLayoutPanel.Size = new System.Drawing.Size(610, 504);
+            this.friendsFlowLayoutPanel.TabIndex = 66;
             // 
             // buttonFetchFriends
             // 
@@ -584,15 +596,14 @@
             this.fbLogoPictureBox.TabIndex = 66;
             this.fbLogoPictureBox.TabStop = false;
             // 
-            // friendsFlowLayoutPanel
+            // tabPage1
             // 
-            this.friendsFlowLayoutPanel.AutoScroll = true;
-            this.friendsFlowLayoutPanel.BackColor = System.Drawing.Color.Transparent;
-            this.friendsFlowLayoutPanel.Location = new System.Drawing.Point(11, 31);
-            this.friendsFlowLayoutPanel.Margin = new System.Windows.Forms.Padding(2);
-            this.friendsFlowLayoutPanel.Name = "friendsFlowLayoutPanel";
-            this.friendsFlowLayoutPanel.Size = new System.Drawing.Size(610, 504);
-            this.friendsFlowLayoutPanel.TabIndex = 66;
+            this.tabPage1.Location = new System.Drawing.Point(4, 22);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Size = new System.Drawing.Size(632, 566);
+            this.tabPage1.TabIndex = 8;
+            this.tabPage1.Text = "tabPage1";
+            this.tabPage1.UseVisualStyleBackColor = true;
             // 
             // FormMain
             // 
@@ -683,6 +694,7 @@
         private System.Windows.Forms.Label labelLikedPages;
         private System.Windows.Forms.FlowLayoutPanel likedPagesFlowLayoutPanel;
         private System.Windows.Forms.FlowLayoutPanel friendsFlowLayoutPanel;
+        private System.Windows.Forms.TabPage tabPage1;
     }
 }
 
