@@ -37,30 +37,35 @@ namespace FacebookWinFormsApp.Forms.Controls
             // albumNameLabel
             // 
             this.albumNameLabel.AutoSize = true;
-            this.albumNameLabel.Location = new System.Drawing.Point(124, 23);
+            this.albumNameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.albumNameLabel.Location = new System.Drawing.Point(6, 17);
+            this.albumNameLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.albumNameLabel.Name = "albumNameLabel";
-            this.albumNameLabel.Size = new System.Drawing.Size(23, 17);
+            this.albumNameLabel.Size = new System.Drawing.Size(23, 16);
             this.albumNameLabel.TabIndex = 0;
             this.albumNameLabel.Text = "---";
             // 
             // albumPictureBox
             // 
-            this.albumPictureBox.Location = new System.Drawing.Point(12, 43);
+            this.albumPictureBox.Location = new System.Drawing.Point(9, 35);
+            this.albumPictureBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.albumPictureBox.Name = "albumPictureBox";
-            this.albumPictureBox.Size = new System.Drawing.Size(243, 153);
+            this.albumPictureBox.Size = new System.Drawing.Size(182, 124);
             this.albumPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.albumPictureBox.TabIndex = 1;
             this.albumPictureBox.TabStop = false;
             // 
             // AlbumBox
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScroll = true;
             this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.Controls.Add(this.albumPictureBox);
             this.Controls.Add(this.albumNameLabel);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "AlbumBox";
-            this.Size = new System.Drawing.Size(258, 198);
+            this.Size = new System.Drawing.Size(194, 161);
             ((System.ComponentModel.ISupportInitialize)(this.albumPictureBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

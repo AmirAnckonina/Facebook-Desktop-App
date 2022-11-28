@@ -263,6 +263,7 @@ namespace FBServiceLogic
                         htFriend.Name = dummyUser.Name;
                         htFriend.PictureURL = dummyUser.PictureURL;
                         htFriend.Hometown = dummyUser.Hometown;
+                        htFriend.Status = dummyUser.OnlineStatus;
                         myHometownFriends.Add(htFriend);
                     }
                 }

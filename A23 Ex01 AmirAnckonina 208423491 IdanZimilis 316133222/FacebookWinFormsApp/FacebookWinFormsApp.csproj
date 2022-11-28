@@ -102,6 +102,12 @@
     <Compile Include="Forms\Controls\FriendBox.Designer.cs">
       <DependentUpon>FriendBox.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Controls\FBGroupBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Controls\FBGroupBox.Designer.cs">
+      <DependentUpon>FBGroupBox.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Controls\PageBox.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -133,6 +139,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Controls\FriendBox.resx">
       <DependentUpon>FriendBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Controls\FBGroupBox.resx">
+      <DependentUpon>FBGroupBox.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Controls\PageBox.resx">
       <DependentUpon>PageBox.cs</DependentUpon>
