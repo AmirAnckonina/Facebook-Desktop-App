@@ -35,11 +35,14 @@ namespace FBServiceLogic
 
         private AppSettings()
         {
-            m_AppID = "3456972604533289";
-            /// m_RememberUserActivated = false;
+            SetDefaultAppSettings();
+        }
+
+        public void SetDefaultAppSettings()
+        {
             RememberUserActivated = false;
-            ///m_LastAccessToken = "";
             LastAccessToken = null;
+            m_AppID = "3456972604533289";
             SetDefaultPermissions();
         }
 
