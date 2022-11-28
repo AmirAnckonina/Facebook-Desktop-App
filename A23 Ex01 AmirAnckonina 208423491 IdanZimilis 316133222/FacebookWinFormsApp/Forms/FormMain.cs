@@ -67,8 +67,8 @@ namespace FacebookWinFormsApp
 
         private void buttonLogout_Click(object sender, EventArgs e)
         {
-            r_FBAPIClient.Logout();
             rememberMeCheckBox.Checked = false;
+            r_FBAPIClient.Logout();
             this.Close();
         }
 
@@ -92,7 +92,7 @@ namespace FacebookWinFormsApp
             else
             {
                 r_FBAPIClient.AppSettings.RememberUserActivated = false;
-                r_FBAPIClient.AppSettings.LastAccessToken.Remove(0);
+                r_FBAPIClient.AppSettings.LastAccessToken = null;
             } 
         }
 
@@ -230,6 +230,11 @@ namespace FacebookWinFormsApp
         {
             statusTextBox.Text = "My status...";
             postTextBox.Text = string.Empty;
+        }
+
+        private void testBoxLoggedInUser_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

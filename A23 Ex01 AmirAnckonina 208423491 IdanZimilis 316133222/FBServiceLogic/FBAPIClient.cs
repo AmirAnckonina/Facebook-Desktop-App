@@ -58,14 +58,15 @@ namespace FBServiceLogic
 
         public void Logout()
         {
-            FacebookService.Logout();
-            r_AppSettings.ResetAppSettings();
+            FacebookService.LogoutWithUI();
             ResetCurrentFBState();
+            r_AppSettings.ResetAppSettings();
         }
 
         public void ResetCurrentFBState()
         {
             m_CurrentUser = null;
+            m_DummyCurrUserData = null;
             m_LoginResult = null;
         }
 

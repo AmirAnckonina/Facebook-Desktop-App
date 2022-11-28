@@ -39,7 +39,7 @@ namespace FBServiceLogic.DummyData
             dummyCurrUser.PictureURL = i_ProfilePictureURL;
             dummyCurrUser.OnlineStatus = eOnlineStatus.active;
             dummyCurrUser.Groups = createDummyGroups();
-            dummyCurrUser.Friends = CreateDummyFriends();
+            dummyCurrUser.Friends = createDummyFriends();
 
             return dummyCurrUser;
         }
@@ -73,7 +73,7 @@ namespace FBServiceLogic.DummyData
             return dummyGroups;
         }
 
-        public static List<DummyUser> CreateDummyFriends()
+        private static List<DummyUser> createDummyFriends()
         {
             List<DummyUser> dummyFriends = new List<DummyUser>();
             DummyUser dummy;

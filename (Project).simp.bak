@@ -2049,7 +2049,7 @@
             <stereotype>create</stereotype>
           </stereotypes>
         </operation>
-        <operation id="o48d4c562b13a4489ac1d9c2ae9423dcf386" cid="OP067" name="SetAppSettings" creation-date="11/28/2022 16:01:59" type="Void" type-id="Void" visibility="private" />
+        <operation id="o48d4c562b13a4489ac1d9c2ae9423dcf386" cid="OP067" name="Dummy" creation-date="11/28/2022 16:01:59" type="" type-id="" visibility="undefined" />
       </operations>
     </item>
     <item id="fe48d64e06aa49b296f8ac213cb55c3a" cid="PROP057" type="property" name="PictureURL" owner="d9582a0558634963a77f3ef0b35d2b14" creator="" creation-date="11/28/2022 16:01:59" visibility="public">
@@ -3044,7 +3044,7 @@
             <class />
           </item>
           <item id="di08a4de418c3a4326943fbb0daa22bd478252" iid="c292d3f9bc5540aa9e9f3cf38ee94535" container="di2c93c42e6c8640aa91f5cef505423ce67051" container-iid="7cbbd9cff8844d9fa9ce9531d8a02318" creation-date="11/28/2022 16:01:59" order-index="1" type="entity">
-            <layout ax="374.6183" ay="-910.4763" awidth="305" aheight="345.0001" x="374.6183" y="-910.4763" width="365" height="405" rotation-center="-112.5,-122.5" />
+            <layout ax="374.6183" ay="-910.4763" awidth="305" aheight="402" x="374.6183" y="-910.4763" width="365" height="405" rotation-center="-112.5,-122.5" />
             <classifier />
             <class />
           </item>

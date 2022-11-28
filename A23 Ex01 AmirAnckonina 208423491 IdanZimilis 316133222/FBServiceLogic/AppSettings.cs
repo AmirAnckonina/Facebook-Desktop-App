@@ -24,6 +24,8 @@ namespace FBServiceLogic
 
         private AppSettings()
         {
+            LastAccessToken = null;
+            RememberUserActivated = false;
             SetDefaultAppSettings();
         }
 

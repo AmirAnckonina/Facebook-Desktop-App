@@ -33,7 +33,6 @@
             this.buttonLogout = new System.Windows.Forms.Button();
             this.postButton = new System.Windows.Forms.Button();
             this.profilePictureBox = new System.Windows.Forms.PictureBox();
-            this.settingsButton = new System.Windows.Forms.Button();
             this.postLabel = new System.Windows.Forms.Label();
             this.postTextBox = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -94,9 +93,9 @@
             // 
             // buttonLogout
             // 
-            this.buttonLogout.Location = new System.Drawing.Point(4, 578);
+            this.buttonLogout.Location = new System.Drawing.Point(4, 556);
             this.buttonLogout.Name = "buttonLogout";
-            this.buttonLogout.Size = new System.Drawing.Size(148, 23);
+            this.buttonLogout.Size = new System.Drawing.Size(163, 42);
             this.buttonLogout.TabIndex = 52;
             this.buttonLogout.Text = "Logout";
             this.buttonLogout.UseVisualStyleBackColor = true;
@@ -116,23 +115,13 @@
             // 
             // profilePictureBox
             // 
-            this.profilePictureBox.Location = new System.Drawing.Point(35, 170);
+            this.profilePictureBox.Location = new System.Drawing.Point(24, 179);
             this.profilePictureBox.Margin = new System.Windows.Forms.Padding(2);
             this.profilePictureBox.Name = "profilePictureBox";
-            this.profilePictureBox.Size = new System.Drawing.Size(118, 114);
+            this.profilePictureBox.Size = new System.Drawing.Size(143, 133);
             this.profilePictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.profilePictureBox.TabIndex = 54;
             this.profilePictureBox.TabStop = false;
-            // 
-            // settingsButton
-            // 
-            this.settingsButton.Location = new System.Drawing.Point(4, 551);
-            this.settingsButton.Margin = new System.Windows.Forms.Padding(2);
-            this.settingsButton.Name = "settingsButton";
-            this.settingsButton.Size = new System.Drawing.Size(149, 23);
-            this.settingsButton.TabIndex = 55;
-            this.settingsButton.Text = "Settings";
-            this.settingsButton.UseVisualStyleBackColor = true;
             // 
             // postLabel
             // 
@@ -184,7 +173,7 @@
             // 
             this.rememberMeCheckBox.AutoSize = true;
             this.rememberMeCheckBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.rememberMeCheckBox.Location = new System.Drawing.Point(9, 515);
+            this.rememberMeCheckBox.Location = new System.Drawing.Point(4, 529);
             this.rememberMeCheckBox.Margin = new System.Windows.Forms.Padding(2);
             this.rememberMeCheckBox.Name = "rememberMeCheckBox";
             this.rememberMeCheckBox.Size = new System.Drawing.Size(126, 22);
@@ -196,11 +185,13 @@
             // testBoxLoggedInUser
             // 
             this.testBoxLoggedInUser.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.testBoxLoggedInUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.testBoxLoggedInUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.testBoxLoggedInUser.Location = new System.Drawing.Point(4, 10);
             this.testBoxLoggedInUser.Name = "testBoxLoggedInUser";
-            this.testBoxLoggedInUser.Size = new System.Drawing.Size(184, 22);
+            this.testBoxLoggedInUser.Size = new System.Drawing.Size(184, 20);
             this.testBoxLoggedInUser.TabIndex = 61;
+            this.testBoxLoggedInUser.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.testBoxLoggedInUser.TextChanged += new System.EventHandler(this.testBoxLoggedInUser_TextChanged);
             // 
             // infoLabel
             // 
@@ -646,7 +637,6 @@
             this.Controls.Add(this.homeTownFreindsTab);
             this.Controls.Add(this.testBoxLoggedInUser);
             this.Controls.Add(this.rememberMeCheckBox);
-            this.Controls.Add(this.settingsButton);
             this.Controls.Add(this.profilePictureBox);
             this.Controls.Add(this.buttonLogout);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
@@ -685,7 +675,6 @@
         private System.Windows.Forms.Button buttonLogout;
         private System.Windows.Forms.Button postButton;
         private System.Windows.Forms.PictureBox profilePictureBox;
-        private System.Windows.Forms.Button settingsButton;
         private System.Windows.Forms.Label postLabel;
         private System.Windows.Forms.TextBox postTextBox;
         private System.Windows.Forms.Label label1;
