@@ -22,9 +22,9 @@ namespace FacebookWinFormsApp.Forms.Controls
             albumNameLabel.Text = i_AlbumName;
         }
 
-        public void SetGroupPictureInPictureBox(string i_albumPictureURL)
+        public void SetGroupPictureInPictureBox(string i_AlbumPictureURL)
         {
-            albumPictureBox.LoadAsync(i_albumPictureURL);
+            albumPictureBox.LoadAsync(i_AlbumPictureURL);
         }
     }
 }

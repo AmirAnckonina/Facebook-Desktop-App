@@ -17,7 +17,7 @@ namespace FBServiceLogic.DummyData
             return likes;
         }
 
-        private static eOnlineStatus GenerateRandOnlineStatus()
+        private static eOnlineStatus generateRandOnlineStatus()
         {
             eOnlineStatus status;
             Random rand = new Random(Guid.NewGuid().GetHashCode());
@@ -38,13 +38,13 @@ namespace FBServiceLogic.DummyData
             dummyCurrUser.Education = "Jaffa College";
             dummyCurrUser.PictureURL = i_ProfilePictureURL;
             dummyCurrUser.OnlineStatus = eOnlineStatus.active;
-            dummyCurrUser.Groups = CreateDummyGroups();
+            dummyCurrUser.Groups = createDummyGroups();
             dummyCurrUser.Friends = CreateDummyFriends();
 
             return dummyCurrUser;
         }
 
-        private static List<DummyGroup> CreateDummyGroups()
+        private static List<DummyGroup> createDummyGroups()
         {
             List<DummyGroup> dummyGroups = new List<DummyGroup>();
             DummyGroup group;
@@ -83,7 +83,7 @@ namespace FBServiceLogic.DummyData
             dummy.Hometown = "Givatayim";
             dummy.Education = "Jaffa College";
             dummy.PictureURL = "https://post.medicalnewstoday.com/wp-content/uploads/sites/3/2020/02/322868_1100-800x825.jpg";
-            dummy.OnlineStatus = GenerateRandOnlineStatus();
+            dummy.OnlineStatus = generateRandOnlineStatus();
             dummyFriends.Add(dummy);
 
             dummy = new DummyUser();
@@ -91,7 +91,7 @@ namespace FBServiceLogic.DummyData
             dummy.Hometown = "Jaffa";
             dummy.Education = "Jaffa College";
             dummy.PictureURL = "https://i.natgeofe.com/n/4f5aaece-3300-41a4-b2a8-ed2708a0a27c/domestic-dog_thumb_4x3.jpg";
-            dummy.OnlineStatus = GenerateRandOnlineStatus();
+            dummy.OnlineStatus = generateRandOnlineStatus();
             dummyFriends.Add(dummy);
 
             dummy = new DummyUser();
@@ -99,7 +99,7 @@ namespace FBServiceLogic.DummyData
             dummy.Hometown = "Givatayim";
             dummy.Education = "Jaffa College";
             dummy.PictureURL = "https://d17fnq9dkz9hgj.cloudfront.net/breed-uploads/2022/03/teddybear-dog-breeds.jpeg?bust=1646780646";
-            dummy.OnlineStatus = GenerateRandOnlineStatus();
+            dummy.OnlineStatus = generateRandOnlineStatus();
             dummyFriends.Add(dummy);
 
             dummy = new DummyUser();
@@ -107,7 +107,7 @@ namespace FBServiceLogic.DummyData
             dummy.Hometown = "Jaffa";
             dummy.Education = "Technion";
             dummy.PictureURL = " https://www.cdc.gov/healthypets/images/pets/angry-dog.jpg?_=03873";
-            dummy.OnlineStatus = GenerateRandOnlineStatus();
+            dummy.OnlineStatus = generateRandOnlineStatus();
             dummyFriends.Add(dummy);
 
             dummy = new DummyUser();
@@ -115,7 +115,7 @@ namespace FBServiceLogic.DummyData
             dummy.Hometown = "Givatayim";
             dummy.Education = "Tel Aviv University";
             dummy.PictureURL = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ363CgmldrjqU6bRNyGZHSljkQUSV8izOhBA&usqp=CAU";
-            dummy.OnlineStatus = GenerateRandOnlineStatus();
+            dummy.OnlineStatus = generateRandOnlineStatus();
             dummyFriends.Add(dummy);
 
             dummy = new DummyUser();
@@ -123,7 +123,7 @@ namespace FBServiceLogic.DummyData
             dummy.Hometown = "Holon";
             dummy.Education = "HIT";
             dummy.PictureURL = "https://images.newscientist.com/wp-content/uploads/2022/04/05152010/SEI_97255351.jpg";
-            dummy.OnlineStatus = GenerateRandOnlineStatus();
+            dummy.OnlineStatus = generateRandOnlineStatus();
             dummyFriends.Add(dummy);
 
             dummy = new DummyUser();
@@ -131,7 +131,7 @@ namespace FBServiceLogic.DummyData
             dummy.Hometown = "Givatayim";
             dummy.Education = "Jaffa College";
             dummy.PictureURL = "https://media.newyorker.com/photos/5d0d56a203a303d37b7e4451/1:1/w_1660,h_1660,c_limit/Hutton-DevilExpression.jpg";
-            dummy.OnlineStatus = GenerateRandOnlineStatus();
+            dummy.OnlineStatus = generateRandOnlineStatus();
             dummyFriends.Add(dummy);
 
             return dummyFriends;

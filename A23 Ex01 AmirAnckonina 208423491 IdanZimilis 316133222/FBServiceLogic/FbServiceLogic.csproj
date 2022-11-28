@@ -52,7 +52,6 @@
     <Compile Include="DummyData\DummyCurrentUser.cs" />
     <Compile Include="DummyData\DummyDataCreator.cs" />
     <Compile Include="DummyData\DummyGroup.cs" />
-    <Compile Include="DummyData\DummyFriends.cs" />
     <Compile Include="DummyData\eGroupPrivacy.cs" />
     <Compile Include="DummyData\eOnlineStatus.cs" />
     <Compile Include="FBAPIClient.cs" />

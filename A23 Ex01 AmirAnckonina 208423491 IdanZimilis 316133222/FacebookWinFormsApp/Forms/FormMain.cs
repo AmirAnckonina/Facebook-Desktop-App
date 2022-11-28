@@ -33,11 +33,11 @@ namespace FacebookWinFormsApp
                 testBoxLoggedInUser.Text = $"Logged in as {r_FBAPIClient.CurrentUser.Name}";
 
                 InitBasicUserInfo();
-                InitAlbums(r_FBAPIClient.GetAlbumsList());
-                InitGroups(r_FBAPIClient.GetGroupsNamesList());
-                InitPosts(r_FBAPIClient.GetPostsList());
+                initAlbums(r_FBAPIClient.GetAlbumsList());
+                initGroups(r_FBAPIClient.GetGroupsNamesList());
+                initPosts(r_FBAPIClient.GetPostsList());
                 InitLikedPages(r_FBAPIClient.GetLikedPages());
-                InitFriends(r_FBAPIClient.GetFriendsList());
+                initFriends(r_FBAPIClient.GetFriendsList());
             }));
         }
 
@@ -127,9 +127,9 @@ namespace FacebookWinFormsApp
             }
         }
 
-        private void InitPosts(List<PostDTO> postsDTOList)
+        private void initPosts(List<PostDTO> i_PostsDTOList)
         {
-            foreach (PostDTO post in postsDTOList)
+            foreach (PostDTO post in i_PostsDTOList)
             {
                 if (!string.IsNullOrEmpty(post.Message))
                 {
@@ -144,9 +144,9 @@ namespace FacebookWinFormsApp
             }
         }
 
-        private void InitAlbums(List<TextAndImageDTO> albumDTOs)
+        private void initAlbums(List<TextAndImageDTO> i_AlbumDTOs)
         {
-            foreach (TextAndImageDTO albumDTO in albumDTOs)
+            foreach (TextAndImageDTO albumDTO in i_AlbumDTOs)
             {
                 AlbumBox album = new AlbumBox();
                 album.SetGroupNameLabel(albumDTO.Name);
@@ -158,7 +158,7 @@ namespace FacebookWinFormsApp
             albumsLayoutPanel.AutoScroll = true;
         }
       
-        private void InitFriends(List<FriendDTO> i_FriendsDTOList)
+        private void initFriends(List<FriendDTO> i_FriendsDTOList)
         {
             foreach (FriendDTO friendDTO in i_FriendsDTOList)
             {
@@ -177,9 +177,9 @@ namespace FacebookWinFormsApp
             rememberMeCheckBox.Checked = true;
         }
 
-        private void InitGroups(List<GroupDTO> groupsListDTO)
+        private void initGroups(List<GroupDTO> i_GroupsListDTO)
         {
-            foreach (GroupDTO groupDTO in groupsListDTO)
+            foreach (GroupDTO groupDTO in i_GroupsListDTO)
             {
                 FBGroupBox groupBox = new FBGroupBox();
                 groupBox.SetGroupNameLabel(groupDTO.Name);
@@ -192,7 +192,7 @@ namespace FacebookWinFormsApp
             groupLayoutPanel.AutoScroll = true;
         }
 
-        private void FetchHometownFriends(List<HometownFriendDTO> i_HometownFriendsDTOList)
+        private void fetchHometownFriends(List<HometownFriendDTO> i_HometownFriendsDTOList)
         {
             if (i_HometownFriendsDTOList.Count > 0)
             {
@@ -218,7 +218,7 @@ namespace FacebookWinFormsApp
         private void fetchHomwtownFriendsButton_Click(object sender, EventArgs e)
         {
             hometownFriendFlowPanel.Controls.Clear();
-            FetchHometownFriends(r_FBAPIClient.GetMyHometownFriends());
+            fetchHometownFriends(r_FBAPIClient.GetMyHometownFriends());
         }
 
         private void postButton_Click(object sender, EventArgs e)

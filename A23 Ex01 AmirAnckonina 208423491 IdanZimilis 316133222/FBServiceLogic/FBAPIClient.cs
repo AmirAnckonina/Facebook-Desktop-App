@@ -33,17 +33,17 @@ namespace FBServiceLogic
         {
             m_LoginResult = FacebookService.Login(r_AppSettings.AppID, r_AppSettings.Permissions.ToArray());
 
-            CompleteLoginProcedure(m_LoginResult.AccessToken);
+            completeLoginProcedure(m_LoginResult.AccessToken);
         }
 
         public void AutomaticLogin()
         {
             m_LoginResult = FacebookService.Connect(r_AppSettings.LastAccessToken);
 
-            CompleteLoginProcedure(m_LoginResult.AccessToken);
+            completeLoginProcedure(m_LoginResult.AccessToken);
         }
 
-        private void CompleteLoginProcedure(string i_AccessToken)
+        private void completeLoginProcedure(string i_AccessToken)
         {
             if (!string.IsNullOrEmpty(i_AccessToken))
             {
@@ -204,43 +204,6 @@ namespace FBServiceLogic
             }
 
             return groupsDTOList;
-        }
-
-        public List<AlumniDTO> GetMyAlumnus()
-        {
-            List<AlumniDTO> myAlumnusList = new List<AlumniDTO>();
-            AlumniDTO newAlumni;
-
-            if (m_CurrentUser.Friends.Count <= 0)
-            {
-                foreach (DummyUser friend in m_DummyCurrUserData.Friends)
-                {
-                    if (m_DummyCurrUserData.Education == friend.Education)
-                    {
-                        newAlumni = new AlumniDTO();
-                        newAlumni.Name = friend.Name;
-                        newAlumni.PictureURL = friend.PictureURL;
-                        newAlumni.Education = friend.Education;
-                        myAlumnusList.Add(newAlumni);
-                    }
-                }
-            }
-            else
-            {
-                foreach (User friend in m_CurrentUser.Friends)
-                {
-                    if (m_CurrentUser.Educations[0].School.Name == friend.Educations[0].School.Name)
-                    {
-                        newAlumni = new AlumniDTO();
-                        newAlumni.Name = friend.Name;
-                        newAlumni.PictureURL = friend.PictureSmallURL;
-                        newAlumni.Education = friend.Educations[0].School.Name;
-                        myAlumnusList.Add(newAlumni);
-                    }
-                }
-            }
-
-            return myAlumnusList;
         }
 
         public List<HometownFriendDTO> GetMyHometownFriends()

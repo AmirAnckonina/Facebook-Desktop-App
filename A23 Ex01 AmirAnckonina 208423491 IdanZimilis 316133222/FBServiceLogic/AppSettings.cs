@@ -27,7 +27,7 @@ namespace FBServiceLogic
             SetDefaultAppSettings();
         }
 
-        private static AppSettings LoadFromFile()
+        private static AppSettings loadFromFile()
         {
             AppSettings appSettings = null;
 
@@ -51,7 +51,7 @@ namespace FBServiceLogic
         {
             AppSettings appSettings = null;
            
-            appSettings = LoadFromFile();
+            appSettings = loadFromFile();
 
             if (appSettings == null || appSettings.RememberUserActivated == false)
             {
@@ -66,10 +66,10 @@ namespace FBServiceLogic
             RememberUserActivated = false;
             LastAccessToken = null;
             AppID = "3456972604533289";
-            SetDefaultPermissions();
+            setDefaultPermissions();
         }
 
-        private void SetDefaultPermissions()
+        private void setDefaultPermissions()
         {
             /// Init App Permissions 
             Permissions = new List<string>(new string[] 
