@@ -29,7 +29,7 @@ namespace FacebookWinFormsApp.Forms.Controls
 
         public void setNumOfLikes(long? i_NumOfLikes)
         {
-            likesLabel.Text = i_NumOfLikes.ToString();//check if null or zero
+            likesLabel.Text = i_NumOfLikes.ToString(); //check if null or zero
         }
     }
 }

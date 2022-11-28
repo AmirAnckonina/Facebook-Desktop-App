@@ -26,8 +26,8 @@ namespace FacebookWinFormsApp
             foreach (TextAndImageDTO albumDTO in albumDTOs)
             {
                 AlbumBox album = new AlbumBox();
-                album.setName(albumDTO.Name);
-                album.setPictureBox(albumDTO.PictureURL);
+                album.SetGroupNameLabel(albumDTO.Name);
+                album.SetGroupPictureInPictureBox(albumDTO.PictureURL);
 
                 albumsFlowLayoutPanel.Controls.Add(album);
             }

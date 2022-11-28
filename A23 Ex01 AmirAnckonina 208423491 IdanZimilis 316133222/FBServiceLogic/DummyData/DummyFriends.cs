@@ -1,4 +1,4 @@
-﻿using System;
+﻿/*using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,28 +10,28 @@ using FBServiceLogic.DTOs;
 using System.IO;
 using System.Xml.Serialization;
 
-namespace FBServiceLogic
+namespace FBServiceLogic.DummyData
 {
-    public class DummyUsers
+    public class DummyFriends
     {
         /// <summary>
         ///  The purpose is to give this List<User> to the current user and set it as his Friends list.
         /// </summary>
         /// 
-       /* private static readonly string sr_DummyUsersFilePath = Path.Combine(
+       *//* private static readonly string sr_DummyUsersFilePath = Path.Combine(
                  Directory.GetParent(Directory.GetCurrentDirectory()).Parent.Parent.FullName,
-                 @"FBServiceLogic\Properties\FBDummyUsers.xml");*/
+                 @"FBServiceLogic\Properties\FBDummyUsers.xml");*//*
 
-        public List<SingleDummyUser> FBUsers { get; set; }
+        public List<DummyUser> Friends { get; set; }
 
-        public DummyUsers()
+        public DummyFriends()
         {
-            FBUsers = new List<SingleDummyUser>();
+            Friends = new List<DummyUser>();
             /// CreateDummyUsers();
             ///SaveXMLExample();
             ///ImportDummyUsersFromXMLFile();
         }
-/*
+*//*
         private void CreateDummyUsers()
         {
             SingleDummyUser dummy = new SingleDummyUser();
@@ -121,6 +121,7 @@ namespace FBServiceLogic
             }
 
             return dummyUsers;
-        }*/
+        }*//*
     }
 }
+*/
