@@ -62,22 +62,21 @@
             this.groupLayoutPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.label9 = new System.Windows.Forms.Label();
             this.postsTab = new System.Windows.Forms.TabPage();
+            this.clearButton = new System.Windows.Forms.Button();
+            this.statusTextBox = new System.Windows.Forms.TextBox();
             this.likedPagesTab = new System.Windows.Forms.TabPage();
             this.labelLikedPages = new System.Windows.Forms.Label();
             this.likedPagesFlowLayoutPanel = new System.Windows.Forms.FlowLayoutPanel();
-            this.myAlumnusTab = new System.Windows.Forms.TabPage();
             this.hometownFriendsTab = new System.Windows.Forms.TabPage();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.searchPostsByDateButton = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
             this.postsByDateListBox = new System.Windows.Forms.ListBox();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.labelhomeTown = new System.Windows.Forms.Label();
             this.fetchHomwtownFriendsButton = new System.Windows.Forms.Button();
             this.hometownFriendFlowPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.fbLogoPictureBox = new System.Windows.Forms.PictureBox();
-            this.labelhomeTown = new System.Windows.Forms.Label();
-            this.statusTextBox = new System.Windows.Forms.TextBox();
-            this.clearButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.profilePictureBox)).BeginInit();
             this.infoGroupBox.SuspendLayout();
             this.homeTownFreindsTab.SuspendLayout();
@@ -343,10 +342,9 @@
             this.homeTownFreindsTab.Controls.Add(this.groupsTab);
             this.homeTownFreindsTab.Controls.Add(this.postsTab);
             this.homeTownFreindsTab.Controls.Add(this.likedPagesTab);
-            this.homeTownFreindsTab.Controls.Add(this.myAlumnusTab);
             this.homeTownFreindsTab.Controls.Add(this.hometownFriendsTab);
             this.homeTownFreindsTab.Controls.Add(this.tabPage1);
-            this.homeTownFreindsTab.Location = new System.Drawing.Point(191, 11);
+            this.homeTownFreindsTab.Location = new System.Drawing.Point(193, 10);
             this.homeTownFreindsTab.Margin = new System.Windows.Forms.Padding(2);
             this.homeTownFreindsTab.Name = "homeTownFreindsTab";
             this.homeTownFreindsTab.SelectedIndex = 0;
@@ -469,6 +467,27 @@
             this.postsTab.Text = "Posts";
             this.postsTab.UseVisualStyleBackColor = true;
             // 
+            // clearButton
+            // 
+            this.clearButton.Location = new System.Drawing.Point(556, 12);
+            this.clearButton.Name = "clearButton";
+            this.clearButton.Size = new System.Drawing.Size(60, 23);
+            this.clearButton.TabIndex = 61;
+            this.clearButton.Text = "Clear";
+            this.clearButton.UseVisualStyleBackColor = true;
+            this.clearButton.Click += new System.EventHandler(this.clearButton_Click);
+            // 
+            // statusTextBox
+            // 
+            this.statusTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.statusTextBox.Location = new System.Drawing.Point(360, 41);
+            this.statusTextBox.Name = "statusTextBox";
+            this.statusTextBox.ReadOnly = true;
+            this.statusTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Both;
+            this.statusTextBox.Size = new System.Drawing.Size(256, 24);
+            this.statusTextBox.TabIndex = 60;
+            this.statusTextBox.Text = "My Status...";
+            // 
             // likedPagesTab
             // 
             this.likedPagesTab.Controls.Add(this.labelLikedPages);
@@ -501,16 +520,6 @@
             this.likedPagesFlowLayoutPanel.Name = "likedPagesFlowLayoutPanel";
             this.likedPagesFlowLayoutPanel.Size = new System.Drawing.Size(610, 504);
             this.likedPagesFlowLayoutPanel.TabIndex = 66;
-            // 
-            // myAlumnusTab
-            // 
-            this.myAlumnusTab.Location = new System.Drawing.Point(4, 22);
-            this.myAlumnusTab.Margin = new System.Windows.Forms.Padding(2);
-            this.myAlumnusTab.Name = "myAlumnusTab";
-            this.myAlumnusTab.Size = new System.Drawing.Size(632, 566);
-            this.myAlumnusTab.TabIndex = 5;
-            this.myAlumnusTab.Text = "My Alumnus";
-            this.myAlumnusTab.UseVisualStyleBackColor = true;
             // 
             // hometownFriendsTab
             // 
@@ -583,6 +592,16 @@
             this.tabPage1.Text = "HomeTown Friends";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
+            // labelhomeTown
+            // 
+            this.labelhomeTown.AutoSize = true;
+            this.labelhomeTown.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.labelhomeTown.Location = new System.Drawing.Point(278, 45);
+            this.labelhomeTown.Name = "labelhomeTown";
+            this.labelhomeTown.Size = new System.Drawing.Size(72, 16);
+            this.labelhomeTown.TabIndex = 2;
+            this.labelhomeTown.Text = "Hometown";
+            // 
             // fetchHomwtownFriendsButton
             // 
             this.fetchHomwtownFriendsButton.BackColor = System.Drawing.Color.LightSteelBlue;
@@ -613,37 +632,6 @@
             this.fbLogoPictureBox.Size = new System.Drawing.Size(143, 129);
             this.fbLogoPictureBox.TabIndex = 66;
             this.fbLogoPictureBox.TabStop = false;
-            // 
-            // labelhomeTown
-            // 
-            this.labelhomeTown.AutoSize = true;
-            this.labelhomeTown.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.labelhomeTown.Location = new System.Drawing.Point(278, 45);
-            this.labelhomeTown.Name = "labelhomeTown";
-            this.labelhomeTown.Size = new System.Drawing.Size(72, 16);
-            this.labelhomeTown.TabIndex = 2;
-            this.labelhomeTown.Text = "Hometown";
-            // 
-            // statusTextBox
-            // 
-            this.statusTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.statusTextBox.Location = new System.Drawing.Point(360, 41);
-            this.statusTextBox.Name = "statusTextBox";
-            this.statusTextBox.ReadOnly = true;
-            this.statusTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.statusTextBox.Size = new System.Drawing.Size(256, 24);
-            this.statusTextBox.TabIndex = 60;
-            this.statusTextBox.Text = "My Status...";
-            // 
-            // clearButton
-            // 
-            this.clearButton.Location = new System.Drawing.Point(556, 12);
-            this.clearButton.Name = "clearButton";
-            this.clearButton.Size = new System.Drawing.Size(60, 23);
-            this.clearButton.TabIndex = 61;
-            this.clearButton.Text = "Clear";
-            this.clearButton.UseVisualStyleBackColor = true;
-            this.clearButton.Click += new System.EventHandler(this.clearButton_Click);
             // 
             // FormMain
             // 
@@ -722,7 +710,6 @@
         private System.Windows.Forms.TabPage postsTab;
         private System.Windows.Forms.TabPage likedPagesTab;
         private System.Windows.Forms.TabPage homeTab;
-        private System.Windows.Forms.TabPage myAlumnusTab;
         private System.Windows.Forms.TabPage hometownFriendsTab;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.Button searchPostsByDateButton;

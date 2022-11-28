@@ -32,7 +32,6 @@ namespace FacebookWinFormsApp
             Invoke(new Action(() =>
             {
                 testBoxLoggedInUser.Text = $"Logged in as {r_FBAPIClient.CurrentUser.Name}";
-                r_FBAPIClient.ImportAlternativeData();
                 FetchBasicUserInfo();
                 FetchAlbums(r_FBAPIClient.GetAlbumsList());
                 FetchGroups(r_FBAPIClient.GetGroupsNamesList());
@@ -229,6 +228,7 @@ namespace FacebookWinFormsApp
 
         private void fetchHomwtownFriendsButton_Click(object sender, EventArgs e)
         {
+            hometownFriendFlowPanel.Controls.Clear();
             FetchHometownFriends(r_FBAPIClient.GetMyHometownFriends());
         }
 
