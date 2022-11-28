@@ -11,17 +11,6 @@ namespace FBServiceLogic
 {
     public class FBAPIClient
     {
-        public enum UserData
-        {
-            Friends,
-            Albums,
-            Alumnus,
-            HometowmFriends,
-            Posts,
-            LikedPages,
-            Groups
-        }
-
         private User m_CurrentUser;
         private DummyCurrentUser m_DummyCurrUserData;
         private LoginResult m_LoginResult;
@@ -51,12 +40,6 @@ namespace FBServiceLogic
             m_LoginResult = FacebookService.Connect(r_AppSettings.LastAccessToken);
 
             CompleteLoginProcedure(m_LoginResult.AccessToken);
-        }
-
-        public void ImportAlternativeData()
-        {
-            ///r_DummyUsers.CreateDummyUsers();
-            ///r_DummyUsers.SaveXMLExample();
         }
 
         private void CompleteLoginProcedure(string i_AccessToken)
