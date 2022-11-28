@@ -1,0 +1,1708 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<sim-project version="13.85" multi-file="no" uid="simp950a35651ba7447f9fc62b6ffd09f71c">
+  <meta>
+    <name>(Project)</name>
+    <authors>Amir Anckonina</authors>
+    <description />
+  </meta>
+  <counters models="4">
+    <entity-names />
+    <entity-ids>
+      <counter>
+        <item-type type-id="package" type="Package" />
+        <value>17</value>
+      </counter>
+      <counter>
+        <item-type type-id="class" type="Class" />
+        <value>38</value>
+      </counter>
+      <counter>
+        <item-type type-id="property" type="Property" />
+        <value>208</value>
+      </counter>
+      <counter>
+        <item-type type-id="enumeration" type="Enumeration" />
+        <value>5</value>
+      </counter>
+      <counter>
+        <item-type type-id="generalization" type="Generalization" />
+        <value>15</value>
+      </counter>
+    </entity-ids>
+    <diagrams>
+      <counter>
+        <type>SoftwareIdeasModeler.Core.Diagrams.UmlDiagrams.UmlClassDiagram</type>
+        <value>7</value>
+      </counter>
+      <counter>
+        <type>SoftwareIdeasModeler.Core.Diagrams.UmlDiagrams.UmlPackageDiagram</type>
+        <value>5</value>
+      </counter>
+    </diagrams>
+    <fields>
+      <counter>
+        <type>SoftwareIdeasModeler.Core.DiagramItems.Fields.OperationField</type>
+        <value>102</value>
+      </counter>
+      <counter>
+        <type>SoftwareIdeasModeler.Core.DiagramItems.Fields.EnumerationItemField</type>
+        <value>8</value>
+      </counter>
+    </fields>
+  </counters>
+  <alias-groups />
+  <management uid="md-d1f248245ec3427cbd6c99433fd1f125" name="" task-id-sequence="0">
+    <persons>
+      <person id="">
+        <first-name>Amir</first-name>
+        <last-name>Anckonina</last-name>
+        <role />
+        <e-mail />
+        <phone-number />
+        <description />
+        <color>#00000000</color>
+      </person>
+    </persons>
+    <teams />
+    <sprints />
+    <projects />
+    <modules />
+    <tasks />
+    <to-dos />
+  </management>
+  <glossary id="glsr-b83ebdd688434e438dc26eab17d744c3" />
+  <types default="UML">
+    <type-sets>
+      <type-set file="UmlTypes.xml" />
+    </type-sets>
+    <custom-types>
+      <parameters />
+      <types>
+        <type id="Int" name="Int" />
+        <type id="long?" name="long?" />
+        <type id="ListBox" name="ListBox" />
+        <type id="Class:655fc04a75b64b13b6f1c1373dfebf9b" name="UserBasicInfoDTO" class-ref="655fc04a75b64b13b6f1c1373dfebf9b" />
+        <type id="List`1" name="List`1" />
+        <type id="DateTime?" name="DateTime?" />
+        <type id="ResourceManager" name="ResourceManager" />
+        <type id="GroupBox" name="GroupBox" />
+        <type id="User" name="User" />
+        <type id="FormClosedEventArgs" name="FormClosedEventArgs" />
+        <type id="ComboBox" name="ComboBox" />
+        <type id="Class:2abfefc5368c499dabec0969b4792b86" name="FBAPIClient" class-ref="2abfefc5368c499dabec0969b4792b86" />
+        <type id="Label" name="Label" />
+        <type id="eGroupPrivacy" name="eGroupPrivacy" />
+        <type id="CultureInfo" name="CultureInfo" />
+        <type id="CheckBox" name="CheckBox" />
+        <type id="TabPage" name="TabPage" />
+        <type id="Button" name="Button" />
+        <type id="IContainer" name="IContainer" />
+        <type id="TabControl" name="TabControl" />
+        <type id="AppSettings" name="AppSettings" />
+        <type id="PictureBox" name="PictureBox" />
+        <type id="Class:98d409381e9f480d8e89b27daaf1d694" name="DummyCurrentUser" class-ref="98d409381e9f480d8e89b27daaf1d694" />
+        <type id="CheckedListBox" name="CheckedListBox" />
+        <type id="TextBox" name="TextBox" />
+        <type id="FormLogin" name="FormLogin" />
+        <type id="DateTimePicker" name="DateTimePicker" />
+        <type id="EventArgs" name="EventArgs" />
+        <type id="StringBuilder" name="StringBuilder" />
+        <type id="TabControlCancelEventArgs" name="TabControlCancelEventArgs" />
+        <type id="List" name="List" />
+        <type id="Nullable`1" name="Nullable`1" />
+        <type id="FormMain" name="FormMain" />
+        <type id="FlowLayoutPanel" name="FlowLayoutPanel" />
+        <type id="eOnlineStatus" name="eOnlineStatus" />
+        <type id="FormAppSettings" name="FormAppSettings" />
+        <type id="Int32" name="Int32" />
+        <type id="Void" name="Void" />
+        <type id="LoginResult" name="LoginResult" />
+      </types>
+    </custom-types>
+  </types>
+  <items>
+    <item id="9c1e16fa9e2a4a0fb71b652caf61365a" cid="PROP047" type="property" name="LikesCount" owner="6e6ecde34bf44b818f0def7515964f73" creator="" creation-date="11/28/2022 16:01:59" visibility="public">
+      <stereotypes>
+        <stereotype name="property" />
+      </stereotypes>
+      <stereotype-instances>
+        <stereotype id="9c1e16fa9e2a4a0fb71b652caf61365a_property_c" type="property" ref="" />
+      </stereotype-instances>
+      <structural-feature type="long?" type-id="long?" />
+    </item>
+    <item id="57334efea60e47a69bc9956ba352301e" cid="PROP039" type="property" name="OnlineStatus" owner="1ece5bed36214668adc1603bd8e0a805" creator="" creation-date="11/28/2022 16:01:59" visibility="public">
+      <stereotypes>
+        <stereotype name="property" />
+      </stereotypes>
+      <stereotype-instances>
+        <stereotype id="57334efea60e47a69bc9956ba352301e_property_c" type="property" ref="" />
+      </stereotype-instances>
+      <structural-feature type="String" type-id="Uml.String" />
+    </item>
+    <item id="655fc04a75b64b13b6f1c1373dfebf9b" cid="C013" type="class" name="UserBasicInfoDTO" owner="di106ea5a88c9f4f9d959b3f6bab5129093437" creator="" creation-date="11/28/2022 16:01:59">
+      <owned-items />
+      <attributes>
+        <attribute id="a3fdcb78ade764aae909fbcc4ca0d1511376" cid="PROP063" name="Birthday" creation-date="11/28/2022 16:01:59" property-ref="25db197b5c8c4a3f93eaa2f3d99fb5c5" />
+        <attribute id="a3e58d49d28e1426697d6c00e0f320aff376" cid="PROP064" name="Gender" creation-date="11/28/2022 16:01:59" property-ref="f2bb242dc2be4c4db79e10ec5c3c1be0" />
+        <attribute id="a1df4e88666ab4e2987e4563ddb0bc493376" cid="PROP065" name="Hometown" creation-date="11/28/2022 16:01:59" property-ref="b6ca289f4c904392b99766050b788a27" />
+        <attribute id="a9e1f3732775741b4953776ec28d18a93376" cid="PROP066" name="Education" creation-date="11/28/2022 16:01:59" property-ref="600466eb820744059d2eb5bc2e64f0a2" />
+        <attribute id="a6f861c699a4043b3979a7056e6a1b846376" cid="PROP067" name="OnlineStatus" creation-date="11/28/2022 16:01:59" property-ref="4921ca44bf524304b2c6547f72f7551d" />
+      </attributes>
+    </item>
+    <item id="86005f6db7ac4546aa97f9d50ee542ba" cid="PKG006" type="package" name="Forms" creator="" creation-date="11/28/2022 16:01:59" />
+    <item id="5235264592a6445987410ae520a454a0" cid="PROP054" type="property" name="&lt;Name&gt;k__BackingField" owner="d9582a0558634963a77f3ef0b35d2b14" creator="" creation-date="11/28/2022 16:01:59" visibility="private">
+      <structural-feature type="String" type-id="Uml.String" />
+    </item>
+    <item id="abf282929a6a472f9fc00632bf33fd02" cid="PROP052" type="property" name="Caption" owner="959544da94454a97a580daa74d618842" creator="" creation-date="11/28/2022 16:01:59" visibility="public">
+      <stereotypes>
+        <stereotype name="property" />
+      </stereotypes>
+      <stereotype-instances>
+        <stereotype id="abf282929a6a472f9fc00632bf33fd02_property_c" type="property" ref="" />
+      </stereotype-instances>
+      <structural-feature type="String" type-id="Uml.String" />
+    </item>
+    <item id="d9582a0558634963a77f3ef0b35d2b14" cid="C012" type="class" name="TextAndImageDTO" owner="di106ea5a88c9f4f9d959b3f6bab5129093437" creator="" creation-date="11/28/2022 16:01:59">
+      <owned-items />
+      <attributes>
+        <attribute id="a1dd55061c7cb45d0a529815909d422fa376" cid="PROP054" name="&lt;Name&gt;k__BackingField" creation-date="11/28/2022 16:01:59" property-ref="5235264592a6445987410ae520a454a0" />
+        <attribute id="aab067a4ef5394f96bd36bc7e60c13a35376" cid="PROP055" name="&lt;PictureURL&gt;k__BackingField" creation-date="11/28/2022 16:01:59" property-ref="23ee3d66016a49deb821e12cbc0224a5" />
+        <attribute id="a3e7485226f7947cd94c3bbdafe170dd0376" cid="PROP056" name="Name" creation-date="11/28/2022 16:01:59" property-ref="f3b4994295474e1da2c95db5863a146b" />
+        <attribute id="a9e7bed90fff34c5b8f1f864beb563125376" cid="PROP057" name="PictureURL" creation-date="11/28/2022 16:01:59" property-ref="fe48d64e06aa49b296f8ac213cb55c3a" />
+      </attributes>
+    </item>
+    <item id="4fbd1ef44c6e445b97819046d2c59fc5" cid="PROP074" type="property" name="LastAccessToken" owner="9b12a1dab9cc497eb781662552307544" creator="" creation-date="11/28/2022 16:01:59" visibility="public">
+      <stereotypes>
+        <stereotype name="property" />
+      </stereotypes>
+      <stereotype-instances>
+        <stereotype id="4fbd1ef44c6e445b97819046d2c59fc5_property_c" type="property" ref="" />
+      </stereotype-instances>
+      <structural-feature type="String" type-id="Uml.String" />
+    </item>
+    <item id="f2bb242dc2be4c4db79e10ec5c3c1be0" cid="PROP064" type="property" name="Gender" owner="655fc04a75b64b13b6f1c1373dfebf9b" creator="" creation-date="11/28/2022 16:01:59" visibility="public">
+      <stereotypes>
+        <stereotype name="property" />
+      </stereotypes>
+      <stereotype-instances>
+        <stereotype id="f2bb242dc2be4c4db79e10ec5c3c1be0_property_c" type="property" ref="" />
+      </stereotype-instances>
+      <structural-feature type="String" type-id="Uml.String" />
+    </item>
+    <item id="37fc0198bfc24f4481b167bd277a91cd" cid="GNR006" type="generalization" owner="di106ea5a88c9f4f9d959b3f6bab5129093437" creator="" creation-date="11/28/2022 16:01:59" from="6e6ecde34bf44b818f0def7515964f73" to="d9582a0558634963a77f3ef0b35d2b14" visibility="package" />
+    <item id="25db197b5c8c4a3f93eaa2f3d99fb5c5" cid="PROP063" type="property" name="Birthday" owner="655fc04a75b64b13b6f1c1373dfebf9b" creator="" creation-date="11/28/2022 16:01:59" visibility="public">
+      <stereotypes>
+        <stereotype name="property" />
+      </stereotypes>
+      <stereotype-instances>
+        <stereotype id="25db197b5c8c4a3f93eaa2f3d99fb5c5_property_c" type="property" ref="" />
+      </stereotype-instances>
+      <structural-feature type="String" type-id="Uml.String" />
+    </item>
+    <item id="318012bcf0c342e39c9f35ec193ff42e" cid="C017" type="class" name="FriendBox" creator="" creation-date="11/28/2022 16:01:59">
+      <owned-items />
+      <attributes>
+        <attribute id="af4dcaf9dfccf45519fb99be40d7fe5dd385" cid="PROP087" name="components" creation-date="11/28/2022 16:01:59" property-ref="1fa841a337c4431cbc72c9da1fbba432" />
+      </attributes>
+      <operations>
+        <operation id="o5306ae79e8844cdb8042138ecd4acd63385" cid="OP049" name="FriendBox" creation-date="11/28/2022 16:01:59" type="" type-id="" visibility="public">
+          <stereotypes>
+            <stereotype>create</stereotype>
+          </stereotypes>
+        </operation>
+        <operation id="o95edf2f734724258b4d9278af4874e6c385" cid="OP050" name="SetFriendNameLabel" creation-date="11/28/2022 16:01:59" type="Void" type-id="Void" visibility="public" />
+        <operation id="o265a812961874acda69ff8e7e073d386385" cid="OP051" name="SetFriendProfilePicture" creation-date="11/28/2022 16:01:59" type="Void" type-id="Void" visibility="public" />
+        <operation id="o627a1ad6af774bddb6dec27652249860385" cid="OP052" name="Dispose" creation-date="11/28/2022 16:01:59" type="Void" type-id="Void" visibility="protected" virtual="true">
+          <parameters>
+            <parameter id="p6ec98bcdc98140169224d28f696dcd56" name="disposing" type="Boolean" type-id="Uml.Boolean" />
+          </parameters>
+        </operation>
+        <operation id="o129c684047da42d4a1b29256ca29f2b2385" cid="OP053" name="InitializeComponent" creation-date="11/28/2022 16:01:59" type="Void" type-id="Void" visibility="private" />
+      </operations>
+    </item>
+    <item id="426ce4786d0f47d4a83502b50a0686d7" cid="PROP090" type="property" name="label2" owner="854d52a77855413d81a1d05e236f7fcb" creator="" creation-date="11/28/2022 16:01:59" visibility="private">
+      <structural-feature type="Label" type-id="Label" />
+    </item>
+    <item id="fe48d64e06aa49b296f8ac213cb55c3a" cid="PROP057" type="property" name="PictureURL" owner="d9582a0558634963a77f3ef0b35d2b14" creator="" creation-date="11/28/2022 16:01:59" visibility="public">
+      <stereotypes>
+        <stereotype name="property" />
+      </stereotypes>
+      <stereotype-instances>
+        <stereotype id="fe48d64e06aa49b296f8ac213cb55c3a_property_c" type="property" ref="" />
+      </stereotype-instances>
+      <structural-feature type="String" type-id="Uml.String" />
+    </item>
+    <item id="2a61b774f0504e4f87d6028f9733e81d" cid="PROP053" type="property" name="CreatedTime" owner="959544da94454a97a580daa74d618842" creator="" creation-date="11/28/2022 16:01:59" visibility="public">
+      <stereotypes>
+        <stereotype name="property" />
+      </stereotypes>
+      <stereotype-instances>
+        <stereotype id="2a61b774f0504e4f87d6028f9733e81d_property_c" type="property" ref="" />
+      </stereotype-instances>
+      <structural-feature type="DateTime?" type-id="DateTime?" />
+    </item>
+    <item id="896eaee6c6434ed4920d12a069fc833a" cid="PROP037" type="property" name="Education" owner="837bcefcb225451aaa89885d559f460c" creator="" creation-date="11/28/2022 16:01:59" visibility="public">
+      <stereotypes>
+        <stereotype name="property" />
+      </stereotypes>
+      <stereotype-instances>
+        <stereotype id="896eaee6c6434ed4920d12a069fc833a_property_c" type="property" ref="" />
+      </stereotype-instances>
+      <structural-feature type="String" type-id="Uml.String" />
+    </item>
+    <item id="1fa841a337c4431cbc72c9da1fbba432" cid="PROP087" type="property" name="components" owner="318012bcf0c342e39c9f35ec193ff42e" creator="" creation-date="11/28/2022 16:01:59" visibility="private">
+      <structural-feature type="IContainer" type-id="IContainer" />
+    </item>
+    <item id="7636d569e2d34b5f955eb455b522068d" cid="PROP080" type="property" name="r_AppSettings" owner="2abfefc5368c499dabec0969b4792b86" creator="" creation-date="11/28/2022 16:01:59" visibility="private">
+      <structural-feature type="AppSettings" type-id="AppSettings" />
+    </item>
+    <item id="fe01f912885b4cfd941f280a97bf0cb1" cid="PROP092" type="property" name="likesLabel" owner="854d52a77855413d81a1d05e236f7fcb" creator="" creation-date="11/28/2022 16:01:59" visibility="private">
+      <structural-feature type="Label" type-id="Label" />
+    </item>
+    <item id="ab6e2463ed9f42dc8ec582fb8d503214" cid="PROP014" type="property" name="PictureURL" owner="e3eb599042534ff39445f562ad5e81f5" creator="" creation-date="11/28/2022 16:01:59" visibility="public">
+      <stereotypes>
+        <stereotype name="property" />
+      </stereotypes>
+      <stereotype-instances>
+        <stereotype id="ab6e2463ed9f42dc8ec582fb8d503214_property_c" type="property" ref="" />
+      </stereotype-instances>
+      <structural-feature type="String" type-id="Uml.String" />
+    </item>
+    <item id="2d12970837104054a8d0c0a5f9da6a9c" cid="PROP077" type="property" name="m_CurrentUser" owner="2abfefc5368c499dabec0969b4792b86" creator="" creation-date="11/28/2022 16:01:59" visibility="private">
+      <structural-feature type="User" type-id="User" />
+    </item>
+    <item id="4863ef611bb04f018ee03b1145915fe7" cid="PROP034" type="property" name="PictureURL" owner="b914432733af4d30ba0509ab071b85ac" creator="" creation-date="11/28/2022 16:01:59" visibility="public">
+      <stereotypes>
+        <stereotype name="property" />
+      </stereotypes>
+      <stereotype-instances>
+        <stereotype id="4863ef611bb04f018ee03b1145915fe7_property_c" type="property" ref="" />
+      </stereotype-instances>
+      <structural-feature type="String" type-id="Uml.String" />
+    </item>
+    <item id="b7a02bb16db04ffc80278d49360d5e8a" cid="PROP042" type="property" name="Privacy" owner="68be714afc7b44cda3ea01eead3d4df9" creator="" creation-date="11/28/2022 16:01:59" visibility="public">
+      <stereotypes>
+        <stereotype name="property" />
+      </stereotypes>
+      <stereotype-instances>
+        <stereotype id="b7a02bb16db04ffc80278d49360d5e8a_property_c" type="property" ref="" />
+      </stereotype-instances>
+      <structural-feature type="String" type-id="Uml.String" />
+    </item>
+    <item id="1ece5bed36214668adc1603bd8e0a805" cid="C007" type="class" name="FriendDTO" owner="di106ea5a88c9f4f9d959b3f6bab5129093437" creator="" creation-date="11/28/2022 16:01:59">
+      <owned-items />
+      <attributes>
+        <attribute id="ade2c6b421f0e43e3b0588e3f1ea67437376" cid="PROP039" name="OnlineStatus" creation-date="11/28/2022 16:01:59" property-ref="57334efea60e47a69bc9956ba352301e" />
+      </attributes>
+    </item>
+    <item id="600466eb820744059d2eb5bc2e64f0a2" cid="PROP066" type="property" name="Education" owner="655fc04a75b64b13b6f1c1373dfebf9b" creator="" creation-date="11/28/2022 16:01:59" visibility="public">
+      <stereotypes>
+        <stereotype name="property" />
+      </stereotypes>
+      <stereotype-instances>
+        <stereotype id="600466eb820744059d2eb5bc2e64f0a2_property_c" type="property" ref="" />
+      </stereotype-instances>
+      <structural-feature type="String" type-id="Uml.String" />
+    </item>
+    <item id="d939ac9a43f04fb99f69820a5a7d07aa" cid="PROP007" type="property" name="Friends" owner="98d409381e9f480d8e89b27daaf1d694" creator="" creation-date="11/28/2022 16:01:59" visibility="public">
+      <stereotypes>
+        <stereotype name="property" />
+      </stereotypes>
+      <stereotype-instances>
+        <stereotype id="d939ac9a43f04fb99f69820a5a7d07aa_property_c" type="property" ref="" />
+      </stereotype-instances>
+      <structural-feature type="List" type-id="List" />
+    </item>
+    <item id="eb5250d4ed04459d921485773b20eabf" cid="GNR007" type="generalization" owner="di106ea5a88c9f4f9d959b3f6bab5129093437" creator="" creation-date="11/28/2022 16:01:59" from="655fc04a75b64b13b6f1c1373dfebf9b" to="d9582a0558634963a77f3ef0b35d2b14" visibility="package" />
+    <item id="959544da94454a97a580daa74d618842" cid="C011" type="class" name="PostDTO" owner="di106ea5a88c9f4f9d959b3f6bab5129093437" creator="" creation-date="11/28/2022 16:01:59">
+      <owned-items />
+      <attributes>
+        <attribute id="a9a5a2707dca54e85be2e488f0104ff66376" cid="PROP051" name="Message" creation-date="11/28/2022 16:01:59" property-ref="2293a40b11cf495dadbec6527e6281ba" />
+        <attribute id="ad46508426454415d9a0ae3ebeee7b203376" cid="PROP052" name="Caption" creation-date="11/28/2022 16:01:59" property-ref="abf282929a6a472f9fc00632bf33fd02" />
+        <attribute id="aa037b4027e2445c5a1a70472af2f769a376" cid="PROP053" name="CreatedTime" creation-date="11/28/2022 16:01:59" property-ref="2a61b774f0504e4f87d6028f9733e81d" />
+      </attributes>
+    </item>
+    <item id="017a3e19d3cb4ed8913eb50f96e29962" cid="PROP088" type="property" name="components" owner="854d52a77855413d81a1d05e236f7fcb" creator="" creation-date="11/28/2022 16:01:59" visibility="private">
+      <structural-feature type="IContainer" type-id="IContainer" />
+    </item>
+    <item id="2293a40b11cf495dadbec6527e6281ba" cid="PROP051" type="property" name="Message" owner="959544da94454a97a580daa74d618842" creator="" creation-date="11/28/2022 16:01:59" visibility="public">
+      <stereotypes>
+        <stereotype name="property" />
+      </stereotypes>
+      <stereotype-instances>
+        <stereotype id="2293a40b11cf495dadbec6527e6281ba_property_c" type="property" ref="" />
+      </stereotype-instances>
+      <structural-feature type="String" type-id="Uml.String" />
+    </item>
+    <item id="7a09c191898e414a83ecaaedbbd58711" cid="PROP084" type="property" name="components" owner="5c6ba9fb01404f78b1f01311a4fb0f2c" creator="" creation-date="11/28/2022 16:01:59" visibility="private">
+      <structural-feature type="IContainer" type-id="IContainer" />
+    </item>
+    <item id="98d409381e9f480d8e89b27daaf1d694" cid="C002" type="class" name="DummyCurrentUser" owner="dia7e9268e071b41dbb786515b34a805911655" creator="" creation-date="11/28/2022 16:01:59">
+      <owned-items />
+      <attributes>
+        <attribute id="acb130ca2d9ca42c7a865b3ca59c19d2e364" cid="PROP007" name="Friends" creation-date="11/28/2022 16:01:59" property-ref="d939ac9a43f04fb99f69820a5a7d07aa" />
+        <attribute id="a539cb71ab0aa45189a95b68e2cc37e31364" cid="PROP008" name="Groups" creation-date="11/28/2022 16:01:59" property-ref="4ff442bc44b04504b53b4f3ae7f689c4" />
+      </attributes>
+    </item>
+    <item id="3c8029e9a56e445993bfbde942f2ed69" cid="C019" type="class" name="AppManager" owner="di852dc3a5785649c7946b058058ffe5e54014" creator="" creation-date="11/28/2022 16:01:59" visibility="undefined">
+      <owned-items />
+      <attributes>
+        <attribute id="aa405aac0695746cdad2e21a0c056b32e386" cid="PROP094" name="r_FormMain" creation-date="11/28/2022 16:01:59" property-ref="96944bb649704f5898018a0e8e339708" />
+        <attribute id="aa20d48c4e57744e98de077c67590888e386" cid="PROP095" name="r_FormLogin" creation-date="11/28/2022 16:01:59" property-ref="f4258774859741898fe50c149f744314" />
+        <attribute id="a403bb2d2a5ac45dc9b4516f9d340bef0386" cid="PROP096" name="r_FormAppSettings" creation-date="11/28/2022 16:01:59" property-ref="ff98e796d55b4652a9674bcfb173c9d2" />
+        <attribute id="a8b249bc67cab495e8c2de78fb7f5bc35386" cid="PROP097" name="r_FBAPIClient" creation-date="11/28/2022 16:01:59" property-ref="25ec3cc1f2f94ef085737b74a8a72131" />
+      </attributes>
+      <operations>
+        <operation id="o92056d804b1d43ad9a7c3c7fa8be0aea386" cid="OP061" name="Run" creation-date="11/28/2022 16:01:59" type="Void" type-id="Void" visibility="public" />
+        <operation id="of66937bcebe043d8b7a5b375a7be46d1386" cid="OP062" name="RunFormAppSettings" creation-date="11/28/2022 16:01:59" type="Void" type-id="Void" visibility="public" />
+        <operation id="o46c526d65a1e4ef69ee1bf77f22adc81386" cid="OP063" name="RunLogin" creation-date="11/28/2022 16:01:59" type="Void" type-id="Void" visibility="public" />
+        <operation id="o468e9de6d1764bd88e960ead0150e178386" cid="OP064" name="RunApp" creation-date="11/28/2022 16:01:59" type="Void" type-id="Void" visibility="public" />
+      </operations>
+    </item>
+    <item id="124170f7fad048cc84c4f2551f735e2a" cid="PROP031" type="property" name="Name" owner="b914432733af4d30ba0509ab071b85ac" creator="" creation-date="11/28/2022 16:01:59" visibility="public">
+      <stereotypes>
+        <stereotype name="property" />
+      </stereotypes>
+      <stereotype-instances>
+        <stereotype id="124170f7fad048cc84c4f2551f735e2a_property_c" type="property" ref="" />
+      </stereotype-instances>
+      <structural-feature type="String" type-id="Uml.String" />
+    </item>
+    <item id="57e422e6d8ac4eb4823af6fabf9c7f1c" cid="PROP016" type="property" name="Privacy" owner="e3eb599042534ff39445f562ad5e81f5" creator="" creation-date="11/28/2022 16:01:59" visibility="public">
+      <stereotypes>
+        <stereotype name="property" />
+      </stereotypes>
+      <stereotype-instances>
+        <stereotype id="57e422e6d8ac4eb4823af6fabf9c7f1c_property_c" type="property" ref="" />
+      </stereotype-instances>
+      <structural-feature type="eGroupPrivacy" type-id="eGroupPrivacy" />
+    </item>
+    <item id="280812605e964ba9ab9c5b20879e331b" cid="GNR005" type="generalization" owner="di106ea5a88c9f4f9d959b3f6bab5129093437" creator="" creation-date="11/28/2022 16:01:59" from="8232a439eaa144e88489ef6a86d3b17c" to="d9582a0558634963a77f3ef0b35d2b14" visibility="package" />
+    <item id="1a665b574ca64c428fa969e01336cc2a" cid="GNR002" type="generalization" owner="di106ea5a88c9f4f9d959b3f6bab5129093437" creator="" creation-date="11/28/2022 16:01:59" from="837bcefcb225451aaa89885d559f460c" to="d9582a0558634963a77f3ef0b35d2b14" visibility="package" />
+    <item id="8469d6d7d38943c0b706c731f603bacc" cid="PROP045" type="property" name="Hometown" owner="8232a439eaa144e88489ef6a86d3b17c" creator="" creation-date="11/28/2022 16:01:59" visibility="public">
+      <stereotypes>
+        <stereotype name="property" />
+      </stereotypes>
+      <stereotype-instances>
+        <stereotype id="8469d6d7d38943c0b706c731f603bacc_property_c" type="property" ref="" />
+      </stereotype-instances>
+      <structural-feature type="String" type-id="Uml.String" />
+    </item>
+    <item id="e832fe1b559d4846922e9c79108d995b" cid="PROP033" type="property" name="Education" owner="b914432733af4d30ba0509ab071b85ac" creator="" creation-date="11/28/2022 16:01:59" visibility="public">
+      <stereotypes>
+        <stereotype name="property" />
+      </stereotypes>
+      <stereotype-instances>
+        <stereotype id="e832fe1b559d4846922e9c79108d995b_property_c" type="property" ref="" />
+      </stereotype-instances>
+      <structural-feature type="String" type-id="Uml.String" />
+    </item>
+    <item id="8232a439eaa144e88489ef6a86d3b17c" cid="C009" type="class" name="HometownFriendDTO" owner="di106ea5a88c9f4f9d959b3f6bab5129093437" creator="" creation-date="11/28/2022 16:01:59">
+      <owned-items />
+      <attributes>
+        <attribute id="a37d5a840d8164d57bd8fa831d8d2a93e376" cid="PROP045" name="Hometown" creation-date="11/28/2022 16:01:59" property-ref="8469d6d7d38943c0b706c731f603bacc" />
+      </attributes>
+    </item>
+    <item id="2abfefc5368c499dabec0969b4792b86" cid="C015" type="class" name="FBAPIClient" creator="" creation-date="11/28/2022 16:01:59">
+      <owned-items />
+      <attributes>
+        <attribute id="aabd2d7a4675a4bc7beeea33affb92e95383" cid="PROP077" name="m_CurrentUser" creation-date="11/28/2022 16:01:59" property-ref="2d12970837104054a8d0c0a5f9da6a9c" />
+        <attribute id="a5d6ab806fcc743ad85aaa34881754eca383" cid="PROP078" name="m_DummyCurrUserData" creation-date="11/28/2022 16:01:59" property-ref="eca2bc39213941ab9d684bae65d6a3fc" />
+        <attribute id="a53bd130176284538aaba67d64aa3beab383" cid="PROP079" name="m_LoginResult" creation-date="11/28/2022 16:01:59" property-ref="89579fb6cada4d7d995967ec77a86d0c" />
+        <attribute id="ab66cc43d28224745aa684fcb0180b493383" cid="PROP080" name="r_AppSettings" creation-date="11/28/2022 16:01:59" property-ref="7636d569e2d34b5f955eb455b522068d" />
+        <attribute id="a45699958cdc54a00bfa1d97a0b98550c383" cid="PROP081" name="CurrentUser" creation-date="11/28/2022 16:01:59" property-ref="b52a8f2dde334473ad6792b1ea3a6eea" />
+        <attribute id="ae69ccecdc8084c01934bbb35d6126102383" cid="PROP082" name="LoginResult" creation-date="11/28/2022 16:01:59" property-ref="289baf2853154d04881ebc1db6af4b42" />
+        <attribute id="ac2ca41cd99bb438eb33df2248ee36507383" cid="PROP083" name="AppSettings" creation-date="11/28/2022 16:01:59" property-ref="67ec82b5253443e7ac1db969f8db946c" />
+      </attributes>
+      <operations>
+        <operation id="o82409e626c764b668113bd70b18ee331383" cid="OP030" name="Login" creation-date="11/28/2022 16:01:59" type="Void" type-id="Void" visibility="public" />
+        <operation id="oc9b1c2b1e1f74de2ac62b339f9c864de383" cid="OP031" name="AutomaticLogin" creation-date="11/28/2022 16:01:59" type="Void" type-id="Void" visibility="public" />
+        <operation id="of9693a3282c6468e94bc683e0d1fe930383" cid="OP032" name="CompleteLoginProcedure" creation-date="11/28/2022 16:01:59" type="Void" type-id="Void" visibility="private">
+          <parameters>
+            <parameter id="p3109d6918ceb4532ae961b0531f75568" name="i_AccessToken" type="String" type-id="Uml.String" />
+          </parameters>
+        </operation>
+        <operation id="of71d3624e6364034a35aa81b268e1c94383" cid="OP033" name="Logout" creation-date="11/28/2022 16:01:59" type="Void" type-id="Void" visibility="public" />
+        <operation id="o7d5affd4c03942e0b1fd43308190a356383" cid="OP034" name="ResetCurrentFBState" creation-date="11/28/2022 16:01:59" type="Void" type-id="Void" visibility="public" />
+        <operation id="o3493d734aec34d3cb5b86cf28e8fc4f5383" cid="OP035" name="GetUserBasicInfoDTO" creation-date="11/28/2022 16:01:59" type="UserBasicInfoDTO" type-id="Class:655fc04a75b64b13b6f1c1373dfebf9b" visibility="public" />
+        <operation id="oee2e561995a84aeba96a97ceea5ff39d383" cid="OP036" name="GetFriendsList" creation-date="11/28/2022 16:01:59" type="List" type-id="List" visibility="public" />
+        <operation id="ob1eb128266974a49ad190d8da2068655383" cid="OP037" name="GetAlbumsList" creation-date="11/28/2022 16:01:59" type="List" type-id="List" visibility="public" />
+        <operation id="o47c5596a50a24ceab8b332452ae2ef64383" cid="OP038" name="GetPostsList" creation-date="11/28/2022 16:01:59" type="List" type-id="List" visibility="public" />
+        <operation id="o41f2124a36854f0b8349bcfd1b9d4803383" cid="OP039" name="GetPostsByDate" creation-date="11/28/2022 16:01:59" type="List" type-id="List" visibility="public">
+          <parameters>
+            <parameter id="p720a1c1173d84872a3f5b8fc67af4ce2" name="i_DateTime" type="DateTime" type-id="Uml.DateTime" />
+          </parameters>
+        </operation>
+        <operation id="o442ef8db61f44acb964cf472a2e8dfe3383" cid="OP040" name="GetGroupsNamesList" creation-date="11/28/2022 16:01:59" type="List" type-id="List" visibility="public" />
+        <operation id="oa41ed6cc758c4e4d9196762a65653681383" cid="OP041" name="GetMyAlumnus" creation-date="11/28/2022 16:01:59" type="List" type-id="List" visibility="public" />
+        <operation id="oec36ffcc15904fd19d01bf4cf2547c9d383" cid="OP042" name="GetMyHometownFriends" creation-date="11/28/2022 16:01:59" type="List" type-id="List" visibility="public" />
+        <operation id="o46b09d57fbb94bd392aac4f781076574383" cid="OP043" name="GetLikedPages" creation-date="11/28/2022 16:01:59" type="List" type-id="List" visibility="public" />
+      </operations>
+    </item>
+    <item id="23ee3d66016a49deb821e12cbc0224a5" cid="PROP055" type="property" name="&lt;PictureURL&gt;k__BackingField" owner="d9582a0558634963a77f3ef0b35d2b14" creator="" creation-date="11/28/2022 16:01:59" visibility="private">
+      <structural-feature type="String" type-id="Uml.String" />
+    </item>
+    <item id="8010e6223eda4f3a9a40d1e65049ee90" cid="PROP091" type="property" name="label3" owner="854d52a77855413d81a1d05e236f7fcb" creator="" creation-date="11/28/2022 16:01:59" visibility="private">
+      <structural-feature type="Label" type-id="Label" />
+    </item>
+    <item id="4ff442bc44b04504b53b4f3ae7f689c4" cid="PROP008" type="property" name="Groups" owner="98d409381e9f480d8e89b27daaf1d694" creator="" creation-date="11/28/2022 16:01:59" visibility="public">
+      <stereotypes>
+        <stereotype name="property" />
+      </stereotypes>
+      <stereotype-instances>
+        <stereotype id="4ff442bc44b04504b53b4f3ae7f689c4_property_c" type="property" ref="" />
+      </stereotype-instances>
+      <structural-feature type="List" type-id="List" />
+    </item>
+    <item id="c5d763a6266548df9d8cbfc73d09046f" cid="PROP075" type="property" name="AppID" owner="9b12a1dab9cc497eb781662552307544" creator="" creation-date="11/28/2022 16:01:59" visibility="public">
+      <stereotypes>
+        <stereotype name="property" />
+      </stereotypes>
+      <stereotype-instances>
+        <stereotype id="c5d763a6266548df9d8cbfc73d09046f_property_c" type="property" ref="" />
+      </stereotype-instances>
+      <structural-feature type="String" type-id="Uml.String" />
+    </item>
+    <item id="4921ca44bf524304b2c6547f72f7551d" cid="PROP067" type="property" name="OnlineStatus" owner="655fc04a75b64b13b6f1c1373dfebf9b" creator="" creation-date="11/28/2022 16:01:59" visibility="public">
+      <stereotypes>
+        <stereotype name="property" />
+      </stereotypes>
+      <stereotype-instances>
+        <stereotype id="4921ca44bf524304b2c6547f72f7551d_property_c" type="property" ref="" />
+      </stereotype-instances>
+      <structural-feature type="String" type-id="Uml.String" />
+    </item>
+    <item id="19482cd6a16245f2a9f22e62bccc91b3" cid="PROP085" type="property" name="albumNameLabel" owner="5c6ba9fb01404f78b1f01311a4fb0f2c" creator="" creation-date="11/28/2022 16:01:59" visibility="private">
+      <structural-feature type="Label" type-id="Label" />
+    </item>
+    <item id="5f8271eff24a490196a475e6559a4b80" cid="PROP043" type="property" name="MembersCount" owner="68be714afc7b44cda3ea01eead3d4df9" creator="" creation-date="11/28/2022 16:01:59" visibility="public">
+      <stereotypes>
+        <stereotype name="property" />
+      </stereotypes>
+      <stereotype-instances>
+        <stereotype id="5f8271eff24a490196a475e6559a4b80_property_c" type="property" ref="" />
+      </stereotype-instances>
+      <structural-feature type="Int" type-id="Int" />
+    </item>
+    <item id="89579fb6cada4d7d995967ec77a86d0c" cid="PROP079" type="property" name="m_LoginResult" owner="2abfefc5368c499dabec0969b4792b86" creator="" creation-date="11/28/2022 16:01:59" visibility="private">
+      <structural-feature type="LoginResult" type-id="LoginResult" />
+    </item>
+    <item id="8a7748a8bab44d2a9061382a9ef82274" cid="PROP089" type="property" name="pageNameLabel" owner="854d52a77855413d81a1d05e236f7fcb" creator="" creation-date="11/28/2022 16:01:59" visibility="private">
+      <structural-feature type="Label" type-id="Label" />
+    </item>
+    <item id="9b12a1dab9cc497eb781662552307544" cid="C014" type="class" name="AppSettings" creator="" creation-date="11/28/2022 16:01:59">
+      <owned-items />
+      <attributes>
+        <attribute id="acff3d6538c174e1ab72fc73680efcd38382" cid="PROP072" name="sr_AppSettingsFilePath" creation-date="11/28/2022 16:01:59" property-ref="25cdbbc3b24141089a0a3b86c5de1ec4" />
+        <attribute id="a3e1bdad25f744a258dbb096525bd7d6e382" cid="PROP073" name="RememberUserActivated" creation-date="11/28/2022 16:01:59" property-ref="75db016e899c44eabe316e42c57772ed" />
+        <attribute id="aad6b33ccf53a4e1f814ec8a43a20869d382" cid="PROP074" name="LastAccessToken" creation-date="11/28/2022 16:01:59" property-ref="4fbd1ef44c6e445b97819046d2c59fc5" />
+        <attribute id="a090291b4ffb04f27ae623e2a1bcba27c383" cid="PROP075" name="AppID" creation-date="11/28/2022 16:01:59" property-ref="c5d763a6266548df9d8cbfc73d09046f" />
+        <attribute id="a5490566534bd4451bb3356b61682089c383" cid="PROP076" name="Permissions" creation-date="11/28/2022 16:01:59" property-ref="07a55944743f430784b2bc1ec121dc74" />
+      </attributes>
+      <operations>
+        <operation id="o22ab4b6eb4b14caeaddd393ab968e150383" cid="OP022" name="SetDefaultAppSettings" creation-date="11/28/2022 16:01:59" type="Void" type-id="Void" visibility="public" />
+        <operation id="oc32ea4cebca24586a61d571af6233c35383" cid="OP024" name="LoadSettings" creation-date="11/28/2022 16:01:59" type="AppSettings" type-id="AppSettings" visibility="public" static="true" />
+        <operation id="o32116af5924c4afa9e07306969ccb2b2383" cid="OP025" name="AddPermission" creation-date="11/28/2022 16:01:59" type="Void" type-id="Void" visibility="public">
+          <parameters>
+            <parameter id="p8ea5a148c5574cf5a2a49de6df1298da" name="i_Permission" type="String" type-id="Uml.String" />
+          </parameters>
+        </operation>
+        <operation id="o76b2f14b5aaf412e902e0202871cc3aa383" cid="OP026" name="SaveToFile" creation-date="11/28/2022 16:01:59" type="Void" type-id="Void" visibility="public" />
+        <operation id="oe60fe388be6c465eb61ffdbabcfe3ccf383" cid="OP027" name="LoadFromFile" creation-date="11/28/2022 16:01:59" type="AppSettings" type-id="AppSettings" visibility="private" static="true" />
+        <operation id="o76f097bc60be4fa7a4ce0b1f1ad8a418383" cid="OP028" name="ResetAppSettings" creation-date="11/28/2022 16:01:59" type="Void" type-id="Void" visibility="public" />
+      </operations>
+    </item>
+    <item id="67ec82b5253443e7ac1db969f8db946c" cid="PROP083" type="property" name="AppSettings" owner="2abfefc5368c499dabec0969b4792b86" creator="" creation-date="11/28/2022 16:01:59" visibility="public">
+      <stereotypes>
+        <stereotype name="property" />
+      </stereotypes>
+      <stereotype-instances>
+        <stereotype id="67ec82b5253443e7ac1db969f8db946c_property_c" type="property" ref="" />
+      </stereotype-instances>
+      <structural-feature type="AppSettings" type-id="AppSettings" />
+    </item>
+    <item id="c238567e7cb84298891743c3a31489a2" cid="GNR001" type="generalization" owner="dia7e9268e071b41dbb786515b34a805911655" creator="" creation-date="11/28/2022 16:01:59" from="98d409381e9f480d8e89b27daaf1d694" to="b914432733af4d30ba0509ab071b85ac" visibility="package" />
+    <item id="b914432733af4d30ba0509ab071b85ac" cid="C005" type="class" name="DummyUser" owner="dia7e9268e071b41dbb786515b34a805911655" creator="" creation-date="11/28/2022 16:01:59">
+      <owned-items />
+      <attributes>
+        <attribute id="a34edb50bb59543c8a8ebc71fba7cbf8f368" cid="PROP031" name="Name" creation-date="11/28/2022 16:01:59" property-ref="124170f7fad048cc84c4f2551f735e2a" />
+        <attribute id="ac225d38204504b83a2c0afa9eae84037368" cid="PROP032" name="Hometown" creation-date="11/28/2022 16:01:59" property-ref="bfa70d7fa6b4418bac981436fab4e0c3" />
+        <attribute id="a5c9d3c85b55b41acb900572f024a9161368" cid="PROP033" name="Education" creation-date="11/28/2022 16:01:59" property-ref="e832fe1b559d4846922e9c79108d995b" />
+        <attribute id="a1271d7022ec5499aa3a657003a7aaa94368" cid="PROP034" name="PictureURL" creation-date="11/28/2022 16:01:59" property-ref="4863ef611bb04f018ee03b1145915fe7" />
+        <attribute id="a411c021e11a742109cabbdb11208bb5b368" cid="PROP035" name="OnlineStatus" creation-date="11/28/2022 16:01:59" property-ref="ffe6bf142f1240218cfac2e0eea40b43" />
+      </attributes>
+    </item>
+    <item id="854d52a77855413d81a1d05e236f7fcb" cid="C018" type="class" name="PageBox" creator="" creation-date="11/28/2022 16:01:59">
+      <owned-items />
+      <attributes>
+        <attribute id="a0dfa7757505b4c4cb4e5ea3f3bef3a11385" cid="PROP088" name="components" creation-date="11/28/2022 16:01:59" property-ref="017a3e19d3cb4ed8913eb50f96e29962" />
+        <attribute id="a41365540deb242b69003b75a9b43d433385" cid="PROP089" name="pageNameLabel" creation-date="11/28/2022 16:01:59" property-ref="8a7748a8bab44d2a9061382a9ef82274" />
+        <attribute id="ac303b1fe668349a392b3ae90e567dc38385" cid="PROP090" name="label2" creation-date="11/28/2022 16:01:59" property-ref="426ce4786d0f47d4a83502b50a0686d7" />
+        <attribute id="a20e8c39a9231456ab30bbcb735a3f406385" cid="PROP091" name="label3" creation-date="11/28/2022 16:01:59" property-ref="8010e6223eda4f3a9a40d1e65049ee90" />
+        <attribute id="af81c1dfbc3784657a71ced938bd621b5385" cid="PROP092" name="likesLabel" creation-date="11/28/2022 16:01:59" property-ref="fe01f912885b4cfd941f280a97bf0cb1" />
+        <attribute id="a59ed47a2926f4386989772eb9479082d385" cid="PROP093" name="pagePictureBox" creation-date="11/28/2022 16:01:59" property-ref="3d43b86cd5834ea58d5bdad63d3d7b19" />
+      </attributes>
+      <operations>
+        <operation id="oe35afbf47d2048d09f04e117a9230e44385" cid="OP054" name="PageBox" creation-date="11/28/2022 16:01:59" type="" type-id="" visibility="public">
+          <stereotypes>
+            <stereotype>create</stereotype>
+          </stereotypes>
+        </operation>
+        <operation id="ob507de0ea74e4d2f943a5a065f32a868385" cid="OP055" name="setName" creation-date="11/28/2022 16:01:59" type="Void" type-id="Void" visibility="public">
+          <parameters>
+            <parameter id="p08c4a55c36bd4df6bf48c1eaa41f0efc" name="i_PageName" type="String" type-id="Uml.String" />
+          </parameters>
+        </operation>
+        <operation id="oca9e98467cef470f8666d39df9c82228385" cid="OP056" name="setPictureBox" creation-date="11/28/2022 16:01:59" type="Void" type-id="Void" visibility="public">
+          <parameters>
+            <parameter id="p3f0e8b48dd9d46ba873383fdf5c8b049" name="i_PagePictureURL" type="String" type-id="Uml.String" />
+          </parameters>
+        </operation>
+        <operation id="ob582ee438c384b9894e7ea92eeda78cc385" cid="OP057" name="setNumOfLikes" creation-date="11/28/2022 16:01:59" type="Void" type-id="Void" visibility="public">
+          <parameters>
+            <parameter id="p21aa839d39c94abfa1b520c27f8e66d5" name="i_NumOfLikes" type="Nullable`1" type-id="Nullable`1" />
+          </parameters>
+        </operation>
+        <operation id="o48673421866a4099a60ea90c201c99b1385" cid="OP058" name="Dispose" creation-date="11/28/2022 16:01:59" type="Void" type-id="Void" visibility="protected" virtual="true">
+          <parameters>
+            <parameter id="p8dbd9caa990247f09149683d34ba14f1" name="disposing" type="Boolean" type-id="Uml.Boolean" />
+          </parameters>
+        </operation>
+        <operation id="o8bbdbdcdfb5d459ba1a726f39110dd80385" cid="OP059" name="InitializeComponent" creation-date="11/28/2022 16:01:59" type="Void" type-id="Void" visibility="private" />
+      </operations>
+    </item>
+    <item id="837bcefcb225451aaa89885d559f460c" cid="C006" type="class" name="AlumniDTO" owner="di106ea5a88c9f4f9d959b3f6bab5129093437" creator="" creation-date="11/28/2022 16:01:59">
+      <owned-items />
+      <attributes>
+        <attribute id="ac3f09f07c85f44f3a30ddd6c8e19fba0376" cid="PROP037" name="Education" creation-date="11/28/2022 16:01:59" property-ref="896eaee6c6434ed4920d12a069fc833a" />
+      </attributes>
+    </item>
+    <item id="e7817099f65e433fb69d3bb5b5a4e8c1" cid="C022" type="class" name="FormMain" owner="di0b8f494aa92440a0b95494c197e3e8297385" creator="" creation-date="11/28/2022 16:01:59">
+      <owned-items />
+      <attributes>
+        <attribute id="ae520af5302e44da3940a3b5bb61ea485387" cid="PROP119" name="r_FBAPIClient" creation-date="11/28/2022 16:01:59" property-ref="39a8552209f44f319d16c297ca33f391" />
+      </attributes>
+      <operations>
+        <operation id="obbebadb6729f43dbb4e41ddb7557f47b392" cid="OP081" name="FormMain" creation-date="11/28/2022 16:01:59" type="" type-id="" visibility="public">
+          <parameters>
+            <parameter id="pf88c69758a8d44be93089abbc8c10c0f" name="i_FBAPIClient" type="FBAPIClient" type-id="Class:2abfefc5368c499dabec0969b4792b86" />
+          </parameters>
+          <stereotypes>
+            <stereotype>create</stereotype>
+          </stereotypes>
+        </operation>
+        <operation id="o03a96c3b2ffd4005b9f78f114d46724a392" cid="OP082" name="FetchUserInfo" creation-date="11/28/2022 16:01:59" type="Void" type-id="Void" visibility="public" />
+        <operation id="o307d34350ed5432fb32953ca97feb183392" cid="OP083" name="FetchBasicUserInfo" creation-date="11/28/2022 16:01:59" type="Void" type-id="Void" visibility="private" />
+        <operation id="o7271c415e4424d5fab50b8277a1419f3392" cid="OP084" name="FetchLikedPages" creation-date="11/28/2022 16:01:59" type="Void" type-id="Void" visibility="private">
+          <parameters>
+            <parameter id="pba5df64117254ce8b366742e31569b88" name="i_LikedPagesList" type="List" type-id="List" />
+          </parameters>
+        </operation>
+        <operation id="of7a5a0ef6e5a4f7c9a86a565fe205b5f392" cid="OP091" name="FetchPosts" creation-date="11/28/2022 16:01:59" type="Void" type-id="Void" visibility="public">
+          <parameters>
+            <parameter id="p553955e36df241b09d75851f41de9582" name="postsDTOList" type="List" type-id="List" />
+          </parameters>
+        </operation>
+        <operation id="o4b0ee28555404509b952f73f4fe0c34f392" cid="OP092" name="FetchAlbums" creation-date="11/28/2022 16:01:59" type="Void" type-id="Void" visibility="public">
+          <parameters>
+            <parameter id="p8a3aef0d9ca34314ba167d0e02c69986" name="albumDTOs" type="List" type-id="List" />
+          </parameters>
+        </operation>
+        <operation id="o72b106af74ca4e11bc5de8c55e439c18392" cid="OP095" name="FetchFriends" creation-date="11/28/2022 16:01:59" type="Void" type-id="Void" visibility="private" />
+        <operation id="oea7091765a0d4b3b99b853d3da8dc3eb392" cid="OP096" name="CheckRememberMe" creation-date="11/28/2022 16:01:59" type="Void" type-id="Void" visibility="public" />
+        <operation id="oda4e2214d9ab40c58e2386977407026b392" cid="OP097" name="FetchGroups" creation-date="11/28/2022 16:01:59" type="Void" type-id="Void" visibility="private">
+          <parameters>
+            <parameter id="p655816e8f31243239de6ba79030cb716" name="groupsListDTO" type="List" type-id="List" />
+          </parameters>
+        </operation>
+      </operations>
+    </item>
+    <item id="25cdbbc3b24141089a0a3b86c5de1ec4" cid="PROP072" type="property" name="sr_AppSettingsFilePath" owner="9b12a1dab9cc497eb781662552307544" creator="" creation-date="11/28/2022 16:01:59" visibility="private">
+      <feature static="true" />
+      <structural-feature type="String" type-id="Uml.String" />
+    </item>
+    <item id="0fb54b4c2fcb4dfc988f5ff1597b3263" cid="PROP013" type="property" name="Name" owner="e3eb599042534ff39445f562ad5e81f5" creator="" creation-date="11/28/2022 16:01:59" visibility="public">
+      <stereotypes>
+        <stereotype name="property" />
+      </stereotypes>
+      <stereotype-instances>
+        <stereotype id="0fb54b4c2fcb4dfc988f5ff1597b3263_property_c" type="property" ref="" />
+      </stereotype-instances>
+      <structural-feature type="String" type-id="Uml.String" />
+    </item>
+    <item id="289baf2853154d04881ebc1db6af4b42" cid="PROP082" type="property" name="LoginResult" owner="2abfefc5368c499dabec0969b4792b86" creator="" creation-date="11/28/2022 16:01:59" visibility="public">
+      <stereotypes>
+        <stereotype name="property" />
+      </stereotypes>
+      <stereotype-instances>
+        <stereotype id="289baf2853154d04881ebc1db6af4b42_property_c" type="property" ref="" />
+      </stereotype-instances>
+      <structural-feature type="LoginResult" type-id="LoginResult" />
+    </item>
+    <item id="75118c846e904f20ad12eac721007a46" cid="C020" type="class" name="FormAppSettings" owner="di0b8f494aa92440a0b95494c197e3e8297385" creator="" creation-date="11/28/2022 16:01:59">
+      <owned-items />
+      <attributes>
+        <attribute id="a77435eaaa3304f82b9d7ebd88e07448c386" cid="PROP099" name="r_FBAPIClient" creation-date="11/28/2022 16:01:59" property-ref="c1dfcafad2ed45599670369d27a493be" />
+        <attribute id="a36420b44555b47c48735c2219c63564b386" cid="PROP111" name="WithDefaultPermissions" creation-date="11/28/2022 16:01:59" property-ref="1896f5ad407d43d3824f21651606b83e" />
+      </attributes>
+      <operations>
+        <operation id="ofe73c0eae969418e9359a8f8db45c981386" cid="OP065" name="FormAppSettings" creation-date="11/28/2022 16:01:59" type="" type-id="" visibility="public">
+          <parameters>
+            <parameter id="p7f5bf9fd1ef541ffa37d9e1166f4fb56" name="i_FBAPIClient" type="FBAPIClient" type-id="Class:2abfefc5368c499dabec0969b4792b86" />
+          </parameters>
+          <stereotypes>
+            <stereotype>create</stereotype>
+          </stereotypes>
+        </operation>
+        <operation id="o48d4c562b13a4489ac1d9c2ae9423dcf386" cid="OP067" name="SetAppSettings" creation-date="11/28/2022 16:01:59" type="Void" type-id="Void" visibility="private" />
+      </operations>
+    </item>
+    <item id="45d21fca06824eeba8efadd08f503de8" cid="C003" type="class" name="DummyDataCreator" owner="dia7e9268e071b41dbb786515b34a805911655" creator="" creation-date="11/28/2022 16:01:59">
+      <style style-name="Default" shadow-type="smooth" shadow-offset="2,2" shadow-visible="true" shadow-color="#3A555555" shadow-radius="8" wrap-name-text="true" wrap-other-text="true" padding="2" margin="1" glow-color="#FFFFFF" accuracy="0.9">
+        <text-style type="name" color="#555555" font="Segoe UI;11.25;BU" />
+        <text-style type="part-header" color="#1E1E1E" font="Verdana;9;I" />
+        <text-style type="text" color="#555555" font="Segoe UI;9.75;" horizontal-alignment="left" />
+        <text-style type="tagged-value" color="#555555" font="Segoe UI;9.75;" />
+        <text-style type="stereotype" color="#555555" font="Segoe UI;9;I" />
+        <background type="solid" colors="#F2F2F2,#F2F2F2" />
+        <border color="#555555" width="2" />
+        <label-connector color="#80000000" dash-style="Dash" />
+        <alternate-styles>
+          <alternate-style style-name="Alternate" shadow-type="smooth" shadow-offset="2,2" shadow-visible="true" shadow-color="#322A2A2A" shadow-radius="8" wrap-name-text="true" wrap-other-text="true" padding="2" margin="1" glow-color="#FFFFFF" accuracy="0.9">
+            <text-style type="name" color="#E9E9E9" font="Segoe UI;11.25;B" />
+            <text-style type="part-header" color="#1E1E1E" font="Verdana;9;I" />
+            <text-style type="text" color="#E9E9E9" font="Segoe UI;9.75;" horizontal-alignment="left" />
+            <text-style type="tagged-value" color="#E9E9E9" font="Segoe UI;9.75;" />
+            <text-style type="stereotype" color="#E9E9E9" font="Segoe UI;9;I" />
+            <background type="solid" colors="#203D85,#203D85" />
+            <border color="#203D85" width="2" />
+            <label-connector color="#80000000" dash-style="Dash" />
+          </alternate-style>
+        </alternate-styles>
+      </style>
+      <operations>
+        <operation id="od4039ddf2366443e9211d1040d45ec8b365" cid="OP003" name="GenerateRandLikesCount" creation-date="11/28/2022 16:01:59" type="long?" type-id="long?" visibility="public" static="true" />
+        <operation id="o1c891b2a5ad640f28a5867fa787c6541365" cid="OP004" name="GenerateRandOnlineStatus" creation-date="11/28/2022 16:01:59" type="eOnlineStatus" type-id="eOnlineStatus" visibility="private" static="true" />
+        <operation id="o53996a717dbb42cda737b7a981b73d2e365" cid="OP005" name="CreateDummyDataForCurrentUser" creation-date="11/28/2022 16:01:59" type="DummyCurrentUser" type-id="Class:98d409381e9f480d8e89b27daaf1d694" visibility="public" static="true">
+          <parameters>
+            <parameter id="p7ccda3445d5b4b3db723e3d8deab4a58" name="i_Name" type="String" type-id="Uml.String" />
+            <parameter id="p901e25b957344ec19f5ba50f712548cf" name="i_ProfilePictureURL" type="String" type-id="Uml.String" />
+          </parameters>
+        </operation>
+        <operation id="o733d1ec393974e6aa9f5f37d36798637366" cid="OP006" name="CreateDummyGroups" creation-date="11/28/2022 16:01:59" type="List" type-id="List" visibility="private" static="true" />
+        <operation id="o627afc8ba7a547b5b7ce8083ec5084ad367" cid="OP007" name="CreateDummyFriends" creation-date="11/28/2022 16:01:59" type="List" type-id="List" visibility="public" static="true" />
+      </operations>
+    </item>
+    <item id="b52a8f2dde334473ad6792b1ea3a6eea" cid="PROP081" type="property" name="CurrentUser" owner="2abfefc5368c499dabec0969b4792b86" creator="" creation-date="11/28/2022 16:01:59" visibility="public">
+      <stereotypes>
+        <stereotype name="property" />
+      </stereotypes>
+      <stereotype-instances>
+        <stereotype id="b52a8f2dde334473ad6792b1ea3a6eea_property_c" type="property" ref="" />
+      </stereotype-instances>
+      <structural-feature type="User" type-id="User" />
+    </item>
+    <item id="595e54b9d40241638a9f5ce97491b7d1" cid="PROP086" type="property" name="albumPictureBox" owner="5c6ba9fb01404f78b1f01311a4fb0f2c" creator="" creation-date="11/28/2022 16:01:59" visibility="private">
+      <structural-feature type="PictureBox" type-id="PictureBox" />
+    </item>
+    <item id="75db016e899c44eabe316e42c57772ed" cid="PROP073" type="property" name="RememberUserActivated" owner="9b12a1dab9cc497eb781662552307544" creator="" creation-date="11/28/2022 16:01:59" visibility="public">
+      <stereotypes>
+        <stereotype name="property" />
+      </stereotypes>
+      <stereotype-instances>
+        <stereotype id="75db016e899c44eabe316e42c57772ed_property_c" type="property" ref="" />
+      </stereotype-instances>
+      <structural-feature type="Boolean" type-id="Uml.Boolean" />
+    </item>
+    <item id="d69b636b8a3b4b6e9f861b2c976fdc0a" cid="PROP015" type="property" name="MembersCount" owner="e3eb599042534ff39445f562ad5e81f5" creator="" creation-date="11/28/2022 16:01:59" visibility="public">
+      <stereotypes>
+        <stereotype name="property" />
+      </stereotypes>
+      <stereotype-instances>
+        <stereotype id="d69b636b8a3b4b6e9f861b2c976fdc0a_property_c" type="property" ref="" />
+      </stereotype-instances>
+      <structural-feature type="Int" type-id="Int" />
+    </item>
+    <item id="ffe6bf142f1240218cfac2e0eea40b43" cid="PROP035" type="property" name="OnlineStatus" owner="b914432733af4d30ba0509ab071b85ac" creator="" creation-date="11/28/2022 16:01:59" visibility="public">
+      <stereotypes>
+        <stereotype name="property" />
+      </stereotypes>
+      <stereotype-instances>
+        <stereotype id="ffe6bf142f1240218cfac2e0eea40b43_property_c" type="property" ref="" />
+      </stereotype-instances>
+      <structural-feature type="eOnlineStatus" type-id="eOnlineStatus" />
+    </item>
+    <item id="6e6ecde34bf44b818f0def7515964f73" cid="C010" type="class" name="LikedPageDTO" owner="di106ea5a88c9f4f9d959b3f6bab5129093437" creator="" creation-date="11/28/2022 16:01:59">
+      <owned-items />
+      <attributes>
+        <attribute id="a8d385255a7d7449f8242f2aeb50699d9376" cid="PROP047" name="LikesCount" creation-date="11/28/2022 16:01:59" property-ref="9c1e16fa9e2a4a0fb71b652caf61365a" />
+      </attributes>
+    </item>
+    <item id="bfa70d7fa6b4418bac981436fab4e0c3" cid="PROP032" type="property" name="Hometown" owner="b914432733af4d30ba0509ab071b85ac" creator="" creation-date="11/28/2022 16:01:59" visibility="public">
+      <stereotypes>
+        <stereotype name="property" />
+      </stereotypes>
+      <stereotype-instances>
+        <stereotype id="bfa70d7fa6b4418bac981436fab4e0c3_property_c" type="property" ref="" />
+      </stereotype-instances>
+      <structural-feature type="String" type-id="Uml.String" />
+    </item>
+    <item id="63f7ac8e51c745e5a5a1781e7a15f699" cid="GNR003" type="generalization" owner="di106ea5a88c9f4f9d959b3f6bab5129093437" creator="" creation-date="11/28/2022 16:01:59" from="1ece5bed36214668adc1603bd8e0a805" to="d9582a0558634963a77f3ef0b35d2b14" visibility="package" />
+    <item id="eca2bc39213941ab9d684bae65d6a3fc" cid="PROP078" type="property" name="m_DummyCurrUserData" owner="2abfefc5368c499dabec0969b4792b86" creator="" creation-date="11/28/2022 16:01:59" visibility="private">
+      <structural-feature type="DummyCurrentUser" type-id="Class:98d409381e9f480d8e89b27daaf1d694" />
+    </item>
+    <item id="8745c46a1c094ba28f1deb4f614f40e7" cid="C023" type="class" name="Program" owner="di852dc3a5785649c7946b058058ffe5e54014" creator="" creation-date="11/28/2022 16:01:59" visibility="undefined">
+      <operations>
+        <operation id="of5cf9d1f0f3e445d87046425ab58b7cd392" cid="OP100" name="Main" creation-date="11/28/2022 16:01:59" type="Void" type-id="Void" visibility="public" static="true" />
+      </operations>
+    </item>
+    <item id="e3eb599042534ff39445f562ad5e81f5" cid="C004" type="class" name="DummyGroup" owner="dia7e9268e071b41dbb786515b34a805911655" creator="" creation-date="11/28/2022 16:01:59">
+      <owned-items />
+      <attributes>
+        <attribute id="ad2517483616748fb871f638bd7c21052367" cid="PROP013" name="Name" creation-date="11/28/2022 16:01:59" property-ref="0fb54b4c2fcb4dfc988f5ff1597b3263" />
+        <attribute id="afd0f6952fefc4205a6e913526f03a164367" cid="PROP014" name="PictureURL" creation-date="11/28/2022 16:01:59" property-ref="ab6e2463ed9f42dc8ec582fb8d503214" />
+        <attribute id="ae7373c5e8f9f441f8696bfb35a06d919367" cid="PROP015" name="MembersCount" creation-date="11/28/2022 16:01:59" property-ref="d69b636b8a3b4b6e9f861b2c976fdc0a" />
+        <attribute id="a99794ce66b9842adb51ec164e4a756cd367" cid="PROP016" name="Privacy" creation-date="11/28/2022 16:01:59" property-ref="57e422e6d8ac4eb4823af6fabf9c7f1c" />
+      </attributes>
+    </item>
+    <item id="68be714afc7b44cda3ea01eead3d4df9" cid="C008" type="class" name="GroupDTO" owner="di106ea5a88c9f4f9d959b3f6bab5129093437" creator="" creation-date="11/28/2022 16:01:59">
+      <owned-items />
+      <attributes>
+        <attribute id="a91f64fcd3d3b401c94aa7b13b876035b376" cid="PROP042" name="Privacy" creation-date="11/28/2022 16:01:59" property-ref="b7a02bb16db04ffc80278d49360d5e8a" />
+        <attribute id="a1f63ca5222c24d4daaf4c624163f8707376" cid="PROP043" name="MembersCount" creation-date="11/28/2022 16:01:59" property-ref="5f8271eff24a490196a475e6559a4b80" />
+      </attributes>
+    </item>
+    <item id="a820ddc0e2444fe994ddab4ab9ca471b" cid="GNR004" type="generalization" owner="di106ea5a88c9f4f9d959b3f6bab5129093437" creator="" creation-date="11/28/2022 16:01:59" from="68be714afc7b44cda3ea01eead3d4df9" to="d9582a0558634963a77f3ef0b35d2b14" visibility="package" />
+    <item id="c198172e644d4a9a90ea110f7b12b2d8" cid="E001" type="enumeration" name="eGroupPrivacy" owner="dia7e9268e071b41dbb786515b34a805911655" creator="" creation-date="11/28/2022 16:01:59">
+      <stereotypes>
+        <stereotype name="enumeration" />
+      </stereotypes>
+      <stereotype-instances>
+        <stereotype id="c198172e644d4a9a90ea110f7b12b2d8_enumeration_c" type="enumeration" ref="" />
+      </stereotype-instances>
+      <enumeration-items>
+        <enumeration-item id="ae55cd4bcd9e44cc387fe09a2a3288946367" cid="ENI001" name="Open" creation-date="11/28/2022 16:01:59" />
+        <enumeration-item id="a503e96038f564c69a12dfe4010f92968367" cid="ENI002" name="Closed" creation-date="11/28/2022 16:01:59" />
+        <enumeration-item id="a82899760a6fe4b38830777ebf83697d8367" cid="ENI003" name="Secret" creation-date="11/28/2022 16:01:59" />
+      </enumeration-items>
+    </item>
+    <item id="f3b4994295474e1da2c95db5863a146b" cid="PROP056" type="property" name="Name" owner="d9582a0558634963a77f3ef0b35d2b14" creator="" creation-date="11/28/2022 16:01:59" visibility="public">
+      <stereotypes>
+        <stereotype name="property" />
+      </stereotypes>
+      <stereotype-instances>
+        <stereotype id="f3b4994295474e1da2c95db5863a146b_property_c" type="property" ref="" />
+      </stereotype-instances>
+      <structural-feature type="String" type-id="Uml.String" />
+    </item>
+    <item id="07a55944743f430784b2bc1ec121dc74" cid="PROP076" type="property" name="Permissions" owner="9b12a1dab9cc497eb781662552307544" creator="" creation-date="11/28/2022 16:01:59" visibility="public">
+      <stereotypes>
+        <stereotype name="property" />
+      </stereotypes>
+      <stereotype-instances>
+        <stereotype id="07a55944743f430784b2bc1ec121dc74_property_c" type="property" ref="" />
+      </stereotype-instances>
+      <structural-feature type="List" type-id="List" />
+    </item>
+    <item id="c6bd2ef20d144d039f8a20d8d6661638" cid="PKG007" type="package" name="Controls" creator="" creation-date="11/28/2022 16:01:59" />
+    <item id="3d43b86cd5834ea58d5bdad63d3d7b19" cid="PROP093" type="property" name="pagePictureBox" owner="854d52a77855413d81a1d05e236f7fcb" creator="" creation-date="11/28/2022 16:01:59" visibility="private">
+      <structural-feature type="PictureBox" type-id="PictureBox" />
+    </item>
+    <item id="5c6ba9fb01404f78b1f01311a4fb0f2c" cid="C016" type="class" name="AlbumBox" creator="" creation-date="11/28/2022 16:01:59">
+      <owned-items />
+      <attributes>
+        <attribute id="ab6efb0b353a149b39888934cca4f2c43384" cid="PROP084" name="components" creation-date="11/28/2022 16:01:59" property-ref="7a09c191898e414a83ecaaedbbd58711" />
+        <attribute id="a31fe83743e544c1b81dc926d27d873eb384" cid="PROP085" name="albumNameLabel" creation-date="11/28/2022 16:01:59" property-ref="19482cd6a16245f2a9f22e62bccc91b3" />
+        <attribute id="ad7120e3df70148f2b1e2beb3bc102115385" cid="PROP086" name="albumPictureBox" creation-date="11/28/2022 16:01:59" property-ref="595e54b9d40241638a9f5ce97491b7d1" />
+      </attributes>
+      <operations>
+        <operation id="ob00f2cec4cde466886b10df5c1afc89e385" cid="OP044" name="AlbumBox" creation-date="11/28/2022 16:01:59" type="" type-id="" visibility="public">
+          <stereotypes>
+            <stereotype>create</stereotype>
+          </stereotypes>
+        </operation>
+        <operation id="o77736fa3e5634d5db4fb0895e65459ac385" cid="OP045" name="SetGroupNameLabel" creation-date="11/28/2022 16:01:59" type="Void" type-id="Void" visibility="public">
+          <parameters>
+            <parameter id="pb703ab0d2c164dffafeb5436eeab352e" name="i_AlbumName" type="String" type-id="Uml.String" />
+          </parameters>
+        </operation>
+        <operation id="oaf1e5baf5d2746b89f54d70971618f03385" cid="OP046" name="SetGroupPictureInPictureBox" creation-date="11/28/2022 16:01:59" type="Void" type-id="Void" visibility="public">
+          <parameters>
+            <parameter id="p51a49b6e0f7c45aeaf7437ab535cceeb" name="i_albumPictureURL" type="String" type-id="Uml.String" />
+          </parameters>
+        </operation>
+        <operation id="oe7515dd300e743f0b7fdd5e6ef93457f385" cid="OP047" name="Dispose" creation-date="11/28/2022 16:01:59" type="Void" type-id="Void" visibility="protected" virtual="true">
+          <parameters>
+            <parameter id="pe96704b5b6db47e78aecb7a86e8c230a" name="disposing" type="Boolean" type-id="Uml.Boolean" />
+          </parameters>
+        </operation>
+        <operation id="o1b1280dff58944e890bb5a7068ae8794385" cid="OP048" name="InitializeComponent" creation-date="11/28/2022 16:01:59" type="Void" type-id="Void" visibility="private" />
+      </operations>
+    </item>
+    <item id="dc2908cf183f4102ab9f02844ea8b6f9" cid="E002" type="enumeration" name="eOnlineStatus" owner="dia7e9268e071b41dbb786515b34a805911655" creator="" creation-date="11/28/2022 16:01:59">
+      <stereotypes>
+        <stereotype name="enumeration" />
+      </stereotypes>
+      <stereotype-instances>
+        <stereotype id="dc2908cf183f4102ab9f02844ea8b6f9_enumeration_c" type="enumeration" ref="" />
+      </stereotype-instances>
+      <enumeration-items>
+        <enumeration-item id="a1b3af83530504f0c9ce210026f18f4df368" cid="ENI004" name="idle" creation-date="11/28/2022 16:01:59" />
+        <enumeration-item id="ac00748fe0ae84a8da519aec013db8bb3368" cid="ENI005" name="active" creation-date="11/28/2022 16:01:59" />
+        <enumeration-item id="ae6bcc28c3a4a4172a89b8600d87082a1368" cid="ENI006" name="offline" creation-date="11/28/2022 16:01:59" />
+        <enumeration-item id="af188f9c90c47499cb7439bea7cfd5a9c368" cid="ENI007" name="unknown" creation-date="11/28/2022 16:01:59" />
+      </enumeration-items>
+    </item>
+    <item id="b6ca289f4c904392b99766050b788a27" cid="PROP065" type="property" name="Hometown" owner="655fc04a75b64b13b6f1c1373dfebf9b" creator="" creation-date="11/28/2022 16:01:59" visibility="public">
+      <stereotypes>
+        <stereotype name="property" />
+      </stereotypes>
+      <stereotype-instances>
+        <stereotype id="b6ca289f4c904392b99766050b788a27_property_c" type="property" ref="" />
+      </stereotype-instances>
+      <structural-feature type="String" type-id="Uml.String" />
+    </item>
+    <item id="89b1a3d7fb994224ab14cb220beba56a" cid="C021" type="class" name="FormLogin" owner="di0b8f494aa92440a0b95494c197e3e8297385" creator="" creation-date="11/28/2022 16:01:59">
+      <owned-items />
+      <attributes>
+        <attribute id="af18e24304e12465bb47450ac0f05e1aa386" cid="PROP112" name="r_FBAPIClient" creation-date="11/28/2022 16:01:59" property-ref="dd4c75bb1d24431ca001c56772d4e8b8" />
+        <attribute id="ad63eb7e303464766abc15f42cc86e903386" cid="PROP113" name="r_FromAppSettings" creation-date="11/28/2022 16:01:59" property-ref="4ec2382603434c02add94c9d455346dc" />
+        <attribute id="ae26eeacf8fdd4cd4a1fdbe3f1169868a387" cid="PROP118" name="LoginSucceed" creation-date="11/28/2022 16:01:59" property-ref="35912cfea785467499f6199fb8797cb5" />
+      </attributes>
+      <operations>
+        <operation id="o61b56157420e4d88b2239a98f5e5d9cf387" cid="OP073" name="FormLogin" creation-date="11/28/2022 16:01:59" type="" type-id="" visibility="public">
+          <parameters>
+            <parameter id="p1b63c5f7f5834bda8dcf46b9f6ace58d" name="i_FBAPIClient" type="FBAPIClient" type-id="Class:2abfefc5368c499dabec0969b4792b86" />
+            <parameter id="p9dc3acaa7efd40438b77288b932dca2b" name="i_FormAppSettings" type="FormAppSettings" type-id="FormAppSettings" />
+          </parameters>
+          <stereotypes>
+            <stereotype>create</stereotype>
+          </stereotypes>
+        </operation>
+        <operation id="odc9a1519eea74e6aa207814dc969dcb2482" cid="OP101" name="CreateLoginRequest" creation-date="11/28/2022 16:48:28" type="Void" type-id="Void" visibility="private" />
+      </operations>
+    </item>
+  </items>
+  <models>
+    <model id="p25bfd6a2aaf04ff3bf792feccefeb8b6_192721904" name="Model4" namespace="" order-index="4">
+      <meta>
+        <authors>
+          <author>Amir Anckonina</author>
+        </authors>
+        <description />
+        <creation-date>11/28/2022 16:01:59</creation-date>
+        <change-date>01/01/0001 00:00:00</change-date>
+        <revision-count>0</revision-count>
+        <version />
+      </meta>
+      <abstract-items />
+      <sub-models />
+      <diagram type="uml-package" id="paa8c2c9bf5934845b72399089ab2f0fa_712421569" name="FacebookWinFormsAppDiagram" order-index="5" overview-order-index="3" uid="" auto-routed-paths="false" default-line-style="default" view-location="-97,-156">
+        <style>
+          <background-color index="1" color="#FFFFFFFF" />
+          <background-color index="2" color="#FFFFFFFF" />
+          <background-type type="vertical-linear" />
+        </style>
+        <meta>
+          <authors>
+            <author>Amir Anckonina</author>
+          </authors>
+          <description />
+          <creation-date>11/28/2022 16:01:59</creation-date>
+          <change-date>11/28/2022 17:48:33</change-date>
+          <revision-count>0</revision-count>
+          <version />
+        </meta>
+        <abstract-items />
+        <layer id="a6f6fb2c9210469d958ad4b090972aaf" name="Default" visible="true" enabled="true" locked="false" />
+      </diagram>
+      <diagram type="uml-class" id="p2c63653c6c3a45a78262f2e1fc2db1e2_789461760" name="ClassDiagramAll" order-index="4" overview-order-index="2" uid="" auto-routed-paths="false" default-line-style="default" view-location="-16,-720" zoom="0.8">
+        <style>
+          <background-color index="1" color="#FFFFFFFF" />
+          <background-color index="2" color="#FFFFFFFF" />
+          <background-type type="vertical-linear" />
+        </style>
+        <meta>
+          <authors>
+            <author>Amir Anckonina</author>
+          </authors>
+          <description />
+          <creation-date>11/28/2022 16:01:59</creation-date>
+          <change-date>11/28/2022 17:33:11</change-date>
+          <revision-count>0</revision-count>
+          <version />
+        </meta>
+        <abstract-items>
+          <item id="di639727fd0ee54564ab41956d9348a65e5809" cid="PROP189" type="property" name="Name" owner="di75c7860e609a4f0fa243158e1de790e35809" creator="" creation-date="11/28/2022 16:01:59" visibility="public">
+            <stereotypes>
+              <stereotype name="property" />
+            </stereotypes>
+            <stereotype-instances>
+              <stereotype id="124170f7fad048cc84c4f2551f735e2a_property_c" type="property" ref="" />
+            </stereotype-instances>
+            <structural-feature type="String" type-id="Uml.String" />
+          </item>
+          <item id="di88483f227b7846a094660ec5cf7a9b985966" cid="PROP176" type="property" name="Message" owner="di9cce443433344fb7a2cff43e86c2245a5966" creator="" creation-date="11/28/2022 16:01:59" visibility="public">
+            <stereotypes>
+              <stereotype name="property" />
+            </stereotypes>
+            <stereotype-instances>
+              <stereotype id="2293a40b11cf495dadbec6527e6281ba_property_c" type="property" ref="" />
+            </stereotype-instances>
+            <structural-feature type="String" type-id="Uml.String" />
+          </item>
+          <item id="di01147cca138c4881ad55487aed73a40e5809" cid="PROP190" type="property" name="Hometown" owner="di75c7860e609a4f0fa243158e1de790e35809" creator="" creation-date="11/28/2022 16:01:59" visibility="public">
+            <stereotypes>
+              <stereotype name="property" />
+            </stereotypes>
+            <stereotype-instances>
+              <stereotype id="bfa70d7fa6b4418bac981436fab4e0c3_property_c" type="property" ref="" />
+            </stereotype-instances>
+            <structural-feature type="String" type-id="Uml.String" />
+          </item>
+          <item id="di5a3106db80f242589cf4fcb87661c9a05809" cid="PROP185" type="property" name="Name" owner="di78917519cbfb4964b053d2cbd767bdec5809" creator="" creation-date="11/28/2022 16:01:59" visibility="public">
+            <stereotypes>
+              <stereotype name="property" />
+            </stereotypes>
+            <stereotype-instances>
+              <stereotype id="0fb54b4c2fcb4dfc988f5ff1597b3263_property_c" type="property" ref="" />
+            </stereotype-instances>
+            <structural-feature type="String" type-id="Uml.String" />
+          </item>
+          <item id="di574e228fab0a4b4cba280244b77912385966" cid="PROP168" type="property" name="Gender" owner="di90f0b498e34e463b95de55f09eb4e18a5966" creator="" creation-date="11/28/2022 16:01:59" visibility="public">
+            <stereotypes>
+              <stereotype name="property" />
+            </stereotypes>
+            <stereotype-instances>
+              <stereotype id="f2bb242dc2be4c4db79e10ec5c3c1be0_property_c" type="property" ref="" />
+            </stereotype-instances>
+            <structural-feature type="String" type-id="Uml.String" />
+          </item>
+          <item id="dic82c7ff6eb734ec582576b04782cdefe5966" cid="PROP172" type="property" name="&lt;Name&gt;k__BackingField" owner="di2eea2673dc77401ab925a9102e6557a95966" creator="" creation-date="11/28/2022 16:01:59" visibility="private">
+            <structural-feature type="String" type-id="Uml.String" />
+          </item>
+          <item id="diae325da3d73a4263905f1fa04cdff33d5966" cid="PROP184" type="property" name="Education" owner="di0396e00801124115be413a7ae8179db75966" creator="" creation-date="11/28/2022 16:01:59" visibility="public">
+            <stereotypes>
+              <stereotype name="property" />
+            </stereotypes>
+            <stereotype-instances>
+              <stereotype id="896eaee6c6434ed4920d12a069fc833a_property_c" type="property" ref="" />
+            </stereotype-instances>
+            <structural-feature type="String" type-id="Uml.String" />
+          </item>
+          <item id="dif19e51eff7c44404a4ad3211b9f866245809" cid="PROP192" type="property" name="PictureURL" owner="di75c7860e609a4f0fa243158e1de790e35809" creator="" creation-date="11/28/2022 16:01:59" visibility="public">
+            <stereotypes>
+              <stereotype name="property" />
+            </stereotypes>
+            <stereotype-instances>
+              <stereotype id="4863ef611bb04f018ee03b1145915fe7_property_c" type="property" ref="" />
+            </stereotype-instances>
+            <structural-feature type="String" type-id="Uml.String" />
+          </item>
+          <item id="di201f6203d8ce403b96672708dacf2dad5966" cid="GNR011" type="generalization" owner="di94ca93dfd35c4d5dad3a2c5c03a164325966" creator="" creation-date="11/28/2022 16:01:59" from="di01a77b3aadba488a8bcf1a42951551265966" to="di2eea2673dc77401ab925a9102e6557a95966" visibility="package" />
+          <item id="di94ca93dfd35c4d5dad3a2c5c03a164325966" cid="PKG010" type="package" name="DTOs" owner="di2c93c42e6c8640aa91f5cef505423ce67051" creator="" creation-date="11/28/2022 16:01:59" visibility="undefined">
+            <owned-items />
+          </item>
+          <item id="diab09cf2c164a4029a26d39660d067e915809" cid="E004" type="enumeration" name="eOnlineStatus" owner="di4c182a5dd03a43348b5deff6c16d8aae5809" creator="" creation-date="11/28/2022 16:01:59" visibility="undefined">
+            <stereotypes>
+              <stereotype name="enumeration" />
+            </stereotypes>
+            <stereotype-instances>
+              <stereotype id="dc2908cf183f4102ab9f02844ea8b6f9_enumeration_c" type="enumeration" ref="" />
+            </stereotype-instances>
+            <enumeration-items>
+              <enumeration-item id="a1b3af83530504f0c9ce210026f18f4df368" cid="ENI004" name="idle" creation-date="11/28/2022 16:01:59" />
+              <enumeration-item id="ac00748fe0ae84a8da519aec013db8bb3368" cid="ENI005" name="active" creation-date="11/28/2022 16:01:59" />
+              <enumeration-item id="ae6bcc28c3a4a4172a89b8600d87082a1368" cid="ENI006" name="offline" creation-date="11/28/2022 16:01:59" />
+              <enumeration-item id="af188f9c90c47499cb7439bea7cfd5a9c368" cid="ENI007" name="unknown" creation-date="11/28/2022 16:01:59" />
+            </enumeration-items>
+          </item>
+          <item id="di69474e49e21e4d23aad935cc2c0b7f915966" cid="PROP175" type="property" name="PictureURL" owner="di2eea2673dc77401ab925a9102e6557a95966" creator="" creation-date="11/28/2022 16:01:59" visibility="public">
+            <stereotypes>
+              <stereotype name="property" />
+            </stereotypes>
+            <stereotype-instances>
+              <stereotype id="fe48d64e06aa49b296f8ac213cb55c3a_property_c" type="property" ref="" />
+            </stereotype-instances>
+            <structural-feature type="String" type-id="Uml.String" />
+          </item>
+          <item id="di90f0b498e34e463b95de55f09eb4e18a5966" cid="C031" type="class" name="UserBasicInfoDTO" owner="di94ca93dfd35c4d5dad3a2c5c03a164325966" creator="" creation-date="11/28/2022 16:01:59" visibility="undefined">
+            <attributes>
+              <attribute id="a3fdcb78ade764aae909fbcc4ca0d1511376" cid="PROP167" name="Birthday" creation-date="11/28/2022 16:01:59" property-ref="di0a76cca1580a493e9bae7ed7450d0b865966" />
+              <attribute id="a3e58d49d28e1426697d6c00e0f320aff376" cid="PROP168" name="Gender" creation-date="11/28/2022 16:01:59" property-ref="di574e228fab0a4b4cba280244b77912385966" />
+              <attribute id="a1df4e88666ab4e2987e4563ddb0bc493376" cid="PROP169" name="Hometown" creation-date="11/28/2022 16:01:59" property-ref="di6f96ad29f2cc44d99c2006013aad4a8a5966" />
+              <attribute id="a9e1f3732775741b4953776ec28d18a93376" cid="PROP170" name="Education" creation-date="11/28/2022 16:01:59" property-ref="dic366cc3bf5fa4cecb8a222cb71c050945966" />
+              <attribute id="a6f861c699a4043b3979a7056e6a1b846376" cid="PROP171" name="OnlineStatus" creation-date="11/28/2022 16:01:59" property-ref="di350040cf9e494836b8dcf6ff9a98c0aa5966" />
+            </attributes>
+          </item>
+          <item id="dd4c75bb1d24431ca001c56772d4e8b8" cid="PROP112" type="property" name="r_FBAPIClient" owner="89b1a3d7fb994224ab14cb220beba56a" creator="" creation-date="11/28/2022 16:01:59" visibility="private">
+            <structural-feature type="FBAPIClient" type-id="Class:2abfefc5368c499dabec0969b4792b86" />
+          </item>
+          <item id="35912cfea785467499f6199fb8797cb5" cid="PROP118" type="property" name="LoginSucceed" owner="89b1a3d7fb994224ab14cb220beba56a" creator="" creation-date="11/28/2022 16:01:59" visibility="public">
+            <stereotypes>
+              <stereotype name="property" />
+            </stereotypes>
+            <stereotype-instances>
+              <stereotype id="35912cfea785467499f6199fb8797cb5_property_c" type="property" ref="" />
+            </stereotype-instances>
+            <structural-feature type="Boolean" type-id="Uml.Boolean" />
+          </item>
+          <item id="di2c93c42e6c8640aa91f5cef505423ce67051" cid="PKG014" type="package" name="FBServiceLogic" creator="" creation-date="11/28/2022 16:01:59" visibility="undefined">
+            <owned-items />
+          </item>
+          <item id="4ec2382603434c02add94c9d455346dc" cid="PROP113" type="property" name="r_FromAppSettings" owner="89b1a3d7fb994224ab14cb220beba56a" creator="" creation-date="11/28/2022 16:01:59" visibility="private">
+            <structural-feature type="FormAppSettings" type-id="FormAppSettings" />
+          </item>
+          <item id="di0396e00801124115be413a7ae8179db75966" cid="C024" type="class" name="AlumniDTO" owner="di94ca93dfd35c4d5dad3a2c5c03a164325966" creator="" creation-date="11/28/2022 16:01:59" visibility="undefined">
+            <attributes>
+              <attribute id="ac3f09f07c85f44f3a30ddd6c8e19fba0376" cid="PROP184" name="Education" creation-date="11/28/2022 16:01:59" property-ref="diae325da3d73a4263905f1fa04cdff33d5966" />
+            </attributes>
+          </item>
+          <item id="di800728fba3ea426d8b02a1cdb0560a208252" cid="PROP199" type="property" name="AppID" owner="dib3b3e9f921ce46669f4315bbe0200ba38252" creator="" creation-date="11/28/2022 16:01:59" visibility="public">
+            <stereotypes>
+              <stereotype name="property" />
+            </stereotypes>
+            <stereotype-instances>
+              <stereotype id="c5d763a6266548df9d8cbfc73d09046f_property_c" type="property" ref="" />
+            </stereotype-instances>
+            <structural-feature type="String" type-id="Uml.String" />
+          </item>
+          <item id="di8e3c47a9f24f4550bb7ef7841e5d1e478252" cid="PROP202" type="property" name="m_DummyCurrUserData" owner="di08a4de418c3a4326943fbb0daa22bd478252" creator="" creation-date="11/28/2022 16:01:59" visibility="private">
+            <structural-feature type="DummyCurrentUser" type-id="Class:98d409381e9f480d8e89b27daaf1d694" />
+          </item>
+          <item id="di852dc3a5785649c7946b058058ffe5e54014" cid="PKG008" type="package" name="FacebookWinFormsApp" creator="" creation-date="11/28/2022 16:01:59" visibility="undefined">
+            <owned-items />
+          </item>
+          <item id="39a8552209f44f319d16c297ca33f391" cid="PROP119" type="property" name="r_FBAPIClient" owner="e7817099f65e433fb69d3bb5b5a4e8c1" creator="" creation-date="11/28/2022 16:01:59" visibility="private">
+            <structural-feature type="FBAPIClient" type-id="Class:2abfefc5368c499dabec0969b4792b86" />
+          </item>
+          <item id="di939227ac686a4920a69cd05be914c52d5809" cid="PROP186" type="property" name="PictureURL" owner="di78917519cbfb4964b053d2cbd767bdec5809" creator="" creation-date="11/28/2022 16:01:59" visibility="public">
+            <stereotypes>
+              <stereotype name="property" />
+            </stereotypes>
+            <stereotype-instances>
+              <stereotype id="ab6e2463ed9f42dc8ec582fb8d503214_property_c" type="property" ref="" />
+            </stereotype-instances>
+            <structural-feature type="String" type-id="Uml.String" />
+          </item>
+          <item id="di267d7b43d7a2403191a6fbacbbcec27b5809" cid="PROP193" type="property" name="OnlineStatus" owner="di75c7860e609a4f0fa243158e1de790e35809" creator="" creation-date="11/28/2022 16:01:59" visibility="public">
+            <stereotypes>
+              <stereotype name="property" />
+            </stereotypes>
+            <stereotype-instances>
+              <stereotype id="ffe6bf142f1240218cfac2e0eea40b43_property_c" type="property" ref="" />
+            </stereotype-instances>
+            <structural-feature type="eOnlineStatus" type-id="eOnlineStatus" />
+          </item>
+          <item id="di08a4de418c3a4326943fbb0daa22bd478252" cid="C037" type="class" name="FBAPIClient" owner="di2c93c42e6c8640aa91f5cef505423ce67051" creator="" creation-date="11/28/2022 16:01:59" visibility="undefined">
+            <attributes>
+              <attribute id="aabd2d7a4675a4bc7beeea33affb92e95383" cid="PROP201" name="m_CurrentUser" creation-date="11/28/2022 16:01:59" property-ref="di89f70a84551f46b9881e3e206521a3f28252" />
+              <attribute id="a5d6ab806fcc743ad85aaa34881754eca383" cid="PROP202" name="m_DummyCurrUserData" creation-date="11/28/2022 16:01:59" property-ref="di8e3c47a9f24f4550bb7ef7841e5d1e478252" />
+              <attribute id="a53bd130176284538aaba67d64aa3beab383" cid="PROP203" name="m_LoginResult" creation-date="11/28/2022 16:01:59" property-ref="dice9526c86ab34a3196c87ae4cab4485c8252" />
+              <attribute id="ab66cc43d28224745aa684fcb0180b493383" cid="PROP204" name="r_AppSettings" creation-date="11/28/2022 16:01:59" property-ref="di501f9e849eee4340a03c66ed7a8ea6888252" />
+              <attribute id="a45699958cdc54a00bfa1d97a0b98550c383" cid="PROP205" name="CurrentUser" creation-date="11/28/2022 16:01:59" property-ref="die21937a9931246369aa2e734a85ecedc8252" />
+              <attribute id="ae69ccecdc8084c01934bbb35d6126102383" cid="PROP206" name="LoginResult" creation-date="11/28/2022 16:01:59" property-ref="di35e5691a723341deb0262decd0a7775a8252" />
+              <attribute id="ac2ca41cd99bb438eb33df2248ee36507383" cid="PROP207" name="AppSettings" creation-date="11/28/2022 16:01:59" property-ref="di77769305b7ae40afae95a25c704fe8cc8252" />
+            </attributes>
+            <operations>
+              <operation id="o82409e626c764b668113bd70b18ee331383" cid="OP030" name="Login" creation-date="11/28/2022 16:01:59" type="Void" type-id="Void" visibility="public" />
+              <operation id="oc9b1c2b1e1f74de2ac62b339f9c864de383" cid="OP031" name="AutomaticLogin" creation-date="11/28/2022 16:01:59" type="Void" type-id="Void" visibility="public" />
+              <operation id="of9693a3282c6468e94bc683e0d1fe930383" cid="OP032" name="CompleteLoginProcedure" creation-date="11/28/2022 16:01:59" type="Void" type-id="Void" visibility="private">
+                <parameters>
+                  <parameter id="p3109d6918ceb4532ae961b0531f75568" name="i_AccessToken" type="String" type-id="Uml.String" />
+                </parameters>
+              </operation>
+              <operation id="of71d3624e6364034a35aa81b268e1c94383" cid="OP033" name="Logout" creation-date="11/28/2022 16:01:59" type="Void" type-id="Void" visibility="public" />
+              <operation id="o7d5affd4c03942e0b1fd43308190a356383" cid="OP034" name="ResetCurrentFBState" creation-date="11/28/2022 16:01:59" type="Void" type-id="Void" visibility="public" />
+              <operation id="o3493d734aec34d3cb5b86cf28e8fc4f5383" cid="OP035" name="GetUserBasicInfoDTO" creation-date="11/28/2022 16:01:59" type="UserBasicInfoDTO" type-id="Class:655fc04a75b64b13b6f1c1373dfebf9b" visibility="public" />
+              <operation id="oee2e561995a84aeba96a97ceea5ff39d383" cid="OP036" name="GetFriendsList" creation-date="11/28/2022 16:01:59" type="List" type-id="List" visibility="public" />
+              <operation id="ob1eb128266974a49ad190d8da2068655383" cid="OP037" name="GetAlbumsList" creation-date="11/28/2022 16:01:59" type="List" type-id="List" visibility="public" />
+              <operation id="o47c5596a50a24ceab8b332452ae2ef64383" cid="OP038" name="GetPostsList" creation-date="11/28/2022 16:01:59" type="List" type-id="List" visibility="public" />
+              <operation id="o41f2124a36854f0b8349bcfd1b9d4803383" cid="OP039" name="GetPostsByDate" creation-date="11/28/2022 16:01:59" type="List" type-id="List" visibility="public">
+                <parameters>
+                  <parameter id="p720a1c1173d84872a3f5b8fc67af4ce2" name="i_DateTime" type="DateTime" type-id="Uml.DateTime" />
+                </parameters>
+              </operation>
+              <operation id="o442ef8db61f44acb964cf472a2e8dfe3383" cid="OP040" name="GetGroupsNamesList" creation-date="11/28/2022 16:01:59" type="List" type-id="List" visibility="public" />
+              <operation id="oa41ed6cc758c4e4d9196762a65653681383" cid="OP041" name="GetMyAlumnus" creation-date="11/28/2022 16:01:59" type="List" type-id="List" visibility="public" />
+              <operation id="oec36ffcc15904fd19d01bf4cf2547c9d383" cid="OP042" name="GetMyHometownFriends" creation-date="11/28/2022 16:01:59" type="List" type-id="List" visibility="public" />
+              <operation id="o46b09d57fbb94bd392aac4f781076574383" cid="OP043" name="GetLikedPages" creation-date="11/28/2022 16:01:59" type="List" type-id="List" visibility="public" />
+            </operations>
+          </item>
+          <item id="dia584c29ee126489bb24e6a85857219c75966" cid="C025" type="class" name="FriendDTO" owner="di94ca93dfd35c4d5dad3a2c5c03a164325966" creator="" creation-date="11/28/2022 16:01:59" visibility="undefined">
+            <attributes>
+              <attribute id="ade2c6b421f0e43e3b0588e3f1ea67437376" cid="PROP183" name="OnlineStatus" creation-date="11/28/2022 16:01:59" property-ref="di99ee9eb62f2b420db4f6edb8c84907ff5966" />
+            </attributes>
+          </item>
+          <item id="dieb0ad8d6098747b693dccec1ead0764b8252" cid="PROP197" type="property" name="RememberUserActivated" owner="dib3b3e9f921ce46669f4315bbe0200ba38252" creator="" creation-date="11/28/2022 16:01:59" visibility="public">
+            <stereotypes>
+              <stereotype name="property" />
+            </stereotypes>
+            <stereotype-instances>
+              <stereotype id="75db016e899c44eabe316e42c57772ed_property_c" type="property" ref="" />
+            </stereotype-instances>
+            <structural-feature type="Boolean" type-id="Uml.Boolean" />
+          </item>
+          <item id="di3fadc43ace60417992848dbe394328eb5966" cid="PROP181" type="property" name="Privacy" owner="di17ec2832c4514d19ae947c10093d95245966" creator="" creation-date="11/28/2022 16:01:59" visibility="public">
+            <stereotypes>
+              <stereotype name="property" />
+            </stereotypes>
+            <stereotype-instances>
+              <stereotype id="b7a02bb16db04ffc80278d49360d5e8a_property_c" type="property" ref="" />
+            </stereotype-instances>
+            <structural-feature type="String" type-id="Uml.String" />
+          </item>
+          <item id="die71c323be8d0430091d9a4d6176b6af55809" cid="E003" type="enumeration" name="eGroupPrivacy" owner="di4c182a5dd03a43348b5deff6c16d8aae5809" creator="" creation-date="11/28/2022 16:01:59" visibility="undefined">
+            <stereotypes>
+              <stereotype name="enumeration" />
+            </stereotypes>
+            <stereotype-instances>
+              <stereotype id="c198172e644d4a9a90ea110f7b12b2d8_enumeration_c" type="enumeration" ref="" />
+            </stereotype-instances>
+            <enumeration-items>
+              <enumeration-item id="ae55cd4bcd9e44cc387fe09a2a3288946367" cid="ENI001" name="Open" creation-date="11/28/2022 16:01:59" />
+              <enumeration-item id="a503e96038f564c69a12dfe4010f92968367" cid="ENI002" name="Closed" creation-date="11/28/2022 16:01:59" />
+              <enumeration-item id="a82899760a6fe4b38830777ebf83697d8367" cid="ENI003" name="Secret" creation-date="11/28/2022 16:01:59" />
+            </enumeration-items>
+          </item>
+          <item id="di99ee9eb62f2b420db4f6edb8c84907ff5966" cid="PROP183" type="property" name="OnlineStatus" owner="dia584c29ee126489bb24e6a85857219c75966" creator="" creation-date="11/28/2022 16:01:59" visibility="public">
+            <stereotypes>
+              <stereotype name="property" />
+            </stereotypes>
+            <stereotype-instances>
+              <stereotype id="57334efea60e47a69bc9956ba352301e_property_c" type="property" ref="" />
+            </stereotype-instances>
+            <structural-feature type="String" type-id="Uml.String" />
+          </item>
+          <item id="di501f9e849eee4340a03c66ed7a8ea6888252" cid="PROP204" type="property" name="r_AppSettings" owner="di08a4de418c3a4326943fbb0daa22bd478252" creator="" creation-date="11/28/2022 16:01:59" visibility="private">
+            <structural-feature type="AppSettings" type-id="AppSettings" />
+          </item>
+          <item id="di78917519cbfb4964b053d2cbd767bdec5809" cid="C035" type="class" name="DummyGroup" owner="di4c182a5dd03a43348b5deff6c16d8aae5809" creator="" creation-date="11/28/2022 16:01:59" visibility="undefined">
+            <attributes>
+              <attribute id="ad2517483616748fb871f638bd7c21052367" cid="PROP185" name="Name" creation-date="11/28/2022 16:01:59" property-ref="di5a3106db80f242589cf4fcb87661c9a05809" />
+              <attribute id="afd0f6952fefc4205a6e913526f03a164367" cid="PROP186" name="PictureURL" creation-date="11/28/2022 16:01:59" property-ref="di939227ac686a4920a69cd05be914c52d5809" />
+              <attribute id="ae7373c5e8f9f441f8696bfb35a06d919367" cid="PROP187" name="MembersCount" creation-date="11/28/2022 16:01:59" property-ref="di7a6a390be40e43de8951f11ef1f61f075809" />
+              <attribute id="a99794ce66b9842adb51ec164e4a756cd367" cid="PROP188" name="Privacy" creation-date="11/28/2022 16:01:59" property-ref="dibb17c0af762e4a268be46596522196965809" />
+            </attributes>
+          </item>
+          <item id="di6123817ff97c4b9282385e24d2d420ce5966" cid="PROP177" type="property" name="Caption" owner="di9cce443433344fb7a2cff43e86c2245a5966" creator="" creation-date="11/28/2022 16:01:59" visibility="public">
+            <stereotypes>
+              <stereotype name="property" />
+            </stereotypes>
+            <stereotype-instances>
+              <stereotype id="abf282929a6a472f9fc00632bf33fd02_property_c" type="property" ref="" />
+            </stereotype-instances>
+            <structural-feature type="String" type-id="Uml.String" />
+          </item>
+          <item id="1896f5ad407d43d3824f21651606b83e" cid="PROP111" type="property" name="WithDefaultPermissions" owner="75118c846e904f20ad12eac721007a46" creator="" creation-date="11/28/2022 16:01:59" visibility="public">
+            <stereotypes>
+              <stereotype name="property" />
+            </stereotypes>
+            <stereotype-instances>
+              <stereotype id="1896f5ad407d43d3824f21651606b83e_property_c" type="property" ref="" />
+            </stereotype-instances>
+            <structural-feature type="Boolean" type-id="Uml.Boolean" />
+          </item>
+          <item id="di77769305b7ae40afae95a25c704fe8cc8252" cid="PROP207" type="property" name="AppSettings" owner="di08a4de418c3a4326943fbb0daa22bd478252" creator="" creation-date="11/28/2022 16:01:59" visibility="public">
+            <stereotypes>
+              <stereotype name="property" />
+            </stereotypes>
+            <stereotype-instances>
+              <stereotype id="67ec82b5253443e7ac1db969f8db946c_property_c" type="property" ref="" />
+            </stereotype-instances>
+            <structural-feature type="AppSettings" type-id="AppSettings" />
+          </item>
+          <item id="di305a90f0a5a74aeaa44a995bbd9122915966" cid="GNR008" type="generalization" owner="di94ca93dfd35c4d5dad3a2c5c03a164325966" creator="" creation-date="11/28/2022 16:01:59" from="di0396e00801124115be413a7ae8179db75966" to="di2eea2673dc77401ab925a9102e6557a95966" visibility="package" />
+          <item id="di0bdd4082bcde4d519a9746c66b719ca15809" cid="C033" type="class" name="DummyDataCreator" owner="di4c182a5dd03a43348b5deff6c16d8aae5809" creator="" creation-date="11/28/2022 16:01:59" visibility="undefined">
+            <style style-name="Default" shadow-type="smooth" shadow-offset="2,2" shadow-visible="true" shadow-color="#3A555555" shadow-radius="8" wrap-name-text="true" wrap-other-text="true" padding="2" margin="1" glow-color="#FFFFFF" accuracy="0.9">
+              <text-style type="name" color="#555555" font="Segoe UI;11.25;BU" />
+              <text-style type="part-header" color="#1E1E1E" font="Verdana;9;I" />
+              <text-style type="text" color="#555555" font="Segoe UI;9.75;" horizontal-alignment="left" />
+              <text-style type="tagged-value" color="#555555" font="Segoe UI;9.75;" />
+              <text-style type="stereotype" color="#555555" font="Segoe UI;9;I" />
+              <background type="solid" colors="#F2F2F2,#F2F2F2" />
+              <border color="#555555" width="2" dash-style="Solid" />
+              <label-connector color="#80000000" dash-style="Dash" />
+              <alternate-styles>
+                <alternate-style style-name="Alternate" shadow-type="smooth" shadow-offset="2,2" shadow-visible="true" shadow-color="#322A2A2A" shadow-radius="8" wrap-name-text="true" wrap-other-text="true" padding="2" margin="1" glow-color="#FFFFFF" accuracy="0.9">
+                  <text-style type="name" color="#E9E9E9" font="Segoe UI;11.25;B" />
+                  <text-style type="part-header" color="#1E1E1E" font="Verdana;9;I" />
+                  <text-style type="text" color="#E9E9E9" font="Segoe UI;9.75;" horizontal-alignment="left" />
+                  <text-style type="tagged-value" color="#E9E9E9" font="Segoe UI;9.75;" />
+                  <text-style type="stereotype" color="#E9E9E9" font="Segoe UI;9;I" />
+                  <background type="solid" colors="#203D85,#203D85" />
+                  <border color="#203D85" width="2" dash-style="Solid" />
+                  <label-connector color="#80000000" dash-style="Dash" />
+                </alternate-style>
+              </alternate-styles>
+            </style>
+            <operations>
+              <operation id="od4039ddf2366443e9211d1040d45ec8b365" cid="OP003" name="GenerateRandLikesCount" creation-date="11/28/2022 16:01:59" type="long?" type-id="long?" visibility="public" static="true" />
+              <operation id="o1c891b2a5ad640f28a5867fa787c6541365" cid="OP004" name="GenerateRandOnlineStatus" creation-date="11/28/2022 16:01:59" type="eOnlineStatus" type-id="eOnlineStatus" visibility="private" static="true" />
+              <operation id="o53996a717dbb42cda737b7a981b73d2e365" cid="OP005" name="CreateDummyDataForCurrentUser" creation-date="11/28/2022 16:01:59" type="DummyCurrentUser" type-id="Class:98d409381e9f480d8e89b27daaf1d694" visibility="public" static="true">
+                <parameters>
+                  <parameter id="p7ccda3445d5b4b3db723e3d8deab4a58" name="i_Name" type="String" type-id="Uml.String" />
+                  <parameter id="p901e25b957344ec19f5ba50f712548cf" name="i_ProfilePictureURL" type="String" type-id="Uml.String" />
+                </parameters>
+              </operation>
+              <operation id="o733d1ec393974e6aa9f5f37d36798637366" cid="OP006" name="CreateDummyGroups" creation-date="11/28/2022 16:01:59" type="List" type-id="List" visibility="private" static="true" />
+              <operation id="o627afc8ba7a547b5b7ce8083ec5084ad367" cid="OP007" name="CreateDummyFriends" creation-date="11/28/2022 16:01:59" type="List" type-id="List" visibility="public" static="true" />
+            </operations>
+          </item>
+          <item id="die4c372c964ab48aeb022b02252b800938252" cid="PROP196" type="property" name="sr_AppSettingsFilePath" owner="dib3b3e9f921ce46669f4315bbe0200ba38252" creator="" creation-date="11/28/2022 16:01:59" visibility="private">
+            <feature static="true" />
+            <structural-feature type="String" type-id="Uml.String" />
+          </item>
+          <item id="di65cbe3eae7584f599d39df309fece3ce5809" cid="GNR014" type="generalization" owner="di4c182a5dd03a43348b5deff6c16d8aae5809" creator="" creation-date="11/28/2022 16:01:59" from="di9b16704670f34b53a142ee4e314871fb5809" to="di75c7860e609a4f0fa243158e1de790e35809" visibility="package" />
+          <item id="di7a6a390be40e43de8951f11ef1f61f075809" cid="PROP187" type="property" name="MembersCount" owner="di78917519cbfb4964b053d2cbd767bdec5809" creator="" creation-date="11/28/2022 16:01:59" visibility="public">
+            <stereotypes>
+              <stereotype name="property" />
+            </stereotypes>
+            <stereotype-instances>
+              <stereotype id="d69b636b8a3b4b6e9f861b2c976fdc0a_property_c" type="property" ref="" />
+            </stereotype-instances>
+            <structural-feature type="Int" type-id="Int" />
+          </item>
+          <item id="di4c182a5dd03a43348b5deff6c16d8aae5809" cid="PKG012" type="package" name="DummyData" owner="di2c93c42e6c8640aa91f5cef505423ce67051" creator="" creation-date="11/28/2022 16:01:59" visibility="undefined" />
+          <item id="di350040cf9e494836b8dcf6ff9a98c0aa5966" cid="PROP171" type="property" name="OnlineStatus" owner="di90f0b498e34e463b95de55f09eb4e18a5966" creator="" creation-date="11/28/2022 16:01:59" visibility="public">
+            <stereotypes>
+              <stereotype name="property" />
+            </stereotypes>
+            <stereotype-instances>
+              <stereotype id="4921ca44bf524304b2c6547f72f7551d_property_c" type="property" ref="" />
+            </stereotype-instances>
+            <structural-feature type="String" type-id="Uml.String" />
+          </item>
+          <item id="di3c185035e2924f55b7f5c0852e69b2f05966" cid="PROP174" type="property" name="Name" owner="di2eea2673dc77401ab925a9102e6557a95966" creator="" creation-date="11/28/2022 16:01:59" visibility="public">
+            <stereotypes>
+              <stereotype name="property" />
+            </stereotypes>
+            <stereotype-instances>
+              <stereotype id="f3b4994295474e1da2c95db5863a146b_property_c" type="property" ref="" />
+            </stereotype-instances>
+            <structural-feature type="String" type-id="Uml.String" />
+          </item>
+          <item id="c1dfcafad2ed45599670369d27a493be" cid="PROP099" type="property" name="r_FBAPIClient" owner="75118c846e904f20ad12eac721007a46" creator="" creation-date="11/28/2022 16:01:59" visibility="private">
+            <structural-feature type="FBAPIClient" type-id="Class:2abfefc5368c499dabec0969b4792b86" />
+          </item>
+          <item id="di0b8f494aa92440a0b95494c197e3e8297385" cid="PKG015" type="package" name="Forms" owner="di852dc3a5785649c7946b058058ffe5e54014" creator="" creation-date="11/28/2022 16:01:59" visibility="undefined">
+            <owned-items />
+          </item>
+          <item id="did334bbca5bb249c99c559444520e6cc85809" cid="PROP194" type="property" name="Friends" owner="di9b16704670f34b53a142ee4e314871fb5809" creator="" creation-date="11/28/2022 16:01:59" visibility="public">
+            <stereotypes>
+              <stereotype name="property" />
+            </stereotypes>
+            <stereotype-instances>
+              <stereotype id="d939ac9a43f04fb99f69820a5a7d07aa_property_c" type="property" ref="" />
+            </stereotype-instances>
+            <structural-feature type="List" type-id="List" />
+          </item>
+          <item id="di0e156dd7081e4ae58d6620d04ab581265809" cid="PROP191" type="property" name="Education" owner="di75c7860e609a4f0fa243158e1de790e35809" creator="" creation-date="11/28/2022 16:01:59" visibility="public">
+            <stereotypes>
+              <stereotype name="property" />
+            </stereotypes>
+            <stereotype-instances>
+              <stereotype id="e832fe1b559d4846922e9c79108d995b_property_c" type="property" ref="" />
+            </stereotype-instances>
+            <structural-feature type="String" type-id="Uml.String" />
+          </item>
+          <item id="dib3b3e9f921ce46669f4315bbe0200ba38252" cid="C036" type="class" name="AppSettings" owner="di2c93c42e6c8640aa91f5cef505423ce67051" creator="" creation-date="11/28/2022 16:01:59" visibility="undefined">
+            <attributes>
+              <attribute id="acff3d6538c174e1ab72fc73680efcd38382" cid="PROP196" name="sr_AppSettingsFilePath" creation-date="11/28/2022 16:01:59" property-ref="die4c372c964ab48aeb022b02252b800938252" />
+              <attribute id="a3e1bdad25f744a258dbb096525bd7d6e382" cid="PROP197" name="RememberUserActivated" creation-date="11/28/2022 16:01:59" property-ref="dieb0ad8d6098747b693dccec1ead0764b8252" />
+              <attribute id="aad6b33ccf53a4e1f814ec8a43a20869d382" cid="PROP198" name="LastAccessToken" creation-date="11/28/2022 16:01:59" property-ref="diad535c5027b44e47baf82323954caa4a8252" />
+              <attribute id="a090291b4ffb04f27ae623e2a1bcba27c383" cid="PROP199" name="AppID" creation-date="11/28/2022 16:01:59" property-ref="di800728fba3ea426d8b02a1cdb0560a208252" />
+              <attribute id="a5490566534bd4451bb3356b61682089c383" cid="PROP200" name="Permissions" creation-date="11/28/2022 16:01:59" property-ref="di7ca1821887794025bb995463bfbfb4cf8252" />
+            </attributes>
+            <operations>
+              <operation id="o22ab4b6eb4b14caeaddd393ab968e150383" cid="OP022" name="SetDefaultAppSettings" creation-date="11/28/2022 16:01:59" type="Void" type-id="Void" visibility="public" />
+              <operation id="oc32ea4cebca24586a61d571af6233c35383" cid="OP024" name="LoadSettings" creation-date="11/28/2022 16:01:59" type="AppSettings" type-id="AppSettings" visibility="public" static="true" />
+              <operation id="o32116af5924c4afa9e07306969ccb2b2383" cid="OP025" name="AddPermission" creation-date="11/28/2022 16:01:59" type="Void" type-id="Void" visibility="public">
+                <parameters>
+                  <parameter id="p8ea5a148c5574cf5a2a49de6df1298da" name="i_Permission" type="String" type-id="Uml.String" />
+                </parameters>
+              </operation>
+              <operation id="o76b2f14b5aaf412e902e0202871cc3aa383" cid="OP026" name="SaveToFile" creation-date="11/28/2022 16:01:59" type="Void" type-id="Void" visibility="public" />
+              <operation id="oe60fe388be6c465eb61ffdbabcfe3ccf383" cid="OP027" name="LoadFromFile" creation-date="11/28/2022 16:01:59" type="AppSettings" type-id="AppSettings" visibility="private" static="true" />
+              <operation id="o76f097bc60be4fa7a4ce0b1f1ad8a418383" cid="OP028" name="ResetAppSettings" creation-date="11/28/2022 16:01:59" type="Void" type-id="Void" visibility="public" />
+            </operations>
+          </item>
+          <item id="dice9526c86ab34a3196c87ae4cab4485c8252" cid="PROP203" type="property" name="m_LoginResult" owner="di08a4de418c3a4326943fbb0daa22bd478252" creator="" creation-date="11/28/2022 16:01:59" visibility="private">
+            <structural-feature type="LoginResult" type-id="LoginResult" />
+          </item>
+          <item id="di7ca1821887794025bb995463bfbfb4cf8252" cid="PROP200" type="property" name="Permissions" owner="dib3b3e9f921ce46669f4315bbe0200ba38252" creator="" creation-date="11/28/2022 16:01:59" visibility="public">
+            <stereotypes>
+              <stereotype name="property" />
+            </stereotypes>
+            <stereotype-instances>
+              <stereotype id="07a55944743f430784b2bc1ec121dc74_property_c" type="property" ref="" />
+            </stereotype-instances>
+            <structural-feature type="List" type-id="List" />
+          </item>
+          <item id="ff98e796d55b4652a9674bcfb173c9d2" cid="PROP096" type="property" name="r_FormAppSettings" owner="3c8029e9a56e445993bfbde942f2ed69" creator="" creation-date="11/28/2022 16:01:59" visibility="private">
+            <structural-feature type="FormAppSettings" type-id="FormAppSettings" />
+          </item>
+          <item id="diac4e52c394e04343b3ac86337389dd035966" cid="GNR010" type="generalization" owner="di94ca93dfd35c4d5dad3a2c5c03a164325966" creator="" creation-date="11/28/2022 16:01:59" from="di17ec2832c4514d19ae947c10093d95245966" to="di2eea2673dc77401ab925a9102e6557a95966" visibility="package" />
+          <item id="di75c7860e609a4f0fa243158e1de790e35809" cid="C034" type="class" name="DummyUser" owner="di4c182a5dd03a43348b5deff6c16d8aae5809" creator="" creation-date="11/28/2022 16:01:59" visibility="undefined">
+            <attributes>
+              <attribute id="a34edb50bb59543c8a8ebc71fba7cbf8f368" cid="PROP189" name="Name" creation-date="11/28/2022 16:01:59" property-ref="di639727fd0ee54564ab41956d9348a65e5809" />
+              <attribute id="ac225d38204504b83a2c0afa9eae84037368" cid="PROP190" name="Hometown" creation-date="11/28/2022 16:01:59" property-ref="di01147cca138c4881ad55487aed73a40e5809" />
+              <attribute id="a5c9d3c85b55b41acb900572f024a9161368" cid="PROP191" name="Education" creation-date="11/28/2022 16:01:59" property-ref="di0e156dd7081e4ae58d6620d04ab581265809" />
+              <attribute id="a1271d7022ec5499aa3a657003a7aaa94368" cid="PROP192" name="PictureURL" creation-date="11/28/2022 16:01:59" property-ref="dif19e51eff7c44404a4ad3211b9f866245809" />
+              <attribute id="a411c021e11a742109cabbdb11208bb5b368" cid="PROP193" name="OnlineStatus" creation-date="11/28/2022 16:01:59" property-ref="di267d7b43d7a2403191a6fbacbbcec27b5809" />
+            </attributes>
+          </item>
+          <item id="di17ec2832c4514d19ae947c10093d95245966" cid="C026" type="class" name="GroupDTO" owner="di94ca93dfd35c4d5dad3a2c5c03a164325966" creator="" creation-date="11/28/2022 16:01:59" visibility="undefined">
+            <attributes>
+              <attribute id="a91f64fcd3d3b401c94aa7b13b876035b376" cid="PROP181" name="Privacy" creation-date="11/28/2022 16:01:59" property-ref="di3fadc43ace60417992848dbe394328eb5966" />
+              <attribute id="a1f63ca5222c24d4daaf4c624163f8707376" cid="PROP182" name="MembersCount" creation-date="11/28/2022 16:01:59" property-ref="di81c5ca5bd15f4dbb9f52a3f7ab4277d45966" />
+            </attributes>
+          </item>
+          <item id="di89f70a84551f46b9881e3e206521a3f28252" cid="PROP201" type="property" name="m_CurrentUser" owner="di08a4de418c3a4326943fbb0daa22bd478252" creator="" creation-date="11/28/2022 16:01:59" visibility="private">
+            <structural-feature type="User" type-id="User" />
+          </item>
+          <item id="dibb17c0af762e4a268be46596522196965809" cid="PROP188" type="property" name="Privacy" owner="di78917519cbfb4964b053d2cbd767bdec5809" creator="" creation-date="11/28/2022 16:01:59" visibility="public">
+            <stereotypes>
+              <stereotype name="property" />
+            </stereotypes>
+            <stereotype-instances>
+              <stereotype id="57e422e6d8ac4eb4823af6fabf9c7f1c_property_c" type="property" ref="" />
+            </stereotype-instances>
+            <structural-feature type="eGroupPrivacy" type-id="eGroupPrivacy" />
+          </item>
+          <item id="di9cce443433344fb7a2cff43e86c2245a5966" cid="C029" type="class" name="PostDTO" owner="di94ca93dfd35c4d5dad3a2c5c03a164325966" creator="" creation-date="11/28/2022 16:01:59" visibility="undefined">
+            <attributes>
+              <attribute id="a9a5a2707dca54e85be2e488f0104ff66376" cid="PROP176" name="Message" creation-date="11/28/2022 16:01:59" property-ref="di88483f227b7846a094660ec5cf7a9b985966" />
+              <attribute id="ad46508426454415d9a0ae3ebeee7b203376" cid="PROP177" name="Caption" creation-date="11/28/2022 16:01:59" property-ref="di6123817ff97c4b9282385e24d2d420ce5966" />
+              <attribute id="aa037b4027e2445c5a1a70472af2f769a376" cid="PROP178" name="CreatedTime" creation-date="11/28/2022 16:01:59" property-ref="di57d3df97186d4662929727570eee703e5966" />
+            </attributes>
+          </item>
+          <item id="di9b16704670f34b53a142ee4e314871fb5809" cid="C032" type="class" name="DummyCurrentUser" owner="di4c182a5dd03a43348b5deff6c16d8aae5809" creator="" creation-date="11/28/2022 16:01:59" visibility="undefined">
+            <attributes>
+              <attribute id="acb130ca2d9ca42c7a865b3ca59c19d2e364" cid="PROP194" name="Friends" creation-date="11/28/2022 16:01:59" property-ref="did334bbca5bb249c99c559444520e6cc85809" />
+              <attribute id="a539cb71ab0aa45189a95b68e2cc37e31364" cid="PROP195" name="Groups" creation-date="11/28/2022 16:01:59" property-ref="di0ef816478df444f5b89acd758f502a2f5809" />
+            </attributes>
+          </item>
+          <item id="di35e5691a723341deb0262decd0a7775a8252" cid="PROP206" type="property" name="LoginResult" owner="di08a4de418c3a4326943fbb0daa22bd478252" creator="" creation-date="11/28/2022 16:01:59" visibility="public">
+            <stereotypes>
+              <stereotype name="property" />
+            </stereotypes>
+            <stereotype-instances>
+              <stereotype id="289baf2853154d04881ebc1db6af4b42_property_c" type="property" ref="" />
+            </stereotype-instances>
+            <structural-feature type="LoginResult" type-id="LoginResult" />
+          </item>
+          <item id="die21937a9931246369aa2e734a85ecedc8252" cid="PROP205" type="property" name="CurrentUser" owner="di08a4de418c3a4326943fbb0daa22bd478252" creator="" creation-date="11/28/2022 16:01:59" visibility="public">
+            <stereotypes>
+              <stereotype name="property" />
+            </stereotypes>
+            <stereotype-instances>
+              <stereotype id="b52a8f2dde334473ad6792b1ea3a6eea_property_c" type="property" ref="" />
+            </stereotype-instances>
+            <structural-feature type="User" type-id="User" />
+          </item>
+          <item id="dide19ffef2d354514b5d4d3d64f25dc595966" cid="C028" type="class" name="LikedPageDTO" owner="di94ca93dfd35c4d5dad3a2c5c03a164325966" creator="" creation-date="11/28/2022 16:01:59" visibility="undefined">
+            <attributes>
+              <attribute id="a8d385255a7d7449f8242f2aeb50699d9376" cid="PROP179" name="LikesCount" creation-date="11/28/2022 16:01:59" property-ref="di2c7ab3b5db054a97863223c38dcf00c05966" />
+            </attributes>
+          </item>
+          <item id="difd8ba745d0374609a50ae8801f3a1dba5966" cid="GNR013" type="generalization" owner="di94ca93dfd35c4d5dad3a2c5c03a164325966" creator="" creation-date="11/28/2022 16:01:59" from="di90f0b498e34e463b95de55f09eb4e18a5966" to="di2eea2673dc77401ab925a9102e6557a95966" visibility="package" />
+          <item id="25ec3cc1f2f94ef085737b74a8a72131" cid="PROP097" type="property" name="r_FBAPIClient" owner="3c8029e9a56e445993bfbde942f2ed69" creator="" creation-date="11/28/2022 16:01:59" visibility="private">
+            <structural-feature type="FBAPIClient" type-id="Class:2abfefc5368c499dabec0969b4792b86" />
+          </item>
+          <item id="di6f96ad29f2cc44d99c2006013aad4a8a5966" cid="PROP169" type="property" name="Hometown" owner="di90f0b498e34e463b95de55f09eb4e18a5966" creator="" creation-date="11/28/2022 16:01:59" visibility="public">
+            <stereotypes>
+              <stereotype name="property" />
+            </stereotypes>
+            <stereotype-instances>
+              <stereotype id="b6ca289f4c904392b99766050b788a27_property_c" type="property" ref="" />
+            </stereotype-instances>
+            <structural-feature type="String" type-id="Uml.String" />
+          </item>
+          <item id="di0a76cca1580a493e9bae7ed7450d0b865966" cid="PROP167" type="property" name="Birthday" owner="di90f0b498e34e463b95de55f09eb4e18a5966" creator="" creation-date="11/28/2022 16:01:59" visibility="public">
+            <stereotypes>
+              <stereotype name="property" />
+            </stereotypes>
+            <stereotype-instances>
+              <stereotype id="25db197b5c8c4a3f93eaa2f3d99fb5c5_property_c" type="property" ref="" />
+            </stereotype-instances>
+            <structural-feature type="String" type-id="Uml.String" />
+          </item>
+          <item id="di8ac702827dd4417294e323c32b0e2e345966" cid="PROP180" type="property" name="Hometown" owner="di01a77b3aadba488a8bcf1a42951551265966" creator="" creation-date="11/28/2022 16:01:59" visibility="public">
+            <stereotypes>
+              <stereotype name="property" />
+            </stereotypes>
+            <stereotype-instances>
+              <stereotype id="8469d6d7d38943c0b706c731f603bacc_property_c" type="property" ref="" />
+            </stereotype-instances>
+            <structural-feature type="String" type-id="Uml.String" />
+          </item>
+          <item id="di2c7ab3b5db054a97863223c38dcf00c05966" cid="PROP179" type="property" name="LikesCount" owner="dide19ffef2d354514b5d4d3d64f25dc595966" creator="" creation-date="11/28/2022 16:01:59" visibility="public">
+            <stereotypes>
+              <stereotype name="property" />
+            </stereotypes>
+            <stereotype-instances>
+              <stereotype id="9c1e16fa9e2a4a0fb71b652caf61365a_property_c" type="property" ref="" />
+            </stereotype-instances>
+            <structural-feature type="long?" type-id="long?" />
+          </item>
+          <item id="dib17500709d0946928aae0aec64d00b835966" cid="PROP173" type="property" name="&lt;PictureURL&gt;k__BackingField" owner="di2eea2673dc77401ab925a9102e6557a95966" creator="" creation-date="11/28/2022 16:01:59" visibility="private">
+            <structural-feature type="String" type-id="Uml.String" />
+          </item>
+          <item id="di9d9ff5a6665e4ee788a5853aafc1c8e35966" cid="GNR009" type="generalization" owner="di94ca93dfd35c4d5dad3a2c5c03a164325966" creator="" creation-date="11/28/2022 16:01:59" from="dia584c29ee126489bb24e6a85857219c75966" to="di2eea2673dc77401ab925a9102e6557a95966" visibility="package" />
+          <item id="di5c620778d6d643eb923dc30aa2264dbe5966" cid="GNR012" type="generalization" owner="di94ca93dfd35c4d5dad3a2c5c03a164325966" creator="" creation-date="11/28/2022 16:01:59" from="dide19ffef2d354514b5d4d3d64f25dc595966" to="di2eea2673dc77401ab925a9102e6557a95966" visibility="package" />
+          <item id="di0ef816478df444f5b89acd758f502a2f5809" cid="PROP195" type="property" name="Groups" owner="di9b16704670f34b53a142ee4e314871fb5809" creator="" creation-date="11/28/2022 16:01:59" visibility="public">
+            <stereotypes>
+              <stereotype name="property" />
+            </stereotypes>
+            <stereotype-instances>
+              <stereotype id="4ff442bc44b04504b53b4f3ae7f689c4_property_c" type="property" ref="" />
+            </stereotype-instances>
+            <structural-feature type="List" type-id="List" />
+          </item>
+          <item id="di2eea2673dc77401ab925a9102e6557a95966" cid="C030" type="class" name="TextAndImageDTO" owner="di94ca93dfd35c4d5dad3a2c5c03a164325966" creator="" creation-date="11/28/2022 16:01:59" visibility="undefined">
+            <attributes>
+              <attribute id="a1dd55061c7cb45d0a529815909d422fa376" cid="PROP172" name="&lt;Name&gt;k__BackingField" creation-date="11/28/2022 16:01:59" property-ref="dic82c7ff6eb734ec582576b04782cdefe5966" />
+              <attribute id="aab067a4ef5394f96bd36bc7e60c13a35376" cid="PROP173" name="&lt;PictureURL&gt;k__BackingField" creation-date="11/28/2022 16:01:59" property-ref="dib17500709d0946928aae0aec64d00b835966" />
+              <attribute id="a3e7485226f7947cd94c3bbdafe170dd0376" cid="PROP174" name="Name" creation-date="11/28/2022 16:01:59" property-ref="di3c185035e2924f55b7f5c0852e69b2f05966" />
+              <attribute id="a9e7bed90fff34c5b8f1f864beb563125376" cid="PROP175" name="PictureURL" creation-date="11/28/2022 16:01:59" property-ref="di69474e49e21e4d23aad935cc2c0b7f915966" />
+            </attributes>
+          </item>
+          <item id="diad535c5027b44e47baf82323954caa4a8252" cid="PROP198" type="property" name="LastAccessToken" owner="dib3b3e9f921ce46669f4315bbe0200ba38252" creator="" creation-date="11/28/2022 16:01:59" visibility="public">
+            <stereotypes>
+              <stereotype name="property" />
+            </stereotypes>
+            <stereotype-instances>
+              <stereotype id="4fbd1ef44c6e445b97819046d2c59fc5_property_c" type="property" ref="" />
+            </stereotype-instances>
+            <structural-feature type="String" type-id="Uml.String" />
+          </item>
+          <item id="di57d3df97186d4662929727570eee703e5966" cid="PROP178" type="property" name="CreatedTime" owner="di9cce443433344fb7a2cff43e86c2245a5966" creator="" creation-date="11/28/2022 16:01:59" visibility="public">
+            <stereotypes>
+              <stereotype name="property" />
+            </stereotypes>
+            <stereotype-instances>
+              <stereotype id="2a61b774f0504e4f87d6028f9733e81d_property_c" type="property" ref="" />
+            </stereotype-instances>
+            <structural-feature type="DateTime?" type-id="DateTime?" />
+          </item>
+          <item id="f4258774859741898fe50c149f744314" cid="PROP095" type="property" name="r_FormLogin" owner="3c8029e9a56e445993bfbde942f2ed69" creator="" creation-date="11/28/2022 16:01:59" visibility="private">
+            <structural-feature type="FormLogin" type-id="FormLogin" />
+          </item>
+          <item id="dic366cc3bf5fa4cecb8a222cb71c050945966" cid="PROP170" type="property" name="Education" owner="di90f0b498e34e463b95de55f09eb4e18a5966" creator="" creation-date="11/28/2022 16:01:59" visibility="public">
+            <stereotypes>
+              <stereotype name="property" />
+            </stereotypes>
+            <stereotype-instances>
+              <stereotype id="600466eb820744059d2eb5bc2e64f0a2_property_c" type="property" ref="" />
+            </stereotype-instances>
+            <structural-feature type="String" type-id="Uml.String" />
+          </item>
+          <item id="di01a77b3aadba488a8bcf1a42951551265966" cid="C027" type="class" name="HometownFriendDTO" owner="di94ca93dfd35c4d5dad3a2c5c03a164325966" creator="" creation-date="11/28/2022 16:01:59" visibility="undefined">
+            <attributes>
+              <attribute id="a37d5a840d8164d57bd8fa831d8d2a93e376" cid="PROP180" name="Hometown" creation-date="11/28/2022 16:01:59" property-ref="di8ac702827dd4417294e323c32b0e2e345966" />
+            </attributes>
+          </item>
+          <item id="di81c5ca5bd15f4dbb9f52a3f7ab4277d45966" cid="PROP182" type="property" name="MembersCount" owner="di17ec2832c4514d19ae947c10093d95245966" creator="" creation-date="11/28/2022 16:01:59" visibility="public">
+            <stereotypes>
+              <stereotype name="property" />
+            </stereotypes>
+            <stereotype-instances>
+              <stereotype id="5f8271eff24a490196a475e6559a4b80_property_c" type="property" ref="" />
+            </stereotype-instances>
+            <structural-feature type="Int" type-id="Int" />
+          </item>
+          <item id="96944bb649704f5898018a0e8e339708" cid="PROP094" type="property" name="r_FormMain" owner="3c8029e9a56e445993bfbde942f2ed69" creator="" creation-date="11/28/2022 16:01:59" visibility="private">
+            <structural-feature type="FormMain" type-id="FormMain" />
+          </item>
+        </abstract-items>
+        <layer id="4b6f6b642eb74e4fb5f171b25ff891fa" name="Default" visible="true" enabled="true" locked="false">
+          <item id="di852dc3a5785649c7946b058058ffe5e54014" iid="87e1515abf314d27bf822a283989019e" creation-date="11/28/2022 16:01:59" order-index="0" type="entity">
+            <layout ax="62.10962" ay="-1749.5" awidth="1463" aheight="504" x="60" y="-1754" width="1463" height="504" expanded="62.10962,-1749.5,1463,504" collapsed="0,0,0,0" rotation-center="-581.5,-152" />
+            <package name-in-body="false" />
+          </item>
+          <item id="8745c46a1c094ba28f1deb4f614f40e7" iid="dd1fa86a4f97436f9c0e551ce25fe599" container="di852dc3a5785649c7946b058058ffe5e54014" container-iid="87e1515abf314d27bf822a283989019e" creation-date="11/28/2022 16:01:59" order-index="4" type="entity">
+            <layout ax="167.2242" ay="-1650.759" awidth="181" aheight="70" x="163" y="-1366" width="181" height="70" rotation-center="40.32434,310.5" />
+            <classifier />
+            <class />
+          </item>
+          <item id="3c8029e9a56e445993bfbde942f2ed69" iid="7cb89018ca77455c9b7cf2c11a72a7a8" container="di852dc3a5785649c7946b058058ffe5e54014" container-iid="87e1515abf314d27bf822a283989019e" creation-date="11/28/2022 16:01:59" order-index="0" type="entity">
+            <layout ax="167.3689" ay="-1544.627" awidth="246.6487" aheight="212" x="163" y="-1260" width="246.6487" height="212" rotation-center="7.5,239.5" />
+            <classifier />
+            <class />
+          </item>
+          <item id="di2c93c42e6c8640aa91f5cef505423ce67051" iid="7cbbd9cff8844d9fa9ce9531d8a02318" creation-date="11/28/2022 16:01:59" order-index="2" type="entity">
+            <layout ax="62.10962" ay="-1211.968" awidth="1463" aheight="1274" x="62.10962" y="-1211.968" width="1463" height="1274" expanded="62.10962,-1211.968,1463,1274" collapsed="0,0,0,0" rotation-center="-518.5,-537" />
+            <package name-in-body="false" />
+          </item>
+          <item id="di94ca93dfd35c4d5dad3a2c5c03a164325966" iid="37d9a4c4bd1747ec8154be4a4de69459" container="di2c93c42e6c8640aa91f5cef505423ce67051" container-iid="7cbbd9cff8844d9fa9ce9531d8a02318" creation-date="11/28/2022 16:01:59" order-index="2" type="entity">
+            <layout ax="91.46106" ay="-494.0911" awidth="1413" aheight="527" x="91.46106" y="-494.0911" width="1413" height="527" expanded="91.46106,-494.0911,1413,527" collapsed="0,0,0,0" rotation-center="-486.5,-218.5" />
+            <package name-in-body="false" />
+          </item>
+          <item id="di0b8f494aa92440a0b95494c197e3e8297385" iid="d598ba8c6cd745c98da3c1d5bc53767d" container="di852dc3a5785649c7946b058058ffe5e54014" container-iid="87e1515abf314d27bf822a283989019e" creation-date="11/28/2022 16:01:59" order-index="0" type="entity">
+            <layout ax="557.7468" ay="-1700.5" awidth="824.5777" aheight="426" x="537.2365" y="-1700.5" width="824.5777" height="426" expanded="557.7468,-1700.5,824.5777,426" collapsed="0,0,0,0" rotation-center="-217.7992,-319" />
+            <package name-in-body="false" />
+          </item>
+          <item id="di4c182a5dd03a43348b5deff6c16d8aae5809" iid="8411dea2e0b2459481b936e6d18a69e8" container="di2c93c42e6c8640aa91f5cef505423ce67051" container-iid="7cbbd9cff8844d9fa9ce9531d8a02318" creation-date="11/28/2022 16:01:59" order-index="1" type="entity">
+            <layout ax="813.1639" ay="-1105.389" awidth="634.2971" aheight="573.9209" x="813.1639" y="-1105.389" width="634.2971" height="573.9209" expanded="813.1639,-1105.389,634.2971,573.9209" collapsed="0,0,0,0" rotation-center="-167.1486,-186.9604" />
+            <package name-in-body="false" />
+          </item>
+          <item id="di9b16704670f34b53a142ee4e314871fb5809" iid="c70994cabdf6421a8c563c1a68208a33" container="di4c182a5dd03a43348b5deff6c16d8aae5809" container-iid="8411dea2e0b2459481b936e6d18a69e8" creation-date="11/28/2022 16:01:59" order-index="0" type="entity">
+            <layout ax="877.548" ay="-618.7556" awidth="183" aheight="75" x="1034.063" y="1010.096" width="183" height="75" rotation-center="-21.5,42.5" />
+            <classifier />
+            <class />
+          </item>
+          <item id="e7817099f65e433fb69d3bb5b5a4e8c1" iid="933cc22e568e410384e23a6544f56313" container="di0b8f494aa92440a0b95494c197e3e8297385" container-iid="d598ba8c6cd745c98da3c1d5bc53767d" creation-date="11/28/2022 16:01:59" order-index="3" type="entity">
+            <layout ax="1034.372" ay="-1607.856" awidth="334" aheight="247" x="1097.027" y="-1786" width="334" height="247" rotation-center="-26.17566,232" />
+            <classifier />
+            <class />
+          </item>
+          <item id="89b1a3d7fb994224ab14cb220beba56a" iid="01a9667eddd7458c8feb33e068ddb534" container="di0b8f494aa92440a0b95494c197e3e8297385" container-iid="d598ba8c6cd745c98da3c1d5bc53767d" creation-date="11/28/2022 16:01:59" order-index="2" type="entity">
+            <layout ax="594.9643" ay="-1448.971" awidth="304.9965" aheight="154" x="594.9643" y="-1448.971" width="304.9965" height="154" rotation-center="-55.32257,268.5" />
+            <classifier />
+            <class />
+          </item>
+          <item id="75118c846e904f20ad12eac721007a46" iid="f3a0fa0f5b7b4dbc8d0e16c61517db3a" container="di0b8f494aa92440a0b95494c197e3e8297385" container-iid="d598ba8c6cd745c98da3c1d5bc53767d" creation-date="11/28/2022 16:01:59" order-index="1" type="entity">
+            <layout ax="594.9643" ay="-1608.236" awidth="355" aheight="125" x="656.8379" y="-1786" width="355" height="125" rotation-center="-6.675659,283" />
+            <classifier />
+            <class />
+          </item>
+          <item id="dib3b3e9f921ce46669f4315bbe0200ba38252" iid="93263b549c9947eb8fee297b3779af7c" container="di2c93c42e6c8640aa91f5cef505423ce67051" container-iid="7cbbd9cff8844d9fa9ce9531d8a02318" creation-date="11/28/2022 16:01:59" order-index="0" type="entity">
+            <layout ax="91.46106" ay="-1107.159" awidth="298" aheight="251" x="91.46106" y="-1107.159" width="298" height="251" rotation-center="-79,-45.5" />
+            <classifier />
+            <class />
+          </item>
+          <item id="di08a4de418c3a4326943fbb0daa22bd478252" iid="c292d3f9bc5540aa9e9f3cf38ee94535" container="di2c93c42e6c8640aa91f5cef505423ce67051" container-iid="7cbbd9cff8844d9fa9ce9531d8a02318" creation-date="11/28/2022 16:01:59" order-index="1" type="entity">
+            <layout ax="418.8125" ay="-1105.389" awidth="365" aheight="441" x="418.8125" y="-1105.389" width="365" height="441" rotation-center="-112.5,-140.5" />
+            <classifier />
+            <class />
+          </item>
+          <item id="di0bdd4082bcde4d519a9746c66b719ca15809" iid="f31783d34b6c4e1cb66f1ae0520a72cd" container="di4c182a5dd03a43348b5deff6c16d8aae5809" container-iid="8411dea2e0b2459481b936e6d18a69e8" creation-date="11/28/2022 16:01:59" order-index="1" type="entity">
+            <layout ax="834.5543" ay="-1010.159" awidth="327" aheight="154" x="120.5" y="-154" width="327" height="154" rotation-center="148.856,115.5" />
+            <classifier />
+            <class />
+          </item>
+          <item id="die71c323be8d0430091d9a4d6176b6af55809" iid="1eca28db5a6a40a9923ff59252034d5a" container="di4c182a5dd03a43348b5deff6c16d8aae5809" container-iid="8411dea2e0b2459481b936e6d18a69e8" creation-date="11/28/2022 16:01:59" order-index="3" type="entity">
+            <layout ax="1140.278" ay="-682.4287" awidth="128" aheight="114" x="-707.051" y="196" width="127.7119" height="114" rotation-center="111.5,126.5" />
+          </item>
+          <item id="diab09cf2c164a4029a26d39660d067e915809" iid="4a597dd565284198abf70c68e00c679b" container="di4c182a5dd03a43348b5deff6c16d8aae5809" container-iid="8411dea2e0b2459481b936e6d18a69e8" creation-date="11/28/2022 16:01:59" order-index="4" type="entity">
+            <layout ax="1296.824" ay="-681.4761" awidth="127" aheight="136" x="573.0001" y="196" width="127" height="136" rotation-center="111.856,115.5" />
+          </item>
+          <item id="di75c7860e609a4f0fa243158e1de790e35809" iid="163d5bdfac7c4d76899e0c1427fa0d84" container="di4c182a5dd03a43348b5deff6c16d8aae5809" container-iid="8411dea2e0b2459481b936e6d18a69e8" creation-date="11/28/2022 16:01:59" order-index="5" type="entity">
+            <layout ax="838.9933" ay="-813.9874" awidth="260" aheight="136" x="995.5631" y="813.0958" width="260" height="136" rotation-center="-60,-19" />
+            <classifier />
+            <class />
+          </item>
+          <item id="di65cbe3eae7584f599d39df309fece3ce5809" iid="e359c39a33e34bb4a50131070dc92885" container="di4c182a5dd03a43348b5deff6c16d8aae5809" container-iid="8411dea2e0b2459481b936e6d18a69e8" creation-date="11/28/2022 16:01:59" order-index="6" type="relation">
+            <layout line-style="straight" lock-to-fields="false" auto-path="" x1="969" y1="-619" x2="969" y2="-678" start-border-pos="0.124934462250256" end-border-pos="0.624993544358474" name-position="0,20">
+              <points>
+                <point x="969" y="-619" />
+                <point x="969" y="-678" />
+              </points>
+            </layout>
+            <relation from="di9b16704670f34b53a142ee4e314871fb5809" from-iid="c70994cabdf6421a8c563c1a68208a33" to="di75c7860e609a4f0fa243158e1de790e35809" to-iid="163d5bdfac7c4d76899e0c1427fa0d84" />
+          </item>
+          <item id="di78917519cbfb4964b053d2cbd767bdec5809" iid="a097b8fda2ea4af3a258d6c1a7308a23" container="di4c182a5dd03a43348b5deff6c16d8aae5809" container-iid="8411dea2e0b2459481b936e6d18a69e8" creation-date="11/28/2022 16:01:59" order-index="2" type="entity">
+            <layout ax="1162.925" ay="-826.3783" awidth="233" aheight="114" x="443.7627" y="47" width="232.7119" height="114" rotation-center="59,126.5" />
+            <classifier />
+            <class />
+          </item>
+          <item id="difd8ba745d0374609a50ae8801f3a1dba5966" iid="33e2213d953b4c7a8310beb763b7ec17" container="di94ca93dfd35c4d5dad3a2c5c03a164325966" container-iid="37d9a4c4bd1747ec8154be4a4de69459" creation-date="11/28/2022 16:01:59" order-index="13" type="relation">
+            <layout line-style="straight" lock-start-point="true" lock-end-point="true" lock-to-fields="false" auto-path="" x1="553" y1="-130" x2="811" y2="-298" start-border-pos="0.225739312550378" end-border-pos="0.700646848094707" start-local-pos="227.5452" end-local-pos="58.03925" name-position="0,20">
+              <points>
+                <point x="553" y="-130" />
+                <point x="811" y="-298" />
+              </points>
+            </layout>
+            <relation from="di90f0b498e34e463b95de55f09eb4e18a5966" from-iid="de8b6e5e4e0f4279842086cac231caed" to="di2eea2673dc77401ab925a9102e6557a95966" to-iid="96b78d582216439187ee930136d6f24c" />
+          </item>
+          <item id="di5c620778d6d643eb923dc30aa2264dbe5966" iid="7ccfafbcae0347558cd0a885c7098913" container="di94ca93dfd35c4d5dad3a2c5c03a164325966" container-iid="37d9a4c4bd1747ec8154be4a4de69459" creation-date="11/28/2022 16:01:59" order-index="12" type="relation">
+            <layout line-style="straight" lock-to-fields="false" auto-path="" x1="1344" y1="-143" x2="1021" y2="-298" start-border-pos="0.0595436320201194" end-border-pos="0.522182594351217" name-position="0,20">
+              <points>
+                <point x="1344" y="-143" />
+                <point x="1021" y="-298" />
+              </points>
+            </layout>
+            <relation from="dide19ffef2d354514b5d4d3d64f25dc595966" from-iid="12061d77c9194ddda1d2feb19f822ca8" to="di2eea2673dc77401ab925a9102e6557a95966" to-iid="96b78d582216439187ee930136d6f24c" />
+          </item>
+          <item id="di201f6203d8ce403b96672708dacf2dad5966" iid="9b2d8403a22349e3ba75bf59a63bd417" container="di94ca93dfd35c4d5dad3a2c5c03a164325966" container-iid="37d9a4c4bd1747ec8154be4a4de69459" creation-date="11/28/2022 16:01:59" order-index="11" type="relation">
+            <layout line-style="straight" lock-to-fields="false" auto-path="" x1="942" y1="-135" x2="911" y2="-298" start-border-pos="0.119386360862038" end-border-pos="0.615543702832696" name-position="0,20">
+              <points>
+                <point x="942" y="-135" />
+                <point x="911" y="-298" />
+              </points>
+            </layout>
+            <relation from="di01a77b3aadba488a8bcf1a42951551265966" from-iid="a8865796032548169d55261b6b21a13c" to="di2eea2673dc77401ab925a9102e6557a95966" to-iid="96b78d582216439187ee930136d6f24c" />
+          </item>
+          <item id="diac4e52c394e04343b3ac86337389dd035966" iid="3a806d4c0b844448b0fd551cb116d7e9" container="di94ca93dfd35c4d5dad3a2c5c03a164325966" container-iid="37d9a4c4bd1747ec8154be4a4de69459" creation-date="11/28/2022 16:01:59" order-index="10" type="relation">
+            <layout line-style="straight" lock-to-fields="false" auto-path="" x1="734" y1="-132" x2="857" y2="-298" start-border-pos="0.156044283780185" end-border-pos="0.66162566100659" name-position="0,20">
+              <points>
+                <point x="734" y="-132" />
+                <point x="857" y="-298" />
+              </points>
+            </layout>
+            <relation from="di17ec2832c4514d19ae947c10093d95245966" from-iid="788e6e9b599e4b3583f74ed4b93e3cae" to="di2eea2673dc77401ab925a9102e6557a95966" to-iid="96b78d582216439187ee930136d6f24c" />
+          </item>
+          <item id="di9d9ff5a6665e4ee788a5853aafc1c8e35966" iid="26eceaf7d2894c8a8eb4abbb4960b7eb" container="di94ca93dfd35c4d5dad3a2c5c03a164325966" container-iid="37d9a4c4bd1747ec8154be4a4de69459" creation-date="11/28/2022 16:01:59" order-index="9" type="relation">
+            <layout line-style="straight" lock-to-fields="false" auto-path="" x1="1148" y1="-143" x2="968" y2="-298" start-border-pos="0.0921221646395597" end-border-pos="0.567565035657818" name-position="0,20">
+              <points>
+                <point x="1148" y="-143" />
+                <point x="968" y="-298" />
+              </points>
+            </layout>
+            <relation from="dia584c29ee126489bb24e6a85857219c75966" from-iid="9a50a25e82124fae9833752ad1995e8e" to="di2eea2673dc77401ab925a9102e6557a95966" to-iid="96b78d582216439187ee930136d6f24c" />
+          </item>
+          <item id="di305a90f0a5a74aeaa44a995bbd9122915966" iid="b0cfdeee93d444f589d39ebd58192998" container="di94ca93dfd35c4d5dad3a2c5c03a164325966" container-iid="37d9a4c4bd1747ec8154be4a4de69459" creation-date="11/28/2022 16:01:59" order-index="8" type="relation">
+            <layout line-style="straight" lock-to-fields="false" auto-path="" x1="276" y1="-128" x2="753" y2="-302" start-border-pos="0.212349603114984" end-border-pos="0.758409516707711" name-position="0,20">
+              <points>
+                <point x="276" y="-128" />
+                <point x="753" y="-302" />
+              </points>
+            </layout>
+            <relation from="di0396e00801124115be413a7ae8179db75966" from-iid="8c67a718a98e4df198b19019925715f0" to="di2eea2673dc77401ab925a9102e6557a95966" to-iid="96b78d582216439187ee930136d6f24c" />
+          </item>
+          <item id="di90f0b498e34e463b95de55f09eb4e18a5966" iid="de8b6e5e4e0f4279842086cac231caed" container="di94ca93dfd35c4d5dad3a2c5c03a164325966" container-iid="37d9a4c4bd1747ec8154be4a4de69459" creation-date="11/28/2022 16:01:59" order-index="7" type="entity">
+            <layout ax="325.4548" ay="-129.876" awidth="252" aheight="131" x="317.8631" y="-407.5" width="252" height="131" rotation-center="77,14.5" />
+            <classifier />
+            <class />
+          </item>
+          <item id="di2eea2673dc77401ab925a9102e6557a95966" iid="96b78d582216439187ee930136d6f24c" container="di94ca93dfd35c4d5dad3a2c5c03a164325966" container-iid="37d9a4c4bd1747ec8154be4a4de69459" creation-date="11/28/2022 16:01:59" order-index="6" type="entity">
+            <layout ax="752.9608" ay="-413.0218" awidth="294" aheight="115" x="742.8631" y="-687.4999" width="294" height="115" rotation-center="-77,-22.5" />
+            <classifier />
+            <class />
+          </item>
+          <item id="di9cce443433344fb7a2cff43e86c2245a5966" iid="59c5cc94f50e4cc5a1aa6b031c4a321c" container="di94ca93dfd35c4d5dad3a2c5c03a164325966" container-iid="37d9a4c4bd1747ec8154be4a4de69459" creation-date="11/28/2022 16:01:59" order-index="5" type="entity">
+            <layout ax="305.7468" ay="-396.0218" awidth="252" aheight="98" x="305.7468" y="-396.0218" width="252" height="92" rotation-center="129,33.5" />
+            <classifier />
+            <class />
+          </item>
+          <item id="dide19ffef2d354514b5d4d3d64f25dc595966" iid="12061d77c9194ddda1d2feb19f822ca8" container="di94ca93dfd35c4d5dad3a2c5c03a164325966" container-iid="37d9a4c4bd1747ec8154be4a4de69459" creation-date="11/28/2022 16:01:59" order-index="4" type="entity">
+            <layout ax="1296.824" ay="-142.5074" awidth="197.6479" aheight="50" x="1304.472" y="-153.2891" width="197.6479" height="50" rotation-center="-21.17603,44.21826" />
+            <classifier />
+            <class />
+          </item>
+          <item id="di01a77b3aadba488a8bcf1a42951551265966" iid="a8865796032548169d55261b6b21a13c" container="di94ca93dfd35c4d5dad3a2c5c03a164325966" container-iid="37d9a4c4bd1747ec8154be4a4de69459" creation-date="11/28/2022 16:01:59" order-index="3" type="entity">
+            <layout ax="837.1636" ay="-135.2162" awidth="220" aheight="50" x="827.8631" y="-407.5" width="220" height="50" rotation-center="-40,55" />
+            <classifier />
+            <class />
+          </item>
+          <item id="di17ec2832c4514d19ae947c10093d95245966" iid="788e6e9b599e4b3583f74ed4b93e3cae" container="di94ca93dfd35c4d5dad3a2c5c03a164325966" container-iid="37d9a4c4bd1747ec8154be4a4de69459" creation-date="11/28/2022 16:01:59" order-index="2" type="entity">
+            <layout ax="596.1829" ay="-132.3565" awidth="220" aheight="74" x="588.8631" y="-407.5" width="220" height="74" rotation-center="-40,44" />
+            <classifier />
+            <class />
+          </item>
+          <item id="dia584c29ee126489bb24e6a85857219c75966" iid="9a50a25e82124fae9833752ad1995e8e" container="di94ca93dfd35c4d5dad3a2c5c03a164325966" container-iid="37d9a4c4bd1747ec8154be4a4de69459" creation-date="11/28/2022 16:01:59" order-index="1" type="entity">
+            <layout ax="1066.836" ay="-142.5074" awidth="220" aheight="50" x="1066.836" y="-142.5074" width="220" height="50" rotation-center="-40,40" />
+            <classifier />
+            <class />
+          </item>
+          <item id="di0396e00801124115be413a7ae8179db75966" iid="8c67a718a98e4df198b19019925715f0" container="di94ca93dfd35c4d5dad3a2c5c03a164325966" container-iid="37d9a4c4bd1747ec8154be4a4de69459" creation-date="11/28/2022 16:01:59" order-index="0" type="entity">
+            <layout ax="110.7468" ay="-128.3337" awidth="195" aheight="50" x="103.8631" y="-407.5" width="195" height="50" rotation-center="-27.5,55" />
+            <classifier />
+            <class />
+          </item>
+        </layer>
+      </diagram>
+    </model>
+  </models>
+</sim-project>

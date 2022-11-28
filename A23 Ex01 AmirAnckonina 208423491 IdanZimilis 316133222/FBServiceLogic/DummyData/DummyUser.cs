@@ -17,19 +17,6 @@ namespace FBServiceLogic.DummyData
         public DummyUser() 
         { }
 
-        public DummyUser(
-            string i_Name,
-            string i_Hometown,
-            string i_Education,
-            string i_PictureURL,
-            eOnlineStatus i_OnlineStatus = eOnlineStatus.unknown
-            )
-        {
-            Name = i_Name;
-            Hometown = i_Hometown;
-            Education = i_Education;
-            PictureURL = i_PictureURL;
-            OnlineStatus = i_OnlineStatus;
-        }
+
     }
 }

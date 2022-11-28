@@ -14,7 +14,6 @@ namespace FacebookWinFormsApp
 {
 	public partial class FormAppSettings : Form
 	{
-		private StringBuilder m_PermissionsStringBuilder = new StringBuilder();
 		private readonly FBAPIClient r_FBAPIClient;
 
 		public bool WithDefaultPermissions { get; set; } = true;
@@ -28,23 +27,28 @@ namespace FacebookWinFormsApp
 
 		private void buttonApply_Click(object sender, EventArgs e)
 		{
-			WithDefaultPermissions = false;
-
-            if (comboAppID.SelectedIndex == -1)
-            {
-                comboAppID.SelectedIndex = 0;
-            }
-
-            else
-            {
-                string appID = comboAppID.SelectedItem.ToString();
-
-                r_FBAPIClient.AppSettings.AppID = appID;
-            }
-
-            UpdateAppPermissions();
+			SetAppSettings();
             DialogResult = DialogResult.OK;
 			this.Close();
+		}
+
+		private void SetAppSettings()
+        {
+			WithDefaultPermissions = false;
+
+			if (comboAppID.SelectedIndex == -1)
+			{
+				comboAppID.SelectedIndex = 0;
+			}
+
+			else
+			{
+				string appID = comboAppID.SelectedItem.ToString();
+
+				r_FBAPIClient.AppSettings.AppID = appID;
+			}
+
+			UpdateAppPermissions();
 		}
 
 		private void UpdateAppPermissions()

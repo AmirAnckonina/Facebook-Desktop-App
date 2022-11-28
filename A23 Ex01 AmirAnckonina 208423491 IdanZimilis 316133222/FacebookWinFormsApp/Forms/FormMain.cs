@@ -17,18 +17,6 @@ namespace FacebookWinFormsApp
 {
     public partial class FormMain : Form
     {
-
-        private enum Tabs
-        {
-            Home,
-            Friends,
-            Albums,
-            Groups,
-            Posts,
-            LikedPages,
-            MyAlumnus,
-            SerachPost,
-        }
         private readonly FBAPIClient r_FBAPIClient;
 
         public FormMain(FBAPIClient i_FBAPIClient)

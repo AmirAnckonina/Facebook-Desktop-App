@@ -11,22 +11,25 @@ namespace FacebookWinFormsApp
     {
         private readonly FBAPIClient r_FBAPIClient;
         private readonly FormAppSettings r_FromAppSettings;
-        private bool m_LoginSucceed;
 
         public FormLogin(FBAPIClient i_FBAPIClient, FormAppSettings i_FormAppSettings)
         {
             InitializeComponent();
-            m_LoginSucceed = false;
+            LoginSucceed = false;
             r_FBAPIClient = i_FBAPIClient;
             r_FromAppSettings = i_FormAppSettings;
-            /// r_FromAppSettings = new FormAppSettings(r_FBAPIClient);
         }
 
-        public bool LoginSucceed { get => m_LoginSucceed; }
+        public bool LoginSucceed { get; set; }
 
         private void buttonLogin_Click(object sender, EventArgs e)
         {
-            m_LoginSucceed = false;
+            CreateLoginRequest();
+        }
+
+        private void CreateLoginRequest()
+        {
+            LoginSucceed = false;
 
             try
             {
@@ -36,13 +39,13 @@ namespace FacebookWinFormsApp
                 }
 
                 r_FBAPIClient.Login();
-                m_LoginSucceed = true;
+                LoginSucceed = true;
                 this.Close();
             }
 
-            catch(Exception ex)
+            catch (Exception ex)
             {
-                m_LoginSucceed = false;
+                LoginSucceed = false;
                 MessageBox.Show(ex.Message);
             }
         }
@@ -66,8 +69,7 @@ namespace FacebookWinFormsApp
 
         private void FormLogin_Load(object sender, EventArgs e)
         {
-            /// Check??
-            m_LoginSucceed = false;
+            LoginSucceed = false;
         }
 
         private void buttonSettings_Click(object sender, EventArgs e)
@@ -79,14 +81,5 @@ namespace FacebookWinFormsApp
         {
             r_FBAPIClient.AppSettings.RememberUserActivated = true;
         }
-
-        /*protected override void OnFormClosed(FormClosedEventArgs e)
-        {
-            base.OnFormClosed(e);
-        }*/
-        /*private void FormLogin_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            OnFormClosed(e as F);
-        }*/
     }
 }
