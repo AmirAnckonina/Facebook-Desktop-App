@@ -15,49 +15,14 @@ namespace FacebookWinFormsApp
         private readonly FormLogin r_FormLogin;
         private readonly FormAppSettings r_FormAppSettings;
         private FBAPIClient r_FBAPIClient;
-        /// <summary>
-        ///  Change
-        /// </summary>
+
         public AppManager()
         {
             this.r_FBAPIClient = new FBAPIClient();
             this.r_FormAppSettings = new FormAppSettings(r_FBAPIClient);
             this.r_FormLogin = new FormLogin(r_FBAPIClient, r_FormAppSettings);
             this.r_FormMain = new FormMain(r_FBAPIClient);
-            /// EventsRegistration();
         }
-
-       /* private void EventsRegistration()
-        {
-            this.r_FormLogin.FormClosed += r_FormLogin_FormClosed;
-            this.r_FormMain.FormClosed += r_FormMain_FormClosed;
-        }
-
-        private void r_FormMain_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            FormMain formMainObj = sender as FormMain;
-
-            if (formMainObj != null)
-            {
-                if (r_FBAPIClient.AppSettings.RememberUserActivated == false)
-                {
-                    RunLogin();
-                }
-            }
-        }
-
-        private void r_FormLogin_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            FormLogin formLoginObj = sender as FormLogin;
-
-            if (formLoginObj != null)
-            {
-                if (r_FBAPIClient.CurrentUser != null)
-                {
-                    RunApp();
-                }
-            }
-        }*/
 
         public void Run()
         {
@@ -74,12 +39,12 @@ namespace FacebookWinFormsApp
             }
         }
 
-        public void RunFormAppSettings()
+        private void RunFormAppSettings()
         {
             r_FormAppSettings.ShowDialog();
         }
 
-        public void RunLogin()
+        private void RunLogin()
         {
             r_FormLogin.ShowDialog();
             /// if (m_FormLogin.LoginSucceed)
@@ -89,14 +54,13 @@ namespace FacebookWinFormsApp
             }
         }
 
-        public void RunApp()
+        private void RunApp()
         {
             r_FormMain.ShowDialog();
             if (r_FBAPIClient.AppSettings.RememberUserActivated == false)
             {
                 RunLogin();
             }
-            ///else close all...
         }
     }
 }

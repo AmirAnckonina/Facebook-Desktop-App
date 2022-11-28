@@ -27,30 +27,21 @@ namespace FacebookWinFormsApp
             r_FBAPIClient = i_FBAPIClient;
         }
 
-        public void FetchUserInfo()
+        private void InitForm()
         {
             Invoke(new Action(() =>
             {
                 testBoxLoggedInUser.Text = $"Logged in as {r_FBAPIClient.CurrentUser.Name}";
-                r_FBAPIClient.ImportAlternativeData();
-                FetchBasicUserInfo();
-                FetchAlbums(r_FBAPIClient.GetAlbumsList());
-                FetchGroups(r_FBAPIClient.GetGroupsNamesList());
-                FetchPosts(r_FBAPIClient.GetPostsList());
-                FetchLikedPages(r_FBAPIClient.GetLikedPages());
-                FetchFriends(r_FBAPIClient.GetFriendsList());
+                InitBasicUserInfo();
+                InitAlbums(r_FBAPIClient.GetAlbumsList());
+                InitGroups(r_FBAPIClient.GetGroupsNamesList());
+                InitPosts(r_FBAPIClient.GetPostsList());
+                InitLikedPages(r_FBAPIClient.GetLikedPages());
+                InitFriends(r_FBAPIClient.GetFriendsList());
             }));
-
-           // testBoxLoggedInUser.Text = $"Logged in as {r_FBAPIClient.CurrentUser.Name}";
-         
-           
-            /*if (m_FBAPIClient.LoggedInUser.Posts.Count > 0)
-            {
-              //textBoxStatus.Text = m_FBAPIClient.LoggedInUser.Posts[0].Message;
-            }*/
         }
 
-        private void FetchBasicUserInfo()
+        private void InitBasicUserInfo()
         {
             UserBasicInfoDTO userBasicInfoDTO = r_FBAPIClient.GetUserBasicInfoDTO();
             profilePictureBox.LoadAsync(userBasicInfoDTO.PictureURL);
@@ -60,7 +51,7 @@ namespace FacebookWinFormsApp
             homeTownLabel.Text = userBasicInfoDTO.Hometown;    
         }
 
-        private void FetchLikedPages(List<LikedPageDTO> i_LikedPagesList)
+        private void InitLikedPages(List<LikedPageDTO> i_LikedPagesList)
         {
             foreach (LikedPageDTO pageDTO in i_LikedPagesList)
             {
@@ -77,13 +68,14 @@ namespace FacebookWinFormsApp
         private void buttonLogout_Click(object sender, EventArgs e)
         {
             r_FBAPIClient.Logout();
+            rememberMeCheckBox.Checked = false;
             this.Close();
         }
 
         private void FormMain_Load(object sender, EventArgs e)
         {
             Thread thread = new Thread(()=>{
-                FetchUserInfo();
+                InitForm();
             });
 
             thread.Start();
@@ -99,7 +91,6 @@ namespace FacebookWinFormsApp
             if (rememberMeCheckBox.Checked)
             {
                 r_FBAPIClient.AppSettings.RememberUserActivated = true;
-                // Consider do that with Event
                 r_FBAPIClient.AppSettings.LastAccessToken = r_FBAPIClient.LoginResult.AccessToken;
             }
 
@@ -121,7 +112,6 @@ namespace FacebookWinFormsApp
             {
                 r_FBAPIClient.Logout();
             }
-
         }
 
         private void searchPostsByDateButton_Click(object sender, EventArgs e)
@@ -142,7 +132,7 @@ namespace FacebookWinFormsApp
             }
         }
 
-        public void FetchPosts(List<PostDTO> postsDTOList)
+        private void InitPosts(List<PostDTO> postsDTOList)
         {
             foreach (PostDTO post in postsDTOList)
             {
@@ -159,7 +149,7 @@ namespace FacebookWinFormsApp
             }
         }
 
-        internal void FetchAlbums(List<TextAndImageDTO> albumDTOs)
+        private void InitAlbums(List<TextAndImageDTO> albumDTOs)
         {
             foreach (TextAndImageDTO albumDTO in albumDTOs)
             {
@@ -173,7 +163,7 @@ namespace FacebookWinFormsApp
             albumsLayoutPanel.AutoScroll = true;
         }
       
-        private void FetchFriends(List<FriendDTO> i_FriendsDTOList)
+        private void InitFriends(List<FriendDTO> i_FriendsDTOList)
         {
             foreach (FriendDTO friendDTO in i_FriendsDTOList)
             {
@@ -191,7 +181,7 @@ namespace FacebookWinFormsApp
             rememberMeCheckBox.Checked = true;
         }
 
-        private void FetchGroups(List<GroupDTO> groupsListDTO)
+        private void InitGroups(List<GroupDTO> groupsListDTO)
         {
             foreach (GroupDTO groupDTO in groupsListDTO)
             {
