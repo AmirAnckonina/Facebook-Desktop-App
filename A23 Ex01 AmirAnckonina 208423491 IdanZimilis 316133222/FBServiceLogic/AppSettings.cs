@@ -10,36 +10,27 @@ namespace FBServiceLogic
 {
     public class AppSettings
     {
-        /// <summary>
-        /// Idan/Amir app id : 3456972604533289 
-        /// </summary>
-        /// 
         private string m_AppID;
-        // private bool m_RememberUserActivated;
-        //private string m_LastAccessToken;
         private List<string> m_Permissions;
-
-        /*private static readonly string sr_AppSettingsFilePath = Path.Combine(
-                 Directory.GetParent(Directory.GetCurrentDirectory()).Parent.Parent.FullName,
-                 @"FBServiceLogic\Properties\AppSettings.xml");*/
-
         private static readonly string sr_AppSettingsFilePath = Path.Combine(
                  AppDomain.CurrentDomain.BaseDirectory,
                  @"AppSettings.xml");
 
-        public string AppID { get => m_AppID; set => m_AppID = value; } 
-        /// public bool RememberUserActivated { get => m_RememberUserActivated; set => m_RememberUserActivated = value; }
         public bool RememberUserActivated { get; set; }
         public string LastAccessToken { get; set; }
+        public string AppID { get => m_AppID; set => m_AppID = value; } 
         public List<string> Permissions { get => m_Permissions; set => m_Permissions = value; } 
 
         private AppSettings()
         {
-            m_AppID = "3456972604533289";
-            /// m_RememberUserActivated = false;
+            SetDefaultAppSettings();
+        }
+
+        public void SetDefaultAppSettings()
+        {
             RememberUserActivated = false;
-            ///m_LastAccessToken = "";
             LastAccessToken = null;
+            m_AppID = "3456972604533289";
             SetDefaultPermissions();
         }
 
@@ -63,7 +54,7 @@ namespace FBServiceLogic
             });
         }
 
-        public static AppSettings LoadSettings() /// Consider change design of the func.
+        public static AppSettings LoadSettings() 
         {
             AppSettings appSettings = null;
            
@@ -78,14 +69,13 @@ namespace FBServiceLogic
 
         }
 
-        public void AddPermissions(string i_Permission)
+        public void AddPermission(string i_Permission)
         {
             m_Permissions.Add(i_Permission);
         }
 
         public void SaveToFile()
         {
-
             FileMode fileMode;
 
             if (File.Exists(sr_AppSettingsFilePath))
@@ -96,7 +86,6 @@ namespace FBServiceLogic
             {
                 fileMode = FileMode.CreateNew;
             }
-
 
             using (Stream stream = new FileStream(sr_AppSettingsFilePath, fileMode))
             {
@@ -127,6 +116,8 @@ namespace FBServiceLogic
 
         public void ResetAppSettings()
         {
+            m_AppID = null;
+            m_Permissions.Clear();
             RememberUserActivated = false;
             LastAccessToken = null;
             if (File.Exists(sr_AppSettingsFilePath))

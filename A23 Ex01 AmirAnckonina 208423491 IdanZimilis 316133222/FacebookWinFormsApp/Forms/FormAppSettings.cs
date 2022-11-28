@@ -15,7 +15,9 @@ namespace FacebookWinFormsApp
 	public partial class FormAppSettings : Form
 	{
 		private StringBuilder m_PermissionsStringBuilder = new StringBuilder();
-		private readonly FBAPIClient r_FBAPIClient; 
+		private readonly FBAPIClient r_FBAPIClient;
+
+		public bool WithDefaultPermissions { get; set; } = true;
 
 		public FormAppSettings(FBAPIClient i_FBAPIClient)
         {
@@ -26,6 +28,7 @@ namespace FacebookWinFormsApp
 
 		private void buttonApply_Click(object sender, EventArgs e)
 		{
+			WithDefaultPermissions = false;
 
             if (comboAppID.SelectedIndex == -1)
             {
@@ -40,8 +43,6 @@ namespace FacebookWinFormsApp
             }
 
             UpdateAppPermissions();
-
-            //listBoxPermissions.CheckedItems.CopyTo(AppSettings.s_Permissions, 0);
             DialogResult = DialogResult.OK;
 			this.Close();
 		}
@@ -52,7 +53,7 @@ namespace FacebookWinFormsApp
 
 			foreach (string checkedPermission in listBoxPermissions.CheckedItems)
             {
-				r_FBAPIClient.AppSettings.AddPermissions(checkedPermission);
+				r_FBAPIClient.AppSettings.AddPermission(checkedPermission);
             }
 		}
 

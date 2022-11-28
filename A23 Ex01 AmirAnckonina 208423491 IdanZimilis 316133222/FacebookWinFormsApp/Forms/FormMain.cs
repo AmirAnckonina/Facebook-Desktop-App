@@ -54,6 +54,7 @@ namespace FacebookWinFormsApp
             }));
 
            // testBoxLoggedInUser.Text = $"Logged in as {r_FBAPIClient.CurrentUser.Name}";
+         
            
             /*if (m_FBAPIClient.LoggedInUser.Posts.Count > 0)
             {
