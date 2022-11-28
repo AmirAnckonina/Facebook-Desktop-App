@@ -9,14 +9,17 @@ namespace FBServiceLogic.DummyData
     public class DummyUser
     {
         public string Name { get; set; }
+
         public string Hometown { get; set; }
+
         public string Education { get; set; }
+
         public string PictureURL { get; set; }
+
         public eOnlineStatus OnlineStatus { get; set; }
 
-        public DummyUser() 
-        { }
-
-
+        public DummyUser()
+        {
+        }
     }
 }

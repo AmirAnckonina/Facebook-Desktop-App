@@ -1,7 +1,6 @@
-﻿
-namespace FacebookWinFormsApp
+﻿namespace FacebookWinFormsApp
 {
-    partial class FormAppSettings
+    public partial class FormAppSettings
     {
         /// <summary>
         /// Required designer variable.
@@ -18,6 +17,7 @@ namespace FacebookWinFormsApp
             {
                 components.Dispose();
             }
+
             base.Dispose(disposing);
         }
 

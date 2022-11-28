@@ -6,13 +6,12 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using System.Threading;
 using FacebookWrapper.ObjectModel;
 using FacebookWrapper;
 using FBServiceLogic;
 using FBServiceLogic.DTOs;
 using FacebookWinFormsApp.Forms.Controls;
-using System.Threading;
-
 
 namespace FacebookWinFormsApp
 {
@@ -33,7 +32,6 @@ namespace FacebookWinFormsApp
             {
                 testBoxLoggedInUser.Text = $"Logged in as {r_FBAPIClient.CurrentUser.Name}";
 
-           
                 InitBasicUserInfo();
                 InitAlbums(r_FBAPIClient.GetAlbumsList());
                 InitGroups(r_FBAPIClient.GetGroupsNamesList());
@@ -62,8 +60,8 @@ namespace FacebookWinFormsApp
                 pageBox.setPictureBox(pageDTO.PictureURL);
                 pageBox.setNumOfLikes(pageDTO.LikesCount);
                 likedPagesFlowLayoutPanel.Controls.Add(pageBox);
-
             }
+
             likedPagesFlowLayoutPanel.AutoScroll = true;
         }
 
@@ -76,16 +74,12 @@ namespace FacebookWinFormsApp
 
         private void FormMain_Load(object sender, EventArgs e)
         {
-            Thread thread = new Thread(()=>{
+            Thread thread = new Thread(()=>
+            {
                 InitForm();
             });
 
             thread.Start();
-        }
-
-        private void fetchAlbumsButton_Click(object sender, EventArgs e)
-        {
-            
         }
 
         private void rememberMeCheckBox_CheckedChanged(object sender, EventArgs e)
@@ -95,7 +89,6 @@ namespace FacebookWinFormsApp
                 r_FBAPIClient.AppSettings.RememberUserActivated = true;
                 r_FBAPIClient.AppSettings.LastAccessToken = r_FBAPIClient.LoginResult.AccessToken;
             }
-
             else
             {
                 r_FBAPIClient.AppSettings.RememberUserActivated = false;
@@ -160,8 +153,8 @@ namespace FacebookWinFormsApp
                 album.SetGroupPictureInPictureBox(albumDTO.PictureURL);
 
                 albumsLayoutPanel.Controls.Add(album);
-                
             }
+
             albumsLayoutPanel.AutoScroll = true;
         }
       
@@ -175,6 +168,7 @@ namespace FacebookWinFormsApp
                 friendBox.SetStatus(friendDTO.OnlineStatus);
                 friendsFlowLayoutPanel.Controls.Add(friendBox);
             }
+
             groupLayoutPanel.AutoScroll = true;
         }
         
@@ -194,6 +188,7 @@ namespace FacebookWinFormsApp
                 groupBox.SetGroupPrivacy(groupDTO.Privacy);
                 groupLayoutPanel.Controls.Add(groupBox);
             }
+
             groupLayoutPanel.AutoScroll = true;
         }
 
@@ -207,15 +202,16 @@ namespace FacebookWinFormsApp
             {
                 labelhomeTown.Text = "THERE ARE NO MUTUAL FRIENDS IN HOMETOWN"; 
             }
+
             foreach (HometownFriendDTO homeTownFriendDTO in i_HometownFriendsDTOList)
             {
                 FriendBox friendBox = new FriendBox();
                 friendBox.SetFriendName(homeTownFriendDTO.Name);
                 friendBox.SetPictureBox(homeTownFriendDTO.PictureURL);
                 friendBox.SetStatus(homeTownFriendDTO.Status.ToString());
-                //friendBox.SetStatus(friendDTO.OnlineStatus);
                 hometownFriendFlowPanel.Controls.Add(friendBox);
             }
+
             hometownFriendFlowPanel.AutoScroll = true;
         }
 
@@ -233,8 +229,7 @@ namespace FacebookWinFormsApp
         private void clearButton_Click(object sender, EventArgs e)
         {
             statusTextBox.Text = "My status...";
-            postTextBox.Text = "";
-     
+            postTextBox.Text = string.Empty;
         }
     }
 }

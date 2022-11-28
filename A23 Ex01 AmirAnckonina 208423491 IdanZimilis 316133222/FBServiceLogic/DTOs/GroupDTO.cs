@@ -9,6 +9,7 @@ namespace FBServiceLogic.DTOs
     public class GroupDTO : TextAndImageDTO
     {
         public string Privacy { get; set; }
+
         public int MembersCount { get; set; }
     }
 }

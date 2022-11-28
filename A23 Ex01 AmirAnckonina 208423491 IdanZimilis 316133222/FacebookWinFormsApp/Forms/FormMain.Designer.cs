@@ -1,6 +1,6 @@
 ﻿namespace FacebookWinFormsApp
 {
-    partial class FormMain
+    public partial class FormMain
     {
         /// <summary>
         /// Required designer variable.
@@ -17,6 +17,7 @@
             {
                 components.Dispose();
             }
+
             base.Dispose(disposing);
         }
 
@@ -731,4 +732,3 @@
         private System.Windows.Forms.Button clearButton;
     }
 }
-

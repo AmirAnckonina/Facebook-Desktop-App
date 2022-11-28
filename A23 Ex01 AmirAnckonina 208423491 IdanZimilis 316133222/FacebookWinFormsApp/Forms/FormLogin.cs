@@ -1,8 +1,8 @@
-﻿using FacebookWrapper;
-using FacebookWrapper.ObjectModel;
-using System;
+﻿using System;
 using System.Text;
 using System.Windows.Forms;
+using FacebookWrapper;
+using FacebookWrapper.ObjectModel;
 using FBServiceLogic;
 
 namespace FacebookWinFormsApp
@@ -42,7 +42,6 @@ namespace FacebookWinFormsApp
                 LoginSucceed = true;
                 this.Close();
             }
-
             catch (Exception ex)
             {
                 LoginSucceed = false;
@@ -55,11 +54,11 @@ namespace FacebookWinFormsApp
             StringBuilder permissionsApprovalMessage = new StringBuilder();
 
             permissionsApprovalMessage.Append($"By login to {r_FBAPIClient.AppSettings.AppID} application, you authorize the app to get the following information:" +
-                $"");
+                string.Empty);
             foreach (string permission in r_FBAPIClient.AppSettings.Permissions)
             {
                 permissionsApprovalMessage.Append($"{permission}" +
-                    $"");
+                    string.Empty);
             }
 
             permissionsApprovalMessage.Append("If you want to modify these permissions, please press cancel, and select 'Settings' button");

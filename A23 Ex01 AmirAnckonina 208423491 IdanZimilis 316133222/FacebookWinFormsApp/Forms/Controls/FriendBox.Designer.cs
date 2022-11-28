@@ -1,7 +1,6 @@
-﻿
-namespace FacebookWinFormsApp.Forms.Controls
+﻿namespace FacebookWinFormsApp.Forms.Controls
 {
-    partial class FriendBox
+    public partial class FriendBox
     {
         /// <summary> 
         /// Required designer variable.
@@ -18,6 +17,7 @@ namespace FacebookWinFormsApp.Forms.Controls
             {
                 components.Dispose();
             }
+
             base.Dispose(disposing);
         }
 

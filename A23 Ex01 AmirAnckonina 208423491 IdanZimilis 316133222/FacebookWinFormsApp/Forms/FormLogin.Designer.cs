@@ -1,7 +1,6 @@
-﻿
-namespace FacebookWinFormsApp
+﻿namespace FacebookWinFormsApp
 {
-    partial class FormLogin
+    public partial class FormLogin
     {
         /// <summary>
         /// Required designer variable.
@@ -18,6 +17,7 @@ namespace FacebookWinFormsApp
             {
                 components.Dispose();
             }
+
             base.Dispose(disposing);
         }
 

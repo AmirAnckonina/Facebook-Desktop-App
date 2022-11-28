@@ -15,13 +15,50 @@ namespace FBServiceLogic
                  @"AppSettings.xml");
 
         public bool RememberUserActivated { get; set; }
+
         public string LastAccessToken { get; set; }
+
         public string AppID { get; set; } 
+
         public List<string> Permissions { get; set; } 
 
         private AppSettings()
         {
             SetDefaultAppSettings();
+        }
+
+        private static AppSettings LoadFromFile()
+        {
+            AppSettings appSettings = null;
+
+            try 
+            {
+                using (Stream stream = new FileStream(sr_AppSettingsFilePath, FileMode.Open))
+                {
+                    XmlSerializer serializer = new XmlSerializer(typeof(AppSettings));
+                    appSettings = serializer.Deserialize(stream) as AppSettings;
+                }
+            }
+            catch(Exception ex)
+            {
+                appSettings = new AppSettings();
+            }
+
+            return appSettings;
+        }       
+
+        public static AppSettings LoadSettings() 
+        {
+            AppSettings appSettings = null;
+           
+            appSettings = LoadFromFile();
+
+            if (appSettings == null || appSettings.RememberUserActivated == false)
+            {
+                appSettings = new AppSettings();
+            }
+
+            return appSettings;
         }
 
         public void SetDefaultAppSettings()
@@ -35,7 +72,9 @@ namespace FBServiceLogic
         private void SetDefaultPermissions()
         {
             /// Init App Permissions 
-            Permissions = new List<string>(new string[] { "email",
+            Permissions = new List<string>(new string[] 
+            {
+                "email",
         "public_profile",
         "user_age_range",
         "user_birthday",
@@ -50,21 +89,6 @@ namespace FBServiceLogic
         "user_posts",
         "user_videos"
             });
-        }
-
-        public static AppSettings LoadSettings() 
-        {
-            AppSettings appSettings = null;
-           
-            appSettings = LoadFromFile();
-
-            if (appSettings == null || appSettings.RememberUserActivated == false)
-            {
-                appSettings = new AppSettings();
-            }
-
-            return appSettings;
-
         }
 
         public void AddPermission(string i_Permission)
@@ -92,26 +116,6 @@ namespace FBServiceLogic
             }       
         }
 
-        private static AppSettings LoadFromFile()
-        {
-            AppSettings appSettings = null;
-
-            try 
-            {
-                using (Stream stream = new FileStream(sr_AppSettingsFilePath, FileMode.Open))
-                {
-                    XmlSerializer serializer = new XmlSerializer(typeof(AppSettings));
-                    appSettings = serializer.Deserialize(stream) as AppSettings;
-                }
-            }
-            catch(Exception ex)
-            {
-                appSettings = new AppSettings();
-            }
-
-            return appSettings;
-        }       
-
         public void ResetAppSettings()
         {
             AppID = null;
@@ -124,7 +128,4 @@ namespace FBServiceLogic
             }
         }
     }
-
 }
-    
-

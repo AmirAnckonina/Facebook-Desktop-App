@@ -9,6 +9,7 @@ namespace FBServiceLogic.DTOs
     public class TextAndImageDTO
     {
         public string Name { get; set; }
+
         public string PictureURL { get; set; }
     }
 }

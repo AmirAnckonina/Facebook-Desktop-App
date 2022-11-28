@@ -11,8 +11,7 @@ namespace FBServiceLogic.DummyData
         public static long? GenerateRandLikesCount()
         {
             Random rand = new Random(Guid.NewGuid().GetHashCode());
-            long ? likes;
-
+            long? likes;
             likes = rand.Next(0, 1000000);
 
             return likes;
@@ -70,7 +69,6 @@ namespace FBServiceLogic.DummyData
             group.Privacy = eGroupPrivacy.Secret;
             group.PictureURL = "https://wwwen.uni.lu/var/storage/images/media/images/lcl_images/no_picture/1416637-1-fre-FR/no_picture.png";
             dummyGroups.Add(group);
-
 
             return dummyGroups;
         }
@@ -135,7 +133,6 @@ namespace FBServiceLogic.DummyData
             dummy.PictureURL = "https://media.newyorker.com/photos/5d0d56a203a303d37b7e4451/1:1/w_1660,h_1660,c_limit/Hutton-DevilExpression.jpg";
             dummy.OnlineStatus = GenerateRandOnlineStatus();
             dummyFriends.Add(dummy);
-
 
             return dummyFriends;
         }

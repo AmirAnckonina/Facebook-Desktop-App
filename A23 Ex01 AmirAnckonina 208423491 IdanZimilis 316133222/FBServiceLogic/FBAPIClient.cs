@@ -1,20 +1,19 @@
-﻿using Facebook;
+﻿using System;
+using System.Collections.Generic;
+using Facebook;
 using FacebookWrapper;
 using FacebookWrapper.ObjectModel;
 using FBServiceLogic.DTOs;
-using System;
-using System.Collections.Generic;
 using FBServiceLogic.DummyData;
-
 
 namespace FBServiceLogic
 {
     public class FBAPIClient
     {
+        private readonly AppSettings r_AppSettings;
         private User m_CurrentUser;
         private DummyCurrentUser m_DummyCurrUserData;
         private LoginResult m_LoginResult;
-        private readonly AppSettings r_AppSettings;
 
         public FBAPIClient()
         {
@@ -25,7 +24,9 @@ namespace FBServiceLogic
         }
 
         public User CurrentUser { get => m_CurrentUser; set => m_CurrentUser = value; }
+
         public LoginResult LoginResult { get => m_LoginResult; set => m_LoginResult = value; }
+
         public AppSettings AppSettings { get => r_AppSettings; }
 
         public void Login()
@@ -49,7 +50,6 @@ namespace FBServiceLogic
                 m_CurrentUser = m_LoginResult.LoggedInUser;
                 m_DummyCurrUserData = DummyDataCreator.CreateDummyDataForCurrentUser(m_CurrentUser.Name, m_CurrentUser.PictureSqaureURL);
             }
-
             else
             {
                 throw new FacebookApiException("Login Failed");
@@ -100,7 +100,6 @@ namespace FBServiceLogic
                     friendDTOList.Add(newFriendDTO);
                 }
             }
-
             else
             {
                 foreach (User friend in m_CurrentUser.Friends)
@@ -191,7 +190,6 @@ namespace FBServiceLogic
                     groupsDTOList.Add(newGroup);
                 }
             }
-
             else
             {
                 foreach (Group group in groups)
@@ -224,11 +222,9 @@ namespace FBServiceLogic
                         newAlumni.PictureURL = friend.PictureURL;
                         newAlumni.Education = friend.Education;
                         myAlumnusList.Add(newAlumni);
-
                     }
                 }
             }
-
             else
             {
                 foreach (User friend in m_CurrentUser.Friends)
@@ -252,7 +248,6 @@ namespace FBServiceLogic
             List<HometownFriendDTO> myHometownFriends = new List<HometownFriendDTO>();
             HometownFriendDTO htFriend;
 
-
             if (m_CurrentUser.Friends.Count <= 0)
             {
                 foreach (DummyUser dummyUser in m_DummyCurrUserData.Friends)
@@ -268,7 +263,6 @@ namespace FBServiceLogic
                     }
                 }
             }
-
             else
             {
                 foreach (User friend in m_CurrentUser.Friends)
@@ -302,4 +296,3 @@ namespace FBServiceLogic
         }
     }
 }
-

@@ -10,8 +10,8 @@ using System.Windows.Forms;
 
 namespace FacebookWinFormsApp.Forms.Controls
 {
-    public partial class FriendBox : UserControl { 
-    
+    public partial class FriendBox : UserControl
+    { 
         public FriendBox()
         {
             InitializeComponent();

@@ -26,6 +26,5 @@ namespace FacebookWinFormsApp.Forms.Controls
         {
             albumPictureBox.LoadAsync(i_albumPictureURL);
         }
-
     }
 }

@@ -1,10 +1,10 @@
-﻿using FacebookWrapper;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using FacebookWrapper;
 using FBServiceLogic;
 
 namespace FacebookWinFormsApp
@@ -32,7 +32,6 @@ namespace FacebookWinFormsApp
                 r_FormMain.CheckRememberMe();
                 RunApp();
             }
-
             else
             {
                 RunLogin();

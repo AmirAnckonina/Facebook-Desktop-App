@@ -78,8 +78,6 @@ namespace FBServiceLogic.DummyData
             FBUsers.Add(dummy);
         }*/
 
-
-
         /*public void SaveXMLExample()
         {
             FileMode fileMode;

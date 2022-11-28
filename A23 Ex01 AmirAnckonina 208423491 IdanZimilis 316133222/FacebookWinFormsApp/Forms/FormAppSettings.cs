@@ -9,7 +9,6 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using FBServiceLogic;
 
-
 namespace FacebookWinFormsApp
 {
 	public partial class FormAppSettings : Form
@@ -23,7 +22,6 @@ namespace FacebookWinFormsApp
 			InitializeComponent();
 			r_FBAPIClient = i_FBAPIClient;
 		}
-
 
 		private void buttonApply_Click(object sender, EventArgs e)
 		{
@@ -40,7 +38,6 @@ namespace FacebookWinFormsApp
 			{
 				comboAppID.SelectedIndex = 0;
 			}
-
 			else
 			{
 				string appID = comboAppID.SelectedItem.ToString();
