@@ -72,6 +72,7 @@ namespace FacebookWinFormsApp
         private void FormAppSettings_Load(object sender, EventArgs e)
         {
 			comboAppID.SelectedItem = comboAppID.Items[0];
+
 			for (int i = 0; i < listBoxPermissions.Items.Count; i++)
 			{
 				listBoxPermissions.SetItemChecked(i, true);

@@ -22,9 +22,9 @@ namespace FacebookWinFormsApp.Forms.Controls
            groupNameLabel.Text = i_AlbumName;
         }
 
-        public void SetGroupPictureInPictureBox(string i_albumPictureURL)
+        public void SetGroupPictureInPictureBox(string i_AlbumPictureURL)
         {
-            groupPictureBox.LoadAsync(i_albumPictureURL);
+            groupPictureBox.LoadAsync(i_AlbumPictureURL);
         }
 
         public void SetGroupMembersCount(string i_MembersCount)
