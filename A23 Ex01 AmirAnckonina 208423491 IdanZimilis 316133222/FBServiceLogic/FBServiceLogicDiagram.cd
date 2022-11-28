@@ -3,21 +3,14 @@
   <Class Name="FBServiceLogic.AppSettings">
     <Position X="6.5" Y="1" Width="2.25" />
     <TypeIdentifier>
-      <HashCode>AABCCAAggAAEAIAAAAAAAAQgAECAAAAAEAAEAAAAEAA=</HashCode>
+      <HashCode>AABCCAAgAAAEAIAAAAAAAAQgAECAAAAAEAAEAAABEAA=</HashCode>
       <FileName>AppSettings.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="FBServiceLogic.FBAPIClient">
     <Position X="3.75" Y="1" Width="2.25" />
-    <NestedTypes>
-      <Enum Name="FBServiceLogic.FBAPIClient.UserData" Collapsed="true">
-        <TypeIdentifier>
-          <NewMemberFileName>FBAPIClient.cs</NewMemberFileName>
-        </TypeIdentifier>
-      </Enum>
-    </NestedTypes>
     <TypeIdentifier>
-      <HashCode>CA0AAEAAQIAAAUAAAEABAAIAIAAQBAAAggEQAAAQwAA=</HashCode>
+      <HashCode>CA0AAEAAQIAAAUAAAEABAAIAIAAQAAAAggEQAAAQwAA=</HashCode>
       <FileName>FBAPIClient.cs</FileName>
     </TypeIdentifier>
   </Class>

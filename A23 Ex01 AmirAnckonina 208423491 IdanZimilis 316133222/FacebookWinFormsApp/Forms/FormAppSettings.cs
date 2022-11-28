@@ -53,7 +53,7 @@ namespace FacebookWinFormsApp
 
 			foreach (string checkedPermission in listBoxPermissions.CheckedItems)
             {
-				r_FBAPIClient.AppSettings.AddPermissions(checkedPermission);
+				r_FBAPIClient.AppSettings.AddPermission(checkedPermission);
             }
 		}
 

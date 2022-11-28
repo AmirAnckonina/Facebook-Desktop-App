@@ -41,7 +41,6 @@ namespace FacebookWinFormsApp
         public void FetchUserInfo()
         {
             testBoxLoggedInUser.Text = $"Logged in as {r_FBAPIClient.CurrentUser.Name}";
-            r_FBAPIClient.ImportAlternativeData();
             FetchBasicUserInfo();
             FetchAlbums(r_FBAPIClient.GetAlbumsList());
             FetchGroups(r_FBAPIClient.GetGroupsNamesList());
