@@ -48,6 +48,8 @@ namespace FacebookWinFormsApp
 
 		private void UpdateAppPermissions()
         {
+			r_FBAPIClient.AppSettings.Permissions.Clear();
+
 			foreach (string checkedPermission in listBoxPermissions.CheckedItems)
             {
 				r_FBAPIClient.AppSettings.AddPermissions(checkedPermission);
