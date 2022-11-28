@@ -10,16 +10,14 @@ namespace FBServiceLogic
 {
     public class AppSettings
     {
-        private string m_AppID;
-        private List<string> m_Permissions;
         private static readonly string sr_AppSettingsFilePath = Path.Combine(
                  AppDomain.CurrentDomain.BaseDirectory,
                  @"AppSettings.xml");
 
         public bool RememberUserActivated { get; set; }
         public string LastAccessToken { get; set; }
-        public string AppID { get => m_AppID; set => m_AppID = value; } 
-        public List<string> Permissions { get => m_Permissions; set => m_Permissions = value; } 
+        public string AppID { get; set; } 
+        public List<string> Permissions { get; set; } 
 
         private AppSettings()
         {
@@ -30,14 +28,14 @@ namespace FBServiceLogic
         {
             RememberUserActivated = false;
             LastAccessToken = null;
-            m_AppID = "3456972604533289";
+            AppID = "3456972604533289";
             SetDefaultPermissions();
         }
 
         private void SetDefaultPermissions()
         {
             /// Init App Permissions 
-            m_Permissions = new List<string>(new string[] { "email",
+            Permissions = new List<string>(new string[] { "email",
         "public_profile",
         "user_age_range",
         "user_birthday",
@@ -71,7 +69,7 @@ namespace FBServiceLogic
 
         public void AddPermission(string i_Permission)
         {
-            m_Permissions.Add(i_Permission);
+            Permissions.Add(i_Permission);
         }
 
         public void SaveToFile()
@@ -116,8 +114,8 @@ namespace FBServiceLogic
 
         public void ResetAppSettings()
         {
-            m_AppID = null;
-            m_Permissions.Clear();
+            AppID = null;
+            Permissions.Clear();
             RememberUserActivated = false;
             LastAccessToken = null;
             if (File.Exists(sr_AppSettingsFilePath))

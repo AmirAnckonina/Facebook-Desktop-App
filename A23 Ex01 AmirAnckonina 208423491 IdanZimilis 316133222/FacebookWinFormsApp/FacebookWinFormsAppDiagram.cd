@@ -10,14 +10,14 @@
   <Class Name="FacebookWinFormsApp.FormAppSettings">
     <Position X="9" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>gIAAgAAAAGgAABAAAACIAQBCAIAAAAAAAAAAAAgAAAA=</HashCode>
+      <HashCode>oIAAAAAAAGgAABAAAACIAQBCAMAAAAAAAAAAAAgAAAA=</HashCode>
       <FileName>Forms\FormAppSettings.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="FacebookWinFormsApp.FormLogin">
     <Position X="7.25" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAIEAAAACBAIAAAQACgAABWAAAAAAAAAAAAAAAAAAQ=</HashCode>
+      <HashCode>AAAIAAAAACBAIAAAQACgAABWAAAAAAAAAAAAAAAAAEQ=</HashCode>
       <FileName>Forms\FormLogin.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -26,13 +26,6 @@
     <Compartments>
       <Compartment Name="Nested Types" Collapsed="false" />
     </Compartments>
-    <NestedTypes>
-      <Enum Name="FacebookWinFormsApp.FormMain.Tabs">
-        <TypeIdentifier>
-          <NewMemberFileName>Forms\FormMain.cs</NewMemberFileName>
-        </TypeIdentifier>
-      </Enum>
-    </NestedTypes>
     <TypeIdentifier>
       <HashCode>AAAgACYAICAAChaCIIqgRDlCAJMEEwgjkBgIJAgBAgA=</HashCode>
       <FileName>Forms\FormMain.cs</FileName>
