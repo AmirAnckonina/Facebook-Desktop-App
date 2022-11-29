@@ -48,7 +48,8 @@ namespace FacebookWinFormsApp
             genderLabel.Text = userBasicInfoDTO.Gender;
             birthdayLabel.Text = userBasicInfoDTO.Birthday;
             statusLabel.Text = userBasicInfoDTO.OnlineStatus;
-            homeTownLabel.Text = userBasicInfoDTO.Hometown;    
+            homeTownLabel.Text = userBasicInfoDTO.Hometown;
+            educationLabel.Text = userBasicInfoDTO.Education;
         }
 
         private void initLikedPages(List<LikedPageDTO> i_LikedPagesList)
@@ -67,7 +68,6 @@ namespace FacebookWinFormsApp
 
         private void buttonLogout_Click(object sender, EventArgs e)
         {
-            rememberMeCheckBox.Checked = false;
             r_FBAPIClient.Logout();
             this.Close();
         }
