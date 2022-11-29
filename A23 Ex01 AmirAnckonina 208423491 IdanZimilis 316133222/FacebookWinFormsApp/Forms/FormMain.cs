@@ -26,22 +26,22 @@ namespace FacebookWinFormsApp
             r_FBAPIClient = i_FBAPIClient;
         }
 
-        private void InitForm()
+        private void initForm()
         {
             Invoke(new Action(() =>
             {
                 testBoxLoggedInUser.Text = $"Logged in as {r_FBAPIClient.CurrentUser.Name}";
 
-                InitBasicUserInfo();
+                initBasicUserInfo();
                 initAlbums(r_FBAPIClient.GetAlbumsList());
                 initGroups(r_FBAPIClient.GetGroupsNamesList());
                 initPosts(r_FBAPIClient.GetPostsList());
-                InitLikedPages(r_FBAPIClient.GetLikedPages());
+                initLikedPages(r_FBAPIClient.GetLikedPages());
                 initFriends(r_FBAPIClient.GetFriendsList());
             }));
         }
 
-        private void InitBasicUserInfo()
+        private void initBasicUserInfo()
         {
             UserBasicInfoDTO userBasicInfoDTO = r_FBAPIClient.GetUserBasicInfoDTO();
             profilePictureBox.LoadAsync(userBasicInfoDTO.PictureURL);
@@ -51,7 +51,7 @@ namespace FacebookWinFormsApp
             homeTownLabel.Text = userBasicInfoDTO.Hometown;    
         }
 
-        private void InitLikedPages(List<LikedPageDTO> i_LikedPagesList)
+        private void initLikedPages(List<LikedPageDTO> i_LikedPagesList)
         {
             foreach (LikedPageDTO pageDTO in i_LikedPagesList)
             {
@@ -76,7 +76,7 @@ namespace FacebookWinFormsApp
         {
             Thread thread = new Thread(()=>
             {
-                InitForm();
+                initForm();
             });
 
             thread.Start();
@@ -230,11 +230,6 @@ namespace FacebookWinFormsApp
         {
             statusTextBox.Text = "My status...";
             postTextBox.Text = string.Empty;
-        }
-
-        private void testBoxLoggedInUser_TextChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }

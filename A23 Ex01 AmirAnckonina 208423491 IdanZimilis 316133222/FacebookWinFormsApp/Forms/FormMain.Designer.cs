@@ -191,7 +191,6 @@
             this.testBoxLoggedInUser.Size = new System.Drawing.Size(184, 20);
             this.testBoxLoggedInUser.TabIndex = 61;
             this.testBoxLoggedInUser.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.testBoxLoggedInUser.TextChanged += new System.EventHandler(this.testBoxLoggedInUser_TextChanged);
             // 
             // infoLabel
             // 
