@@ -55,10 +55,20 @@ namespace FBServiceLogic
                 throw new FacebookApiException("Login Failed");
             }
         }
-
+        
+        public void NormalExit()
+        {
+            FacebookService.Logout();
+            reset();
+        }
         public void Logout()
         {
             FacebookService.LogoutWithUI();
+            reset();
+        }
+
+        private void reset()
+        {
             ResetCurrentFBState();
             r_AppSettings.ResetAppSettings();
         }

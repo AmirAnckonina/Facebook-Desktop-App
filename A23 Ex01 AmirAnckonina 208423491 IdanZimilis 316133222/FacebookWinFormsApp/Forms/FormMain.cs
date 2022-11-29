@@ -105,7 +105,8 @@ namespace FacebookWinFormsApp
             }
             else
             {
-                r_FBAPIClient.Logout();
+                r_FBAPIClient.NormalExit();
+
             }
         }
 
