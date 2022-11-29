@@ -41,12 +41,10 @@
             this.testBoxLoggedInUser = new System.Windows.Forms.TextBox();
             this.infoLabel = new System.Windows.Forms.Label();
             this.infoGroupBox = new System.Windows.Forms.GroupBox();
-            this.aboutLabel = new System.Windows.Forms.Label();
             this.statusLabel = new System.Windows.Forms.Label();
             this.homeTownLabel = new System.Windows.Forms.Label();
             this.birthdayLabel = new System.Windows.Forms.Label();
             this.genderLabel = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -77,6 +75,8 @@
             this.fetchHomwtownFriendsButton = new System.Windows.Forms.Button();
             this.hometownFriendFlowPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.fbLogoPictureBox = new System.Windows.Forms.PictureBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.educationLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.profilePictureBox)).BeginInit();
             this.infoGroupBox.SuspendLayout();
             this.homeTownFreindsTab.SuspendLayout();
@@ -151,9 +151,9 @@
             this.label1.Location = new System.Drawing.Point(22, 18);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(339, 18);
+            this.label1.Size = new System.Drawing.Size(238, 18);
             this.label1.TabIndex = 58;
-            this.label1.Text = "Welcome To Facebook Desktop Application";
+            this.label1.Text = "Facebook Desktop Application";
             // 
             // postsListBox
             // 
@@ -196,21 +196,21 @@
             // 
             this.infoLabel.AutoSize = true;
             this.infoLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.infoLabel.Location = new System.Drawing.Point(-3, 3);
+            this.infoLabel.Location = new System.Drawing.Point(4, 0);
             this.infoLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.infoLabel.Name = "infoLabel";
-            this.infoLabel.Size = new System.Drawing.Size(32, 18);
+            this.infoLabel.Size = new System.Drawing.Size(74, 18);
             this.infoLabel.TabIndex = 62;
-            this.infoLabel.Text = "Info";
+            this.infoLabel.Text = "My Profile";
             // 
             // infoGroupBox
             // 
-            this.infoGroupBox.Controls.Add(this.aboutLabel);
+            this.infoGroupBox.Controls.Add(this.educationLabel);
+            this.infoGroupBox.Controls.Add(this.label6);
             this.infoGroupBox.Controls.Add(this.statusLabel);
             this.infoGroupBox.Controls.Add(this.homeTownLabel);
             this.infoGroupBox.Controls.Add(this.birthdayLabel);
             this.infoGroupBox.Controls.Add(this.genderLabel);
-            this.infoGroupBox.Controls.Add(this.label6);
             this.infoGroupBox.Controls.Add(this.label5);
             this.infoGroupBox.Controls.Add(this.label4);
             this.infoGroupBox.Controls.Add(this.label3);
@@ -221,24 +221,14 @@
             this.infoGroupBox.Margin = new System.Windows.Forms.Padding(2);
             this.infoGroupBox.Name = "infoGroupBox";
             this.infoGroupBox.Padding = new System.Windows.Forms.Padding(2);
-            this.infoGroupBox.Size = new System.Drawing.Size(548, 124);
+            this.infoGroupBox.Size = new System.Drawing.Size(586, 171);
             this.infoGroupBox.TabIndex = 63;
             this.infoGroupBox.TabStop = false;
-            // 
-            // aboutLabel
-            // 
-            this.aboutLabel.AutoSize = true;
-            this.aboutLabel.Location = new System.Drawing.Point(474, 34);
-            this.aboutLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.aboutLabel.Name = "aboutLabel";
-            this.aboutLabel.Size = new System.Drawing.Size(23, 17);
-            this.aboutLabel.TabIndex = 72;
-            this.aboutLabel.Text = "---";
             // 
             // statusLabel
             // 
             this.statusLabel.AutoSize = true;
-            this.statusLabel.Location = new System.Drawing.Point(276, 75);
+            this.statusLabel.Location = new System.Drawing.Point(128, 113);
             this.statusLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.statusLabel.Name = "statusLabel";
             this.statusLabel.Size = new System.Drawing.Size(23, 17);
@@ -248,7 +238,7 @@
             // homeTownLabel
             // 
             this.homeTownLabel.AutoSize = true;
-            this.homeTownLabel.Location = new System.Drawing.Point(276, 34);
+            this.homeTownLabel.Location = new System.Drawing.Point(361, 34);
             this.homeTownLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.homeTownLabel.Name = "homeTownLabel";
             this.homeTownLabel.Size = new System.Drawing.Size(23, 17);
@@ -258,7 +248,7 @@
             // birthdayLabel
             // 
             this.birthdayLabel.AutoSize = true;
-            this.birthdayLabel.Location = new System.Drawing.Point(68, 75);
+            this.birthdayLabel.Location = new System.Drawing.Point(128, 75);
             this.birthdayLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.birthdayLabel.Name = "birthdayLabel";
             this.birthdayLabel.Size = new System.Drawing.Size(23, 17);
@@ -268,27 +258,17 @@
             // genderLabel
             // 
             this.genderLabel.AutoSize = true;
-            this.genderLabel.Location = new System.Drawing.Point(68, 39);
+            this.genderLabel.Location = new System.Drawing.Point(128, 34);
             this.genderLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.genderLabel.Name = "genderLabel";
             this.genderLabel.Size = new System.Drawing.Size(23, 17);
             this.genderLabel.TabIndex = 68;
             this.genderLabel.Text = "---";
             // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(408, 34);
-            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(45, 17);
-            this.label6.TabIndex = 67;
-            this.label6.Text = "About";
-            // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(179, 75);
+            this.label5.Location = new System.Drawing.Point(31, 113);
             this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(48, 17);
@@ -298,7 +278,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(179, 34);
+            this.label4.Location = new System.Drawing.Point(256, 34);
             this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(79, 17);
@@ -308,7 +288,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(-3, 75);
+            this.label3.Location = new System.Drawing.Point(31, 75);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(60, 17);
@@ -318,7 +298,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(-3, 34);
+            this.label2.Location = new System.Drawing.Point(31, 34);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(56, 17);
@@ -624,6 +604,26 @@
             this.fbLogoPictureBox.TabIndex = 66;
             this.fbLogoPictureBox.TabStop = false;
             // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(256, 75);
+            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(71, 17);
+            this.label6.TabIndex = 72;
+            this.label6.Text = "Education";
+            // 
+            // educationLabel
+            // 
+            this.educationLabel.AutoSize = true;
+            this.educationLabel.Location = new System.Drawing.Point(361, 75);
+            this.educationLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.educationLabel.Name = "educationLabel";
+            this.educationLabel.Size = new System.Drawing.Size(23, 17);
+            this.educationLabel.TabIndex = 73;
+            this.educationLabel.Text = "---";
+            // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -682,12 +682,10 @@
         private System.Windows.Forms.TextBox testBoxLoggedInUser;
         private System.Windows.Forms.Label infoLabel;
         private System.Windows.Forms.GroupBox infoGroupBox;
-        private System.Windows.Forms.Label aboutLabel;
         private System.Windows.Forms.Label statusLabel;
         private System.Windows.Forms.Label homeTownLabel;
         private System.Windows.Forms.Label birthdayLabel;
         private System.Windows.Forms.Label genderLabel;
-        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
@@ -718,5 +716,7 @@
         private System.Windows.Forms.Label labelhomeTown;
         private System.Windows.Forms.TextBox statusTextBox;
         private System.Windows.Forms.Button clearButton;
+        private System.Windows.Forms.Label educationLabel;
+        private System.Windows.Forms.Label label6;
     }
 }

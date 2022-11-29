@@ -79,7 +79,7 @@ namespace FBServiceLogic
             userBasicInfoDTO.Birthday = m_CurrentUser.Birthday;
             userBasicInfoDTO.Gender = m_CurrentUser.Gender.ToString();
             userBasicInfoDTO.Education = m_CurrentUser.Educations != null ? m_CurrentUser.Educations[0].School.Name : m_DummyCurrUserData.Education;
-            userBasicInfoDTO.Hometown = m_CurrentUser.Hometown != null ? m_CurrentUser.Hometown.Name : m_DummyCurrUserData.Education;
+            userBasicInfoDTO.Hometown = m_CurrentUser.Hometown != null ? m_CurrentUser.Hometown.Name : m_DummyCurrUserData.Hometown;
             userBasicInfoDTO.OnlineStatus = m_CurrentUser.OnlineStatus != null ? m_CurrentUser.OnlineStatus.ToString() : m_DummyCurrUserData.OnlineStatus.ToString();
 
             return userBasicInfoDTO;
