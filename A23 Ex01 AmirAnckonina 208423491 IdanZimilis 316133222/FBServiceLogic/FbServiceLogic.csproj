@@ -37,11 +37,9 @@
   </PropertyGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <None Include="FBServiceLogicDiagram.cd" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AppSettings.cs" />
-    <Compile Include="DTOs\AlumniDTO.cs" />
     <Compile Include="DTOs\FriendDTO.cs" />
     <Compile Include="DTOs\GroupDTO.cs" />
     <Compile Include="DTOs\HometownFriendDTO.cs" />
