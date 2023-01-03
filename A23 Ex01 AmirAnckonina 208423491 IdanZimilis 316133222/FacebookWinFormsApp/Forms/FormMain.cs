@@ -32,12 +32,12 @@ namespace FacebookWinFormsApp
             {
                 testBoxLoggedInUser.Text = $"Logged in as {r_FBAPIClient.CurrentUser.Name}";
 
-                initBasicUserInfo();
-                initAlbums(r_FBAPIClient.GetAlbumsList());
-                initGroups(r_FBAPIClient.GetGroupsNamesList());
-                initPosts(r_FBAPIClient.GetPostsList());
-                initLikedPages(r_FBAPIClient.GetLikedPages());
-                initFriends(r_FBAPIClient.GetFriendsList());
+                new Thread(initBasicUserInfo).Start();
+                new Thread(()=>initAlbums(r_FBAPIClient.GetAlbumsList())).Start();
+                new Thread(()=>initGroups(r_FBAPIClient.GetGroupsNamesList())).Start();
+                new Thread(() => initPosts(r_FBAPIClient.GetPostsList())).Start();
+                new Thread(() => initLikedPages(r_FBAPIClient.GetLikedPages())).Start();
+                new Thread(() => initFriends(r_FBAPIClient.GetFriendsList())).Start();
             }));
         }
 
@@ -45,11 +45,14 @@ namespace FacebookWinFormsApp
         {
             UserBasicInfoDTO userBasicInfoDTO = r_FBAPIClient.GetUserBasicInfoDTO();
             profilePictureBox.LoadAsync(userBasicInfoDTO.PictureURL);
-            genderLabel.Text = userBasicInfoDTO.Gender;
-            birthdayLabel.Text = userBasicInfoDTO.Birthday;
-            statusLabel.Text = userBasicInfoDTO.OnlineStatus;
-            homeTownLabel.Text = userBasicInfoDTO.Hometown;
-            educationLabel.Text = userBasicInfoDTO.Education;
+            Invoke(new Action(() =>
+            {
+                genderLabel.Text = userBasicInfoDTO.Gender;
+                birthdayLabel.Text = userBasicInfoDTO.Birthday;
+                statusLabel.Text = userBasicInfoDTO.OnlineStatus;
+                homeTownLabel.Text = userBasicInfoDTO.Hometown;
+                educationLabel.Text = userBasicInfoDTO.Education;
+            }));
         }
 
         private void initLikedPages(List<LikedPageDTO> i_LikedPagesList)
@@ -60,10 +63,10 @@ namespace FacebookWinFormsApp
                 pageBox.setName(pageDTO.Name);
                 pageBox.setPictureBox(pageDTO.PictureURL);
                 pageBox.setNumOfLikes(pageDTO.LikesCount);
-                likedPagesFlowLayoutPanel.Controls.Add(pageBox);
+                likedPagesFlowLayoutPanel.Invoke(new Action(() => likedPagesFlowLayoutPanel.Controls.Add(pageBox)));
             }
 
-            likedPagesFlowLayoutPanel.AutoScroll = true;
+            likedPagesFlowLayoutPanel.Invoke(new Action(()=>likedPagesFlowLayoutPanel.AutoScroll = true));
         }
 
         private void buttonLogout_Click(object sender, EventArgs e)
@@ -130,17 +133,20 @@ namespace FacebookWinFormsApp
 
         private void initPosts(List<PostDTO> i_PostsDTOList)
         {
-            foreach (PostDTO post in i_PostsDTOList)
+            if (i_PostsDTOList != null)
             {
-                if (!string.IsNullOrEmpty(post.Message))
+                foreach (PostDTO post in i_PostsDTOList)
                 {
-                    string[] postString = post.Message.Split(char.Parse("\n"));
-                    foreach (string word in postString)
+                    if (!string.IsNullOrEmpty(post.Message))
                     {
-                        postsListBox.Items.Add(word + Environment.NewLine);
+                        string[] postString = post.Message.Split(char.Parse("\n"));
+                        foreach (string word in postString)
+                        {
+                            postsListBox.Invoke(new Action(() => postsListBox.Items.Add(word + Environment.NewLine)));
+                        }
+
+                        postsByDateListBox.Invoke(new Action(() => postsByDateListBox.Items.Add(Environment.NewLine)));
                     }
-                  
-                    postsByDateListBox.Items.Add(Environment.NewLine);
                 }
             }
         }
@@ -153,12 +159,15 @@ namespace FacebookWinFormsApp
                 album.SetGroupNameLabel(albumDTO.Name);
                 album.SetGroupPictureInPictureBox(albumDTO.PictureURL);
 
-                albumsLayoutPanel.Controls.Add(album);
+                albumsLayoutPanel.Invoke(new Action(() =>
+                {
+                    albumsLayoutPanel.Controls.Add(album);
+                    albumsLayoutPanel.AutoScroll = true;
+                }));
             }
 
-            albumsLayoutPanel.AutoScroll = true;
         }
-      
+
         private void initFriends(List<FriendDTO> i_FriendsDTOList)
         {
             foreach (FriendDTO friendDTO in i_FriendsDTOList)
@@ -167,10 +176,13 @@ namespace FacebookWinFormsApp
                 friendBox.SetFriendName(friendDTO.Name);
                 friendBox.SetPictureBox(friendDTO.PictureURL);
                 friendBox.SetStatus(friendDTO.OnlineStatus);
-                friendsFlowLayoutPanel.Controls.Add(friendBox);
+                friendsFlowLayoutPanel.Invoke(new Action(() =>
+                {
+                    friendsFlowLayoutPanel.Controls.Add(friendBox);
+                    groupLayoutPanel.AutoScroll = true;
+                }));
             }
 
-            groupLayoutPanel.AutoScroll = true;
         }
         
         public void CheckRememberMe()
@@ -187,10 +199,14 @@ namespace FacebookWinFormsApp
                 groupBox.SetGroupPictureInPictureBox(groupDTO.PictureURL);
                 groupBox.SetGroupMembersCount(groupDTO.MembersCount.ToString());
                 groupBox.SetGroupPrivacy(groupDTO.Privacy);
-                groupLayoutPanel.Controls.Add(groupBox);
+                groupLayoutPanel.Invoke(new Action(() =>
+                {
+                    groupLayoutPanel.Controls.Add(groupBox);
+                    groupLayoutPanel.AutoScroll = true;
+
+                }));
             }
 
-            groupLayoutPanel.AutoScroll = true;
         }
 
         private void fetchHometownFriends(List<HometownFriendDTO> i_HometownFriendsDTOList)
