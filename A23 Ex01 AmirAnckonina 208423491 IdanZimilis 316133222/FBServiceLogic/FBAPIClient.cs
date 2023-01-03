@@ -146,17 +146,24 @@ namespace FBServiceLogic
         {
             List<PostDTO> postDTOList = new List<PostDTO>();
             PostDTO newPost;
-
-            foreach (Post post in m_CurrentUser.Posts)
+            try
             {
-                newPost = new PostDTO();
-                newPost.Message = post.Message;
-                newPost.Caption = post.Caption;
-                newPost.CreatedTime = post.CreatedTime;
-                postDTOList.Add(newPost);
-            }
+                foreach (Post post in m_CurrentUser.Posts)
+                {
+                    newPost = new PostDTO();
+                    newPost.Message = post.Message;
+                    newPost.Caption = post.Caption;
+                    newPost.CreatedTime = post.CreatedTime;
+                    postDTOList.Add(newPost);
+                }
 
-            return postDTOList;
+                return postDTOList;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("problem with getting post from api");
+                return null;
+            }
         }
 
         public List<PostDTO> GetPostsByDate(DateTime i_DateTime)
