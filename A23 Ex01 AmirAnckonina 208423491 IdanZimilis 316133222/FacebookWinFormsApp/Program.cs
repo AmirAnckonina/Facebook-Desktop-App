@@ -18,7 +18,7 @@ namespace FacebookWinFormsApp
             FacebookService.s_UseForamttedToStrings = true;
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            new AppManager().Run();
+            AppManager.Instance.Run();
         }
     }
 }
