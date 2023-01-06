@@ -32,41 +32,53 @@ namespace FacebookWinFormsApp
             {
                 testBoxLoggedInUser.Text = $"Logged in as {r_FBAPIClient.CurrentUser.Name}";
 
-                new Thread(initBasicUserInfo).Start();
-                new Thread(()=>initAlbums(r_FBAPIClient.GetAlbumsList())).Start();
-                new Thread(()=>initGroups(r_FBAPIClient.GetGroupsList())).Start();
-                new Thread(() => initPosts(r_FBAPIClient.GetPostsList())).Start();
-                new Thread(() => initLikedPages(r_FBAPIClient.GetLikedPages())).Start();
-                new Thread(() => initFriends(r_FBAPIClient.GetFriendsList())).Start();
+                new Thread(() => initBasicUserInfo()).Start();
+                new Thread(() => initAlbums()).Start();
+                new Thread(() => initGroups()).Start();
+                new Thread(() => initPosts()).Start();
+                new Thread(() => initLikedPages()).Start();
+                new Thread(() => initFriends()).Start();
             }));
         }
 
         private void initBasicUserInfo()
         {
-            UserBasicInfoDTO userBasicInfoDTO = r_FBAPIClient.GetUserBasicInfoDTO();
-            profilePictureBox.LoadAsync(userBasicInfoDTO.PictureURL);
-            Invoke(new Action(() =>
+            try
             {
-                genderLabel.Text = userBasicInfoDTO.Gender;
-                birthdayLabel.Text = userBasicInfoDTO.Birthday;
-                statusLabel.Text = userBasicInfoDTO.OnlineStatus;
-                homeTownLabel.Text = userBasicInfoDTO.Hometown;
-                educationLabel.Text = userBasicInfoDTO.Education;
-            }));
+                UserBasicInfoDTO userBasicInfoDTO = r_FBAPIClient.GetUserBasicInfoDTO();
+
+                profilePictureBox.LoadAsync(userBasicInfoDTO.PictureURL);
+                Invoke(new Action(() =>
+                {
+                    genderLabel.Text = userBasicInfoDTO.Gender;
+                    birthdayLabel.Text = userBasicInfoDTO.Birthday;
+                    statusLabel.Text = userBasicInfoDTO.OnlineStatus;
+                    homeTownLabel.Text = userBasicInfoDTO.Hometown;
+                    educationLabel.Text = userBasicInfoDTO.Education;
+                }));
+            }
+            catch(Exception ex)
+            { }
         }
 
-        private void initLikedPages(List<LikedPageDTO> i_LikedPagesList)
+        private void initLikedPages()
         {
-            foreach (LikedPageDTO pageDTO in i_LikedPagesList)
+            try
             {
-                PageBox pageBox = new PageBox();
-                pageBox.setName(pageDTO.Name);
-                pageBox.setPictureBox(pageDTO.PictureURL);
-                pageBox.setNumOfLikes(pageDTO.LikesCount);
-                likedPagesFlowLayoutPanel.Invoke(new Action(() => likedPagesFlowLayoutPanel.Controls.Add(pageBox)));
-            }
+                List<LikedPageDTO> i_LikedPagesList = r_FBAPIClient.GetLikedPages();
 
-            likedPagesFlowLayoutPanel.Invoke(new Action(()=>likedPagesFlowLayoutPanel.AutoScroll = true));
+                foreach (LikedPageDTO pageDTO in i_LikedPagesList)
+                {
+                    PageBox pageBox = new PageBox();
+                    pageBox.setName(pageDTO.Name);
+                    pageBox.setPictureBox(pageDTO.PictureURL);
+                    pageBox.setNumOfLikes(pageDTO.LikesCount);
+                    likedPagesFlowLayoutPanel.Invoke(new Action(() => likedPagesFlowLayoutPanel.Controls.Add(pageBox)));
+                    likedPagesFlowLayoutPanel.Invoke(new Action(()=>likedPagesFlowLayoutPanel.AutoScroll = true));
+                }
+            }
+            catch(Exception ex)
+            { }                
         }
 
         private void buttonLogout_Click(object sender, EventArgs e)
@@ -113,74 +125,110 @@ namespace FacebookWinFormsApp
             }
         }
 
-        private void searchPostsByDateButton_Click(object sender, EventArgs e)
+        private void fetchPostsByDate()
         {
-            postsByDateListBox.Items.Clear();
-            foreach (PostDTO post in r_FBAPIClient.GetPostsByDate(dateTimePicker1.Value))
+            try
             {
-                if (!string.IsNullOrEmpty(post.Message))
-                {
-                    string[] postString = post.Message.Split(char.Parse("\n"));
-                    foreach (string word in postString)
-                    {
-                        postsByDateListBox.Items.Add(word + Environment.NewLine);
-                    }
-                  
-                    postsByDateListBox.Items.Add(Environment.NewLine);
-                }
-            }
-        }
+                List<PostDTO> allPostsInSingleDay = r_FBAPIClient.GetPostsByDate(dateTimePicker1.Value);
 
-        private void initPosts(List<PostDTO> i_PostsDTOList)
-        {
-            if (i_PostsDTOList != null)
-            {
-                foreach (PostDTO post in i_PostsDTOList)
+                foreach (PostDTO post in allPostsInSingleDay)
                 {
                     if (!string.IsNullOrEmpty(post.Message))
                     {
                         string[] postString = post.Message.Split(char.Parse("\n"));
                         foreach (string word in postString)
                         {
-                            postsListBox.Invoke(new Action(() => postsListBox.Items.Add(word + Environment.NewLine)));
+                            postsByDateListBox.Items.Add(word + Environment.NewLine);
                         }
 
-                        postsByDateListBox.Invoke(new Action(() => postsByDateListBox.Items.Add(Environment.NewLine)));
+                        postsByDateListBox.Items.Add(Environment.NewLine);
                     }
                 }
             }
+            catch(Exception ex)
+            { }
         }
 
-        private void initAlbums(List<TextAndImageDTO> i_AlbumDTOs)
+        private void searchPostsByDateButton_Click(object sender, EventArgs e)
         {
-            foreach (TextAndImageDTO albumDTO in i_AlbumDTOs)
-            {
-                AlbumBox album = new AlbumBox();
-                album.SetGroupNameLabel(albumDTO.Name);
-                album.SetGroupPictureInPictureBox(albumDTO.PictureURL);
+            postsByDateListBox.Items.Clear();
+            fetchPostsByDate();
+            
+        }
 
-                albumsLayoutPanel.Invoke(new Action(() =>
+        private void initPosts()
+        {
+            try
+            {
+                List<PostDTO> i_PostsDTOList = r_FBAPIClient.GetPostsList();
+
+                if (i_PostsDTOList != null)
                 {
-                    albumsLayoutPanel.Controls.Add(album);
-                    albumsLayoutPanel.AutoScroll = true;
-                }));
+                    foreach (PostDTO post in i_PostsDTOList)
+                    {
+                        if (!string.IsNullOrEmpty(post.Message))
+                        {
+                            string[] postString = post.Message.Split(char.Parse("\n"));
+                            foreach (string word in postString)
+                            {
+                                postsListBox.Invoke(new Action(() => postsListBox.Items.Add(word + Environment.NewLine)));
+                            }
+
+                            postsByDateListBox.Invoke(new Action(() => postsByDateListBox.Items.Add(Environment.NewLine)));
+                        }
+                    }
+                }
             }
-
+            catch(Exception ex)
+            { }
         }
 
-        private void initFriends(List<FriendDTO> i_FriendsDTOList)
+        private void initAlbums()
         {
-            foreach (FriendDTO friendDTO in i_FriendsDTOList)
+            try
             {
-                FriendBox friendBox = new FriendBox();
-                friendBox.SetFriendName(friendDTO.Name);
-                friendBox.SetPictureBox(friendDTO.PictureURL);
-                friendBox.SetStatus(friendDTO.OnlineStatus);
-                friendsFlowLayoutPanel.Invoke(new Action(() =>
+                List<TextAndImageDTO> albumsDTO = r_FBAPIClient.GetAlbumsList();
+
+                foreach (TextAndImageDTO albumDTO in albumsDTO)
                 {
-                    friendsFlowLayoutPanel.Controls.Add(friendBox);
-                    groupLayoutPanel.AutoScroll = true;
-                }));
+                    AlbumBox album = new AlbumBox();
+                    album.SetGroupNameLabel(albumDTO.Name);
+                    album.SetGroupPictureInPictureBox(albumDTO.PictureURL);
+
+                    albumsLayoutPanel.Invoke(new Action(() =>
+                    {
+                        albumsLayoutPanel.Controls.Add(album);
+                        albumsLayoutPanel.AutoScroll = true;
+                    }));
+                }
+            }
+            catch(Exception ex)
+            {
+                //MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void initFriends()
+        {
+            try
+            {
+                List<FriendDTO> i_FriendsDTOList = r_FBAPIClient.GetFriendsList();
+                foreach (FriendDTO friendDTO in i_FriendsDTOList)
+                {
+                    FriendBox friendBox = new FriendBox();
+                    friendBox.SetFriendName(friendDTO.Name);
+                    friendBox.SetPictureBox(friendDTO.PictureURL);
+                    friendBox.SetStatus(friendDTO.OnlineStatus);
+                    friendsFlowLayoutPanel.Invoke(new Action(() =>
+                    {
+                        friendsFlowLayoutPanel.Controls.Add(friendBox);
+                        groupLayoutPanel.AutoScroll = true;
+                    }));
+                }
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show($"An error occured while fetching user friends. " + ex.Message);
             }
 
         }
@@ -190,52 +238,67 @@ namespace FacebookWinFormsApp
             rememberMeCheckBox.Checked = true;
         }
 
-        private void initGroups(List<GroupDTO> i_GroupsListDTO)
+        private void initGroups()
         {
-            foreach (GroupDTO groupDTO in i_GroupsListDTO)
+            try
             {
-                FBGroupBox groupBox = new FBGroupBox();
-                groupBox.SetGroupNameLabel(groupDTO.Name);
-                groupBox.SetGroupPictureInPictureBox(groupDTO.PictureURL);
-                groupBox.SetGroupMembersCount(groupDTO.MembersCount.ToString());
-                groupBox.SetGroupPrivacy(groupDTO.Privacy);
-                groupLayoutPanel.Invoke(new Action(() =>
+                List<GroupDTO> i_GroupsListDTO = r_FBAPIClient.GetGroupsList();
+
+                foreach (GroupDTO groupDTO in i_GroupsListDTO)
                 {
-                    groupLayoutPanel.Controls.Add(groupBox);
-                    groupLayoutPanel.AutoScroll = true;
+                    FBGroupBox groupBox = new FBGroupBox();
+                    groupBox.SetGroupNameLabel(groupDTO.Name);
+                    groupBox.SetGroupPictureInPictureBox(groupDTO.PictureURL);
+                    groupBox.SetGroupMembersCount(groupDTO.MembersCount.ToString());
+                    groupBox.SetGroupPrivacy(groupDTO.Privacy);
+                    groupLayoutPanel.Invoke(new Action(() =>
+                    {
+                        groupLayoutPanel.Controls.Add(groupBox);
+                        groupLayoutPanel.AutoScroll = true;
 
-                }));
+                    }));
+                }
             }
-
+            catch(Exception ex)
+            {
+                MessageBox.Show($"An error occured while fetching user groups. " + ex.Message);
+            }
         }
 
-        private void fetchHometownFriends(List<HometownFriendDTO> i_HometownFriendsDTOList)
+        private void fetchHometownFriends()
         {
-            if (i_HometownFriendsDTOList.Count > 0)
+            try
             {
-                labelhomeTown.Text = i_HometownFriendsDTOList[0].Hometown;
-            }
-            else
-            {
-                labelhomeTown.Text = "THERE ARE NO MUTUAL FRIENDS IN HOMETOWN"; 
-            }
+                List<HometownFriendDTO> i_HometownFriendsDTOList = r_FBAPIClient.GetMyHometownFriends();
 
-            foreach (HometownFriendDTO homeTownFriendDTO in i_HometownFriendsDTOList)
-            {
-                FriendBox friendBox = new FriendBox();
-                friendBox.SetFriendName(homeTownFriendDTO.Name);
-                friendBox.SetPictureBox(homeTownFriendDTO.PictureURL);
-                friendBox.SetStatus(homeTownFriendDTO.Status.ToString());
-                hometownFriendFlowPanel.Controls.Add(friendBox);
-            }
+                if (i_HometownFriendsDTOList.Count > 0)
+                {
+                    labelhomeTown.Text = i_HometownFriendsDTOList[0].Hometown;
+                }
+                else
+                {
+                    labelhomeTown.Text = "THERE ARE NO MUTUAL FRIENDS IN HOMETOWN"; 
+                }
 
-            hometownFriendFlowPanel.AutoScroll = true;
+                foreach (HometownFriendDTO homeTownFriendDTO in i_HometownFriendsDTOList)
+                {
+                    FriendBox friendBox = new FriendBox();
+                    friendBox.SetFriendName(homeTownFriendDTO.Name);
+                    friendBox.SetPictureBox(homeTownFriendDTO.PictureURL);
+                    friendBox.SetStatus(homeTownFriendDTO.Status.ToString());
+                    hometownFriendFlowPanel.Controls.Add(friendBox);
+                }
+
+                hometownFriendFlowPanel.AutoScroll = true;
+            }
+            catch(Exception ex)
+            { }
         }
 
         private void fetchHomwtownFriendsButton_Click(object sender, EventArgs e)
         {
             hometownFriendFlowPanel.Controls.Clear();
-            fetchHometownFriends(r_FBAPIClient.GetMyHometownFriends());
+            fetchHometownFriends();
         }
 
         private void postButton_Click(object sender, EventArgs e)

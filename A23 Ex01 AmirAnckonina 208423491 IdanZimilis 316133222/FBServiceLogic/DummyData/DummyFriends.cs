@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace FBServiceLogic.DummyData
 {
-    public class DummyFriends : FBDummyDataObject
+    public class DummyFriends : IDummyData
     {
         public DummyFriends()
         {

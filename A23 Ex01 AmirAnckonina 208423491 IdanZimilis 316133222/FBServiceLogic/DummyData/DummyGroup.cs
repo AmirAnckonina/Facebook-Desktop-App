@@ -6,13 +6,13 @@ using System.Threading.Tasks;
 
 namespace FBServiceLogic.DummyData
 {
-    public class DummyGroup
+    public class DummyGroup : DummyBasic
     {
         public DummyGroup()
         { }
 
-        public string Name { get; set; }
-        public string PictureURL { get; set; }
+        //public string Name { get; set; }
+        //public string PictureURL { get; set; }
         public int MembersCount { get; set; }
         public eGroupPrivacy Privacy { get; set; }
     }

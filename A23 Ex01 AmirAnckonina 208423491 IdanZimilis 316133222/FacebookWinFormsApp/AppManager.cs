@@ -45,6 +45,7 @@ namespace FacebookWinFormsApp
                 return s_Instance;
             }
         }
+
         public void Run()
         {
             if (r_FBAPIClient.AppSettings.RememberUserActivated)
@@ -57,11 +58,6 @@ namespace FacebookWinFormsApp
             {
                 RunLogin();
             }
-        }
-
-        private void RunFormAppSettings()
-        {
-            r_FormAppSettings.ShowDialog();
         }
 
         private void RunLogin()
