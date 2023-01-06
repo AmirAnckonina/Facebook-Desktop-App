@@ -16,14 +16,17 @@ namespace FacebookWinFormsApp
 
         private readonly FormMain r_FormMain;
         private readonly FormLogin r_FormLogin;
-        private readonly FormAppSettings r_FormAppSettings;
-        private FBAPIClient r_FBAPIClient;
+        //private readonly FormAppSettings r_FormAppSettings;
+        private readonly FBAPIClient r_FBAPIClient;
+        private readonly AccountFacade r_AccountFacade;
 
         private AppManager()
         {
             this.r_FBAPIClient = new FBAPIClient();
-            this.r_FormAppSettings = new FormAppSettings(r_FBAPIClient);
-            this.r_FormLogin = new FormLogin(r_FBAPIClient, r_FormAppSettings);
+            this.r_AccountFacade = new AccountFacade(r_FBAPIClient);
+            //this.r_FormAppSettings = new FormAppSettings(r_FBAPIClient);
+            //this.r_FormLogin = new FormLogin(r_FBAPIClient, r_FormAppSettings);
+            this.r_FormLogin = new FormLogin(r_AccountFacade);
             this.r_FormMain = new FormMain(r_FBAPIClient);
         }
 
@@ -48,9 +51,13 @@ namespace FacebookWinFormsApp
 
         public void Run()
         {
-            if (r_FBAPIClient.AppSettings.RememberUserActivated)
+            //Facade
+            //if (r_FBAPIClient.AppSettings.RememberUserActivated)
+            if (r_AccountFacade.RememberUserActivatedInApp())
             {
-                r_FBAPIClient.AutomaticLogin();
+                //Facade
+                r_AccountFacade.AutomaticLogin();
+                //r_FBAPIClient.AutomaticLogin();
                 r_FormMain.CheckRememberMe();
                 RunApp();
             }
@@ -63,8 +70,9 @@ namespace FacebookWinFormsApp
         private void RunLogin()
         {
             r_FormLogin.ShowDialog();
-            /// if (m_FormLogin.LoginSucceed)
-            if (r_FBAPIClient.CurrentUser != null)
+            //Facade
+            //if (r_FBAPIClient.CurrentUser != null)
+            if (r_AccountFacade.UserCurrentlyActivated())
             {
                 RunApp();
             }
@@ -73,7 +81,9 @@ namespace FacebookWinFormsApp
         private void RunApp()
         {
             r_FormMain.ShowDialog();
-            if (r_FBAPIClient.AppSettings.RememberUserActivated == false)
+            //Facade
+            //if (r_FBAPIClient.AppSettings.RememberUserActivated == false)
+            if (!r_AccountFacade.RememberUserActivatedInApp())
             {
                 RunLogin();
             }

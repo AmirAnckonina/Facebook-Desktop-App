@@ -1,6 +1,0 @@
-1. Implement multithread for init method in FromMain
-2. Cahnge if-else to try-catch FBLogic when requseting data from FBAPI
-3. Implement signelton on AppManager/FormAppSettings
-4. Consider implement Factory Method on App Forms
-5. Investigate if DTOs could be a king of a Proxy DP
-6. 
