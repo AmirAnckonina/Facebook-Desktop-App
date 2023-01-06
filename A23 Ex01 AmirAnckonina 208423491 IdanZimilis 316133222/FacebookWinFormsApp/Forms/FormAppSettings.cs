@@ -13,14 +13,14 @@ namespace FacebookWinFormsApp
 {
 	public partial class FormAppSettings : Form
 	{
-		private readonly FBAPIClient r_FBAPIClient;
+		private readonly AccountFacade r_AccountFacade;
 
 		public bool WithDefaultPermissions { get; set; } = true;
 
-		public FormAppSettings(FBAPIClient i_FBAPIClient)
+		public FormAppSettings(AccountFacade i_AccountFacade)
         {
 			InitializeComponent();
-			r_FBAPIClient = i_FBAPIClient;
+			r_AccountFacade = i_AccountFacade;
 		}
 
 		private void buttonApply_Click(object sender, EventArgs e)
@@ -42,7 +42,9 @@ namespace FacebookWinFormsApp
 			{
 				string appID = comboAppID.SelectedItem.ToString();
 
-				r_FBAPIClient.AppSettings.AppID = appID;
+				//Facade
+				r_AccountFacade.SetAppID(appID);
+				//r_AccountFacade.AppSettings.AppID = appID;
 			}
 
 			UpdateAppPermissions();
@@ -50,23 +52,21 @@ namespace FacebookWinFormsApp
 
 		private void UpdateAppPermissions()
         {
-			r_FBAPIClient.AppSettings.Permissions.Clear();
+			//Facade
+			r_AccountFacade.ClearAppPermissions();
+			//r_FBAPIClient.AppSettings.Permissions.Clear();
 
 			foreach (string checkedPermission in listBoxPermissions.CheckedItems)
             {
-				r_FBAPIClient.AppSettings.AddPermission(checkedPermission);
+				//Facade
+				r_AccountFacade.AddAppPermission(checkedPermission);
+				//r_FBAPIClient.AppSettings.AddPermission(checkedPermission);
             }
 		}
 
 		private void buttonAddPermission_Click(object sender, EventArgs e)
 		{
 			listBoxPermissions.Items.Add(textBoxPermissionToAdd.Text);
-		}
-
-		private void buttonAddAppID_Click(object sender, EventArgs e)
-		{
-			comboAppID.Items.Insert(0, textBoxAppID.Text);
-			comboAppID.SelectedIndex = 0;
 		}
 
         private void FormAppSettings_Load(object sender, EventArgs e)

@@ -9,16 +9,25 @@ namespace FacebookWinFormsApp
 {
     public partial class FormLogin : Form
     {
-        private readonly FBAPIClient r_FBAPIClient;
+        //private readonly FBAPIClient r_FBAPIClient;
+        private readonly AccountFacade r_AccountFacade;
         private readonly FormAppSettings r_FromAppSettings;
 
-        public FormLogin(FBAPIClient i_FBAPIClient, FormAppSettings i_FormAppSettings)
+        public FormLogin(AccountFacade i_AccountFacade)
+        {
+            InitializeComponent();
+            LoginSucceed = false;
+            r_AccountFacade = i_AccountFacade;
+            r_FromAppSettings = new FormAppSettings(r_AccountFacade);
+        }
+
+        /*public FormLogin(FBAPIClient i_FBAPIClient, FormAppSettings i_FormAppSettings)
         {
             InitializeComponent();
             LoginSucceed = false;
             r_FBAPIClient = i_FBAPIClient;
             r_FromAppSettings = i_FormAppSettings;
-        }
+        }*/
 
         public bool LoginSucceed { get; set; }
 
@@ -35,10 +44,14 @@ namespace FacebookWinFormsApp
             {
                 if (r_FromAppSettings.WithDefaultPermissions == true)
                 {
-                    r_FBAPIClient.AppSettings.SetDefaultAppSettings();
+                    //Facade
+                    r_AccountFacade.SetDefaultSettingsInApp();
+                    //r_FBAPIClient.AppSettings.SetDefaultAppSettings();
                 }
 
-                r_FBAPIClient.Login();
+                //Facade
+                r_AccountFacade.Login();
+                //r_FBAPIClient.Login();
                 LoginSucceed = true;
                 this.Close();
             }
@@ -59,9 +72,9 @@ namespace FacebookWinFormsApp
             r_FromAppSettings.ShowDialog();
         }
 
-        private void rememberMeCheckbox_CheckedChanged(object sender, EventArgs e)
+     /*   private void rememberMeCheckbox_CheckedChanged(object sender, EventArgs e)
         {
             r_FBAPIClient.AppSettings.RememberUserActivated = true;
-        }
+        }*/
     }
 }
