@@ -8,9 +8,9 @@ namespace FBServiceLogic.DummyData
 {
     public static class FBDummyDataFactory
     {
-        public static FBDummyDataObject CreateDummyData(string i_RequestedDataType)
+        public static IDummyData CreateDummyData(string i_RequestedDataType)
         {
-            FBDummyDataObject dummyData;
+            IDummyData dummyData;
             eDummyDataType dataType;
             bool dataTypeParsedSuccessfully = Enum.TryParse(i_RequestedDataType, out dataType);
 
@@ -31,13 +31,13 @@ namespace FBServiceLogic.DummyData
                         break;
 
                     default:
-                        throw new DummyDataTypeException("The requested data type isn't supported by dummy data factory.");
+                        throw new DummyDataTypeException();
                 }
             }
 
             else
             {
-                throw new DummyDataTypeException("Enum parsing error");
+                throw new DummyDataTypeException();
             }
 
             return dummyData;

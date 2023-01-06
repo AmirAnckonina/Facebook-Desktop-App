@@ -83,33 +83,13 @@ namespace FBServiceLogic
             UserBasicInfoDTO userBasicInfoDTO = new UserBasicInfoDTO();
             DummyUser dummyUserData = FBDummyDataFactory.CreateDummyData("User") as DummyUser;
 
-            try
-            {
-                userBasicInfoDTO.Name = m_CurrentUser.Name;
-                userBasicInfoDTO.PictureURL = m_CurrentUser.PictureNormalURL;
-                userBasicInfoDTO.Birthday = m_CurrentUser.Birthday;
-                userBasicInfoDTO.Gender = m_CurrentUser.Gender.ToString();
-                userBasicInfoDTO.Education = dummyUserData.Education;
-                userBasicInfoDTO.Hometown = dummyUserData.Hometown;
-                userBasicInfoDTO.OnlineStatus = dummyUserData.OnlineStatus.ToString();
-                /*userBasicInfoDTO.Education = m_CurrentUser.Educations[0].School.Name;
-                userBasicInfoDTO.Hometown = m_CurrentUser.Hometown.Name;
-                userBasicInfoDTO.OnlineStatus = m_CurrentUser.OnlineStatus.ToString();*/
-            }
-            catch(Exception FbApiEx)
-            {
-                /*DummyUser dummyUser = FBDummyDataFactory.CreateDummyData("User") as DummyUser;
-
-                userBasicInfoDTO.Name = m_CurrentUser.Name == null ? dummyUser.Name : m_CurrentUser.Name;
-                userBasicInfoDTO.PictureURL = m_CurrentUser.PictureNormalURL == null ? dummyUser.PictureURL : m_CurrentUser.PictureNormalURL;
-                userBasicInfoDTO.Birthday = m_CurrentUser.Birthday == null ? string.Empty : m_CurrentUser.Birthday;
-                userBasicInfoDTO.Gender = m_CurrentUser.Gender == null ? string.Empty : m_CurrentUser.Gender.ToString();
-                *//*userBasicInfoDTO.Education = dummyUser.Education;
-                userBasicInfoDTO.Hometown = dummyUser.Hometown;
-                userBasicInfoDTO.OnlineStatus = dummyUser.OnlineStatus.ToString();*/
-            }
-            /*catch(DummyDataTypeException dummyDataEx)
-            { }*/
+            userBasicInfoDTO.Name = m_CurrentUser.Name;
+            userBasicInfoDTO.PictureURL = m_CurrentUser.PictureNormalURL;
+            userBasicInfoDTO.Birthday = m_CurrentUser.Birthday;
+            userBasicInfoDTO.Gender = m_CurrentUser.Gender.ToString();
+            userBasicInfoDTO.Education = dummyUserData.Education;
+            userBasicInfoDTO.Hometown = dummyUserData.Hometown;
+            userBasicInfoDTO.OnlineStatus = dummyUserData.OnlineStatus.ToString();
 
             return userBasicInfoDTO;
         }
@@ -132,7 +112,7 @@ namespace FBServiceLogic
                     friendDTOList.Add(newFriendDTO);
                 }
             }
-            catch(FacebookApiException FbApiEx)
+            catch(Exception ex)
             {
                 DummyFriends dummyFriendsData = FBDummyDataFactory.CreateDummyData("Friends") as DummyFriends;
 
@@ -145,8 +125,6 @@ namespace FBServiceLogic
                     friendDTOList.Add(newFriendDTO);
                 }
             }
-            catch(DummyDataTypeException dummyDataEx)
-            { }
 
             return friendDTOList;
         }
@@ -155,21 +133,15 @@ namespace FBServiceLogic
         {
             List<TextAndImageDTO> albumDTOList = new List<TextAndImageDTO>();
             TextAndImageDTO albumDTO;
+            FacebookObjectCollection<Album> albums = m_CurrentUser.Albums;
 
-            try
+            foreach (Album album in m_CurrentUser.Albums)
             {
-                FacebookObjectCollection<Album> albums = m_CurrentUser.Albums;
-
-                foreach (Album album in m_CurrentUser.Albums)
-                {
-                    albumDTO = new TextAndImageDTO();
-                    albumDTO.Name = album.Name;
-                    albumDTO.PictureURL = album.PictureSmallURL;
-                    albumDTOList.Add(albumDTO);
-                }
+                albumDTO = new TextAndImageDTO();
+                albumDTO.Name = album.Name;
+                albumDTO.PictureURL = album.PictureSmallURL;
+                albumDTOList.Add(albumDTO);
             }
-            catch (FacebookApiException FbApiEx)
-            { }
 
             return albumDTOList;
         }
@@ -178,21 +150,17 @@ namespace FBServiceLogic
         {
             List<PostDTO> postDTOList = new List<PostDTO>();
             PostDTO newPost;
-            try
-            {
-                FacebookObjectCollection<Post> posts = m_CurrentUser.Posts;
 
-                foreach (Post post in m_CurrentUser.Posts)
-                {
-                    newPost = new PostDTO();
-                    newPost.Message = post.Message;
-                    newPost.Caption = post.Caption;
-                    newPost.CreatedTime = post.CreatedTime;
-                    postDTOList.Add(newPost);
-                }
+            FacebookObjectCollection<Post> posts = m_CurrentUser.Posts;
+
+            foreach (Post post in m_CurrentUser.Posts)
+            {
+                newPost = new PostDTO();
+                newPost.Message = post.Message;
+                newPost.Caption = post.Caption;
+                newPost.CreatedTime = post.CreatedTime;
+                postDTOList.Add(newPost);
             }
-            catch (FacebookApiException FbApiEx)
-            { }
 
             return postDTOList;
         }
@@ -204,26 +172,21 @@ namespace FBServiceLogic
             DateTime? dateTime; 
             int postCounter = 0;
 
-            try
-            {
-                FacebookObjectCollection<Post> posts = m_CurrentUser.Posts;
+            FacebookObjectCollection<Post> posts = m_CurrentUser.Posts;
 
-                foreach (Post post in m_CurrentUser.Posts)
+            foreach (Post post in m_CurrentUser.Posts)
+            {
+                postCounter++;
+                dateTime = post.CreatedTime.Value;
+                if (dateTime?.Day == i_DateTime.Day && dateTime?.Month == i_DateTime.Month && dateTime?.Year == i_DateTime.Year )
                 {
-                    postCounter++;
-                    dateTime = post.CreatedTime.Value;
-                    if (dateTime?.Day == i_DateTime.Day && dateTime?.Month == i_DateTime.Month && dateTime?.Year == i_DateTime.Year )
-                    {
-                        newPost = new PostDTO();
-                        newPost.Message = post.Message;
-                        newPost.Caption = post.Caption;
-                        newPost.CreatedTime = post.CreatedTime;
-                        postDTOList.Add(newPost);
-                    }
+                    newPost = new PostDTO();
+                    newPost.Message = post.Message;
+                    newPost.Caption = post.Caption;
+                    newPost.CreatedTime = post.CreatedTime;
+                    postDTOList.Add(newPost);
                 }
             }
-            catch (FacebookApiException FbApiEx)
-            { }
 
             return postDTOList;
         }
@@ -247,7 +210,7 @@ namespace FBServiceLogic
                     groupsDTOList.Add(newGroup);
                 }
             }
-            catch (FacebookApiException FbApiEx)
+            catch (Exception ex)
             {
                 DummyGroups dummyGroupsData = FBDummyDataFactory.CreateDummyData("Groups") as DummyGroups;
 
@@ -261,8 +224,7 @@ namespace FBServiceLogic
                     groupsDTOList.Add(newGroup);
                 }
             }
-            catch (DummyDataTypeException dummyDataEx)
-            { }
+
 
             return groupsDTOList;
         }
@@ -285,7 +247,7 @@ namespace FBServiceLogic
                     myHometownFriends.Add(htFriend);
                 }
             }
-            catch(FacebookApiException FbApiEx)
+            catch(Exception ex)
             {
                 DummyFriends dummyFriendsData = FBDummyDataFactory.CreateDummyData("Friends") as DummyFriends;
 
@@ -302,10 +264,7 @@ namespace FBServiceLogic
                     }
                 }
             }
-            catch(DummyDataTypeException dummyDataEx)
-            { }
-
-            
+       
             return myHometownFriends;
         }
 
@@ -313,22 +272,16 @@ namespace FBServiceLogic
         {
             List<LikedPageDTO> likedPagesList = new List<LikedPageDTO>();
             LikedPageDTO newLikedPage;
+            FacebookObjectCollection<Page> likedPages = m_CurrentUser.LikedPages;
 
-            try
+            foreach (Page likedPage in m_CurrentUser.LikedPages)
             {
-                FacebookObjectCollection<Page> likedPages = m_CurrentUser.LikedPages;
-                foreach (Page likedPage in m_CurrentUser.LikedPages)
-                {
-                    newLikedPage = new LikedPageDTO();
-                    newLikedPage.Name = likedPage.Name;
-                    newLikedPage.PictureURL = likedPage.PictureSmallURL;
-                    newLikedPage.LikesCount = likedPage.LikesCount != null ? likedPage.LikesCount : RandomDataGenerator.GenerateRandLikesCount();
-                    likedPagesList.Add(newLikedPage);
-                }
+                newLikedPage = new LikedPageDTO();
+                newLikedPage.Name = likedPage.Name;
+                newLikedPage.PictureURL = likedPage.PictureSmallURL;
+                newLikedPage.LikesCount = likedPage.LikesCount != null ? likedPage.LikesCount : RandomDataGenerator.GenerateRandLikesCount();
+                likedPagesList.Add(newLikedPage);
             }
-            catch (FacebookApiException FbApiEx)
-            { }
-
 
             return likedPagesList;
         }

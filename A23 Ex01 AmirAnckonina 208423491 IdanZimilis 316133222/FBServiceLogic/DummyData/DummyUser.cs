@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace FBServiceLogic.DummyData
 {
-    public class DummyUser : FBDummyDataObject
+    public class DummyUser : DummyBasic, IDummyData
     {
-        public string Name { get; set; }
+        //public string Name { get; set; }
+        //public string PictureURL { get; set; }
         public string Hometown { get; set; }
         public string Education { get; set; }
-        public string PictureURL { get; set; }
         public eOnlineStatus OnlineStatus { get; set; }
 
         public DummyUser()

@@ -8,7 +8,14 @@ namespace FBServiceLogic.DummyData
 {
     public class DummyDataTypeException : Exception
     {
-        public DummyDataTypeException(string i_ErrMessage) : base(i_ErrMessage)
+        private const string k_defaultDataTypeExMessage = "The requested data type isn't supported";
+
+        public DummyDataTypeException() 
+            : base(k_defaultDataTypeExMessage)
+        { }
+
+        public DummyDataTypeException(string i_ErrMessage) 
+            : base(i_ErrMessage)
         { }
     }
 }
