@@ -34,7 +34,7 @@ namespace FacebookWinFormsApp
 
                 new Thread(initBasicUserInfo).Start();
                 new Thread(()=>initAlbums(r_FBAPIClient.GetAlbumsList())).Start();
-                new Thread(()=>initGroups(r_FBAPIClient.GetGroupsNamesList())).Start();
+                new Thread(()=>initGroups(r_FBAPIClient.GetGroupsList())).Start();
                 new Thread(() => initPosts(r_FBAPIClient.GetPostsList())).Start();
                 new Thread(() => initLikedPages(r_FBAPIClient.GetLikedPages())).Start();
                 new Thread(() => initFriends(r_FBAPIClient.GetFriendsList())).Start();
