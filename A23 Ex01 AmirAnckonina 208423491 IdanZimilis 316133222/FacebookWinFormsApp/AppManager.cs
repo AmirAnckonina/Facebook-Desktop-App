@@ -9,14 +9,17 @@ using FBServiceLogic;
 
 namespace FacebookWinFormsApp
 {
-    public class AppManager
+    public sealed class AppManager
     {
+        private static AppManager s_Instance = null;
+        private static object s_Lock = new object();
+
         private readonly FormMain r_FormMain;
         private readonly FormLogin r_FormLogin;
         private readonly FormAppSettings r_FormAppSettings;
         private FBAPIClient r_FBAPIClient;
 
-        public AppManager()
+        private AppManager()
         {
             this.r_FBAPIClient = new FBAPIClient();
             this.r_FormAppSettings = new FormAppSettings(r_FBAPIClient);
@@ -24,6 +27,24 @@ namespace FacebookWinFormsApp
             this.r_FormMain = new FormMain(r_FBAPIClient);
         }
 
+        public static AppManager Instance
+        {
+            get
+            {
+                if (s_Instance == null)
+                {
+                    lock (s_Lock)
+                    {
+                        if (s_Instance == null)
+                        {
+                            s_Instance = new AppManager();
+                        }
+                    }
+                }
+
+                return s_Instance;
+            }
+        }
         public void Run()
         {
             if (r_FBAPIClient.AppSettings.RememberUserActivated)
