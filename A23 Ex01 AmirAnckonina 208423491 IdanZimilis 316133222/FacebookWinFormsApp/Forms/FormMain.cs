@@ -137,9 +137,9 @@ namespace FacebookWinFormsApp
             {
                 //List<PostDTO> allPostsInSingleDay = r_FBAPIClient.GetPostsByDate(dateTimePicker1.Value);
                 List<PostDTO> allPostsInSingleDay = r_FBAPIClient.GetPostsByDate(dateTimePicker1.Value);
-                
 
-                /*foreach (PostDTO post in allPostsInSingleDay)
+
+                foreach (PostDTO post in allPostsInSingleDay)
                 {
                     if (!string.IsNullOrEmpty(post.Message))
                     {
@@ -151,9 +151,10 @@ namespace FacebookWinFormsApp
 
                         postsByDateListBox.Items.Add(Environment.NewLine);
                     }
-                }*/
+                }
 
-                postBindingSource.DataSource = allPostsInSingleDay;
+                //postBindingSource.DataSource = allPostsInSingleDay;
+
             }
             catch(Exception ex)
             { }
@@ -170,12 +171,12 @@ namespace FacebookWinFormsApp
         {
             try
             {
-                List<PostDTO> i_PostsDTOList = r_FBAPIClient.GetPostsList();
+                List<PostDTO> postsDTOList = r_FBAPIClient.GetPostsList();
 
-                if (i_PostsDTOList != null)
+                if (postsDTOList != null)
                 {
 
-                    foreach (PostDTO post in i_PostsDTOList)
+                    /*foreach (PostDTO post in i_PostsDTOList)
                     {
                         if (!string.IsNullOrEmpty(post.Message))
                         {
@@ -185,9 +186,10 @@ namespace FacebookWinFormsApp
                                 postsListBox.Invoke(new Action(() => postsListBox.Items.Add(word + Environment.NewLine)));
                             }
 
-                            postsByDateListBox.Invoke(new Action(() => postsByDateListBox.Items.Add(Environment.NewLine)));
+                           // postsByDateListBox.Invoke(new Action(() => postsByDateListBox.Items.Add(Environment.NewLine)));
                         }
-                    }
+                    }*/
+                    postBindingSource.DataSource = postsDTOList;
                 }
             }
             catch(Exception ex)
@@ -323,6 +325,6 @@ namespace FacebookWinFormsApp
             postTextBox.Text = string.Empty;
         }
 
-      
+       
     }
 }
