@@ -98,11 +98,10 @@ namespace FBServiceLogic
         {
             List<FriendDTO> friendDTOList = new List<FriendDTO>();
             FriendDTO newFriendDTO;
+            DummyFriends dummyFriendsData;
 
-            try
+            if (m_CurrentUser.Friends.Count > 0)
             {
-                FacebookObjectCollection<User> userFriends = m_CurrentUser.Friends;
-
                 foreach (User friend in m_CurrentUser.Friends)
                 {
                     newFriendDTO = new FriendDTO();
@@ -112,10 +111,10 @@ namespace FBServiceLogic
                     friendDTOList.Add(newFriendDTO);
                 }
             }
-            catch(Exception ex)
-            {
-                DummyFriends dummyFriendsData = FBDummyDataFactory.CreateDummyData("Friends") as DummyFriends;
 
+            else
+            {
+                dummyFriendsData = FBDummyDataFactory.CreateDummyData("Friends") as DummyFriends;
                 foreach (DummyUser dummyUser in dummyFriendsData.Friends)
                 {
                     newFriendDTO = new FriendDTO();
@@ -195,36 +194,33 @@ namespace FBServiceLogic
         {
             List<GroupDTO> groupsDTOList = new List<GroupDTO>();
             GroupDTO newGroup;
+            DummyGroups dummyGroupsData;
 
-            try
+            if (m_CurrentUser.Groups.Count > 0)
             {
-                FacebookObjectCollection<Group> groups = m_CurrentUser.Groups;
-
-                foreach (Group group in groups)
+                foreach (Group group in m_CurrentUser.Groups)
                 {
                     newGroup = new GroupDTO();
                     newGroup.Name = group.Name;
                     newGroup.PictureURL = group.PictureNormalURL;
                     newGroup.Privacy = group.Privacy.ToString();
-                    newGroup.MembersCount = group.Members.Count;
+                    newGroup.MembersCount = RandomDataGenerator.GenerateRandGroupMemebersCount();
                     groupsDTOList.Add(newGroup);
                 }
             }
-            catch (Exception ex)
+            else
             {
-                DummyGroups dummyGroupsData = FBDummyDataFactory.CreateDummyData("Groups") as DummyGroups;
-
+                dummyGroupsData = FBDummyDataFactory.CreateDummyData("Groups") as DummyGroups;
                 foreach (DummyGroup group in dummyGroupsData.Groups)
                 {
                     newGroup = new GroupDTO();
                     newGroup.Name = group.Name;
                     newGroup.PictureURL = group.PictureURL;
                     newGroup.Privacy = group.Privacy.ToString();
-                    newGroup.MembersCount = group.MembersCount;
+                    newGroup.MembersCount = RandomDataGenerator.GenerateRandGroupMemebersCount();
                     groupsDTOList.Add(newGroup);
                 }
             }
-
 
             return groupsDTOList;
         }
@@ -233,11 +229,10 @@ namespace FBServiceLogic
         {
             List<HometownFriendDTO> myHometownFriends = new List<HometownFriendDTO>();
             HometownFriendDTO htFriend;
+            DummyFriends dummyFriendsData;
 
-            try
+            if (m_CurrentUser.Friends.Count > 0)
             {
-                FacebookObjectCollection<User> userFriends = m_CurrentUser.Friends;
-
                 foreach (User friend in m_CurrentUser.Friends)
                 {
                     htFriend = new HometownFriendDTO();
@@ -247,10 +242,9 @@ namespace FBServiceLogic
                     myHometownFriends.Add(htFriend);
                 }
             }
-            catch(Exception ex)
+            else
             {
-                DummyFriends dummyFriendsData = FBDummyDataFactory.CreateDummyData("Friends") as DummyFriends;
-
+                dummyFriendsData = FBDummyDataFactory.CreateDummyData("Friends") as DummyFriends;
                 foreach (DummyUser dummyUser in dummyFriendsData.Friends)
                 {
                     if (dummyUser.Hometown == dummyUser.Hometown)
@@ -272,7 +266,6 @@ namespace FBServiceLogic
         {
             List<LikedPageDTO> likedPagesList = new List<LikedPageDTO>();
             LikedPageDTO newLikedPage;
-            FacebookObjectCollection<Page> likedPages = m_CurrentUser.LikedPages;
 
             foreach (Page likedPage in m_CurrentUser.LikedPages)
             {

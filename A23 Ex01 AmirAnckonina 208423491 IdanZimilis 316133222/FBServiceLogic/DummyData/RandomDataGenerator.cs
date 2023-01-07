@@ -28,5 +28,14 @@ namespace FBServiceLogic.DummyData
 
             return likes;
         }
+
+        public static int GenerateRandGroupMemebersCount()
+        {
+            Random rand = new Random(Guid.NewGuid().GetHashCode());
+            int members;
+            members = rand.Next(0, 10000);
+
+            return members;
+        }
     }
 }
