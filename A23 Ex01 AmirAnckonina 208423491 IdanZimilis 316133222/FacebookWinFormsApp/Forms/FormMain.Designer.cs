@@ -29,7 +29,11 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMain));
+            System.Windows.Forms.Label captionLabel;
+            System.Windows.Forms.Label createdTimeLabel1;
+            System.Windows.Forms.Label messageLabel2;
             this.buttonLogout = new System.Windows.Forms.Button();
             this.postButton = new System.Windows.Forms.Button();
             this.profilePictureBox = new System.Windows.Forms.PictureBox();
@@ -41,6 +45,8 @@
             this.testBoxLoggedInUser = new System.Windows.Forms.TextBox();
             this.infoLabel = new System.Windows.Forms.Label();
             this.infoGroupBox = new System.Windows.Forms.GroupBox();
+            this.educationLabel = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
             this.statusLabel = new System.Windows.Forms.Label();
             this.homeTownLabel = new System.Windows.Forms.Label();
             this.birthdayLabel = new System.Windows.Forms.Label();
@@ -66,6 +72,7 @@
             this.labelLikedPages = new System.Windows.Forms.Label();
             this.likedPagesFlowLayoutPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.hometownFriendsTab = new System.Windows.Forms.TabPage();
+            this.panelPostDetails = new System.Windows.Forms.Panel();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.searchPostsByDateButton = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
@@ -75,8 +82,14 @@
             this.fetchHomwtownFriendsButton = new System.Windows.Forms.Button();
             this.hometownFriendFlowPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.fbLogoPictureBox = new System.Windows.Forms.PictureBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.educationLabel = new System.Windows.Forms.Label();
+            this.postBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.postDTOBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.captionLabel1 = new System.Windows.Forms.Label();
+            this.createdTimeDateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.messageLabel3 = new System.Windows.Forms.Label();
+            captionLabel = new System.Windows.Forms.Label();
+            createdTimeLabel1 = new System.Windows.Forms.Label();
+            messageLabel2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.profilePictureBox)).BeginInit();
             this.infoGroupBox.SuspendLayout();
             this.homeTownFreindsTab.SuspendLayout();
@@ -87,8 +100,11 @@
             this.postsTab.SuspendLayout();
             this.likedPagesTab.SuspendLayout();
             this.hometownFriendsTab.SuspendLayout();
+            this.panelPostDetails.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.fbLogoPictureBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.postBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.postDTOBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // buttonLogout
@@ -225,6 +241,26 @@
             this.infoGroupBox.TabIndex = 63;
             this.infoGroupBox.TabStop = false;
             // 
+            // educationLabel
+            // 
+            this.educationLabel.AutoSize = true;
+            this.educationLabel.Location = new System.Drawing.Point(361, 75);
+            this.educationLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.educationLabel.Name = "educationLabel";
+            this.educationLabel.Size = new System.Drawing.Size(23, 17);
+            this.educationLabel.TabIndex = 73;
+            this.educationLabel.Text = "---";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(256, 75);
+            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(71, 17);
+            this.label6.TabIndex = 72;
+            this.label6.Text = "Education";
+            // 
             // statusLabel
             // 
             this.statusLabel.AutoSize = true;
@@ -319,7 +355,7 @@
             this.homeTownFreindsTab.Margin = new System.Windows.Forms.Padding(2);
             this.homeTownFreindsTab.Name = "homeTownFreindsTab";
             this.homeTownFreindsTab.SelectedIndex = 0;
-            this.homeTownFreindsTab.Size = new System.Drawing.Size(640, 592);
+            this.homeTownFreindsTab.Size = new System.Drawing.Size(638, 592);
             this.homeTownFreindsTab.TabIndex = 65;
             // 
             // homeTab
@@ -341,7 +377,7 @@
             this.friendsTab.Margin = new System.Windows.Forms.Padding(2);
             this.friendsTab.Name = "friendsTab";
             this.friendsTab.Padding = new System.Windows.Forms.Padding(2);
-            this.friendsTab.Size = new System.Drawing.Size(632, 566);
+            this.friendsTab.Size = new System.Drawing.Size(630, 566);
             this.friendsTab.TabIndex = 1;
             this.friendsTab.Text = "Friends";
             this.friendsTab.UseVisualStyleBackColor = true;
@@ -364,7 +400,7 @@
             this.albumsTab.Margin = new System.Windows.Forms.Padding(2);
             this.albumsTab.Name = "albumsTab";
             this.albumsTab.Padding = new System.Windows.Forms.Padding(2);
-            this.albumsTab.Size = new System.Drawing.Size(632, 566);
+            this.albumsTab.Size = new System.Drawing.Size(630, 566);
             this.albumsTab.TabIndex = 0;
             this.albumsTab.Text = "Albums";
             this.albumsTab.UseVisualStyleBackColor = true;
@@ -387,7 +423,7 @@
             this.albumsLayoutPanel.Location = new System.Drawing.Point(12, 47);
             this.albumsLayoutPanel.Margin = new System.Windows.Forms.Padding(2);
             this.albumsLayoutPanel.Name = "albumsLayoutPanel";
-            this.albumsLayoutPanel.Size = new System.Drawing.Size(610, 504);
+            this.albumsLayoutPanel.Size = new System.Drawing.Size(605, 504);
             this.albumsLayoutPanel.TabIndex = 65;
             // 
             // groupsTab
@@ -397,7 +433,7 @@
             this.groupsTab.Location = new System.Drawing.Point(4, 22);
             this.groupsTab.Margin = new System.Windows.Forms.Padding(2);
             this.groupsTab.Name = "groupsTab";
-            this.groupsTab.Size = new System.Drawing.Size(632, 566);
+            this.groupsTab.Size = new System.Drawing.Size(630, 566);
             this.groupsTab.TabIndex = 2;
             this.groupsTab.Text = "Groups";
             this.groupsTab.UseVisualStyleBackColor = true;
@@ -433,7 +469,7 @@
             this.postsTab.Location = new System.Drawing.Point(4, 22);
             this.postsTab.Margin = new System.Windows.Forms.Padding(2);
             this.postsTab.Name = "postsTab";
-            this.postsTab.Size = new System.Drawing.Size(632, 566);
+            this.postsTab.Size = new System.Drawing.Size(630, 566);
             this.postsTab.TabIndex = 3;
             this.postsTab.Text = "Posts";
             this.postsTab.UseVisualStyleBackColor = true;
@@ -466,7 +502,7 @@
             this.likedPagesTab.Location = new System.Drawing.Point(4, 22);
             this.likedPagesTab.Margin = new System.Windows.Forms.Padding(2);
             this.likedPagesTab.Name = "likedPagesTab";
-            this.likedPagesTab.Size = new System.Drawing.Size(632, 566);
+            this.likedPagesTab.Size = new System.Drawing.Size(630, 566);
             this.likedPagesTab.TabIndex = 4;
             this.likedPagesTab.Text = "Liked Pages";
             this.likedPagesTab.UseVisualStyleBackColor = true;
@@ -495,6 +531,7 @@
             // hometownFriendsTab
             // 
             this.hometownFriendsTab.AutoScroll = true;
+            this.hometownFriendsTab.Controls.Add(this.panelPostDetails);
             this.hometownFriendsTab.Controls.Add(this.dateTimePicker1);
             this.hometownFriendsTab.Controls.Add(this.searchPostsByDateButton);
             this.hometownFriendsTab.Controls.Add(this.label7);
@@ -502,10 +539,24 @@
             this.hometownFriendsTab.Location = new System.Drawing.Point(4, 22);
             this.hometownFriendsTab.Margin = new System.Windows.Forms.Padding(2);
             this.hometownFriendsTab.Name = "hometownFriendsTab";
-            this.hometownFriendsTab.Size = new System.Drawing.Size(632, 566);
+            this.hometownFriendsTab.Size = new System.Drawing.Size(630, 566);
             this.hometownFriendsTab.TabIndex = 7;
             this.hometownFriendsTab.Text = "Search Post";
             this.hometownFriendsTab.UseVisualStyleBackColor = true;
+            // 
+            // panelPostDetails
+            // 
+            this.panelPostDetails.BackColor = System.Drawing.Color.SandyBrown;
+            this.panelPostDetails.Controls.Add(captionLabel);
+            this.panelPostDetails.Controls.Add(this.captionLabel1);
+            this.panelPostDetails.Controls.Add(createdTimeLabel1);
+            this.panelPostDetails.Controls.Add(this.createdTimeDateTimePicker1);
+            this.panelPostDetails.Controls.Add(messageLabel2);
+            this.panelPostDetails.Controls.Add(this.messageLabel3);
+            this.panelPostDetails.Location = new System.Drawing.Point(382, 58);
+            this.panelPostDetails.Name = "panelPostDetails";
+            this.panelPostDetails.Size = new System.Drawing.Size(245, 211);
+            this.panelPostDetails.TabIndex = 4;
             // 
             // dateTimePicker1
             // 
@@ -540,6 +591,8 @@
             // postsByDateListBox
             // 
             this.postsByDateListBox.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.postsByDateListBox.DataSource = this.postDTOBindingSource;
+            this.postsByDateListBox.DisplayMember = "Message";
             this.postsByDateListBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.postsByDateListBox.FormattingEnabled = true;
             this.postsByDateListBox.HorizontalScrollbar = true;
@@ -548,7 +601,7 @@
             this.postsByDateListBox.Margin = new System.Windows.Forms.Padding(2);
             this.postsByDateListBox.Name = "postsByDateListBox";
             this.postsByDateListBox.ScrollAlwaysVisible = true;
-            this.postsByDateListBox.Size = new System.Drawing.Size(588, 378);
+            this.postsByDateListBox.Size = new System.Drawing.Size(347, 480);
             this.postsByDateListBox.TabIndex = 0;
             // 
             // tabPage1
@@ -604,25 +657,66 @@
             this.fbLogoPictureBox.TabIndex = 66;
             this.fbLogoPictureBox.TabStop = false;
             // 
-            // label6
+            // postBindingSource
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(256, 75);
-            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(71, 17);
-            this.label6.TabIndex = 72;
-            this.label6.Text = "Education";
+            this.postBindingSource.DataSource = typeof(FacebookWrapper.ObjectModel.Post);
             // 
-            // educationLabel
+            // postDTOBindingSource
             // 
-            this.educationLabel.AutoSize = true;
-            this.educationLabel.Location = new System.Drawing.Point(361, 75);
-            this.educationLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.educationLabel.Name = "educationLabel";
-            this.educationLabel.Size = new System.Drawing.Size(23, 17);
-            this.educationLabel.TabIndex = 73;
-            this.educationLabel.Text = "---";
+            this.postDTOBindingSource.DataSource = typeof(FBServiceLogic.DTOs.PostDTO);
+            // 
+            // captionLabel
+            // 
+            captionLabel.AutoSize = true;
+            captionLabel.Location = new System.Drawing.Point(9, 20);
+            captionLabel.Name = "captionLabel";
+            captionLabel.Size = new System.Drawing.Size(46, 13);
+            captionLabel.TabIndex = 4;
+            captionLabel.Text = "Caption:";
+            // 
+            // captionLabel1
+            // 
+            this.captionLabel1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.postDTOBindingSource, "Caption", true));
+            this.captionLabel1.Location = new System.Drawing.Point(88, 20);
+            this.captionLabel1.Name = "captionLabel1";
+            this.captionLabel1.Size = new System.Drawing.Size(141, 23);
+            this.captionLabel1.TabIndex = 5;
+            this.captionLabel1.Text = "label10";
+            // 
+            // createdTimeLabel1
+            // 
+            createdTimeLabel1.AutoSize = true;
+            createdTimeLabel1.Location = new System.Drawing.Point(9, 50);
+            createdTimeLabel1.Name = "createdTimeLabel1";
+            createdTimeLabel1.Size = new System.Drawing.Size(73, 13);
+            createdTimeLabel1.TabIndex = 6;
+            createdTimeLabel1.Text = "Created Time:";
+            // 
+            // createdTimeDateTimePicker1
+            // 
+            this.createdTimeDateTimePicker1.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.postDTOBindingSource, "CreatedTime", true));
+            this.createdTimeDateTimePicker1.Location = new System.Drawing.Point(88, 46);
+            this.createdTimeDateTimePicker1.Name = "createdTimeDateTimePicker1";
+            this.createdTimeDateTimePicker1.Size = new System.Drawing.Size(141, 20);
+            this.createdTimeDateTimePicker1.TabIndex = 7;
+            // 
+            // messageLabel2
+            // 
+            messageLabel2.AutoSize = true;
+            messageLabel2.Location = new System.Drawing.Point(9, 69);
+            messageLabel2.Name = "messageLabel2";
+            messageLabel2.Size = new System.Drawing.Size(53, 13);
+            messageLabel2.TabIndex = 8;
+            messageLabel2.Text = "Message:";
+            // 
+            // messageLabel3
+            // 
+            this.messageLabel3.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.postDTOBindingSource, "Message", true));
+            this.messageLabel3.Location = new System.Drawing.Point(88, 69);
+            this.messageLabel3.Name = "messageLabel3";
+            this.messageLabel3.Size = new System.Drawing.Size(141, 23);
+            this.messageLabel3.TabIndex = 9;
+            this.messageLabel3.Text = "label10";
             // 
             // FormMain
             // 
@@ -662,9 +756,13 @@
             this.likedPagesTab.PerformLayout();
             this.hometownFriendsTab.ResumeLayout(false);
             this.hometownFriendsTab.PerformLayout();
+            this.panelPostDetails.ResumeLayout(false);
+            this.panelPostDetails.PerformLayout();
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.fbLogoPictureBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.postBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.postDTOBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -718,5 +816,11 @@
         private System.Windows.Forms.Button clearButton;
         private System.Windows.Forms.Label educationLabel;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Panel panelPostDetails;
+        private System.Windows.Forms.BindingSource postBindingSource;
+        private System.Windows.Forms.Label captionLabel1;
+        private System.Windows.Forms.BindingSource postDTOBindingSource;
+        private System.Windows.Forms.DateTimePicker createdTimeDateTimePicker1;
+        private System.Windows.Forms.Label messageLabel3;
     }
 }

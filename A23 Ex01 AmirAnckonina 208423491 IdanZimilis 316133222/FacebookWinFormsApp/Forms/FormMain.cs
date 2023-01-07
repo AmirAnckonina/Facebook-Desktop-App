@@ -69,12 +69,18 @@ namespace FacebookWinFormsApp
 
                 foreach (LikedPageDTO pageDTO in i_LikedPagesList)
                 {
+                    Invoke(new Action(() =>
+                    {
+
                     PageBox pageBox = new PageBox();
                     pageBox.setName(pageDTO.Name);
                     pageBox.setPictureBox(pageDTO.PictureURL);
                     pageBox.setNumOfLikes(pageDTO.LikesCount);
-                    likedPagesFlowLayoutPanel.Invoke(new Action(() => likedPagesFlowLayoutPanel.Controls.Add(pageBox)));
-                    likedPagesFlowLayoutPanel.Invoke(new Action(()=>likedPagesFlowLayoutPanel.AutoScroll = true));
+                    likedPagesFlowLayoutPanel.Controls.Add(pageBox);
+                    likedPagesFlowLayoutPanel.AutoScroll = true;
+                   /* likedPagesFlowLayoutPanel.Invoke(new Action(() => likedPagesFlowLayoutPanel.Controls.Add(pageBox)));
+                    likedPagesFlowLayoutPanel.Invoke(new Action(() => likedPagesFlowLayoutPanel.AutoScroll = true));*/
+                    }));
                 }
             }
             catch(Exception ex)
@@ -129,9 +135,11 @@ namespace FacebookWinFormsApp
         {
             try
             {
+                //List<PostDTO> allPostsInSingleDay = r_FBAPIClient.GetPostsByDate(dateTimePicker1.Value);
                 List<PostDTO> allPostsInSingleDay = r_FBAPIClient.GetPostsByDate(dateTimePicker1.Value);
+                
 
-                foreach (PostDTO post in allPostsInSingleDay)
+                /*foreach (PostDTO post in allPostsInSingleDay)
                 {
                     if (!string.IsNullOrEmpty(post.Message))
                     {
@@ -143,7 +151,9 @@ namespace FacebookWinFormsApp
 
                         postsByDateListBox.Items.Add(Environment.NewLine);
                     }
-                }
+                }*/
+
+                postBindingSource.DataSource = allPostsInSingleDay;
             }
             catch(Exception ex)
             { }
@@ -164,6 +174,7 @@ namespace FacebookWinFormsApp
 
                 if (i_PostsDTOList != null)
                 {
+
                     foreach (PostDTO post in i_PostsDTOList)
                     {
                         if (!string.IsNullOrEmpty(post.Message))
@@ -191,14 +202,14 @@ namespace FacebookWinFormsApp
 
                 foreach (TextAndImageDTO albumDTO in albumsDTO)
                 {
-                    AlbumBox album = new AlbumBox();
-                    album.SetGroupNameLabel(albumDTO.Name);
-                    album.SetGroupPictureInPictureBox(albumDTO.PictureURL);
-
-                    albumsLayoutPanel.Invoke(new Action(() =>
+                    Invoke(new Action(() =>
                     {
+                        AlbumBox album = new AlbumBox();
+                        album.SetGroupNameLabel(albumDTO.Name);
+                        album.SetGroupPictureInPictureBox(albumDTO.PictureURL);
                         albumsLayoutPanel.Controls.Add(album);
                         albumsLayoutPanel.AutoScroll = true;
+
                     }));
                 }
             }
@@ -311,5 +322,7 @@ namespace FacebookWinFormsApp
             statusTextBox.Text = "My status...";
             postTextBox.Text = string.Empty;
         }
+
+      
     }
 }

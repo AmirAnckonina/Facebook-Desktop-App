@@ -151,7 +151,7 @@ namespace FBServiceLogic
             PostDTO newPost;
 
             FacebookObjectCollection<Post> posts = m_CurrentUser.Posts;
-
+           
             foreach (Post post in m_CurrentUser.Posts)
             {
                 newPost = new PostDTO();
@@ -173,20 +173,40 @@ namespace FBServiceLogic
 
             FacebookObjectCollection<Post> posts = m_CurrentUser.Posts;
 
-            foreach (Post post in m_CurrentUser.Posts)
+            //new section
+            //List<Post> postsByDate = new List<Post>();
+            foreach (Post post in posts)
             {
                 postCounter++;
                 dateTime = post.CreatedTime.Value;
-                if (dateTime?.Day == i_DateTime.Day && dateTime?.Month == i_DateTime.Month && dateTime?.Year == i_DateTime.Year )
+                if (dateTime?.Day == i_DateTime.Day && dateTime?.Month == i_DateTime.Month && dateTime?.Year == i_DateTime.Year)
                 {
                     newPost = new PostDTO();
                     newPost.Message = post.Message;
                     newPost.Caption = post.Caption;
                     newPost.CreatedTime = post.CreatedTime;
                     postDTOList.Add(newPost);
+                    //postsByDate.Add(post);
                 }
             }
 
+            //end of new section
+
+            /* foreach (Post post in m_CurrentUser.Posts)
+             {
+                 postCounter++;
+                 dateTime = post.CreatedTime.Value;
+                 if (dateTime?.Day == i_DateTime.Day && dateTime?.Month == i_DateTime.Month && dateTime?.Year == i_DateTime.Year )
+                 {
+                     newPost = new PostDTO();
+                     newPost.Message = post.Message;
+                     newPost.Caption = post.Caption;
+                     newPost.CreatedTime = post.CreatedTime;
+                     postDTOList.Add(newPost);
+                 }
+             }
+
+             return postDTOList;*/
             return postDTOList;
         }
 
