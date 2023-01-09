@@ -171,10 +171,11 @@ namespace FacebookWinFormsApp
         {
             try
             {
-                List<PostDTO> postsDTOList = r_FBAPIClient.GetPostsList();
+                this.postDTOBindingSource.DataSource = r_FBAPIClient.GetPostsList();
+                //List<PostDTO> postsDTOList = r_FBAPIClient.GetPostsList();
 
-                if (postsDTOList != null)
-                {
+               /* if (postsDTOList != null)
+                {*/
 
                     /*foreach (PostDTO post in i_PostsDTOList)
                     {
@@ -186,11 +187,10 @@ namespace FacebookWinFormsApp
                                 postsListBox.Invoke(new Action(() => postsListBox.Items.Add(word + Environment.NewLine)));
                             }
 
-                           // postsByDateListBox.Invoke(new Action(() => postsByDateListBox.Items.Add(Environment.NewLine)));
+                            //postsByDateListBox.Invoke(new Action(() => postsByDateListBox.Items.Add(Environment.NewLine)));
                         }
                     }*/
-                    postBindingSource.DataSource = postsDTOList;
-                }
+                //}
             }
             catch(Exception ex)
             { }
