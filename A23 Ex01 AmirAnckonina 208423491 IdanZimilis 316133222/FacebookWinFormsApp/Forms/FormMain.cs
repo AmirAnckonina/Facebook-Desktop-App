@@ -325,6 +325,9 @@ namespace FacebookWinFormsApp
             postTextBox.Text = string.Empty;
         }
 
-       
+        private void postsListBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
