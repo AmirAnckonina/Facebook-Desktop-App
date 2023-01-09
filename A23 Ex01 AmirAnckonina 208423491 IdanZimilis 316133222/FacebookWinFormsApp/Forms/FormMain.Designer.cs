@@ -30,10 +30,10 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.Label label10;
-            System.Windows.Forms.Label label12;
-            System.Windows.Forms.Label label13;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMain));
+            System.Windows.Forms.Label captionLabel;
+            System.Windows.Forms.Label createdTimeLabel;
+            System.Windows.Forms.Label messageLabel;
             this.buttonLogout = new System.Windows.Forms.Button();
             this.postButton = new System.Windows.Forms.Button();
             this.profilePictureBox = new System.Windows.Forms.PictureBox();
@@ -68,9 +68,6 @@
             this.label9 = new System.Windows.Forms.Label();
             this.postsTab = new System.Windows.Forms.TabPage();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label11 = new System.Windows.Forms.Label();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
-            this.label14 = new System.Windows.Forms.Label();
             this.clearButton = new System.Windows.Forms.Button();
             this.statusTextBox = new System.Windows.Forms.TextBox();
             this.likedPagesTab = new System.Windows.Forms.TabPage();
@@ -86,9 +83,12 @@
             this.fetchHomwtownFriendsButton = new System.Windows.Forms.Button();
             this.hometownFriendFlowPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.fbLogoPictureBox = new System.Windows.Forms.PictureBox();
-            label10 = new System.Windows.Forms.Label();
-            label12 = new System.Windows.Forms.Label();
-            label13 = new System.Windows.Forms.Label();
+            this.captionLabel1 = new System.Windows.Forms.Label();
+            this.createdTimeDateTimePicker = new System.Windows.Forms.DateTimePicker();
+            this.messageLabel1 = new System.Windows.Forms.Label();
+            captionLabel = new System.Windows.Forms.Label();
+            createdTimeLabel = new System.Windows.Forms.Label();
+            messageLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.profilePictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.postDTOBindingSource)).BeginInit();
             this.infoGroupBox.SuspendLayout();
@@ -105,40 +105,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.fbLogoPictureBox)).BeginInit();
             this.SuspendLayout();
             // 
-            // label10
-            // 
-            label10.AutoSize = true;
-            label10.Location = new System.Drawing.Point(12, 25);
-            label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            label10.Name = "label10";
-            label10.Size = new System.Drawing.Size(60, 17);
-            label10.TabIndex = 4;
-            label10.Text = "Caption:";
-            // 
-            // label12
-            // 
-            label12.AutoSize = true;
-            label12.Location = new System.Drawing.Point(12, 62);
-            label12.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            label12.Name = "label12";
-            label12.Size = new System.Drawing.Size(97, 17);
-            label12.TabIndex = 6;
-            label12.Text = "Created Time:";
-            // 
-            // label13
-            // 
-            label13.AutoSize = true;
-            label13.Location = new System.Drawing.Point(12, 85);
-            label13.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            label13.Name = "label13";
-            label13.Size = new System.Drawing.Size(69, 17);
-            label13.TabIndex = 8;
-            label13.Text = "Message:";
-            // 
             // buttonLogout
             // 
             this.buttonLogout.Location = new System.Drawing.Point(5, 684);
-            this.buttonLogout.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonLogout.Margin = new System.Windows.Forms.Padding(4);
             this.buttonLogout.Name = "buttonLogout";
             this.buttonLogout.Size = new System.Drawing.Size(217, 52);
             this.buttonLogout.TabIndex = 52;
@@ -213,7 +183,6 @@
             this.postsListBox.ScrollAlwaysVisible = true;
             this.postsListBox.Size = new System.Drawing.Size(496, 564);
             this.postsListBox.TabIndex = 59;
-            this.postsListBox.SelectedIndexChanged += new System.EventHandler(this.postsListBox_SelectedIndexChanged);
             // 
             // postDTOBindingSource
             // 
@@ -237,7 +206,7 @@
             this.testBoxLoggedInUser.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.testBoxLoggedInUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.testBoxLoggedInUser.Location = new System.Drawing.Point(5, 12);
-            this.testBoxLoggedInUser.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.testBoxLoggedInUser.Margin = new System.Windows.Forms.Padding(4);
             this.testBoxLoggedInUser.Name = "testBoxLoggedInUser";
             this.testBoxLoggedInUser.Size = new System.Drawing.Size(244, 23);
             this.testBoxLoggedInUser.TabIndex = 61;
@@ -482,6 +451,7 @@
             // 
             // postsTab
             // 
+            this.postsTab.AutoScroll = true;
             this.postsTab.Controls.Add(this.panel1);
             this.postsTab.Controls.Add(this.clearButton);
             this.postsTab.Controls.Add(this.statusTextBox);
@@ -500,48 +470,22 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.SandyBrown;
-            this.panel1.Controls.Add(label10);
-            this.panel1.Controls.Add(this.label11);
-            this.panel1.Controls.Add(label12);
-            this.panel1.Controls.Add(this.dateTimePicker2);
-            this.panel1.Controls.Add(label13);
-            this.panel1.Controls.Add(this.label14);
+            this.panel1.Controls.Add(captionLabel);
+            this.panel1.Controls.Add(this.captionLabel1);
+            this.panel1.Controls.Add(createdTimeLabel);
+            this.panel1.Controls.Add(this.createdTimeDateTimePicker);
+            this.panel1.Controls.Add(messageLabel);
+            this.panel1.Controls.Add(this.messageLabel1);
             this.panel1.Location = new System.Drawing.Point(525, 95);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(315, 139);
+            this.panel1.Size = new System.Drawing.Size(356, 139);
             this.panel1.TabIndex = 62;
-            // 
-            // label11
-            // 
-            this.label11.Location = new System.Drawing.Point(117, 25);
-            this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(188, 28);
-            this.label11.TabIndex = 5;
-            this.label11.Text = "label10";
-            // 
-            // dateTimePicker2
-            // 
-            this.dateTimePicker2.Location = new System.Drawing.Point(117, 57);
-            this.dateTimePicker2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(187, 22);
-            this.dateTimePicker2.TabIndex = 7;
-            // 
-            // label14
-            // 
-            this.label14.Location = new System.Drawing.Point(117, 85);
-            this.label14.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(188, 28);
-            this.label14.TabIndex = 9;
-            this.label14.Text = "label10";
             // 
             // clearButton
             // 
             this.clearButton.Location = new System.Drawing.Point(741, 15);
-            this.clearButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.clearButton.Margin = new System.Windows.Forms.Padding(4);
             this.clearButton.Name = "clearButton";
             this.clearButton.Size = new System.Drawing.Size(80, 28);
             this.clearButton.TabIndex = 61;
@@ -553,7 +497,7 @@
             // 
             this.statusTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.statusTextBox.Location = new System.Drawing.Point(480, 50);
-            this.statusTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.statusTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.statusTextBox.Name = "statusTextBox";
             this.statusTextBox.ReadOnly = true;
             this.statusTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Both;
@@ -657,7 +601,7 @@
             this.tabPage1.Controls.Add(this.fetchHomwtownFriendsButton);
             this.tabPage1.Controls.Add(this.hometownFriendFlowPanel);
             this.tabPage1.Location = new System.Drawing.Point(4, 25);
-            this.tabPage1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPage1.Margin = new System.Windows.Forms.Padding(4);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Size = new System.Drawing.Size(843, 700);
             this.tabPage1.TabIndex = 8;
@@ -681,7 +625,7 @@
             this.fetchHomwtownFriendsButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.fetchHomwtownFriendsButton.ForeColor = System.Drawing.SystemColors.Desktop;
             this.fetchHomwtownFriendsButton.Location = new System.Drawing.Point(17, 23);
-            this.fetchHomwtownFriendsButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.fetchHomwtownFriendsButton.Margin = new System.Windows.Forms.Padding(4);
             this.fetchHomwtownFriendsButton.Name = "fetchHomwtownFriendsButton";
             this.fetchHomwtownFriendsButton.Size = new System.Drawing.Size(808, 28);
             this.fetchHomwtownFriendsButton.TabIndex = 1;
@@ -693,7 +637,7 @@
             // 
             this.hometownFriendFlowPanel.AutoScroll = true;
             this.hometownFriendFlowPanel.Location = new System.Drawing.Point(17, 96);
-            this.hometownFriendFlowPanel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.hometownFriendFlowPanel.Margin = new System.Windows.Forms.Padding(4);
             this.hometownFriendFlowPanel.Name = "hometownFriendFlowPanel";
             this.hometownFriendFlowPanel.Size = new System.Drawing.Size(808, 581);
             this.hometownFriendFlowPanel.TabIndex = 0;
@@ -703,11 +647,63 @@
             this.fbLogoPictureBox.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("fbLogoPictureBox.BackgroundImage")));
             this.fbLogoPictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.fbLogoPictureBox.Location = new System.Drawing.Point(32, 44);
-            this.fbLogoPictureBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.fbLogoPictureBox.Margin = new System.Windows.Forms.Padding(4);
             this.fbLogoPictureBox.Name = "fbLogoPictureBox";
             this.fbLogoPictureBox.Size = new System.Drawing.Size(191, 159);
             this.fbLogoPictureBox.TabIndex = 66;
             this.fbLogoPictureBox.TabStop = false;
+            // 
+            // captionLabel
+            // 
+            captionLabel.AutoSize = true;
+            captionLabel.Location = new System.Drawing.Point(3, 27);
+            captionLabel.Name = "captionLabel";
+            captionLabel.Size = new System.Drawing.Size(60, 17);
+            captionLabel.TabIndex = 0;
+            captionLabel.Text = "Caption:";
+            // 
+            // captionLabel1
+            // 
+            this.captionLabel1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.postDTOBindingSource, "Caption", true));
+            this.captionLabel1.Location = new System.Drawing.Point(106, 27);
+            this.captionLabel1.Name = "captionLabel1";
+            this.captionLabel1.Size = new System.Drawing.Size(200, 23);
+            this.captionLabel1.TabIndex = 1;
+            // 
+            // createdTimeLabel
+            // 
+            createdTimeLabel.AutoSize = true;
+            createdTimeLabel.Location = new System.Drawing.Point(3, 57);
+            createdTimeLabel.Name = "createdTimeLabel";
+            createdTimeLabel.Size = new System.Drawing.Size(97, 17);
+            createdTimeLabel.TabIndex = 2;
+            createdTimeLabel.Text = "Created Time:";
+            // 
+            // createdTimeDateTimePicker
+            // 
+            this.createdTimeDateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.postDTOBindingSource, "CreatedTime", true));
+            this.createdTimeDateTimePicker.Location = new System.Drawing.Point(106, 53);
+            this.createdTimeDateTimePicker.Name = "createdTimeDateTimePicker";
+            this.createdTimeDateTimePicker.Size = new System.Drawing.Size(200, 22);
+            this.createdTimeDateTimePicker.TabIndex = 3;
+            // 
+            // messageLabel
+            // 
+            messageLabel.AutoSize = true;
+            messageLabel.Location = new System.Drawing.Point(3, 78);
+            messageLabel.Name = "messageLabel";
+            messageLabel.Size = new System.Drawing.Size(69, 17);
+            messageLabel.TabIndex = 4;
+            messageLabel.Text = "Message:";
+            // 
+            // messageLabel1
+            // 
+            this.messageLabel1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.postDTOBindingSource, "Message", true));
+            this.messageLabel1.Location = new System.Drawing.Point(106, 78);
+            this.messageLabel1.Name = "messageLabel1";
+            this.messageLabel1.Size = new System.Drawing.Size(200, 23);
+            this.messageLabel1.TabIndex = 5;
+            this.messageLabel1.Text = "\r\n";
             // 
             // FormMain
             // 
@@ -724,7 +720,7 @@
             this.Controls.Add(this.profilePictureBox);
             this.Controls.Add(this.buttonLogout);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.Name = "FormMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -808,9 +804,9 @@
         private System.Windows.Forms.Label educationLabel;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
-        private System.Windows.Forms.Label label14;
         private System.Windows.Forms.BindingSource postDTOBindingSource;
+        private System.Windows.Forms.Label captionLabel1;
+        private System.Windows.Forms.DateTimePicker createdTimeDateTimePicker;
+        private System.Windows.Forms.Label messageLabel1;
     }
 }
