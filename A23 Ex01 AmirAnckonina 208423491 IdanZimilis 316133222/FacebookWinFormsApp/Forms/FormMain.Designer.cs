@@ -30,10 +30,10 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMain));
             System.Windows.Forms.Label label10;
             System.Windows.Forms.Label label12;
             System.Windows.Forms.Label label13;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMain));
             this.buttonLogout = new System.Windows.Forms.Button();
             this.postButton = new System.Windows.Forms.Button();
             this.profilePictureBox = new System.Windows.Forms.PictureBox();
@@ -66,13 +66,16 @@
             this.groupLayoutPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.label9 = new System.Windows.Forms.Label();
             this.postsTab = new System.Windows.Forms.TabPage();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.label11 = new System.Windows.Forms.Label();
+            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+            this.label14 = new System.Windows.Forms.Label();
             this.clearButton = new System.Windows.Forms.Button();
             this.statusTextBox = new System.Windows.Forms.TextBox();
             this.likedPagesTab = new System.Windows.Forms.TabPage();
             this.labelLikedPages = new System.Windows.Forms.Label();
             this.likedPagesFlowLayoutPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.hometownFriendsTab = new System.Windows.Forms.TabPage();
-            this.postDTOBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.searchPostsByDateButton = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
@@ -82,12 +85,7 @@
             this.fetchHomwtownFriendsButton = new System.Windows.Forms.Button();
             this.hometownFriendFlowPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.fbLogoPictureBox = new System.Windows.Forms.PictureBox();
-            this.postBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.likedPageDTOBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.label11 = new System.Windows.Forms.Label();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
-            this.label14 = new System.Windows.Forms.Label();
+            this.postDTOBindingSource = new System.Windows.Forms.BindingSource(this.components);
             label10 = new System.Windows.Forms.Label();
             label12 = new System.Windows.Forms.Label();
             label13 = new System.Windows.Forms.Label();
@@ -99,15 +97,40 @@
             this.albumsTab.SuspendLayout();
             this.groupsTab.SuspendLayout();
             this.postsTab.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.likedPagesTab.SuspendLayout();
             this.hometownFriendsTab.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.postDTOBindingSource)).BeginInit();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.fbLogoPictureBox)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.postBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.likedPageDTOBindingSource)).BeginInit();
-            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.postDTOBindingSource)).BeginInit();
             this.SuspendLayout();
+            // 
+            // label10
+            // 
+            label10.AutoSize = true;
+            label10.Location = new System.Drawing.Point(9, 20);
+            label10.Name = "label10";
+            label10.Size = new System.Drawing.Size(46, 13);
+            label10.TabIndex = 4;
+            label10.Text = "Caption:";
+            // 
+            // label12
+            // 
+            label12.AutoSize = true;
+            label12.Location = new System.Drawing.Point(9, 50);
+            label12.Name = "label12";
+            label12.Size = new System.Drawing.Size(73, 13);
+            label12.TabIndex = 6;
+            label12.Text = "Created Time:";
+            // 
+            // label13
+            // 
+            label13.AutoSize = true;
+            label13.Location = new System.Drawing.Point(9, 69);
+            label13.Name = "label13";
+            label13.Size = new System.Drawing.Size(53, 13);
+            label13.TabIndex = 8;
+            label13.Text = "Message:";
             // 
             // buttonLogout
             // 
@@ -479,6 +502,43 @@
             this.postsTab.Text = "Posts";
             this.postsTab.UseVisualStyleBackColor = true;
             // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.SandyBrown;
+            this.panel1.Controls.Add(label10);
+            this.panel1.Controls.Add(this.label11);
+            this.panel1.Controls.Add(label12);
+            this.panel1.Controls.Add(this.dateTimePicker2);
+            this.panel1.Controls.Add(label13);
+            this.panel1.Controls.Add(this.label14);
+            this.panel1.Location = new System.Drawing.Point(394, 77);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(236, 113);
+            this.panel1.TabIndex = 62;
+            // 
+            // label11
+            // 
+            this.label11.Location = new System.Drawing.Point(88, 20);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(141, 23);
+            this.label11.TabIndex = 5;
+            this.label11.Text = "label10";
+            // 
+            // dateTimePicker2
+            // 
+            this.dateTimePicker2.Location = new System.Drawing.Point(88, 46);
+            this.dateTimePicker2.Name = "dateTimePicker2";
+            this.dateTimePicker2.Size = new System.Drawing.Size(141, 20);
+            this.dateTimePicker2.TabIndex = 7;
+            // 
+            // label14
+            // 
+            this.label14.Location = new System.Drawing.Point(88, 69);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(141, 23);
+            this.label14.TabIndex = 9;
+            this.label14.Text = "label10";
+            // 
             // clearButton
             // 
             this.clearButton.Location = new System.Drawing.Point(556, 12);
@@ -547,10 +607,6 @@
             this.hometownFriendsTab.TabIndex = 7;
             this.hometownFriendsTab.Text = "Search Post";
             this.hometownFriendsTab.UseVisualStyleBackColor = true;
-            // 
-            // postDTOBindingSource
-            // 
-            this.postDTOBindingSource.DataSource = typeof(FBServiceLogic.DTOs.PostDTO);
             // 
             // dateTimePicker1
             // 
@@ -649,80 +705,9 @@
             this.fbLogoPictureBox.TabIndex = 66;
             this.fbLogoPictureBox.TabStop = false;
             // 
-            // postBindingSource
+            // postDTOBindingSource
             // 
-            this.postBindingSource.DataSource = typeof(FacebookWrapper.ObjectModel.Post);
-            // 
-            // likedPageDTOBindingSource
-            // 
-            this.likedPageDTOBindingSource.DataSource = typeof(FBServiceLogic.DTOs.LikedPageDTO);
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.SandyBrown;
-            this.panel1.Controls.Add(label10);
-            this.panel1.Controls.Add(this.label11);
-            this.panel1.Controls.Add(label12);
-            this.panel1.Controls.Add(this.dateTimePicker2);
-            this.panel1.Controls.Add(label13);
-            this.panel1.Controls.Add(this.label14);
-            this.panel1.Location = new System.Drawing.Point(394, 77);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(236, 113);
-            this.panel1.TabIndex = 62;
-            // 
-            // label10
-            // 
-            label10.AutoSize = true;
-            label10.Location = new System.Drawing.Point(9, 20);
-            label10.Name = "label10";
-            label10.Size = new System.Drawing.Size(46, 13);
-            label10.TabIndex = 4;
-            label10.Text = "Caption:";
-            // 
-            // label11
-            // 
-            this.label11.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.postDTOBindingSource, "Caption", true));
-            this.label11.Location = new System.Drawing.Point(88, 20);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(141, 23);
-            this.label11.TabIndex = 5;
-            this.label11.Text = "label10";
-            // 
-            // label12
-            // 
-            label12.AutoSize = true;
-            label12.Location = new System.Drawing.Point(9, 50);
-            label12.Name = "label12";
-            label12.Size = new System.Drawing.Size(73, 13);
-            label12.TabIndex = 6;
-            label12.Text = "Created Time:";
-            // 
-            // dateTimePicker2
-            // 
-            this.dateTimePicker2.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.postDTOBindingSource, "CreatedTime", true));
-            this.dateTimePicker2.Location = new System.Drawing.Point(88, 46);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(141, 20);
-            this.dateTimePicker2.TabIndex = 7;
-            // 
-            // label13
-            // 
-            label13.AutoSize = true;
-            label13.Location = new System.Drawing.Point(9, 69);
-            label13.Name = "label13";
-            label13.Size = new System.Drawing.Size(53, 13);
-            label13.TabIndex = 8;
-            label13.Text = "Message:";
-            // 
-            // label14
-            // 
-            this.label14.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.postDTOBindingSource, "Message", true));
-            this.label14.Location = new System.Drawing.Point(88, 69);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(141, 23);
-            this.label14.TabIndex = 9;
-            this.label14.Text = "label10";
+            this.postDTOBindingSource.DataSource = typeof(FBServiceLogic.DTOs.PostDTO);
             // 
             // FormMain
             // 
@@ -758,18 +743,16 @@
             this.groupsTab.PerformLayout();
             this.postsTab.ResumeLayout(false);
             this.postsTab.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.likedPagesTab.ResumeLayout(false);
             this.likedPagesTab.PerformLayout();
             this.hometownFriendsTab.ResumeLayout(false);
             this.hometownFriendsTab.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.postDTOBindingSource)).EndInit();
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.fbLogoPictureBox)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.postBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.likedPageDTOBindingSource)).EndInit();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.postDTOBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -823,12 +806,10 @@
         private System.Windows.Forms.Button clearButton;
         private System.Windows.Forms.Label educationLabel;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.BindingSource postBindingSource;
-        private System.Windows.Forms.BindingSource postDTOBindingSource;
-        private System.Windows.Forms.BindingSource likedPageDTOBindingSource;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.DateTimePicker dateTimePicker2;
         private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.BindingSource postDTOBindingSource;
     }
 }
