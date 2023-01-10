@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace FBServiceLogic.DummyData
 {
-    public static class FBDummyDataFactory
+    public static class FbDummyDataFactory
     {
         public static IDummyData CreateDummyData(string i_RequestedDataType)
         {

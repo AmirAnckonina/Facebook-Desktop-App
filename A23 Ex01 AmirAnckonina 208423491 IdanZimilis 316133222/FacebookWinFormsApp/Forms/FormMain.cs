@@ -114,7 +114,7 @@ namespace FacebookWinFormsApp
             if (rememberMeCheckBox.Checked)
             {
                 r_FbApiClient.AppSettings.SaveToFile();
-                r_FbApiClient.ResetCurrentFBState();
+                r_FbApiClient.ResetCurrentFbState();
             }
             else
             {
@@ -224,7 +224,7 @@ namespace FacebookWinFormsApp
 
                 foreach (GroupDTO groupDTO in groupsListDTO)
                 {
-                    FBGroupBox groupBox = new FBGroupBox();
+                    Forms.Controls.GroupBox groupBox = new Forms.Controls.GroupBox();
                     groupBox.SetGroupNameLabel(groupDTO.Name);
                     groupBox.SetGroupPictureInPictureBox(groupDTO.PictureURL);
                     groupBox.SetGroupMembersCount(groupDTO.MembersCount.ToString());

@@ -54,15 +54,5 @@ namespace FBServiceLogic
         {
             return r_FbApiClient.AppSettings.RememberUserActivated;
         }
-
-        /*public void EnableRememberUserInApp()
-        {
-
-        }
-
-        public void DisableRememberUserInApp()
-        {
-
-        }*/
     }
 }
