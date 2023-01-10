@@ -9,9 +9,7 @@ namespace FBServiceLogic.DummyData
     public abstract class DummyBasic
     {
         public string Name { get; set; }
-        public string PictureURL { get; set; }
 
-        public DummyBasic()
-        { }
+        public string PictureURL { get; set; }
     }
 }
