@@ -59,7 +59,7 @@
     <Compile Include="DummyData\eOnlineStatus.cs" />
     <Compile Include="DummyData\IDummyData.cs" />
     <Compile Include="DummyData\RandomDataGenerator.cs" />
-    <Compile Include="FBAPIClient.cs" />
+    <Compile Include="FbApiClient.cs" />
     <Compile Include="DummyData\DummyUser.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>

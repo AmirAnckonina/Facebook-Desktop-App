@@ -8,51 +8,51 @@ namespace FBServiceLogic
 {
     public class AccountFacade
     {
-        private readonly FBAPIClient r_FBAPIClient;
+        private readonly FbApiClient r_FbApiClient;
 
-        public AccountFacade(FBAPIClient i_FBAPIClient)
+        public AccountFacade(FbApiClient i_FbApiClient)
         {
-            r_FBAPIClient = i_FBAPIClient;
+            r_FbApiClient = i_FbApiClient;
         }
 
         public void Login()
         {
-            r_FBAPIClient.Login();
+            r_FbApiClient.Login();
         }
 
         public void AutomaticLogin()
         {
-            r_FBAPIClient.AutomaticLogin();
+            r_FbApiClient.AutomaticLogin();
         }
 
         public void SetAppID(string i_AppID)
         {
-            r_FBAPIClient.AppSettings.AppID = i_AppID;
+            r_FbApiClient.AppSettings.AppID = i_AppID;
         }
 
         public void ClearAppPermissions()
         {
-            r_FBAPIClient.AppSettings.Permissions.Clear();
+            r_FbApiClient.AppSettings.Permissions.Clear();
         }
 
         public void AddAppPermission(string i_Permission)
         {
-            r_FBAPIClient.AppSettings.AddPermission(i_Permission);
+            r_FbApiClient.AppSettings.AddPermission(i_Permission);
         }
 
         public void SetDefaultSettingsInApp()
         {
-            r_FBAPIClient.AppSettings.SetDefaultAppSettings();
+            r_FbApiClient.AppSettings.SetDefaultAppSettings();
         }
 
         public bool UserCurrentlyActivated()
         {
-            return r_FBAPIClient.CurrentUser != null;
+            return r_FbApiClient.CurrentUser != null;
         }
         
         public bool RememberUserActivatedInApp()
         {
-            return r_FBAPIClient.AppSettings.RememberUserActivated;
+            return r_FbApiClient.AppSettings.RememberUserActivated;
         }
 
         /*public void EnableRememberUserInApp()

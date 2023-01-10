@@ -8,13 +8,13 @@ using FBServiceLogic.DummyData;
 
 namespace FBServiceLogic
 {
-    public class FBAPIClient
+    public class FbApiClient
     {
         private readonly AppSettings r_AppSettings;
         private User m_CurrentUser;
         private LoginResult m_LoginResult;
 
-        public FBAPIClient()
+        public FbApiClient()
         {
             m_CurrentUser = null;
             m_LoginResult = null;
@@ -111,7 +111,6 @@ namespace FBServiceLogic
                     friendDTOList.Add(newFriendDTO);
                 }
             }
-
             else
             {
                 dummyFriendsData = FBDummyDataFactory.CreateDummyData("Friends") as DummyFriends;
@@ -132,7 +131,6 @@ namespace FBServiceLogic
         {
             List<TextAndImageDTO> albumDTOList = new List<TextAndImageDTO>();
             TextAndImageDTO albumDTO;
-            FacebookObjectCollection<Album> albums = m_CurrentUser.Albums;
 
             foreach (Album album in m_CurrentUser.Albums)
             {
@@ -150,8 +148,6 @@ namespace FBServiceLogic
             List<PostDTO> postDTOList = new List<PostDTO>();
             PostDTO newPost;
 
-            FacebookObjectCollection<Post> posts = m_CurrentUser.Posts;
-           
             foreach (Post post in m_CurrentUser.Posts)
             {
                 newPost = new PostDTO();
@@ -171,11 +167,7 @@ namespace FBServiceLogic
             DateTime? dateTime; 
             int postCounter = 0;
 
-            FacebookObjectCollection<Post> posts = m_CurrentUser.Posts;
-
-            //new section
-            //List<Post> postsByDate = new List<Post>();
-            foreach (Post post in posts)
+            foreach (Post post in m_CurrentUser.Posts)
             {
                 postCounter++;
                 dateTime = post.CreatedTime.Value;
@@ -186,27 +178,9 @@ namespace FBServiceLogic
                     newPost.Caption = post.Caption;
                     newPost.CreatedTime = post.CreatedTime;
                     postDTOList.Add(newPost);
-                    //postsByDate.Add(post);
                 }
             }
 
-            //end of new section
-
-            /* foreach (Post post in m_CurrentUser.Posts)
-             {
-                 postCounter++;
-                 dateTime = post.CreatedTime.Value;
-                 if (dateTime?.Day == i_DateTime.Day && dateTime?.Month == i_DateTime.Month && dateTime?.Year == i_DateTime.Year )
-                 {
-                     newPost = new PostDTO();
-                     newPost.Message = post.Message;
-                     newPost.Caption = post.Caption;
-                     newPost.CreatedTime = post.CreatedTime;
-                     postDTOList.Add(newPost);
-                 }
-             }
-
-             return postDTOList;*/
             return postDTOList;
         }
 

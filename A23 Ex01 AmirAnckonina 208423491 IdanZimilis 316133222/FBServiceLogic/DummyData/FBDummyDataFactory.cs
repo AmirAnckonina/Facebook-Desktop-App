@@ -34,7 +34,6 @@ namespace FBServiceLogic.DummyData
                         throw new DummyDataTypeException();
                 }
             }
-
             else
             {
                 throw new DummyDataTypeException();

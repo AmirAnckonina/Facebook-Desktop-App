@@ -42,9 +42,7 @@ namespace FacebookWinFormsApp
 			{
 				string appID = comboAppID.SelectedItem.ToString();
 
-				//Facade
 				r_AccountFacade.SetAppID(appID);
-				//r_AccountFacade.AppSettings.AppID = appID;
 			}
 
 			UpdateAppPermissions();
@@ -52,15 +50,11 @@ namespace FacebookWinFormsApp
 
 		private void UpdateAppPermissions()
         {
-			//Facade
 			r_AccountFacade.ClearAppPermissions();
-			//r_FBAPIClient.AppSettings.Permissions.Clear();
 
 			foreach (string checkedPermission in listBoxPermissions.CheckedItems)
             {
-				//Facade
 				r_AccountFacade.AddAppPermission(checkedPermission);
-				//r_FBAPIClient.AppSettings.AddPermission(checkedPermission);
             }
 		}
 

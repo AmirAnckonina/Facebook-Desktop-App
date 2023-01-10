@@ -12,10 +12,12 @@ namespace FBServiceLogic.DummyData
 
         public DummyDataTypeException() 
             : base(k_defaultDataTypeExMessage)
-        { }
+        { 
+        }
 
         public DummyDataTypeException(string i_ErrMessage) 
             : base(i_ErrMessage)
-        { }
+        { 
+        }
     }
 }
