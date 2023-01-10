@@ -1,6 +1,6 @@
 ﻿namespace FacebookWinFormsApp.Forms.Controls
 {
-    public partial class FBGroupBox
+    public partial class GroupBox
     {
         /// <summary> 
         /// Required designer variable.

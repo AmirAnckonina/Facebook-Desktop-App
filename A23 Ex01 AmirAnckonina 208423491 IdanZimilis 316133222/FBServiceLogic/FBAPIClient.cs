@@ -68,11 +68,11 @@ namespace FBServiceLogic
 
         private void reset()
         {
-            ResetCurrentFBState();
+            ResetCurrentFbState();
             r_AppSettings.ResetAppSettings();
         }
 
-        public void ResetCurrentFBState()
+        public void ResetCurrentFbState()
         {
             m_CurrentUser = null;
             m_LoginResult = null;
@@ -81,7 +81,7 @@ namespace FBServiceLogic
         public UserBasicInfoDTO GetUserBasicInfoDTO()
         {
             UserBasicInfoDTO userBasicInfoDTO = new UserBasicInfoDTO();
-            DummyUser dummyUserData = FBDummyDataFactory.CreateDummyData("User") as DummyUser;
+            DummyUser dummyUserData = FbDummyDataFactory.CreateDummyData("User") as DummyUser;
 
             userBasicInfoDTO.Name = m_CurrentUser.Name;
             userBasicInfoDTO.PictureURL = m_CurrentUser.PictureNormalURL;
@@ -113,7 +113,7 @@ namespace FBServiceLogic
             }
             else
             {
-                dummyFriendsData = FBDummyDataFactory.CreateDummyData("Friends") as DummyFriends;
+                dummyFriendsData = FbDummyDataFactory.CreateDummyData("Friends") as DummyFriends;
                 foreach (DummyUser dummyUser in dummyFriendsData.Friends)
                 {
                     newFriendDTO = new FriendDTO();
@@ -204,7 +204,7 @@ namespace FBServiceLogic
             }
             else
             {
-                dummyGroupsData = FBDummyDataFactory.CreateDummyData("Groups") as DummyGroups;
+                dummyGroupsData = FbDummyDataFactory.CreateDummyData("Groups") as DummyGroups;
                 foreach (DummyGroup group in dummyGroupsData.Groups)
                 {
                     newGroup = new GroupDTO();
@@ -238,7 +238,7 @@ namespace FBServiceLogic
             }
             else
             {
-                dummyFriendsData = FBDummyDataFactory.CreateDummyData("Friends") as DummyFriends;
+                dummyFriendsData = FbDummyDataFactory.CreateDummyData("Friends") as DummyFriends;
                 foreach (DummyUser dummyUser in dummyFriendsData.Friends)
                 {
                     if (dummyUser.Hometown == dummyUser.Hometown)

@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace FacebookWinFormsApp.Forms.Controls
 {
-    public partial class FBGroupBox : UserControl
+    public partial class GroupBox : UserControl
     {
-        public FBGroupBox()
+        public GroupBox()
         {
             InitializeComponent();
         }

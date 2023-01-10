@@ -53,7 +53,7 @@
     <Compile Include="DummyData\DummyFriends.cs" />
     <Compile Include="DummyData\DummyGroup.cs" />
     <Compile Include="DummyData\eDummyDataType.cs" />
-    <Compile Include="DummyData\FBDummyDataFactory.cs" />
+    <Compile Include="DummyData\FbDummyDataFactory.cs" />
     <Compile Include="DummyData\DummyGroups.cs" />
     <Compile Include="DummyData\eGroupPrivacy.cs" />
     <Compile Include="DummyData\eOnlineStatus.cs" />
