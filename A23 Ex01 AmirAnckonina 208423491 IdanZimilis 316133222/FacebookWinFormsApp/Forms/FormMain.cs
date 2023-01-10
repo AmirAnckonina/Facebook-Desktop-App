@@ -1,36 +1,29 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Windows.Forms;
 using System.Threading;
-using FacebookWrapper.ObjectModel;
-using FacebookWrapper;
+using System.Windows.Forms;
+using FacebookWinFormsApp.Forms.Controls;
 using FBServiceLogic;
 using FBServiceLogic.DTOs;
-using FacebookWinFormsApp.Forms.Controls;
 
 namespace FacebookWinFormsApp
 {
     public partial class FormMain : Form
     {
-        private readonly FBAPIClient r_FBAPIClient;
+        private readonly FbApiClient r_FbApiClient;
 
-        public FormMain(FBAPIClient i_FBAPIClient)
+        public FormMain(FbApiClient i_FbApiClient)
         {
             InitializeComponent();
             FacebookWrapper.FacebookService.s_CollectionLimit = 100;
-            r_FBAPIClient = i_FBAPIClient;
+            r_FbApiClient = i_FbApiClient;
         }
 
         private void initForm()
         {
             Invoke(new Action(() =>
             {
-                testBoxLoggedInUser.Text = $"Logged in as {r_FBAPIClient.CurrentUser.Name}";
+                testBoxLoggedInUser.Text = $"Logged in as {r_FbApiClient.CurrentUser.Name}";
 
                 new Thread(() => initBasicUserInfo()).Start();
                 new Thread(() => initAlbums()).Start();
@@ -45,7 +38,7 @@ namespace FacebookWinFormsApp
         {
             try
             {
-                UserBasicInfoDTO userBasicInfoDTO = r_FBAPIClient.GetUserBasicInfoDTO();
+                UserBasicInfoDTO userBasicInfoDTO = r_FbApiClient.GetUserBasicInfoDTO();
 
                 profilePictureBox.LoadAsync(userBasicInfoDTO.PictureURL);
                 Invoke(new Action(() =>
@@ -57,39 +50,38 @@ namespace FacebookWinFormsApp
                     educationLabel.Text = userBasicInfoDTO.Education;
                 }));
             }
-            catch(Exception ex)
-            { }
+            catch(Exception)
+            { 
+            }
         }
 
         private void initLikedPages()
         {
             try
             {
-                List<LikedPageDTO> i_LikedPagesList = r_FBAPIClient.GetLikedPages();
+                List<LikedPageDTO> i_LikedPagesList = r_FbApiClient.GetLikedPages();
 
                 foreach (LikedPageDTO pageDTO in i_LikedPagesList)
                 {
                     Invoke(new Action(() =>
                     {
-
-                    PageBox pageBox = new PageBox();
-                    pageBox.setName(pageDTO.Name);
-                    pageBox.setPictureBox(pageDTO.PictureURL);
-                    pageBox.setNumOfLikes(pageDTO.LikesCount);
-                    likedPagesFlowLayoutPanel.Controls.Add(pageBox);
-                    likedPagesFlowLayoutPanel.AutoScroll = true;
-                   /* likedPagesFlowLayoutPanel.Invoke(new Action(() => likedPagesFlowLayoutPanel.Controls.Add(pageBox)));
-                    likedPagesFlowLayoutPanel.Invoke(new Action(() => likedPagesFlowLayoutPanel.AutoScroll = true));*/
+                        PageBox pageBox = new PageBox();
+                        pageBox.setName(pageDTO.Name);
+                        pageBox.setPictureBox(pageDTO.PictureURL);
+                        pageBox.setNumOfLikes(pageDTO.LikesCount);
+                        likedPagesFlowLayoutPanel.Controls.Add(pageBox);
+                        likedPagesFlowLayoutPanel.AutoScroll = true;
                     }));
                 }
             }
-            catch(Exception ex)
-            { }                
+            catch(Exception)
+            { 
+            }                
         }
 
         private void buttonLogout_Click(object sender, EventArgs e)
         {
-            r_FBAPIClient.Logout();
+            r_FbApiClient.Logout();
             this.Close();
         }
 
@@ -107,13 +99,13 @@ namespace FacebookWinFormsApp
         {
             if (rememberMeCheckBox.Checked)
             {
-                r_FBAPIClient.AppSettings.RememberUserActivated = true;
-                r_FBAPIClient.AppSettings.LastAccessToken = r_FBAPIClient.LoginResult.AccessToken;
+                r_FbApiClient.AppSettings.RememberUserActivated = true;
+                r_FbApiClient.AppSettings.LastAccessToken = r_FbApiClient.LoginResult.AccessToken;
             }
             else
             {
-                r_FBAPIClient.AppSettings.RememberUserActivated = false;
-                r_FBAPIClient.AppSettings.LastAccessToken = null;
+                r_FbApiClient.AppSettings.RememberUserActivated = false;
+                r_FbApiClient.AppSettings.LastAccessToken = null;
             } 
         }
 
@@ -121,23 +113,21 @@ namespace FacebookWinFormsApp
         {
             if (rememberMeCheckBox.Checked)
             {
-                r_FBAPIClient.AppSettings.SaveToFile();
-                r_FBAPIClient.ResetCurrentFBState();
+                r_FbApiClient.AppSettings.SaveToFile();
+                r_FbApiClient.ResetCurrentFBState();
             }
             else
             {
-                r_FBAPIClient.NormalExit();
-
+                r_FbApiClient.NormalExit();
             }
         }
 
         private void fetchPostsByDate()
         {
+            List<PostDTO> allPostsInSingleDay;
             try
             {
-                //List<PostDTO> allPostsInSingleDay = r_FBAPIClient.GetPostsByDate(dateTimePicker1.Value);
-                List<PostDTO> allPostsInSingleDay = r_FBAPIClient.GetPostsByDate(dateTimePicker1.Value);
-
+                allPostsInSingleDay = r_FbApiClient.GetPostsByDate(dateTimePicker1.Value);
 
                 foreach (PostDTO post in allPostsInSingleDay)
                 {
@@ -152,55 +142,34 @@ namespace FacebookWinFormsApp
                         postsByDateListBox.Items.Add(Environment.NewLine);
                     }
                 }
-
-                //postBindingSource.DataSource = allPostsInSingleDay;
-
             }
-            catch(Exception ex)
-            { }
+            catch(Exception)
+            { 
+            }
         }
 
         private void searchPostsByDateButton_Click(object sender, EventArgs e)
         {
             postsByDateListBox.Items.Clear();
             fetchPostsByDate();
-            
         }
 
         private void initPosts()
         {
             try
             {
-                this.postDTOBindingSource.DataSource = r_FBAPIClient.GetPostsList();
-                //List<PostDTO> postsDTOList = r_FBAPIClient.GetPostsList();
-
-               /* if (postsDTOList != null)
-                {*/
-
-                    /*foreach (PostDTO post in i_PostsDTOList)
-                    {
-                        if (!string.IsNullOrEmpty(post.Message))
-                        {
-                            string[] postString = post.Message.Split(char.Parse("\n"));
-                            foreach (string word in postString)
-                            {
-                                postsListBox.Invoke(new Action(() => postsListBox.Items.Add(word + Environment.NewLine)));
-                            }
-
-                            //postsByDateListBox.Invoke(new Action(() => postsByDateListBox.Items.Add(Environment.NewLine)));
-                        }
-                    }*/
-                //}
+                this.postDTOBindingSource.DataSource = r_FbApiClient.GetPostsList();
             }
-            catch(Exception ex)
-            { }
+            catch(Exception)
+            { 
+            }
         }
 
         private void initAlbums()
         {
             try
             {
-                List<TextAndImageDTO> albumsDTO = r_FBAPIClient.GetAlbumsList();
+                List<TextAndImageDTO> albumsDTO = r_FbApiClient.GetAlbumsList();
 
                 foreach (TextAndImageDTO albumDTO in albumsDTO)
                 {
@@ -211,13 +180,11 @@ namespace FacebookWinFormsApp
                         album.SetGroupPictureInPictureBox(albumDTO.PictureURL);
                         albumsLayoutPanel.Controls.Add(album);
                         albumsLayoutPanel.AutoScroll = true;
-
                     }));
                 }
             }
-            catch(Exception ex)
+            catch(Exception)
             {
-                //MessageBox.Show(ex.Message);
             }
         }
 
@@ -225,25 +192,23 @@ namespace FacebookWinFormsApp
         {
             try
             {
-                List<FriendDTO> i_FriendsDTOList = r_FBAPIClient.GetFriendsList();
-                foreach (FriendDTO friendDTO in i_FriendsDTOList)
+                List<FriendDTO> friendsDTOList = r_FbApiClient.GetFriendsList();
+                foreach (FriendDTO friendDTO in friendsDTOList)
                 {
-                    FriendBox friendBox = new FriendBox();
-                    friendBox.SetFriendName(friendDTO.Name);
-                    friendBox.SetPictureBox(friendDTO.PictureURL);
-                    friendBox.SetStatus(friendDTO.OnlineStatus);
                     friendsFlowLayoutPanel.Invoke(new Action(() =>
                     {
+                        FriendBox friendBox = new FriendBox();
+                        friendBox.SetFriendName(friendDTO.Name);
+                        friendBox.SetPictureBox(friendDTO.PictureURL);
+                        friendBox.SetStatus(friendDTO.OnlineStatus);
                         friendsFlowLayoutPanel.Controls.Add(friendBox);
                         groupLayoutPanel.AutoScroll = true;
                     }));
                 }
             }
-            catch(Exception ex)
-            {
-                MessageBox.Show($"An error occured while fetching user friends. " + ex.Message);
+            catch(Exception)
+            { 
             }
-
         }
         
         public void CheckRememberMe()
@@ -255,9 +220,9 @@ namespace FacebookWinFormsApp
         {
             try
             {
-                List<GroupDTO> i_GroupsListDTO = r_FBAPIClient.GetGroupsList();
+                List<GroupDTO> groupsListDTO = r_FbApiClient.GetGroupsList();
 
-                foreach (GroupDTO groupDTO in i_GroupsListDTO)
+                foreach (GroupDTO groupDTO in groupsListDTO)
                 {
                     FBGroupBox groupBox = new FBGroupBox();
                     groupBox.SetGroupNameLabel(groupDTO.Name);
@@ -268,13 +233,11 @@ namespace FacebookWinFormsApp
                     {
                         groupLayoutPanel.Controls.Add(groupBox);
                         groupLayoutPanel.AutoScroll = true;
-
                     }));
                 }
             }
-            catch(Exception ex)
+            catch(Exception)
             {
-                MessageBox.Show($"An error occured while fetching user groups. " + ex.Message);
             }
         }
 
@@ -282,18 +245,18 @@ namespace FacebookWinFormsApp
         {
             try
             {
-                List<HometownFriendDTO> i_HometownFriendsDTOList = r_FBAPIClient.GetMyHometownFriends();
+                List<HometownFriendDTO> hometownFriendsDTOList = r_FbApiClient.GetMyHometownFriends();
 
-                if (i_HometownFriendsDTOList.Count > 0)
+                if (hometownFriendsDTOList.Count > 0)
                 {
-                    labelhomeTown.Text = i_HometownFriendsDTOList[0].Hometown;
+                    labelhomeTown.Text = hometownFriendsDTOList[0].Hometown;
                 }
                 else
                 {
                     labelhomeTown.Text = "THERE ARE NO MUTUAL FRIENDS IN HOMETOWN"; 
                 }
 
-                foreach (HometownFriendDTO homeTownFriendDTO in i_HometownFriendsDTOList)
+                foreach (HometownFriendDTO homeTownFriendDTO in hometownFriendsDTOList)
                 {
                     FriendBox friendBox = new FriendBox();
                     friendBox.SetFriendName(homeTownFriendDTO.Name);
@@ -304,8 +267,9 @@ namespace FacebookWinFormsApp
 
                 hometownFriendFlowPanel.AutoScroll = true;
             }
-            catch(Exception ex)
-            { }
+            catch(Exception)
+            {
+            }
         }
 
         private void fetchHomwtownFriendsButton_Click(object sender, EventArgs e)
@@ -324,7 +288,5 @@ namespace FacebookWinFormsApp
             statusTextBox.Text = "My status...";
             postTextBox.Text = string.Empty;
         }
-
-        
     }
 }

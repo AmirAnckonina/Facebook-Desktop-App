@@ -7,5 +7,6 @@ using System.Threading.Tasks;
 namespace FBServiceLogic.DummyData
 {
     public interface IDummyData
-    { }
+    {
+    }
 }

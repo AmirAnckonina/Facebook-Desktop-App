@@ -41,7 +41,7 @@ namespace FBServiceLogic
                     appSettings = serializer.Deserialize(stream) as AppSettings;
                 }
             }
-            catch(Exception ex)
+            catch(Exception)
             {
                 appSettings = new AppSettings();
             }

@@ -13,21 +13,17 @@ namespace FacebookWinFormsApp
     {
         private static AppManager s_Instance = null;
         private static object s_Lock = new object();
-
         private readonly FormMain r_FormMain;
         private readonly FormLogin r_FormLogin;
-        //private readonly FormAppSettings r_FormAppSettings;
-        private readonly FBAPIClient r_FBAPIClient;
+        private readonly FbApiClient r_FbApiClient;
         private readonly AccountFacade r_AccountFacade;
 
         private AppManager()
         {
-            this.r_FBAPIClient = new FBAPIClient();
-            this.r_AccountFacade = new AccountFacade(r_FBAPIClient);
-            //this.r_FormAppSettings = new FormAppSettings(r_FBAPIClient);
-            //this.r_FormLogin = new FormLogin(r_FBAPIClient, r_FormAppSettings);
-            this.r_FormLogin = new FormLogin(r_AccountFacade);
-            this.r_FormMain = new FormMain(r_FBAPIClient);
+            r_FbApiClient = new FbApiClient();
+            r_AccountFacade = new AccountFacade(r_FbApiClient);
+            r_FormLogin = new FormLogin(r_AccountFacade);
+            r_FormMain = new FormMain(r_FbApiClient);
         }
 
         public static AppManager Instance
@@ -51,13 +47,9 @@ namespace FacebookWinFormsApp
 
         public void Run()
         {
-            //Facade
-            //if (r_FBAPIClient.AppSettings.RememberUserActivated)
             if (r_AccountFacade.RememberUserActivatedInApp())
             {
-                //Facade
                 r_AccountFacade.AutomaticLogin();
-                //r_FBAPIClient.AutomaticLogin();
                 r_FormMain.CheckRememberMe();
                 RunApp();
             }
@@ -70,8 +62,6 @@ namespace FacebookWinFormsApp
         private void RunLogin()
         {
             r_FormLogin.ShowDialog();
-            //Facade
-            //if (r_FBAPIClient.CurrentUser != null)
             if (r_AccountFacade.UserCurrentlyActivated())
             {
                 RunApp();
@@ -81,8 +71,6 @@ namespace FacebookWinFormsApp
         private void RunApp()
         {
             r_FormMain.ShowDialog();
-            //Facade
-            //if (r_FBAPIClient.AppSettings.RememberUserActivated == false)
             if (!r_AccountFacade.RememberUserActivatedInApp())
             {
                 RunLogin();
