@@ -5,6 +5,7 @@ using FacebookWrapper;
 using FacebookWrapper.ObjectModel;
 using FBServiceLogic.DTOs;
 using FBServiceLogic.DummyData;
+using FBServiceLogic.SortFriendsStrategy;
 
 namespace FBServiceLogic
 {
@@ -13,12 +14,14 @@ namespace FBServiceLogic
         private readonly AppSettings r_AppSettings;
         private User m_CurrentUser;
         private LoginResult m_LoginResult;
+        private readonly FbFriendsSorter r_FbFriendsSorter;
 
         public FbApiClient()
         {
             m_CurrentUser = null;
             m_LoginResult = null;
             m_CurrentUser = null;
+            r_FbFriendsSorter = new FbFriendsSorter();
             r_AppSettings = AppSettings.LoadSettings();
         }
 
@@ -28,7 +31,7 @@ namespace FBServiceLogic
 
         public AppSettings AppSettings { get => r_AppSettings; }
 
-        public void Login()
+        public void RegularLogin()
         {
             m_LoginResult = FacebookService.Login(r_AppSettings.AppID, r_AppSettings.Permissions.ToArray());
 
@@ -94,7 +97,7 @@ namespace FBServiceLogic
             return userBasicInfoDTO;
         }
 
-        public List<FriendDTO> GetFriendsList()
+        public List<FriendDTO> GetFriendsList(string i_SortStrategy = null)
         {
             List<FriendDTO> friendDTOList = new List<FriendDTO>();
             FriendDTO newFriendDTO;
@@ -123,7 +126,26 @@ namespace FBServiceLogic
                     friendDTOList.Add(newFriendDTO);
                 }
             }
+            
+            if (!string.IsNullOrEmpty(i_SortStrategy))
+            {
+                eSortStrategy sortStrategy;
+                bool sortStrategyParsedSuccessfully = Enum.TryParse(i_SortStrategy, out sortStrategy);
+                if (sortStrategyParsedSuccessfully)
+                {
+                    if (sortStrategy == eSortStrategy.Ascending)
+                    {
+                        r_FbFriendsSorter.Comparer = new AscendingComparer();
+                    }
+                    else if (sortStrategy == eSortStrategy.Descending)
+                    {
+                        r_FbFriendsSorter.Comparer = new DescendingComparer();
+                    }
 
+                    r_FbFriendsSorter.SortFriends(friendDTOList);
+                }
+            }
+            
             return friendDTOList;
         }
 

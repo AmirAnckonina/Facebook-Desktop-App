@@ -61,6 +61,11 @@
     <Compile Include="DummyData\RandomDataGenerator.cs" />
     <Compile Include="FbApiClient.cs" />
     <Compile Include="DummyData\DummyUser.cs" />
+    <Compile Include="SortFriendsStrategy\AscendingComparer.cs" />
+    <Compile Include="SortFriendsStrategy\DescendingComparer.cs" />
+    <Compile Include="SortFriendsStrategy\eSortStrategy.cs" />
+    <Compile Include="SortFriendsStrategy\FbFriendsSorter.cs" />
+    <Compile Include="SortFriendsStrategy\IComparer.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -89,5 +94,6 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
