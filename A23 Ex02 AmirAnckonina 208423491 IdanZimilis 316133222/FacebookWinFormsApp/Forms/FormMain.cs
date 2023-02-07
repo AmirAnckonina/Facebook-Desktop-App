@@ -17,6 +17,7 @@ namespace FacebookWinFormsApp
             InitializeComponent();
             FacebookWrapper.FacebookService.s_CollectionLimit = 100;
             r_FbApiClient = i_FbApiClient;
+            r_FbApiClient.m_NotifyUserInfoFetched += this.displayUserInfo;
         }
 
         private void initForm()
@@ -25,7 +26,7 @@ namespace FacebookWinFormsApp
             {
                 testBoxLoggedInUser.Text = $"Logged in as {r_FbApiClient.CurrentUser.Name}";
 
-                new Thread(() => initBasicUserInfo()).Start();
+                new Thread(() => initBasicUserInfo()).Start(); //Fetch, notify when done
                 new Thread(() => initAlbums()).Start();
                 new Thread(() => initGroups()).Start();
                 new Thread(() => initPosts()).Start();
@@ -34,13 +35,26 @@ namespace FacebookWinFormsApp
             }));
         }
 
+        private void displayUserInfo(UserBasicInfoDTO i_UserBasicInfoDTO)
+        {
+            profilePictureBox.LoadAsync(i_UserBasicInfoDTO.PictureURL);
+            Invoke(new Action(() =>
+            {
+                genderLabel.Text = i_UserBasicInfoDTO.Gender;
+                birthdayLabel.Text = i_UserBasicInfoDTO.Birthday;
+                statusLabel.Text = i_UserBasicInfoDTO.OnlineStatus;
+                homeTownLabel.Text = i_UserBasicInfoDTO.Hometown;
+                educationLabel.Text = i_UserBasicInfoDTO.Education;
+            }));
+        }
+
         private void initBasicUserInfo()
         {
             try
             {
-                UserBasicInfoDTO userBasicInfoDTO = r_FbApiClient.GetUserBasicInfoDTO();
+                r_FbApiClient.FetchUserBasicInfoDTO();
 
-                profilePictureBox.LoadAsync(userBasicInfoDTO.PictureURL);
+                /*profilePictureBox.LoadAsync(userBasicInfoDTO.PictureURL);
                 Invoke(new Action(() =>
                 {
                     genderLabel.Text = userBasicInfoDTO.Gender;
@@ -48,7 +62,7 @@ namespace FacebookWinFormsApp
                     statusLabel.Text = userBasicInfoDTO.OnlineStatus;
                     homeTownLabel.Text = userBasicInfoDTO.Hometown;
                     educationLabel.Text = userBasicInfoDTO.Education;
-                }));
+                }));*/
             }
             catch(Exception)
             { 
@@ -190,9 +204,9 @@ namespace FacebookWinFormsApp
 
         private void initFriends(string i_SortingMethod = null)
         {
-            if (friendsFlowLayoutPanel.Controls.Count <= 0)
+            if (friendsFlowLayoutPanel.Controls.Count > 0)
             {
-                friendsFlowLayoutPanel.Controls.Clear();          
+                friendsFlowLayoutPanel.Controls.Clear();
             }
 
             try
@@ -224,6 +238,8 @@ namespace FacebookWinFormsApp
 
         private void initGroups()
         {
+
+            
             try
             {
                 List<GroupDTO> groupsListDTO = r_FbApiClient.GetGroupsList();
