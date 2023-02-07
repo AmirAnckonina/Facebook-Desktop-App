@@ -59,6 +59,8 @@
             this.homeTownFriendsTab = new System.Windows.Forms.TabControl();
             this.homeTab = new System.Windows.Forms.TabPage();
             this.friendsTab = new System.Windows.Forms.TabPage();
+            this.sortByComboBox = new System.Windows.Forms.ComboBox();
+            this.label10 = new System.Windows.Forms.Label();
             this.friendsFlowLayoutPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.albumsTab = new System.Windows.Forms.TabPage();
             this.label8 = new System.Windows.Forms.Label();
@@ -76,18 +78,16 @@
             this.likedPagesTab = new System.Windows.Forms.TabPage();
             this.labelLikedPages = new System.Windows.Forms.Label();
             this.likedPagesFlowLayoutPanel = new System.Windows.Forms.FlowLayoutPanel();
-            this.hometownFriendsTab = new System.Windows.Forms.TabPage();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.searchPostsByDateButton = new System.Windows.Forms.Button();
-            this.label7 = new System.Windows.Forms.Label();
-            this.postsByDateListBox = new System.Windows.Forms.ListBox();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.labelhomeTown = new System.Windows.Forms.Label();
             this.fetchHomwtownFriendsButton = new System.Windows.Forms.Button();
             this.hometownFriendFlowPanel = new System.Windows.Forms.FlowLayoutPanel();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.searchPostsByDateButton = new System.Windows.Forms.Button();
+            this.label7 = new System.Windows.Forms.Label();
+            this.postsByDateListBox = new System.Windows.Forms.ListBox();
             this.fbLogoPictureBox = new System.Windows.Forms.PictureBox();
-            this.label10 = new System.Windows.Forms.Label();
-            this.sortByComboBox = new System.Windows.Forms.ComboBox();
+            this.filteredAlbumsCheckbox = new System.Windows.Forms.CheckBox();
             captionLabel = new System.Windows.Forms.Label();
             createdTimeLabel = new System.Windows.Forms.Label();
             messageLabel = new System.Windows.Forms.Label();
@@ -102,7 +102,6 @@
             this.postsTab.SuspendLayout();
             this.panel1.SuspendLayout();
             this.likedPagesTab.SuspendLayout();
-            this.hometownFriendsTab.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.fbLogoPictureBox)).BeginInit();
             this.SuspendLayout();
@@ -377,7 +376,7 @@
             this.label2.TabIndex = 63;
             this.label2.Text = "Gender";
             // 
-            // homeTownFreindsTab
+            // homeTownFriendsTab
             // 
             this.homeTownFriendsTab.Controls.Add(this.homeTab);
             this.homeTownFriendsTab.Controls.Add(this.friendsTab);
@@ -385,11 +384,10 @@
             this.homeTownFriendsTab.Controls.Add(this.groupsTab);
             this.homeTownFriendsTab.Controls.Add(this.postsTab);
             this.homeTownFriendsTab.Controls.Add(this.likedPagesTab);
-            this.homeTownFriendsTab.Controls.Add(this.hometownFriendsTab);
             this.homeTownFriendsTab.Controls.Add(this.tabPage1);
             this.homeTownFriendsTab.Location = new System.Drawing.Point(193, 10);
             this.homeTownFriendsTab.Margin = new System.Windows.Forms.Padding(2);
-            this.homeTownFriendsTab.Name = "homeTownFreindsTab";
+            this.homeTownFriendsTab.Name = "homeTownFriendsTab";
             this.homeTownFriendsTab.SelectedIndex = 0;
             this.homeTownFriendsTab.Size = new System.Drawing.Size(638, 592);
             this.homeTownFriendsTab.TabIndex = 65;
@@ -420,6 +418,27 @@
             this.friendsTab.Text = "Friends";
             this.friendsTab.UseVisualStyleBackColor = true;
             // 
+            // sortByComboBox
+            // 
+            this.sortByComboBox.Items.AddRange(new object[] {
+            "Ascending",
+            "Descending"});
+            this.sortByComboBox.Location = new System.Drawing.Point(342, 10);
+            this.sortByComboBox.Margin = new System.Windows.Forms.Padding(4);
+            this.sortByComboBox.Name = "sortByComboBox";
+            this.sortByComboBox.Size = new System.Drawing.Size(203, 21);
+            this.sortByComboBox.TabIndex = 69;
+            this.sortByComboBox.SelectedIndexChanged += new System.EventHandler(this.sortByComboBox_SelectedIndexChanged);
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(291, 13);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(44, 13);
+            this.label10.TabIndex = 68;
+            this.label10.Text = "Sort By:";
+            // 
             // friendsFlowLayoutPanel
             // 
             this.friendsFlowLayoutPanel.AutoScroll = true;
@@ -432,6 +451,7 @@
             // 
             // albumsTab
             // 
+            this.albumsTab.Controls.Add(this.filteredAlbumsCheckbox);
             this.albumsTab.Controls.Add(this.label8);
             this.albumsTab.Controls.Add(this.albumsLayoutPanel);
             this.albumsTab.Location = new System.Drawing.Point(4, 22);
@@ -610,20 +630,48 @@
             this.likedPagesFlowLayoutPanel.Size = new System.Drawing.Size(610, 504);
             this.likedPagesFlowLayoutPanel.TabIndex = 66;
             // 
-            // hometownFriendsTab
+            // tabPage1
             // 
-            this.hometownFriendsTab.AutoScroll = true;
-            this.hometownFriendsTab.Controls.Add(this.dateTimePicker1);
-            this.hometownFriendsTab.Controls.Add(this.searchPostsByDateButton);
-            this.hometownFriendsTab.Controls.Add(this.label7);
-            this.hometownFriendsTab.Controls.Add(this.postsByDateListBox);
-            this.hometownFriendsTab.Location = new System.Drawing.Point(4, 22);
-            this.hometownFriendsTab.Margin = new System.Windows.Forms.Padding(2);
-            this.hometownFriendsTab.Name = "hometownFriendsTab";
-            this.hometownFriendsTab.Size = new System.Drawing.Size(630, 566);
-            this.hometownFriendsTab.TabIndex = 7;
-            this.hometownFriendsTab.Text = "Search Post";
-            this.hometownFriendsTab.UseVisualStyleBackColor = true;
+            this.tabPage1.Controls.Add(this.labelhomeTown);
+            this.tabPage1.Controls.Add(this.fetchHomwtownFriendsButton);
+            this.tabPage1.Controls.Add(this.hometownFriendFlowPanel);
+            this.tabPage1.Location = new System.Drawing.Point(4, 22);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Size = new System.Drawing.Size(630, 566);
+            this.tabPage1.TabIndex = 8;
+            this.tabPage1.Text = "HomeTown Friends";
+            this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // labelhomeTown
+            // 
+            this.labelhomeTown.AutoSize = true;
+            this.labelhomeTown.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.labelhomeTown.Location = new System.Drawing.Point(278, 45);
+            this.labelhomeTown.Name = "labelhomeTown";
+            this.labelhomeTown.Size = new System.Drawing.Size(72, 16);
+            this.labelhomeTown.TabIndex = 2;
+            this.labelhomeTown.Text = "Hometown";
+            // 
+            // fetchHomwtownFriendsButton
+            // 
+            this.fetchHomwtownFriendsButton.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.fetchHomwtownFriendsButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.fetchHomwtownFriendsButton.ForeColor = System.Drawing.SystemColors.Desktop;
+            this.fetchHomwtownFriendsButton.Location = new System.Drawing.Point(13, 19);
+            this.fetchHomwtownFriendsButton.Name = "fetchHomwtownFriendsButton";
+            this.fetchHomwtownFriendsButton.Size = new System.Drawing.Size(606, 23);
+            this.fetchHomwtownFriendsButton.TabIndex = 1;
+            this.fetchHomwtownFriendsButton.Text = "Fetch Hometown Friends";
+            this.fetchHomwtownFriendsButton.UseVisualStyleBackColor = false;
+            this.fetchHomwtownFriendsButton.Click += new System.EventHandler(this.fetchHomwtownFriendsButton_Click);
+            // 
+            // hometownFriendFlowPanel
+            // 
+            this.hometownFriendFlowPanel.AutoScroll = true;
+            this.hometownFriendFlowPanel.Location = new System.Drawing.Point(13, 78);
+            this.hometownFriendFlowPanel.Name = "hometownFriendFlowPanel";
+            this.hometownFriendFlowPanel.Size = new System.Drawing.Size(606, 472);
+            this.hometownFriendFlowPanel.TabIndex = 0;
             // 
             // dateTimePicker1
             // 
@@ -669,49 +717,6 @@
             this.postsByDateListBox.Size = new System.Drawing.Size(466, 463);
             this.postsByDateListBox.TabIndex = 0;
             // 
-            // tabPage1
-            // 
-            this.tabPage1.Controls.Add(this.labelhomeTown);
-            this.tabPage1.Controls.Add(this.fetchHomwtownFriendsButton);
-            this.tabPage1.Controls.Add(this.hometownFriendFlowPanel);
-            this.tabPage1.Location = new System.Drawing.Point(4, 22);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Size = new System.Drawing.Size(630, 566);
-            this.tabPage1.TabIndex = 8;
-            this.tabPage1.Text = "HomeTown Friends";
-            this.tabPage1.UseVisualStyleBackColor = true;
-            // 
-            // labelhomeTown
-            // 
-            this.labelhomeTown.AutoSize = true;
-            this.labelhomeTown.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.labelhomeTown.Location = new System.Drawing.Point(278, 45);
-            this.labelhomeTown.Name = "labelhomeTown";
-            this.labelhomeTown.Size = new System.Drawing.Size(72, 16);
-            this.labelhomeTown.TabIndex = 2;
-            this.labelhomeTown.Text = "Hometown";
-            // 
-            // fetchHomwtownFriendsButton
-            // 
-            this.fetchHomwtownFriendsButton.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.fetchHomwtownFriendsButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.fetchHomwtownFriendsButton.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.fetchHomwtownFriendsButton.Location = new System.Drawing.Point(13, 19);
-            this.fetchHomwtownFriendsButton.Name = "fetchHomwtownFriendsButton";
-            this.fetchHomwtownFriendsButton.Size = new System.Drawing.Size(606, 23);
-            this.fetchHomwtownFriendsButton.TabIndex = 1;
-            this.fetchHomwtownFriendsButton.Text = "Fetch Hometown Friends";
-            this.fetchHomwtownFriendsButton.UseVisualStyleBackColor = false;
-            this.fetchHomwtownFriendsButton.Click += new System.EventHandler(this.fetchHomwtownFriendsButton_Click);
-            // 
-            // hometownFriendFlowPanel
-            // 
-            this.hometownFriendFlowPanel.AutoScroll = true;
-            this.hometownFriendFlowPanel.Location = new System.Drawing.Point(13, 78);
-            this.hometownFriendFlowPanel.Name = "hometownFriendFlowPanel";
-            this.hometownFriendFlowPanel.Size = new System.Drawing.Size(606, 472);
-            this.hometownFriendFlowPanel.TabIndex = 0;
-            // 
             // fbLogoPictureBox
             // 
             this.fbLogoPictureBox.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("fbLogoPictureBox.BackgroundImage")));
@@ -722,26 +727,16 @@
             this.fbLogoPictureBox.TabIndex = 66;
             this.fbLogoPictureBox.TabStop = false;
             // 
-            // label10
+            // filteredAlbumsCheckbox
             // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(291, 13);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(44, 13);
-            this.label10.TabIndex = 68;
-            this.label10.Text = "Sort By:";
-            // 
-            // sortByComboBox
-            // 
-            this.sortByComboBox.Items.AddRange(new object[] {
-            "Ascending",
-            "Descending"});
-            this.sortByComboBox.Location = new System.Drawing.Point(342, 10);
-            this.sortByComboBox.Margin = new System.Windows.Forms.Padding(4);
-            this.sortByComboBox.Name = "sortByComboBox";
-            this.sortByComboBox.Size = new System.Drawing.Size(203, 21);
-            this.sortByComboBox.TabIndex = 69;
-            this.sortByComboBox.SelectedIndexChanged += new System.EventHandler(this.sortByComboBox_SelectedIndexChanged);
+            this.filteredAlbumsCheckbox.AutoSize = true;
+            this.filteredAlbumsCheckbox.Location = new System.Drawing.Point(452, 21);
+            this.filteredAlbumsCheckbox.Name = "filteredAlbumsCheckbox";
+            this.filteredAlbumsCheckbox.Size = new System.Drawing.Size(165, 17);
+            this.filteredAlbumsCheckbox.TabIndex = 67;
+            this.filteredAlbumsCheckbox.Text = "Show Only Populated Albums";
+            this.filteredAlbumsCheckbox.UseVisualStyleBackColor = true;
+            this.filteredAlbumsCheckbox.CheckedChanged += new System.EventHandler(this.filteredAlbumsCheckbox_CheckedChanged);
             // 
             // FormMain
             // 
@@ -783,8 +778,6 @@
             this.panel1.PerformLayout();
             this.likedPagesTab.ResumeLayout(false);
             this.likedPagesTab.PerformLayout();
-            this.hometownFriendsTab.ResumeLayout(false);
-            this.hometownFriendsTab.PerformLayout();
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.fbLogoPictureBox)).EndInit();
@@ -848,5 +841,6 @@
         private System.Windows.Forms.Label messageLabel1;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.ComboBox sortByComboBox;
+        private System.Windows.Forms.CheckBox filteredAlbumsCheckbox;
     }
 }

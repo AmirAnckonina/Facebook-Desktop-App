@@ -174,19 +174,43 @@ namespace FBServiceLogic
             return friendDTOList;
         }
 
-        public List<TextAndImageDTO> GetAlbumsList()
+        public List<TextAndImageDTO> GetAlbumsList(bool i_FilterApplied = false)
         {
             List<TextAndImageDTO> albumDTOList = new List<TextAndImageDTO>();
             TextAndImageDTO albumDTO;
 
-            foreach (Album album in m_CurrentUser.Albums)
+            if (i_FilterApplied)
+            {
+                albumDTOList = getFilteredAlbumsList();
+            }
+            else
+            {
+                foreach (Album album in m_CurrentUser.Albums)
+                {
+                    albumDTO = new TextAndImageDTO();
+                    albumDTO.Name = album.Name;
+                    albumDTO.PictureURL = album.PictureSmallURL;
+                    albumDTOList.Add(albumDTO);
+                }
+            }
+
+            return albumDTOList;
+        }
+
+        private List<TextAndImageDTO> getFilteredAlbumsList()
+        {
+            List<TextAndImageDTO> albumDTOList = new List<TextAndImageDTO>();
+            TextAndImageDTO albumDTO;
+            AlbumCollection filteredAlbums = new AlbumCollection(m_CurrentUser.Albums);
+
+            foreach (Album album in filteredAlbums)
             {
                 albumDTO = new TextAndImageDTO();
                 albumDTO.Name = album.Name;
                 albumDTO.PictureURL = album.PictureSmallURL;
                 albumDTOList.Add(albumDTO);
             }
-
+            
             return albumDTOList;
         }
 

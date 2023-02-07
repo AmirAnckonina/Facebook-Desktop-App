@@ -40,6 +40,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AccountFacade.cs" />
+    <Compile Include="AlbumCollection.cs" />
     <Compile Include="AppSettings.cs" />
     <Compile Include="DTOs\FriendDTO.cs" />
     <Compile Include="DTOs\GroupDTO.cs" />

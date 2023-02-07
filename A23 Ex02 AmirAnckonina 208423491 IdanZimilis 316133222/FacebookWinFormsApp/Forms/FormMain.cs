@@ -26,7 +26,7 @@ namespace FacebookWinFormsApp
             {
                 testBoxLoggedInUser.Text = $"Logged in as {r_FbApiClient.CurrentUser.Name}";
 
-                new Thread(() => initBasicUserInfo()).Start(); //Fetch, notify when done
+                new Thread(() => initBasicUserInfo()).Start();
                 new Thread(() => initAlbums()).Start();
                 new Thread(() => initGroups()).Start();
                 new Thread(() => initPosts()).Start();
@@ -53,16 +53,6 @@ namespace FacebookWinFormsApp
             try
             {
                 r_FbApiClient.FetchUserBasicInfoDTO();
-
-                /*profilePictureBox.LoadAsync(userBasicInfoDTO.PictureURL);
-                Invoke(new Action(() =>
-                {
-                    genderLabel.Text = userBasicInfoDTO.Gender;
-                    birthdayLabel.Text = userBasicInfoDTO.Birthday;
-                    statusLabel.Text = userBasicInfoDTO.OnlineStatus;
-                    homeTownLabel.Text = userBasicInfoDTO.Hometown;
-                    educationLabel.Text = userBasicInfoDTO.Education;
-                }));*/
             }
             catch(Exception)
             { 
@@ -179,23 +169,27 @@ namespace FacebookWinFormsApp
             }
         }
 
-        private void initAlbums()
+        private void initAlbums(bool i_FilterApplied = false)
         {
             try
             {
-                List<TextAndImageDTO> albumsDTO = r_FbApiClient.GetAlbumsList();
+                List<TextAndImageDTO> albumsDTO = r_FbApiClient.GetAlbumsList(i_FilterApplied);
 
-                foreach (TextAndImageDTO albumDTO in albumsDTO)
+                Invoke(new Action(() =>
                 {
-                    Invoke(new Action(() =>
+                    albumsLayoutPanel.Controls.Clear();
+                    foreach (TextAndImageDTO albumDTO in albumsDTO)
                     {
+                        //Invoke(new Action(() =>
+                        //{
                         AlbumBox album = new AlbumBox();
                         album.SetGroupNameLabel(albumDTO.Name);
                         album.SetGroupPictureInPictureBox(albumDTO.PictureURL);
                         albumsLayoutPanel.Controls.Add(album);
                         albumsLayoutPanel.AutoScroll = true;
-                    }));
-                }
+                        //}));
+                    }
+                }));
             }
             catch(Exception)
             {
@@ -204,27 +198,26 @@ namespace FacebookWinFormsApp
 
         private void initFriends(string i_SortingMethod = null)
         {
-            if (friendsFlowLayoutPanel.Controls.Count > 0)
-            {
-                friendsFlowLayoutPanel.Controls.Clear();
-            }
-
             try
             {
                 List<FriendDTO> friendsDTOList = r_FbApiClient.GetFriendsList(i_SortingMethod);
 
-                foreach (FriendDTO friendDTO in friendsDTOList)
+                friendsFlowLayoutPanel.Invoke(new Action(() =>
                 {
-                    friendsFlowLayoutPanel.Invoke(new Action(() =>
+                    friendsFlowLayoutPanel.Controls.Clear();
+                    foreach (FriendDTO friendDTO in friendsDTOList)
                     {
-                        FriendBox friendBox = new FriendBox();
-                        friendBox.SetFriendName(friendDTO.Name);
-                        friendBox.SetPictureBox(friendDTO.PictureURL);
-                        friendBox.SetStatus(friendDTO.OnlineStatus);
-                        friendsFlowLayoutPanel.Controls.Add(friendBox);
-                        groupLayoutPanel.AutoScroll = true;
-                    }));
-                }
+                       //friendsFlowLayoutPanel.Invoke(new Action(() =>
+                        //{
+                            FriendBox friendBox = new FriendBox();
+                            friendBox.SetFriendName(friendDTO.Name);
+                            friendBox.SetPictureBox(friendDTO.PictureURL);
+                            friendBox.SetStatus(friendDTO.OnlineStatus);
+                            friendsFlowLayoutPanel.Controls.Add(friendBox);
+                            groupLayoutPanel.AutoScroll = true;
+                        //}));
+                    }
+                }));
             }
             catch(Exception)
             { 
@@ -237,9 +230,7 @@ namespace FacebookWinFormsApp
         }
 
         private void initGroups()
-        {
-
-            
+        { 
             try
             {
                 List<GroupDTO> groupsListDTO = r_FbApiClient.GetGroupsList();
@@ -317,8 +308,24 @@ namespace FacebookWinFormsApp
 
             if (!string.IsNullOrEmpty(selectedSortingMethodItem))
             {
-                initFriends(selectedSortingMethodItem);
+                new Thread(() => initFriends(selectedSortingMethodItem)).Start();
             }
+        }
+
+        private void filteredAlbumsCheckbox_CheckedChanged(object sender, EventArgs e)
+        {
+            bool filterApplied;
+
+            if (filteredAlbumsCheckbox.Checked)
+            {
+                filterApplied = true;
+            }
+            else
+            {
+                filterApplied = false;
+            }
+
+            new Thread(() => initAlbums(filterApplied)).Start();
         }
     }
 }
