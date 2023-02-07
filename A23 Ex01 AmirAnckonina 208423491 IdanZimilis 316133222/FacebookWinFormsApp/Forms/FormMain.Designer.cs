@@ -67,7 +67,7 @@
             this.groupLayoutPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.label9 = new System.Windows.Forms.Label();
             this.postsTab = new System.Windows.Forms.TabPage();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.postPanel = new System.Windows.Forms.Panel();
             this.captionLabel1 = new System.Windows.Forms.Label();
             this.createdTimeDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.messageLabel1 = new System.Windows.Forms.Label();
@@ -98,7 +98,7 @@
             this.albumsTab.SuspendLayout();
             this.groupsTab.SuspendLayout();
             this.postsTab.SuspendLayout();
-            this.panel1.SuspendLayout();
+            this.postPanel.SuspendLayout();
             this.likedPagesTab.SuspendLayout();
             this.hometownFriendsTab.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -479,7 +479,7 @@
             // postsTab
             // 
             this.postsTab.AutoScroll = true;
-            this.postsTab.Controls.Add(this.panel1);
+            this.postsTab.Controls.Add(this.postPanel);
             this.postsTab.Controls.Add(this.clearButton);
             this.postsTab.Controls.Add(this.statusTextBox);
             this.postsTab.Controls.Add(this.postLabel);
@@ -494,20 +494,20 @@
             this.postsTab.Text = "Posts";
             this.postsTab.UseVisualStyleBackColor = true;
             // 
-            // panel1
+            // postPanel
             // 
-            this.panel1.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.panel1.Controls.Add(captionLabel);
-            this.panel1.Controls.Add(this.captionLabel1);
-            this.panel1.Controls.Add(createdTimeLabel);
-            this.panel1.Controls.Add(this.createdTimeDateTimePicker);
-            this.panel1.Controls.Add(messageLabel);
-            this.panel1.Controls.Add(this.messageLabel1);
-            this.panel1.Location = new System.Drawing.Point(21, 95);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(800, 139);
-            this.panel1.TabIndex = 62;
+            this.postPanel.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.postPanel.Controls.Add(captionLabel);
+            this.postPanel.Controls.Add(this.captionLabel1);
+            this.postPanel.Controls.Add(createdTimeLabel);
+            this.postPanel.Controls.Add(this.createdTimeDateTimePicker);
+            this.postPanel.Controls.Add(messageLabel);
+            this.postPanel.Controls.Add(this.messageLabel1);
+            this.postPanel.Location = new System.Drawing.Point(21, 95);
+            this.postPanel.Margin = new System.Windows.Forms.Padding(4);
+            this.postPanel.Name = "postPanel";
+            this.postPanel.Size = new System.Drawing.Size(800, 139);
+            this.postPanel.TabIndex = 62;
             // 
             // captionLabel1
             // 
@@ -741,8 +741,8 @@
             this.groupsTab.PerformLayout();
             this.postsTab.ResumeLayout(false);
             this.postsTab.PerformLayout();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.postPanel.ResumeLayout(false);
+            this.postPanel.PerformLayout();
             this.likedPagesTab.ResumeLayout(false);
             this.likedPagesTab.PerformLayout();
             this.hometownFriendsTab.ResumeLayout(false);
@@ -803,7 +803,7 @@
         private System.Windows.Forms.Button clearButton;
         private System.Windows.Forms.Label educationLabel;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel postPanel;
         private System.Windows.Forms.BindingSource postDTOBindingSource;
         private System.Windows.Forms.Label captionLabel1;
         private System.Windows.Forms.DateTimePicker createdTimeDateTimePicker;

@@ -170,8 +170,9 @@ namespace FacebookWinFormsApp
             try
             {
                 List<TextAndImageDTO> albumsDTO = r_FbApiClient.GetAlbumsList();
+                AlbumCollection albumCollection = new AlbumCollection(albumsDTO);
 
-                foreach (TextAndImageDTO albumDTO in albumsDTO)
+                foreach (TextAndImageDTO albumDTO in albumCollection)
                 {
                     Invoke(new Action(() =>
                     {

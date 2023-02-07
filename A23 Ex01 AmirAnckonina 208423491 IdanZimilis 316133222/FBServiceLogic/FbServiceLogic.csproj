@@ -41,6 +41,7 @@
   <ItemGroup>
     <Compile Include="AccountFacade.cs" />
     <Compile Include="AppSettings.cs" />
+    <Compile Include="AlbumCollection.cs" />
     <Compile Include="DTOs\FriendDTO.cs" />
     <Compile Include="DTOs\GroupDTO.cs" />
     <Compile Include="DTOs\HometownFriendDTO.cs" />
