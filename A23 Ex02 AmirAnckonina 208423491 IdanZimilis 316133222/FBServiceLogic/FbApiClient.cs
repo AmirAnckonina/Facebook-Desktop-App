@@ -15,7 +15,7 @@ namespace FBServiceLogic
         private User m_CurrentUser;
         private LoginResult m_LoginResult;
         private readonly FbFriendsSorter r_FbFriendsSorter;
-        public event Action<UserBasicInfoDTO> m_NotifyUserInfoFetched;
+        public event Action<PostDTO> m_StatusPosted;
 
         public FbApiClient()
         {
@@ -82,7 +82,7 @@ namespace FBServiceLogic
             m_LoginResult = null;
         }
 
-        /* public UserBasicInfoDTO GetUserBasicInfoDTO()
+         public UserBasicInfoDTO GetUserBasicInfoDTO()
          {
              UserBasicInfoDTO userBasicInfoDTO = new UserBasicInfoDTO();
              DummyUser dummyUserData = FbDummyDataFactory.CreateDummyData("User") as DummyUser;
@@ -96,9 +96,9 @@ namespace FBServiceLogic
              userBasicInfoDTO.OnlineStatus = dummyUserData.OnlineStatus.ToString();
 
              return userBasicInfoDTO;
-         }*/
+         }
 
-        public void FetchUserBasicInfoDTO()
+       /* public void FetchUserBasicInfoDTO()
         {
             UserBasicInfoDTO userBasicInfoDTO = new UserBasicInfoDTO();
             DummyUser dummyUserData = FbDummyDataFactory.CreateDummyData("User") as DummyUser;
@@ -120,7 +120,7 @@ namespace FBServiceLogic
             {
                 m_NotifyUserInfoFetched.Invoke(i_UserBasicInfoDTO);
             }
-        }
+        }*/
 
         public List<FriendDTO> GetFriendsList(string i_SortStrategy = null)
         {
@@ -303,7 +303,7 @@ namespace FBServiceLogic
                     htFriend = new HometownFriendDTO();
                     htFriend.Name = friend.Name;
                     htFriend.PictureURL = friend.PictureSqaureURL;
-                    htFriend.Hometown = friend.Hometown.Name;
+                    htFriend.Hometown = htFriend.Hometown != null ? friend.Hometown.Name : string.Empty;
                     myHometownFriends.Add(htFriend);
                 }
             }
@@ -342,6 +342,30 @@ namespace FBServiceLogic
             }
 
             return likedPagesList;
+        }
+
+        public void PostStatus(string i_StatusMessage)
+        {
+            string newPostMessage = i_StatusMessage;
+            string caption = $"caption";
+            DateTime? createdTime = DateTime.Now;
+
+            /// Post Status
+
+            OnPostStatus(new PostDTO()
+            {
+                Message = newPostMessage,
+                Caption = caption,
+                CreatedTime = createdTime
+            });
+        }
+
+        protected virtual void OnPostStatus(PostDTO post)
+        {
+            if (m_StatusPosted != null)
+            {
+                m_StatusPosted.Invoke(post);
+            }
         }
     }
 }

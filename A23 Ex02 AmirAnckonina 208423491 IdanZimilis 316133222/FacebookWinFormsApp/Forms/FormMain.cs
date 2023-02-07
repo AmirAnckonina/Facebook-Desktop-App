@@ -17,7 +17,15 @@ namespace FacebookWinFormsApp
             InitializeComponent();
             FacebookWrapper.FacebookService.s_CollectionLimit = 100;
             r_FbApiClient = i_FbApiClient;
-            r_FbApiClient.m_NotifyUserInfoFetched += this.displayUserInfo;
+            r_FbApiClient.m_StatusPosted += this.updatePosts;
+        }
+
+        private void updatePosts(PostDTO newPost)
+        {
+            statusTextBox.Text = postTextBox.Text;
+            this.postDTOBindingSource.Add(newPost);
+            this.postDTOBindingSource.EndEdit();
+            new Thread(() => initPosts()).Start();
         }
 
         private void initForm()
@@ -35,24 +43,21 @@ namespace FacebookWinFormsApp
             }));
         }
 
-        private void displayUserInfo(UserBasicInfoDTO i_UserBasicInfoDTO)
-        {
-            profilePictureBox.LoadAsync(i_UserBasicInfoDTO.PictureURL);
-            Invoke(new Action(() =>
-            {
-                genderLabel.Text = i_UserBasicInfoDTO.Gender;
-                birthdayLabel.Text = i_UserBasicInfoDTO.Birthday;
-                statusLabel.Text = i_UserBasicInfoDTO.OnlineStatus;
-                homeTownLabel.Text = i_UserBasicInfoDTO.Hometown;
-                educationLabel.Text = i_UserBasicInfoDTO.Education;
-            }));
-        }
-
         private void initBasicUserInfo()
         {
             try
             {
-                r_FbApiClient.FetchUserBasicInfoDTO();
+                UserBasicInfoDTO i_UserBasicInfoDTO = r_FbApiClient.GetUserBasicInfoDTO();
+
+                profilePictureBox.LoadAsync(i_UserBasicInfoDTO.PictureURL);
+                Invoke(new Action(() =>
+                {
+                    genderLabel.Text = i_UserBasicInfoDTO.Gender;
+                    birthdayLabel.Text = i_UserBasicInfoDTO.Birthday;
+                    statusLabel.Text = i_UserBasicInfoDTO.OnlineStatus;
+                    homeTownLabel.Text = i_UserBasicInfoDTO.Hometown;
+                    educationLabel.Text = i_UserBasicInfoDTO.Education;
+                }));
             }
             catch(Exception)
             { 
@@ -180,14 +185,11 @@ namespace FacebookWinFormsApp
                     albumsLayoutPanel.Controls.Clear();
                     foreach (TextAndImageDTO albumDTO in albumsDTO)
                     {
-                        //Invoke(new Action(() =>
-                        //{
                         AlbumBox album = new AlbumBox();
                         album.SetGroupNameLabel(albumDTO.Name);
                         album.SetGroupPictureInPictureBox(albumDTO.PictureURL);
                         albumsLayoutPanel.Controls.Add(album);
                         albumsLayoutPanel.AutoScroll = true;
-                        //}));
                     }
                 }));
             }
@@ -207,15 +209,12 @@ namespace FacebookWinFormsApp
                     friendsFlowLayoutPanel.Controls.Clear();
                     foreach (FriendDTO friendDTO in friendsDTOList)
                     {
-                       //friendsFlowLayoutPanel.Invoke(new Action(() =>
-                        //{
                             FriendBox friendBox = new FriendBox();
                             friendBox.SetFriendName(friendDTO.Name);
                             friendBox.SetPictureBox(friendDTO.PictureURL);
                             friendBox.SetStatus(friendDTO.OnlineStatus);
                             friendsFlowLayoutPanel.Controls.Add(friendBox);
                             groupLayoutPanel.AutoScroll = true;
-                        //}));
                     }
                 }));
             }
@@ -288,12 +287,18 @@ namespace FacebookWinFormsApp
         private void fetchHomwtownFriendsButton_Click(object sender, EventArgs e)
         {
             hometownFriendFlowPanel.Controls.Clear();
-            fetchHometownFriends();
+            try
+            {
+                fetchHometownFriends();
+            }
+            catch(Exception)
+            {
+            }
         }
 
         private void postButton_Click(object sender, EventArgs e)
         {
-            statusTextBox.Text = postTextBox.Text;
+            r_FbApiClient.PostStatus(postTextBox.Text);
         }
 
         private void clearButton_Click(object sender, EventArgs e)
