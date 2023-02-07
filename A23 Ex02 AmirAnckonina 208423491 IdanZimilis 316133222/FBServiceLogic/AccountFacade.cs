@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace FBServiceLogic
 {
-    public class AccountFacade
+    public class AccountFacade 
     {
         private readonly FbApiClient r_FbApiClient;
 
@@ -15,9 +15,9 @@ namespace FBServiceLogic
             r_FbApiClient = i_FbApiClient;
         }
 
-        public void Login()
+        public void RegularLogin()
         {
-            r_FbApiClient.Login();
+            r_FbApiClient.RegularLogin();
         }
 
         public void AutomaticLogin()

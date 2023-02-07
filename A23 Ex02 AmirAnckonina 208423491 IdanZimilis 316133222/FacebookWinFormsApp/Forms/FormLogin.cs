@@ -38,7 +38,7 @@ namespace FacebookWinFormsApp
                     r_AccountFacade.SetDefaultSettingsInApp();
                 }
 
-                r_AccountFacade.Login();
+                r_AccountFacade.RegularLogin();
                 LoginSucceed = true;
                 this.Close();
             }

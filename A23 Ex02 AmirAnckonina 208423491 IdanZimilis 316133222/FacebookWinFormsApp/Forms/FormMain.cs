@@ -188,11 +188,17 @@ namespace FacebookWinFormsApp
             }
         }
 
-        private void initFriends()
+        private void initFriends(string i_SortingMethod = null)
         {
+            if (friendsFlowLayoutPanel.Controls.Count <= 0)
+            {
+                friendsFlowLayoutPanel.Controls.Clear();          
+            }
+
             try
             {
-                List<FriendDTO> friendsDTOList = r_FbApiClient.GetFriendsList();
+                List<FriendDTO> friendsDTOList = r_FbApiClient.GetFriendsList(i_SortingMethod);
+
                 foreach (FriendDTO friendDTO in friendsDTOList)
                 {
                     friendsFlowLayoutPanel.Invoke(new Action(() =>
@@ -287,6 +293,16 @@ namespace FacebookWinFormsApp
         {
             statusTextBox.Text = "My status...";
             postTextBox.Text = string.Empty;
+        }
+
+        private void sortByComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string selectedSortingMethodItem = sortByComboBox.SelectedItem.ToString();
+
+            if (!string.IsNullOrEmpty(selectedSortingMethodItem))
+            {
+                initFriends(selectedSortingMethodItem);
+            }
         }
     }
 }
