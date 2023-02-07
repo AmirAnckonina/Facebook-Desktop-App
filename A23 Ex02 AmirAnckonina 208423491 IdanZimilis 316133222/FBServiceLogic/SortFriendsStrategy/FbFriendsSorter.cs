@@ -33,13 +33,6 @@ namespace FBServiceLogic
             }
         }
 
-        /*private void doSwap(FriendDTO io_Friend1, FriendDTO io_Friend2)
-        {
-            FriendDTO temp = io_Friend1;
-            io_Friend1 = io_Friend2;
-            io_Friend2 = temp;
-        }*/
-
         private void doSwap<T>(List<T> list, int i, int j)
         {
             T temp = list[i];

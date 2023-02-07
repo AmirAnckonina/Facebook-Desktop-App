@@ -15,6 +15,7 @@ namespace FBServiceLogic
         private User m_CurrentUser;
         private LoginResult m_LoginResult;
         private readonly FbFriendsSorter r_FbFriendsSorter;
+        public event Action<UserBasicInfoDTO> m_NotifyUserInfoFetched;
 
         public FbApiClient()
         {
@@ -81,7 +82,23 @@ namespace FBServiceLogic
             m_LoginResult = null;
         }
 
-        public UserBasicInfoDTO GetUserBasicInfoDTO()
+        /* public UserBasicInfoDTO GetUserBasicInfoDTO()
+         {
+             UserBasicInfoDTO userBasicInfoDTO = new UserBasicInfoDTO();
+             DummyUser dummyUserData = FbDummyDataFactory.CreateDummyData("User") as DummyUser;
+
+             userBasicInfoDTO.Name = m_CurrentUser.Name;
+             userBasicInfoDTO.PictureURL = m_CurrentUser.PictureNormalURL;
+             userBasicInfoDTO.Birthday = m_CurrentUser.Birthday;
+             userBasicInfoDTO.Gender = m_CurrentUser.Gender.ToString();
+             userBasicInfoDTO.Education = dummyUserData.Education;
+             userBasicInfoDTO.Hometown = dummyUserData.Hometown;
+             userBasicInfoDTO.OnlineStatus = dummyUserData.OnlineStatus.ToString();
+
+             return userBasicInfoDTO;
+         }*/
+
+        public void FetchUserBasicInfoDTO()
         {
             UserBasicInfoDTO userBasicInfoDTO = new UserBasicInfoDTO();
             DummyUser dummyUserData = FbDummyDataFactory.CreateDummyData("User") as DummyUser;
@@ -94,7 +111,15 @@ namespace FBServiceLogic
             userBasicInfoDTO.Hometown = dummyUserData.Hometown;
             userBasicInfoDTO.OnlineStatus = dummyUserData.OnlineStatus.ToString();
 
-            return userBasicInfoDTO;
+            notifyUserInfoFetched(userBasicInfoDTO);
+        }
+
+        private void notifyUserInfoFetched(UserBasicInfoDTO i_UserBasicInfoDTO)
+        {
+            if (m_NotifyUserInfoFetched != null)
+            {
+                m_NotifyUserInfoFetched.Invoke(i_UserBasicInfoDTO);
+            }
         }
 
         public List<FriendDTO> GetFriendsList(string i_SortStrategy = null)
