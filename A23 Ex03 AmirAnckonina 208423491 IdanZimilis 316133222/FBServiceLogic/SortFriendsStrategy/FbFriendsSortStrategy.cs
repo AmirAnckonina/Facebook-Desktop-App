@@ -7,11 +7,11 @@ using System.Threading.Tasks;
 
 namespace FBServiceLogic
 {
-    public class FbFriendsSorter
+    public class FbFriendsSortStrategy
     {
         public IComparer Comparer { get; set; }
 
-        public FbFriendsSorter()
+        public FbFriendsSortStrategy()
         {
         }
 
@@ -25,8 +25,7 @@ namespace FBServiceLogic
                     {
                         if (Comparer.ShouldSwap(io_FriendsList[j].Name, io_FriendsList[j + g].Name))
                         {
-                            //doSwap(i_FriendsList[j], i_FriendsList[j + g]);
-                            doSwap(io_FriendsList, j, j + g); //.doSwap<FriendDTO>()
+                            doSwap(io_FriendsList, j, j + g);
                         }
                     }
                 }

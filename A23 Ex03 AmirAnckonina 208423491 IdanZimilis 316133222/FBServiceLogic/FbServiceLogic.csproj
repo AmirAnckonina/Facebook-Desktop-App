@@ -65,7 +65,7 @@
     <Compile Include="SortFriendsStrategy\AscendingComparer.cs" />
     <Compile Include="SortFriendsStrategy\DescendingComparer.cs" />
     <Compile Include="SortFriendsStrategy\eSortStrategy.cs" />
-    <Compile Include="SortFriendsStrategy\FbFriendsSorter.cs" />
+    <Compile Include="SortFriendsStrategy\FbFriendsSortStrategy.cs" />
     <Compile Include="SortFriendsStrategy\IComparer.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>

@@ -12,7 +12,7 @@ namespace FBServiceLogic
     public class FbApiClient
     {
         private readonly AppSettings r_AppSettings;
-        private readonly FbFriendsSorter r_FbFriendsSorter;
+        private readonly FbFriendsSortStrategy r_FbFriendsSorter;
         private User m_CurrentUser;
         private LoginResult m_LoginResult;
 
@@ -23,7 +23,7 @@ namespace FBServiceLogic
             m_CurrentUser = null;
             m_LoginResult = null;
             m_CurrentUser = null;
-            r_FbFriendsSorter = new FbFriendsSorter();
+            r_FbFriendsSorter = new FbFriendsSortStrategy();
             r_AppSettings = AppSettings.LoadSettings();
         }
 
@@ -99,30 +99,6 @@ namespace FBServiceLogic
              return userBasicInfoDTO;
          }
 
-       /* public void FetchUserBasicInfoDTO()
-        {
-            UserBasicInfoDTO userBasicInfoDTO = new UserBasicInfoDTO();
-            DummyUser dummyUserData = FbDummyDataFactory.CreateDummyData("User") as DummyUser;
-
-            userBasicInfoDTO.Name = m_CurrentUser.Name;
-            userBasicInfoDTO.PictureURL = m_CurrentUser.PictureNormalURL;
-            userBasicInfoDTO.Birthday = m_CurrentUser.Birthday;
-            userBasicInfoDTO.Gender = m_CurrentUser.Gender.ToString();
-            userBasicInfoDTO.Education = dummyUserData.Education;
-            userBasicInfoDTO.Hometown = dummyUserData.Hometown;
-            userBasicInfoDTO.OnlineStatus = dummyUserData.OnlineStatus.ToString();
-
-            notifyUserInfoFetched(userBasicInfoDTO);
-        }
-
-        private void notifyUserInfoFetched(UserBasicInfoDTO i_UserBasicInfoDTO)
-        {
-            if (m_NotifyUserInfoFetched != null)
-            {
-                m_NotifyUserInfoFetched.Invoke(i_UserBasicInfoDTO);
-            }
-        }*/
-
         public List<FriendDTO> GetFriendsList(string i_SortStrategy = null)
         {
             List<FriendDTO> friendDTOList = new List<FriendDTO>();
@@ -153,10 +129,12 @@ namespace FBServiceLogic
                 }
             }
 
+            /// Check if sorting is required, execute as well
             if (!string.IsNullOrEmpty(i_SortStrategy))
             {
                 eSortStrategy sortStrategy;
                 bool sortStrategyParsedSuccessfully = Enum.TryParse(i_SortStrategy, out sortStrategy);
+
                 if (sortStrategyParsedSuccessfully)
                 {
                     if (sortStrategy == eSortStrategy.Ascending)
@@ -347,11 +325,12 @@ namespace FBServiceLogic
 
         public void PostStatus(string i_StatusMessage)
         {
+            /// Simulating a status posting - can't be done today with Fb auth limitiations.
             string newPostMessage = i_StatusMessage;
             string caption = $"caption";
             DateTime? createdTime = DateTime.Now;
 
-            /// Post Status
+           /// Post Status in Facebook.
 
             OnPostStatus(new PostDTO()
             {
@@ -361,11 +340,11 @@ namespace FBServiceLogic
             });
         }
 
-        protected virtual void OnPostStatus(PostDTO post)
+        protected virtual void OnPostStatus(PostDTO i_Post)
         {
             if (m_StatusPosted != null)
             {
-                m_StatusPosted.Invoke(post);
+                m_StatusPosted.Invoke(i_Post);
             }
         }
     }
