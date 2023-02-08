@@ -34,6 +34,5 @@ namespace FBServiceLogic
         {
             return GetEnumerator();
         }
-
     }
 }

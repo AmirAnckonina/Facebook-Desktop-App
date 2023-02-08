@@ -12,9 +12,10 @@ namespace FBServiceLogic
     public class FbApiClient
     {
         private readonly AppSettings r_AppSettings;
+        private readonly FbFriendsSorter r_FbFriendsSorter;
         private User m_CurrentUser;
         private LoginResult m_LoginResult;
-        private readonly FbFriendsSorter r_FbFriendsSorter;
+
         public event Action<PostDTO> m_StatusPosted;
 
         public FbApiClient()
@@ -57,7 +58,7 @@ namespace FBServiceLogic
                 throw new FacebookApiException("Login Failed");
             }
         }
-        
+
         public void NormalExit()
         {
             FacebookService.Logout();
@@ -82,7 +83,7 @@ namespace FBServiceLogic
             m_LoginResult = null;
         }
 
-         public UserBasicInfoDTO GetUserBasicInfoDTO()
+        public UserBasicInfoDTO GetUserBasicInfoDTO()
          {
              UserBasicInfoDTO userBasicInfoDTO = new UserBasicInfoDTO();
              DummyUser dummyUserData = FbDummyDataFactory.CreateDummyData("User") as DummyUser;
@@ -151,7 +152,7 @@ namespace FBServiceLogic
                     friendDTOList.Add(newFriendDTO);
                 }
             }
-            
+
             if (!string.IsNullOrEmpty(i_SortStrategy))
             {
                 eSortStrategy sortStrategy;
@@ -170,7 +171,7 @@ namespace FBServiceLogic
                     r_FbFriendsSorter.SortFriends(friendDTOList);
                 }
             }
-            
+
             return friendDTOList;
         }
 
@@ -210,7 +211,7 @@ namespace FBServiceLogic
                 albumDTO.PictureURL = album.PictureSmallURL;
                 albumDTOList.Add(albumDTO);
             }
-            
+
             return albumDTOList;
         }
 
@@ -235,7 +236,7 @@ namespace FBServiceLogic
         {
             List<PostDTO> postDTOList = new List<PostDTO>();
             PostDTO newPost;
-            DateTime? dateTime; 
+            DateTime? dateTime;
             int postCounter = 0;
 
             foreach (Post post in m_CurrentUser.Posts)
@@ -323,7 +324,7 @@ namespace FBServiceLogic
                     }
                 }
             }
-       
+
             return myHometownFriends;
         }
 
@@ -356,7 +357,7 @@ namespace FBServiceLogic
             {
                 Message = newPostMessage,
                 Caption = caption,
-                CreatedTime = createdTime
+                CreatedTime = createdTime,
             });
         }
 
