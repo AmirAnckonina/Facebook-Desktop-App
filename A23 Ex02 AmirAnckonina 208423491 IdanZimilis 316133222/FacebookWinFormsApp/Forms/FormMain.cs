@@ -59,8 +59,8 @@ namespace FacebookWinFormsApp
                     educationLabel.Text = i_UserBasicInfoDTO.Education;
                 }));
             }
-            catch(Exception)
-            { 
+            catch (Exception)
+            {
             }
         }
 
@@ -83,9 +83,9 @@ namespace FacebookWinFormsApp
                     }));
                 }
             }
-            catch(Exception)
-            { 
-            }                
+            catch (Exception)
+            {
+            }
         }
 
         private void buttonLogout_Click(object sender, EventArgs e)
@@ -96,7 +96,7 @@ namespace FacebookWinFormsApp
 
         private void FormMain_Load(object sender, EventArgs e)
         {
-            Thread thread = new Thread(()=>
+            Thread thread = new Thread(() =>
             {
                 initForm();
             });
@@ -115,7 +115,7 @@ namespace FacebookWinFormsApp
             {
                 r_FbApiClient.AppSettings.RememberUserActivated = false;
                 r_FbApiClient.AppSettings.LastAccessToken = null;
-            } 
+            }
         }
 
         private void FormMain_FormClosed(object sender, FormClosedEventArgs e)
@@ -152,8 +152,8 @@ namespace FacebookWinFormsApp
                     }
                 }
             }
-            catch(Exception)
-            { 
+            catch (Exception)
+            {
             }
         }
 
@@ -169,8 +169,8 @@ namespace FacebookWinFormsApp
             {
                 this.postDTOBindingSource.DataSource = r_FbApiClient.GetPostsList();
             }
-            catch(Exception)
-            { 
+            catch (Exception)
+            {
             }
         }
 
@@ -193,7 +193,7 @@ namespace FacebookWinFormsApp
                     }
                 }));
             }
-            catch(Exception)
+            catch (Exception)
             {
             }
         }
@@ -218,18 +218,18 @@ namespace FacebookWinFormsApp
                     }
                 }));
             }
-            catch(Exception)
-            { 
+            catch (Exception)
+            {
             }
         }
-        
+
         public void CheckRememberMe()
         {
             rememberMeCheckBox.Checked = true;
         }
 
         private void initGroups()
-        { 
+        {
             try
             {
                 List<GroupDTO> groupsListDTO = r_FbApiClient.GetGroupsList();
@@ -248,7 +248,7 @@ namespace FacebookWinFormsApp
                     }));
                 }
             }
-            catch(Exception)
+            catch (Exception)
             {
             }
         }
@@ -265,7 +265,7 @@ namespace FacebookWinFormsApp
                 }
                 else
                 {
-                    labelhomeTown.Text = "THERE ARE NO MUTUAL FRIENDS IN HOMETOWN"; 
+                    labelhomeTown.Text = "THERE ARE NO MUTUAL FRIENDS IN HOMETOWN";
                 }
 
                 foreach (HometownFriendDTO homeTownFriendDTO in hometownFriendsDTOList)
@@ -279,7 +279,7 @@ namespace FacebookWinFormsApp
 
                 hometownFriendFlowPanel.AutoScroll = true;
             }
-            catch(Exception)
+            catch (Exception)
             {
             }
         }
@@ -291,7 +291,7 @@ namespace FacebookWinFormsApp
             {
                 fetchHometownFriends();
             }
-            catch(Exception)
+            catch (Exception)
             {
             }
         }

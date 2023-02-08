@@ -18,9 +18,9 @@ namespace FBServiceLogic
 
         public string LastAccessToken { get; set; }
 
-        public string AppID { get; set; } 
+        public string AppID { get; set; }
 
-        public List<string> Permissions { get; set; } 
+        public List<string> Permissions { get; set; }
 
         private AppSettings()
         {
@@ -33,7 +33,7 @@ namespace FBServiceLogic
         {
             AppSettings appSettings = null;
 
-            try 
+            try
             {
                 using (Stream stream = new FileStream(sr_AppSettingsFilePath, FileMode.Open))
                 {
@@ -41,18 +41,18 @@ namespace FBServiceLogic
                     appSettings = serializer.Deserialize(stream) as AppSettings;
                 }
             }
-            catch(Exception)
+            catch (Exception)
             {
                 appSettings = new AppSettings();
             }
 
             return appSettings;
-        }       
+        }
 
-        public static AppSettings LoadSettings() 
+        public static AppSettings LoadSettings()
         {
             AppSettings appSettings = null;
-           
+
             appSettings = loadFromFile();
 
             if (appSettings == null || appSettings.RememberUserActivated == false)
@@ -73,23 +73,23 @@ namespace FBServiceLogic
 
         private void setDefaultPermissions()
         {
-            /// Init App Permissions 
-            Permissions = new List<string>(new string[] 
+            /// Init App Permissions
+            Permissions = new List<string>(new string[]
             {
                 "email",
-        "public_profile",
-        "user_age_range",
-        "user_birthday",
-        "user_events",
-        "user_friends",
-        "user_gender",
-        "user_hometown",
-        "user_likes",
-        "user_link",
-        "user_location",
-        "user_photos",
-        "user_posts",
-        "user_videos"
+                "public_profile",
+                "user_age_range",
+                "user_birthday",
+                "user_events",
+                "user_friends",
+                "user_gender",
+                "user_hometown",
+                "user_likes",
+                "user_link",
+                "user_location",
+                "user_photos",
+                "user_posts",
+                "user_videos",
             });
         }
 
@@ -115,7 +115,7 @@ namespace FBServiceLogic
             {
                 XmlSerializer serializer = new XmlSerializer(this.GetType());
                 serializer.Serialize(stream, this);
-            }       
+            }
         }
 
         public void ResetAppSettings()
